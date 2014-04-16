@@ -28,3 +28,6 @@ thumbs.db
 # Ignore all logfiles and tempfiles.
 *.log
 /tmp
+
+# Ignore Node dependencies
+node_modules
