@@ -1,7 +1,5 @@
 ## WDI InstallFest Script
 
-A work in progress to automate the set up of a student's development machine.
-
 ##### For Mac OS:
 
 Paste this script into a Terminal prompt:
