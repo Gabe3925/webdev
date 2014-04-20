@@ -7,7 +7,6 @@ Most necessary:
 * When you type `pry` into your terminal, it changes the prompt to `[1] pry(main)>`
 	* to exit pry, simply use the `exit` command
 * When you type `rails --version` into your terminal, you get `Rails 4.1.0` or above
-* When you type `brew doctor` into your terminal, you get no warnings
 
 Sublime Text:
 
