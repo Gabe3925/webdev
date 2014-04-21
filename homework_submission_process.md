@@ -1,4 +1,4 @@
-#WDI_DC_1 Homework Submission Process
+#Homework Submission Process
 
 ###Open up a terminal window
 
@@ -48,9 +48,9 @@ git push origin master
 ![image](./screenshots/git_commit_push.png)
 
 
-###Open up a your internet browser and go to your fork on Github
+###Open up Chrome and go to your fork on GitHub
 
-######Make ONE pull request
+######Make a pull request (just one, please)
 
 ---
 

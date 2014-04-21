@@ -2,12 +2,11 @@
 
 Most necessary:
 
-* When you type `ruby --version` into your terminal, you get `ruby  2.1.1` or above
+* When you type `ruby --version` into your terminal, you get `ruby  1.9.3` or above
 * When you type `git --version` into your terminal, you get `git version 1.9.1` or above
 * When you type `pry` into your terminal, it changes the prompt to `[1] pry(main)>`
 	* to exit pry, simply use the `exit` command
 * When you type `rails --version` into your terminal, you get `Rails 4.1.0` or above
-* When you type `brew doctor` into your terminal, you get no warnings
 
 Sublime Text:
 
