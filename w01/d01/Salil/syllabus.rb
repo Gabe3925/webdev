@@ -112,4 +112,4 @@ number_array.flatten!
 number_array.each do |current_index|
   puts get_character(message_string, current_index)
 end
--Done
+- Done (SD)
