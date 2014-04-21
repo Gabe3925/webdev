@@ -2,6 +2,23 @@
 
 A long time ago in a unix environment far, far away, young Jedi padawans who knew only of desktop software were seduced by the dark side of the Force to enter… The Terminal.
 
+## Terminal Commands
+
+- `cd <directory_path>`: change directories
+  - `cd ~/` : go to user directory
+  - `cd ../` : go up one directory
+- `ls -l <directory_path>`: lists visible files in a directory
+  - `ls -la <directory_path>`: lists ALL files in a directory
+- `mv <filepath> <new_filepath>`: moves/renames files
+- `mkdir <directory_name>`: make a new directory
+- `rmdir <directory_name>`: remove an empty directory
+- `touch <filepath>`: create a new empty file
+- `rm <filepath>`: removes a file
+  - `rm -r`: removes all files in a directory
+  - `rm -rf`: forcibly removes a directory and all its files
+- `subl <filepath>`: opens a file in Sublime Text
+
+## Going to the Dark Side
 Place your hands on your keyboard, and let the Force flow through your finger tips. No touching your mousepad!
 
 1. Open the **Terminal app** (use Spotlight)
@@ -12,7 +29,7 @@ Place your hands on your keyboard, and let the Force flow through your finger ti
 6. Move Vader *into* the Deathstar.
 7. List the contents of Deathstar to confirm that Vader is onboard.
 8. Create a new desktop folder called "**Alderaan**".
-9. Enter Alderaan directory.
+9. Enter the Alderaan directory.
 10. Create three news files: "**.voice1**", "**.voice2**", "**.voice3**".
 11. List the voices of Alderaan in the terminal.
 12. Open each voice in Sublime Text, and save their contents as:
