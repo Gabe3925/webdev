@@ -16,6 +16,6 @@
 # 2) How can you combat or minimize those habits' effects on your experience at General Assembly?
 #I have found that whenever I get some exercise, it can fix the way I work drastically. Whenever
 #I exercise, I go to bed at a reasonable hour, my focus gets much sharper, and I can do homework
-#assignments
+#assignments much faster, and more productively.
 
 
