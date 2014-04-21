@@ -2,7 +2,7 @@
 
 **IMPORTANT:** Move into your folder within w01/d01. 
 
-1. In your folder you will find a `familiarity.rb` file. Open the file using `subl` and follow the directions in the file. 
+1. In your folder you will find a `syllabus.rb` file. Open the file using `subl` and follow the directions in the file. 
   * Learning Objectives:
     * A) to gain familiarity working in the command line/pry
     * B) to get comfortable looking at Ruby syntax and to familiarize yourself with common string and Fixnum methods
