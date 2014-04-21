@@ -1,4 +1,4 @@
-#WDI_DC_1 Homework Submission Process
+#Homework Submission Process
 
 ###Open up a terminal window
 
