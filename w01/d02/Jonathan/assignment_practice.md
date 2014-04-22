@@ -4,6 +4,7 @@ a = 5
 a = 6
 ```
 What is `a`?
+6
 
 2.
 ```
@@ -11,6 +12,7 @@ a = 5
 a + 2
 ```
 What is `a`?
+7
 
 3.
 ```
@@ -19,6 +21,7 @@ b = 7
 a = b + 2
 ```
 What is `b`?
+9
 
 4.
 ```
@@ -27,6 +30,7 @@ b = 10
 c = a + b
 ```
 What is `c`?
+15
 
 5.
 ```
@@ -34,6 +38,7 @@ a = 5
 a = a + 2
 ```
 What is `a`?
+7
 
 6.
 ```
@@ -42,6 +47,7 @@ b = 10
 c = a + b * 2
 ```
 What is `c`?
+30
 
 7.
 ```
@@ -51,7 +57,9 @@ c = a
 a = b
 ```
 What is `c`?
+5
 What is `a`?
+10
 
 8.
 ```
@@ -61,6 +69,7 @@ a = b
 b = a
 ```
 What is `b`?
+10
 
 9.
 ```
@@ -70,6 +79,7 @@ a = b
 b = a + b
 ```
 What is `b`?
+20
 
 10.
 ```
@@ -78,7 +88,8 @@ b = "b"
 b.upcase!
 a = b
 ```
-What is `a`?
+What is `a`
+B
 
 11.
 ```
@@ -89,6 +100,7 @@ b = a
 a.downcase!
 ```
 What is `a`? What is `b`?
+a, a
 
 12.
 ```
@@ -100,6 +112,7 @@ b.downcase!
 c = a + b
 ```
 What is `c`?
+bb
 
 13.
 ```
@@ -112,6 +125,7 @@ b = b + c
 d = a.to_s + b + c
 ```
 What is `d`?
+10Bcc
 
 14.
 ```
@@ -122,6 +136,7 @@ b = b.upcase
 c = b
 ```
 What is `a`? What is `c`?
+b, B
 
 15.
 ```
@@ -135,3 +150,4 @@ d = b + c.to_i
 b = d.to_s + a.upcase!
 ```
 What are `a`, `b`, `c`, and `d`?
+110AA`05
