@@ -1,6 +1,6 @@
-rNum = rand(10)
-count = 0
-puts "Please guess a number"
+rNum = rand(11)
+count = 1
+puts "Please guess a number between 0-10"
 answer = gets.to_i
 
 while rNum != answer
@@ -13,6 +13,5 @@ while rNum != answer
   answer = gets.to_i
   count += 1
 end
-count += 1
 puts "You got it!"
 puts "It took you #{count} times to guess the number!"
