@@ -1,24 +1,24 @@
-1.
-```
+1 
+
 a = 5
 a = 6
-```
-What is `a`? 6
 
-2.
-```
+puts "What is `a`?"
+
+2
+
 a = 5
 a + 2
-```
-What is `a`? 5
 
-3.
-```
+puts "What is `a`?"
+
+3
+
 a = 5
 b = 7
 a = b + 2
-```
-What is `b`? 7
+
+puts "What is `b`?"
 
 4.
 ```
@@ -26,14 +26,14 @@ a = 5
 b = 10
 c = a + b
 ```
-What is `c`? 15
+What is `c`?
 
 5.
 ```
 a = 5
 a = a + 2
 ```
-What is `a`? 7
+What is `a`?
 
 6.
 ```
@@ -41,7 +41,7 @@ a = 5
 b = 10
 c = a + b * 2
 ```
-What is `c`? 25
+What is `c`?
 
 7.
 ```
@@ -50,8 +50,8 @@ b = 10
 c = a
 a = b
 ```
-What is `c`? 5
-What is `a`? 10
+What is `c`?
+What is `a`?
 
 8.
 ```
@@ -60,7 +60,7 @@ b = 10
 a = b
 b = a
 ```
-What is `b`? 10
+What is `b`?
 
 9.
 ```
@@ -69,7 +69,7 @@ b = 10
 a = b
 b = a + b
 ```
-What is `b`? 20
+What is `b`?
 
 10.
 ```
@@ -78,7 +78,7 @@ b = "b"
 b.upcase!
 a = b
 ```
-What is `a`? B
+What is `a`?
 
 11.
 ```
@@ -88,8 +88,7 @@ a.upcase!
 b = a
 a.downcase!
 ```
-What is `a`? What is `b`? a, a*
-
+What is `a`? What is `b`?
 
 12.
 ```
@@ -100,7 +99,7 @@ a = b
 b.downcase!
 c = a + b
 ```
-What is `c`? bb*
+What is `c`?
 
 13.
 ```
@@ -112,7 +111,7 @@ b.upcase!
 b = b + c
 d = a.to_s + b + c
 ```
-What is `d`? 10Bcc
+What is `d`?
 
 14.
 ```
@@ -122,7 +121,8 @@ a = b
 b = b.upcase
 c = b
 ```
-What is `a`? What is `c`? b*, B
+What is `a`? What is `c`?
+
 15.
 ```
 a = 10
@@ -134,8 +134,4 @@ a = a.downcase + a + c
 d = b + c.to_i
 b = d.to_s + a.upcase!
 ```
-What are `a`, `b`, `c`, and `d`?*
-a = "AA105"
-b = "110AA105"
-c = "105"
-d = 110
+What are `a`, `b`, `c`, and `d`?
