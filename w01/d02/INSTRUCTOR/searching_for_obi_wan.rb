@@ -20,9 +20,3 @@ else
   puts "R2-D2: (Agreeable droid noises)"
 end
 
-
-# snake_case for variables and methods
-# SCREAMING_SNAKE_CASE for constants
-# PI = 3.1415926535
-# CamelCase for classes
-# headlessCamelCase
