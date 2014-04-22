@@ -15,3 +15,5 @@
 # Looking back, it was much easier to do well - and much more satisfying - by applying simple steps to stay engaged and on top of the material.
 # To succeed at GA, I know to apply the good learning habits I figured out during college while continuing the passion I have developed for webdev over the past few years.
 
+
+
