@@ -1,11 +1,36 @@
 require 'pry'
 
-def age(drinking_age)
-	return drinking_age
+def drinking_age?(age)
+	if age < 21
+		puts "You can't drink yet...legally"
+		return false
+	else
+		puts "Drinks Galore!"
+		return true
+	end
 end
 
-binding.pry
+drinking_age? (19)
+drinking_age? (23)
 
+def is_prime?(num)
+	factor = 2
+	max_potential_factor = num / 2
+	while factor <= max_potential_factor
+		if (num % factor) == 0
+			return false
+		end
+		factor =+ 1
+	end
+
+	return true
+end
+
+	if is_prime?(9)
+		puts "This method breaks the world."
+	else
+		puts "it might still work"
+end
 
 
 
