@@ -18,7 +18,7 @@ a = 5
 b = 7
 a = b + 2
 ```
-What is `b`? 9
+What is `b`? 7
 
 4.
 ```
