@@ -17,4 +17,4 @@ We are going to have 1:1 meetings with every student this week just to get to kn
 |:----    |:----  |:----  |:----  |:---- |:----|:----|:----|:----|:----
 |__Greg__| Elaine | Jacob | Yi-Hsiao | Salil | Mary | Brett | 
 |__Peter__| Matt | Adam | Alexi | Gabe | Richard | Thomas |
-|__Travis__| Jonathan | JoElla |Stephen | Randy | Parker | Inhak | Mikael |
+|__Travis__| Stephen | JoElla |Jon | Randy | Parker | Inhak | Mikael |
