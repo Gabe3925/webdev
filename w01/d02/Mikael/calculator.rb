@@ -4,14 +4,16 @@ def calculate(operation, first, second)
   case operation
   when "add"
     return first + second
-  when "subtract"
+  when "sub"
     return first - second
-  when "multiply"
+  when "mul"
     return first * second
-  when "divide"
+  when "div"
     return first / second
-  when "exponent"
+  when "exp"
     return first ** second
+  when "sqrt"
+    return sqrt(first)
   else
     return "Sorry, that is not a valid operation."
   end
@@ -21,7 +23,7 @@ end
 
 
 puts "Welcome to the calculator!"
-puts "You may add, subtract, multiply, divide, exponentiate, or square root."
+puts "You may add, subtract (sub), multiply (mul), divide (div), exponentiate (exp), or square root (sqrt)."
 puts "Please enter an operation, followed by the first operator, followed by the second operator."
 calculate("add",3,5)
 calculate("exponentiate",2,3)
