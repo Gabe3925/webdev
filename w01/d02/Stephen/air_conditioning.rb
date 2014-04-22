@@ -7,8 +7,10 @@ ac_works = (gets.chomp.downcase == "y")
 puts "What temperature do you wish it were?"
 new_temp = gets.to_i
 
-if ac_works && (curr_temp > new_temp)
-  puts "Turn on the A/C Please"
+if ac_works
+  if curr_temp > new_temp
+    puts "Turn on the A/C Please"
+  end
 else
   if curr_temp > new_temp
     puts "Fix the A/C now!  It's hot!"
