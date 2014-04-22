@@ -3,14 +3,22 @@
 a = 5
 a = 6
 ```
+<<<<<<< HEAD
 What is `a`?
+=======
+What is `a`?	6
+>>>>>>> 878719316f647e3b7ed71f9a602e4c01443583ab
 
 2.
 ```
 a = 5
 a + 2
 ```
+<<<<<<< HEAD
 What is `a`?
+=======
+What is `a`?	5
+>>>>>>> 878719316f647e3b7ed71f9a602e4c01443583ab
 
 3.
 ```
@@ -18,7 +26,11 @@ a = 5
 b = 7
 a = b + 2
 ```
+<<<<<<< HEAD
 What is `b`?
+=======
+What is `b`? 	7
+>>>>>>> 878719316f647e3b7ed71f9a602e4c01443583ab
 
 4.
 ```
@@ -26,14 +38,22 @@ a = 5
 b = 10
 c = a + b
 ```
+<<<<<<< HEAD
 What is `c`?
+=======
+What is `c`? 	15
+>>>>>>> 878719316f647e3b7ed71f9a602e4c01443583ab
 
 5.
 ```
 a = 5
 a = a + 2
 ```
+<<<<<<< HEAD
 What is `a`?
+=======
+What is `a`? 	7
+>>>>>>> 878719316f647e3b7ed71f9a602e4c01443583ab
 
 6.
 ```
@@ -41,7 +61,11 @@ a = 5
 b = 10
 c = a + b * 2
 ```
+<<<<<<< HEAD
 What is `c`?
+=======
+What is `c`? 	25
+>>>>>>> 878719316f647e3b7ed71f9a602e4c01443583ab
 
 7.
 ```
@@ -50,8 +74,13 @@ b = 10
 c = a
 a = b
 ```
+<<<<<<< HEAD
 What is `c`?
 What is `a`?
+=======
+What is `c`? 	5
+What is `a`? 	10
+>>>>>>> 878719316f647e3b7ed71f9a602e4c01443583ab
 
 8.
 ```
@@ -60,7 +89,11 @@ b = 10
 a = b
 b = a
 ```
+<<<<<<< HEAD
 What is `b`?
+=======
+What is `b`? 	10
+>>>>>>> 878719316f647e3b7ed71f9a602e4c01443583ab
 
 9.
 ```
@@ -69,7 +102,11 @@ b = 10
 a = b
 b = a + b
 ```
+<<<<<<< HEAD
 What is `b`?
+=======
+What is `b`? 20
+>>>>>>> 878719316f647e3b7ed71f9a602e4c01443583ab
 
 10.
 ```
@@ -78,7 +115,11 @@ b = "b"
 b.upcase!
 a = b
 ```
+<<<<<<< HEAD
 What is `a`?
+=======
+What is `a`?	B
+>>>>>>> 878719316f647e3b7ed71f9a602e4c01443583ab
 
 11.
 ```
@@ -89,6 +130,11 @@ b = a
 a.downcase!
 ```
 What is `a`? What is `b`?
+<<<<<<< HEAD
+=======
+a is a
+b is a
+>>>>>>> 878719316f647e3b7ed71f9a602e4c01443583ab
 
 12.
 ```
@@ -100,6 +146,10 @@ b.downcase!
 c = a + b
 ```
 What is `c`?
+<<<<<<< HEAD
+=======
+bb
+>>>>>>> 878719316f647e3b7ed71f9a602e4c01443583ab
 
 13.
 ```
@@ -112,6 +162,10 @@ b = b + c
 d = a.to_s + b + c
 ```
 What is `d`?
+<<<<<<< HEAD
+=======
+10Bcc
+>>>>>>> 878719316f647e3b7ed71f9a602e4c01443583ab
 
 14.
 ```
@@ -122,6 +176,11 @@ b = b.upcase
 c = b
 ```
 What is `a`? What is `c`?
+<<<<<<< HEAD
+=======
+a is b
+c is B
+>>>>>>> 878719316f647e3b7ed71f9a602e4c01443583ab
 
 15.
 ```
@@ -134,4 +193,13 @@ a = a.downcase + a + c
 d = b + c.to_i
 b = d.to_s + a.upcase!
 ```
+<<<<<<< HEAD
 What are `a`, `b`, `c`, and `d`?
+=======
+What are `a`, `b`, `c`, and `d`?
+
+a = AA105
+b = 110AA105
+c = 105
+d = 110
+>>>>>>> 878719316f647e3b7ed71f9a602e4c01443583ab
