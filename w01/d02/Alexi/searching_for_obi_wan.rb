@@ -12,15 +12,21 @@ do you? (Answer \"I do\" or \"I don't\")"
 alias_answer = gets.chomp.downcase
 
 if alias_answer == "i do"
-  puts  "Oh, marvelous! Simply marvelous! Say hello to 
-  R2-D2; he's been looking all over for you."
+  puts  "Oh, marvelous! Simply marvelous! 
+  Say hello to R2-D2; he's been looking 
+  all over for you."
 else
 
-  print  "I've really enjoyed speaking with you, " + user_name +, 
-  " but if you'll please excuse me, I have to help my friend 
+  print  "I've really enjoyed speaking with 
+  you, " + user_name + " but if you'll please
+   excuse me, I have to help my friend 
   find someone named Obi-Wan Kenobi."
+  
   puts "(Wha's your fav farewell)"
   fav_farewell = gets.chomp
-  puts fav_farewell + " to your too"
-  puts "Well R2, I suppose we'll just "gi
+  puts fav_farewell + " to you too"
+  puts "Well R2, I suppose we'll just have 
+  to keep looking"
 
+puts "R2-D2: (Agreeable droid noises)"
+end
