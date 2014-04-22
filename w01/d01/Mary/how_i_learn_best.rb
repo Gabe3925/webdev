@@ -17,4 +17,3 @@
 # going over the material that day so that I feel more comfortable with it and won't feel behind
 # during class.
 
-
