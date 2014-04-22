@@ -21,6 +21,8 @@ else
 end
 
 
-
-
-
+# snake_case for variables and methods
+# SCREAMING_SNAKE_CASE for constants
+# PI = 3.1415926535
+# CamelCase for classes
+# headlessCamelCase
