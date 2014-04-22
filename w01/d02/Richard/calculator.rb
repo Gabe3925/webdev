@@ -11,8 +11,13 @@ def calculator(operation, x, y)
       puts  "You've chosen Multiplication! #{x} * #{y} = #{x * y}"
     when "4"
       puts  "You've chosen Division! #{x} / #{y} = #{x / y}"
+    when "5"
+      puts "You've chosen to raise #{x} to the power of #{y} which equals #{x**y}"
+    when "6"
+      puts "You've chosen to get the square root of #{x} which equals #{x.to_f**(0.5)}"
     end
+
 end
 
 
-calculator("1",3,5)
+calculator("6",3,5)
