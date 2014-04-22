@@ -1,9 +1,9 @@
 puts "What is the temperature?"
-temp = gets.chomp.to_i
+temp = gets.to_i
 puts "Is the A/C working? yes or no"
-work = gets.chomp
+work = gets.chomp.downcase
 puts "What temperature (in F) do you wish it were?"
-ideal_temp = gets.chomp.to_i
+ideal_temp = gets.to_i
 
 if work == "yes" && temp > ideal_temp
   puts "Turn on the A/C Please."
