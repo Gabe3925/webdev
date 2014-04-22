@@ -5,7 +5,7 @@ def drinking_age (age)
     puts ("Underage. Banned")
     return false
   else
-    puts ("You're in!")
+    puts ("You're good!")
     return true
   end
 end
