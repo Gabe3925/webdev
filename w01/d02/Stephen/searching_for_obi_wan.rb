@@ -1,8 +1,9 @@
 puts "C-3P0, human-cyborg relations."
 puts "What is your name?"
 name = gets.chomp
-puts "#{name}? How interesting, for someone from around these parts."
-puts "I'm terribly sorry for prying, but you don't by any chance go by the alias of Obi-Wan Kenobi, do you? (Answer \"I do\" or \"I don\'t\")"
+puts "It is a pleasure to meet you, #{name}.  Have you ever met a protcol droid before?"
+puts "#{gets.chomp}? How interesting, for someone from around these parts."
+puts "I'm terribly sorry for prying, but you don't by any chance go by the alias of Obi-Wan Kenobi, do you? (Answer \"I do\" or \"I don't\")"
 response = gets.chomp
 if response.downcase == "i do"
   puts "Oh, marvelous! Simply marvelous! Say hello to R2-D2; he's been looking all over for you."
