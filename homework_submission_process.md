@@ -5,7 +5,7 @@
 ######Move to your local `WDI_DC_1` folder
 
 ```bash
-cd dev/wdi/WDI_DC_1
+cd ~dev/wdi/WDI_DC_1
 ```
 
 ######Move to the folder for today and look at what is inside

@@ -20,9 +20,3 @@ else
   puts "R2-D2: (Agreeable droid noises)"
 end
 
-
-
-
-
-
-
