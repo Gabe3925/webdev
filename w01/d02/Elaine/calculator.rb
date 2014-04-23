@@ -12,6 +12,9 @@ while operation != "quit"
   puts "\"division\""
   puts "\"square root\""
   puts "\"exponentiation\""
+  puts "\"sin\""
+  puts "\"cos\""
+  puts "\"tan\""
   puts ""
   puts "Otherwise, enter \"quit\" to exit."
 
@@ -23,7 +26,7 @@ while operation != "quit"
     puts "Please enter your first number."
     number1 = gets.to_i
 
-    unless operation == "square root"
+    unless operation == "square root" || operation == "sin" || operation == "cos" || operation == "tan"
       puts ""
       puts "Please enter your second number."
       number2 = gets.to_i
@@ -54,6 +57,18 @@ while operation != "quit"
       exponent_answer = number1**number2
       puts ""
       puts "Answer: #{number1}^#{number2} = #{exponent_answer}"
+    when "sin"
+      sin_answer = Math.sin(number1)
+      puts ""
+      puts "Answer: sin(#{number1}) = #{sin_answer}"
+    when "cos"
+      cos_answer = Math.cos(number1)
+      puts ""
+      puts "Answer: cos(#{number1}) = #{cos_answer}"
+    when "tan"
+      tan_answer = Math.tan(number1)
+      puts ""
+      puts "Answer: tan(#{number1}) = #{tan_answer}"
     else
       puts ""
       puts "You did not select a valid operation."
