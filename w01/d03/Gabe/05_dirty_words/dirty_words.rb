@@ -10,7 +10,7 @@ phrase.each do |word|
 	if !is_dirty
 	then is_dirty = dirty_words.index(word) #a search using index, through array dirty words, looking for 
 	end
-end
+end 
 
 
 if is_dirty
