@@ -24,4 +24,44 @@ def square_root(x)
   return Math.sqrt(x)
 end
 
-binding.pry
+ exit = false
+
+ while exit == false
+  puts "What operation would you like to run:"
+  puts "add"
+  puts "subtract"
+  puts "multiply"
+  puts "divide"
+  puts "exponent"
+  puts "square root"
+  puts "exit"
+   operation = gets.chomp.downcase
+   if operation != "exit"
+    puts "Please input an x value:"
+    x = gets.to_i
+    puts "Please input a y value:"
+    y = gets.to_i
+
+    if operation == "add"
+      puts add(x, y)
+    elsif operation == "subtract"
+      puts subtract(x, y)
+    elsif operation == "multiply"
+      puts multiply(x, y)
+    elsif operation == "divide"
+      puts divide(x, y)
+    elsif operation == "exponent"
+      puts exponent(x, y)
+    elsif operation == "square root"
+      puts square_root(x)
+    elsif operation == "exit"
+      puts "Goodbye!"
+      exit =! true
+    else
+      puts "Invalid input."
+    end
+
+  else
+    exit = true
+  end
+ end
