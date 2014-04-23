@@ -3,7 +3,7 @@ last_num = nil
 
 while in_operation == true
   puts "LA CALCULATRICE: what would you like to do?"
-  puts "add, subtract, multiply, divide, exponent, sqrt, quit"
+  puts "add, subtract, multiply, divide, exponent, sqrt, trig, factorial, quit"
   user_command = gets.chomp.downcase
 
   case user_command
