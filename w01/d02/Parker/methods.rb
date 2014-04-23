@@ -22,7 +22,7 @@ def is_prime?(num)
 		end
 		factor =+ 1
 	end
-
+git
 	return true
 end
 

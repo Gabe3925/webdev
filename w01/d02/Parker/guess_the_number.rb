@@ -23,4 +23,4 @@ while guess != secret_number
 	number_of_guesses = number number_of_guesses + 1 
 end
 
-puts "You win! HIGH FIVE! It only took you #{number_of_guesses} guesses"m
+puts "You win! HIGH FIVE! It only took you #{number_of_guesses} guesses"
