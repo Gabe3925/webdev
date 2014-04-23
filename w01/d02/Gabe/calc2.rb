@@ -97,6 +97,16 @@ if operation == "t"
 	continue = gets.chomp.downcase
 	end
 
+if operation == "k"
+	count = 1
+	newnum = int1( |int1| count *= int1 }
+	puts " factorial #{int1} = #{newnum} "
+	puts "another calculation? y / n "
+	continue = gets.chomp.downcase
+	end
+
+
+
 end
 
 
