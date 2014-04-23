@@ -1,3 +1,6 @@
+require 'pry'
+
+
 red = ['Woodley Park', 'Dupont Circle', 'Farragut North', 'Metro Center', 'Judiciary Square', 'Union Station']
 turquoise = ['Crystal City', 'Metro Center', 'Shaw-Howard', 'Beltwater']
 orange = ['Farragut West', 'McPherson Sq', 'Metro Center', 'Federal Triangle', 'Smithsonian', "L'enfant Plaza"]
@@ -43,18 +46,39 @@ end_line = gets.chomp.downcase
 			puts "Orange Line Stations are: #{orange_stop_list}"
 			end_line = :orange
 		end
-		
+
 puts "What's the stop you'll getting off?"
 	end_stop = gets.chomp
 	end_local = dc_metro[end_line].index(end_stop)
 
-
-if begin_local < end_local
-	distance = end_local - begin_local
+if begin_line != end_line && end_stop != "Metro Center"
+  trip_1_1 = dc_metro[begin_line].index(begin_stop)
+  trip_1_2 = dc_metro[begin_line].index("Metro Center")
+	if trip_1_1 < trip_1_2
+		distance_1 = trip_1_2 - trip_1_1
+	else
+		distance_1 = trip_1_1 - trip_1_2
+	end
+  trip_2_1 = dc_metro[end_line].index(end_stop)
+  trip_2_2 = dc_metro[end_line].index("Metro Center")
+  	if trip_2_1 < trip_2_2
+		distance_2 = trip_2_2 - trip_2_1
+	else
+		distance_2 = trip_2_1 - trip_2_2
+	end
+distance = (distance_1 + distance_2)
 else
+	if begin_local < end_local
+	distance = end_local - begin_local
+	else
 	distance = begin_local - end_local
+	end
 end
 
 
-puts "There are #{distance} stops between your destination."													
 
+
+puts "There are #{distance} stops until your destination."													
+
+
+binding.pry
