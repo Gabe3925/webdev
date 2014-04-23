@@ -9,7 +9,9 @@ def items_string(items)
   when 2
     return items[0] + " & " + items[1]
   when 3
-    return items[0] + items_string(items.unshift)
+    first = items[0]
+    items.shift
+    return first + ", " + items_string(items)
   end
 end
 
@@ -22,19 +24,16 @@ orders = {}
 
 while
   name = prompt("Name for order ('q' to end): ")
-
   break if name.downcase == 'q'
 
   name = name.to_sym
   index = 0
+  orders[name] ||= []
 
   while true
-    item = prompt("#{name} wants to order: ")
-    orders[name] ||= []
+    item = prompt("==> #{name} wants to order ('q' to end): ")
+    break if item.downcase == 'q'
     orders[name].push(item)
-
-    resp = prompt("Add another item to the order? (y/n): ")
-    break if resp.downcase == 'n'
   end
   puts
 end
