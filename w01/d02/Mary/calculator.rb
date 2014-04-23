@@ -1,29 +1,29 @@
+puts "Please choose from menu:"
+  puts "ADD   SUBSTRACT   MULTIPLY   DIVIDE   FIND EXPONENT   FIND SQUARE ROOT"
+  operation = gets.chomp.upcase
 
-another = "Y"
-
-while another == "Y"
-  puts "What calculator operation would you like to perform? Your choices are +, -, *, /, exp, or sqrt"
-  operation = gets.chomp
+while operation != "N"
 
   puts "Please enter the first value you'd like to use in calculation."
   val1 = gets.to_i
   puts "Please enter the second value you'd like to use in calculation. If calculating square root, just press enter."
   val2 = gets.to_i
 
-  if operation == "+"
+  if operation == "ADD"
     puts "Answer is " + (val1 + val2).to_s
-  elsif operation == "-"
+  elsif operation == "SUBTRACT"
     puts "Answer is " + (val1 - val2).to_s
-  elsif operation == "*"
+  elsif operation == "MULTIPLY"
     puts "Answer is " + (val1 * val2).to_s
-  elsif operation == "/"
+  elsif operation == "DIVIDE"
     puts "Answer is " + (val1 / val2).to_s
-  elsif operation == "exp"
+  elsif operation == "FIND EXPONENT"
     puts "Answer is " + (val1 ** val2).to_s
-  elsif operation == "sqrt"
+  elsif operation == "FIND SQUARE ROOT"
     puts "Answer is " + Math.sqrt(val1).to_s
   end
 
-  puts "Would you like to do another calculation? Type Y to continue and N to quit."
-  another = gets.chomp.upcase
+  puts "Please choose from menu or type \"N\" to quit:"
+  puts "ADD   SUBSTRACT   MULTIPLY   DIVIDE   FIND EXPONENT   FIND SQUARE ROOT"
+  operation = gets.chomp.upcase
 end
