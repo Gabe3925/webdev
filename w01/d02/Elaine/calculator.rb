@@ -32,26 +32,34 @@ while operation != "quit"
     case operation
     when "addition"
       sum = number1 + number2
-      puts "#{number1} + #{number2} = #{sum}"
+      puts ""
+      puts "Answer: #{number1} + #{number2} = #{sum}"
     when "subtraction"
       difference = number1 - number2
-      puts "#{number1} - #{number2} = #{difference}"
+      puts ""
+      puts "Answer: #{number1} - #{number2} = #{difference}"
     when "multiplication"
       product = number1 * number2
-      puts "#{number1} * #{number2} = #{product}"
+      puts ""
+      puts "Answer: #{number1} * #{number2} = #{product}"
     when "division"
       quotient = number1 / number2
-      puts "#{number1} / #{number2} = #{quotient}"
+      puts ""
+      puts "Answer: #{number1} / #{number2} = #{quotient}"
     when "square root"
       sqrt_answer = Math.sqrt(number1)
-      puts "the square root of #{number1} = #{sqrt_answer}"
+      puts ""
+      puts "Answer: the square root of #{number1} = #{sqrt_answer}"
     when "exponentiation"
       exponent_answer = number1**number2
-      puts "#{number1}^#{number2} = #{exponent_answer}"
+      puts ""
+      puts "Answer: #{number1}^#{number2} = #{exponent_answer}"
     else
+      puts ""
       puts "You did not select a valid operation."
     end
   end
 end
 
+puts ""
 puts "Thank you for using this calculator!"
