@@ -12,13 +12,6 @@ def drinking_age?(age)
 end
 
 def ac_action(curr_temp, func, desired_temp)
-  puts "What is the current temperature?"
-  temp = gets.to_i
-  puts "Is the A/C functional? (yes or no)"
-  answer = gets.chomp.downcase
-  puts "What temperature would you prefer?"
-  prefer = gets.to_i
-
   if answer == "yes" && temp > prefer
     return "Turn on the A/C please"
   elsif answer == "no" && temp > prefer
