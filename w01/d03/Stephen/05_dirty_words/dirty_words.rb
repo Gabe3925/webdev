@@ -9,7 +9,7 @@ def ok_to_print?(words)
 end
 
 print "Go ahead, say your worst: "
-user_words = gets.chomp.split(' ')
+user_words = gets.chomp.downcase.split(' ')
 if(ok_to_print?(user_words))
   puts "Looks good to us!"
 else
