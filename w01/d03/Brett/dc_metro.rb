@@ -12,13 +12,36 @@ dc_metro[:red] = red
 dc_metro[:turquoise] = turquoise
 dc_metro[:orange] = orange
 
-puts "Red line stops:"
-puts red
+# method to display menu based on line color and calculate stops
+def line_menu(line)
+  puts "Stops on this line: #{line}"
+#   if line
+#   line.each do |i|
+#     puts i
+# end
 
-puts "What stop are you departing at? (case-sensitive)"
-departure = gets.chomp
+  puts "What stop are you departing at? (case-sensitive)"
+  departure = gets.chomp
 
-puts "What stop are you arriving at? (case-sensitive)"
-arrival = gets.chomp
+  puts "What stop are you arriving at? (case-sensitive)"
+  arrival = gets.chomp
 
-puts "The number of stops for your trip is #{(red.index(departure) - red.index(arrival)).abs}"
+  return (line.index(departure) - line.index(arrival)).abs # the number of stops in the trip
+end
+
+# Determine what line the rider wants to ride.
+puts "What line do you want to get on?"
+puts "- Red"
+puts "- Turquoise"
+puts "- Orange"
+line = gets.chomp.downcase
+
+if line == "red"
+    puts "Your trip is #{line_menu(red)} stops."
+  elsif line == "turquoise"
+    puts "Your trip is #{line_menu(turquoise)} stops."
+  elsif line == "orange"
+    puts "Your trip is #{line_menu(orange)} stops."
+  else
+    puts "That's not a metro line."
+end
