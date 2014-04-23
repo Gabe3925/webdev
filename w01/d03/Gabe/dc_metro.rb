@@ -12,11 +12,34 @@ print red.join("---").chomp
 
 
 puts "What stop will you board at?"
-boarding_stop = gets.chomp.downcase.split(" ")
+boarding_stop = gets.chomp
 
 puts "What is your destination stop?"
-destination_stop = gets.chomp.downcase.split(" ")
+destination_stop = gets.chomp
 
-red.each do |station|
-	station.count(boarding_stop..destination_stop)
+#	convert stations into their stop numbers.
+
+#	red.each do |station| select a range of stations 
+#			between boarding_stop
+#			and destination_stop
+#			move this range into a new array called trip
+#			count the items in this array and output number.
+
+puts "RED LINE"
+red.each_with_index do |station, index|
+  puts "#{station}(#{index})"
 end
+	
+a = red.index(boarding_stop)
+
+b = red.index(destination_stop)
+
+
+
+trip = (a - b)
+trip  = trip.abs
+
+puts "You travelled through #{trip} stations."
+
+
+
