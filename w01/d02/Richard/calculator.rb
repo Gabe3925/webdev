@@ -12,8 +12,16 @@ operations = [
   "7.  Sine",
   "8.  Cosine",
   "9.  Tangent",
-  "10. Exit Calculator"
+  "10. Factorals",
+  "11. Exit Calculator"
 ]
+def factorial(n1)
+  if n1 == 1 or n1 == 0
+    1
+  else
+    n1*factorial(n1-1)
+  end
+end
 
 def calculator(operation, n1, n2)
   case operation
@@ -35,6 +43,8 @@ def calculator(operation, n1, n2)
       return "You've chosen to get the Cosine of #{n1} which is equal to: #{Math.cos(n1)}"
     when "9"
       return "You've chosen to get the Tangent of #{n1} which is equal to: #{Math.tan(n1)}"
+    when "10"
+      return "You've chosen to get the Factor of #{n1} which is equal to: #{factorial(n1)}"
     end
 end
 
@@ -56,6 +66,10 @@ while run
     n1 = gets.to_f
     n2 = 1
   elsif operation == "10"
+    puts "TIME FOR SOME FACTORIALS! Which would you like to peform on?"
+    n1 = gets.to_f
+    n2 = 1
+  elsif operation == "11"
     run = false
   else
     puts "What first number would you like to operate on?"
