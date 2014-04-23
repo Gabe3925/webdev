@@ -30,7 +30,7 @@ def calculator(operation, n1, n2)
     when "2"
       return "You've chosen Subtraction! #{n1} - #{n2} = #{n1 - n2}"
     when "3"
-      return "You've chosen" + "Multiplication!".red + "#{n1} * #{n2} = #{n1 * n2}"
+      return "You've chosen Multiplication! #{n1} * #{n2} = #{n1 * n2}"
     when "4"
       return "You've chosen Division! #{n1} / #{n2} = #{n1 / n2}"
     when "5"
@@ -67,7 +67,7 @@ while run
     n2 = 1
   elsif operation == "10"
     puts "TIME FOR SOME FACTORIALS! Which would you like to peform on?"
-    n1 = gets.to_f
+    n1 = gets.to_i
     n2 = 1
   elsif operation == "11"
     run = false
