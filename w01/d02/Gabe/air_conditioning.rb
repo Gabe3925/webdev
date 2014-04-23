@@ -29,6 +29,6 @@ when "no" || "nope" || "negative"
 	else
 	puts "Maybe get the AC fixed. You may desire it be be cooler in here someday."
 
-end
+	end
 
 end
