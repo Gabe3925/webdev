@@ -12,13 +12,9 @@ line = 0
 
 while true
   puts story[line]
-  print "WANT MORE (YOU KNOW YOU DO)?? "
 
+  print "WANT MORE (YOU KNOW YOU DO)?? "
   break if gets.chomp.downcase == 'n'
 
-  if line == story.length - 1
-    line = 0
-  else
-    line += 1
-  end
+  line = (line + 1) % story.length
 end
