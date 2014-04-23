@@ -54,6 +54,12 @@ message_array.push(character_3)
 message_array.pop()
 # WAIT! What just happened to our sweet, sweet array?
 
+<<<<<<< HEAD
+  # pop Removes the last element from self and returns it, or nil if the array is empty.
+  # If a number n is given, returns an array of the last n elements (or less) just like array.slice!(-n, n) does. See also #push for the opposite effect.
+
+=======
+>>>>>>> 6fa00c8b7f0738430b0ff12195ffe4162704560b
 puts message_array
 
 message_array.push(character_3)
