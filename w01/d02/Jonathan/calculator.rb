@@ -15,18 +15,22 @@ def menu
 end
 
 def addition (v1, v2)
+  puts " "
   return (v1 + v2)
 end
 
 def subtraction (vl, v2)
+  puts " "
   return (v1 - v2)
 end
 
 def multiplication (v1, v2)
+  puts " "
   return (v1 * v2)
 end
 
 def division (v1, v2)
+  puts " "
   return (v1 / v2)
 end
 
