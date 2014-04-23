@@ -71,7 +71,28 @@ if operation == "x"
 
 if operation == "q"
 	newnum = Math.sqrt(int1) 
-	puts " #{int1} / #{int2} = #{newnum} "
+	puts " square root of #{int1} is = #{newnum} "
+	puts "another calculation? y / n "
+	continue = gets.chomp.downcase
+	end
+
+if operation == "n"
+	newnum = Math.sin(int1) 
+	puts " sin #{int1} = #{newnum} "
+	puts "another calculation? y / n "
+	continue = gets.chomp.downcase
+	end
+
+if operation == "c"
+	newnum = Math.cos(int1) 
+	puts " cos #{int1}  = #{newnum} "
+	puts "another calculation? y / n "
+	continue = gets.chomp.downcase
+	end
+
+if operation == "t"
+	newnum = Math.tan(int1) 
+	puts " tan #{int1} = #{newnum} "
 	puts "another calculation? y / n "
 	continue = gets.chomp.downcase
 	end
