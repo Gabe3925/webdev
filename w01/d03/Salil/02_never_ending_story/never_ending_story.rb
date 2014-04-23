@@ -18,7 +18,7 @@ while ans == "y"
   break if ans == "n"
 
   count += 1
-  if count > 4
+  if count >= story.length
     count = 0
   end
 end
