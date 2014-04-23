@@ -36,35 +36,14 @@ and stop that user is getting off at and prints the total number of stops for th
      - Smithsonian
      - L'enfant Plaza
      
-  - __NOTE:__ the 3 subway lines intersect at Metro Center.
 
 ###The Process
-- Start with single-line functionality
-  - Assume that the Red line is the only subway line first.
-  - The user should be given a list of all the stops on the Red line
-  - The user should be able to enter the stop that they want to get on at
-  - The user should be able to enter the stop that they want to get off at
-  - The user should be told the number of stops for their trip
+1) Before you start coding away, close your laptops and draw a diagram of the metro lines with their stops and how they intersect.
+	
+2) Re-open your laptops and set up your data at the top of your program; the kindly DC Metro Authority has gone to the trouble of arranging your data for you:
 
-- Two-line functionality (Red and Turqoise)
-  - The user should be asked what line they want to get on
-  - The user should be given a list of all the stops on that line
-  - The user should be able to enter the stop that they want to get on at
-  - The user should be asked what line they want to get off
-  - The user should be given a list of all the stops on that line
-  - The user should be able to enter the stop that they want to get off at
-  - The user should be told the number of stops for their trip
-
-- Three lines functionality (Red, Turqoise, and Orange)
-  - Make your program work with all three lines
-
-### Advice Frog Says:
-* Before you start coding away, close those precious laptops and draw a diagram of these lines with their stops and intersection. 
-* Then try writing out, step by step in plain English what needs to happen in your program.
-* Make the name of the subway lines keys in a hash, while the values are an array of all the stops on each line.
-* 
 ```ruby
-red = ['Woodley Park', 'Dupont Circle', 'Farragut North', 'Metro Center', ' 'Union Station']
+red = ['Woodley Park', 'Dupont Circle', 'Farragut North', 'Metro Center', 'Union Station']
 turquoise = ['Crystal City', 'Metro Center', 'Shaw-Howard', 'Beltwater']
 orange = ['Farragut West', 'McPherson Sq', 'Metro Center', 'Federal Triangle', 'Smithsonian', "L'enfant Plaza"]
 
@@ -74,5 +53,22 @@ dc_metro[:turquoise] = turquoise
 dc_metro[:orange] = orange
 ```
 
-* The key to the lab is to find the __intersection__ of the lines at Metro Center.
+3) Build your program from the ground up, starting with single-line functionality:
+  - Assume that the Red line is the only subway line first.
+    - The user should be given a list of all the stops on the Red line
+    - The user should be able to enter the stop that they want to get on at
+    - The user should be able to enter the stop that they want to get off at
+    - The user should be told the number of stops for their trip
+
+4) Now move on to two-line functionality (Red and Turqoise)
+  - The user should be asked what line they want to get on
+  - The user should be given a list of all the stops on that line
+  - The user should be able to enter the stop that they want to get on at
+  - The user should be asked what line they want to get off
+  - The user should be given a list of all the stops on that line
+  - The user should be able to enter the stop that they want to get off at
+  - The user should be told the number of stops for their trip
+
+5) Now move on to three-line functionality (Red, Turqoise, and Orange)
+  - Make your program work with all three lines
 
