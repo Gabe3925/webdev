@@ -10,6 +10,8 @@ while operation != "quit"
   puts "\"subtraction\""
   puts "\"multiplication\""
   puts "\"division\""
+  puts "\"square root\""
+  puts "\"exponentiation\""
   puts ""
   puts "Otherwise, enter \"quit\" to exit."
 
@@ -21,9 +23,11 @@ while operation != "quit"
     puts "Please enter your first number."
     number1 = gets.to_i
 
-    puts ""
-    puts "Please enter your second number."
-    number2 = gets.to_i
+    unless operation == "square root"
+      puts ""
+      puts "Please enter your second number."
+      number2 = gets.to_i
+    end
 
     case operation
     when "addition"
@@ -38,6 +42,12 @@ while operation != "quit"
     when "division"
       quotient = number1 / number2
       puts "#{number1} / #{number2} = #{quotient}"
+    when "square root"
+      sqrt_answer = Math.sqrt(number1)
+      puts "the square root of #{number1} = #{sqrt_answer}"
+    when "exponentiation"
+      exponent_answer = number1**number2
+      puts "#{number1}^#{number2} = #{exponent_answer}"
     else
       puts "You did not select a valid operation."
     end
