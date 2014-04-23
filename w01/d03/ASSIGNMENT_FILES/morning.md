@@ -10,7 +10,7 @@
 - The user should be asked to enter the price of their meal
 - The user should be asked to enter what the tax percentage is
 - The user should be asked to enter what percentage they would like to tip
-* ^^^ **THIS AIN'T DRY** ^^^ Write and use a method to get responses!
+* ^^^ **DEAREST STUDENTS: Ask yourselves, "Is this DRY?"** ^^^ Write and use a method to get responses!
 - After these three options have been entered, the user should see an appropriate displayed output with their total
   - For example:
   `Your total is $15.47`
