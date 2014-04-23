@@ -1,5 +1,5 @@
 puts "Go ahead say your worst!"
-sentence = gets.split(', ')
+sentence = gets.chomp.split(', ')
 
 dirty_words = ['pee', 'poop', 'she-dog', 'phallus', 'fornicate', 'frack']
 is_dirty = false
@@ -13,9 +13,10 @@ is_dirty = false
 #   end
 # end
 
-phrase.each do |words|
+sentence.each do |words|
   if !is_dirty
     is_dirty = dirty_words.include?(words)
+    return # prevents the enumeration from working through entire array
   end
 end
 

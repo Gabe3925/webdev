@@ -8,6 +8,7 @@ def deck_o_cards
   suits.each do |v| # loop through all values and assume entity v
     values.each do |s| # loop through all suits and assume entity s
           deck.push({value: v, suit: s})
+          # add value and suit hash to deck array.
     end
   end
   return deck.shuffle
