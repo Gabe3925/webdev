@@ -1,4 +1,5 @@
 dirty_words = ['pee', 'poop', 'she-dog', 'phallus', 'fornicate', 'frack']
+<<<<<<< HEAD
 
 
 puts "Go ahead, say your worst:"
@@ -25,3 +26,5 @@ if is_vulgar
 else
   puts "Okay, we'll publish that."
 end
+=======
+>>>>>>> 5269418d61924848620646f9bddc734bff0c15c5
