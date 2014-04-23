@@ -15,9 +15,17 @@ def calc(a, b)
 
   puts "#{a} / #{b} ="
   div = a.to_i / b.to_i
-  return div
+  puts div
+
+  puts "sqrt(#{a}) ="
+  exp = Math.sqrt(a.to_i)
+  puts exp
+
+  puts "#{a} ** #{b} ="
+  div = a.to_i ** b.to_i
+  puts div
 end
 
-calc1 = calc("4", "2") # test method
+calc1 = calc("64", "2") # test method
 puts calc1 # should show the right math
 
