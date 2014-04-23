@@ -10,7 +10,9 @@ while true
   if !orders.has_key?(name)
     orders[name] = []
   end
+
   orders[name].push(order)
+
   puts "Add another item to the order? (y/n)"
   resp = gets.chomp.downcase
   break if resp == "n"
