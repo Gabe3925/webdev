@@ -1,3 +1,4 @@
+
 puts "CALC II"
 puts "by Gabe Snyder"
 puts "---------------------"
@@ -61,23 +62,22 @@ if operation == "d"
 	continue = gets.chomp.downcase
 	end
 
-end
+if operation == "x"
+	newnum = (int1 ** int2)
+	puts " #{int1} to the #{int2} power = #{newnum} "
+	puts "another calculation? y / n "
+	continue = gets.chomp.downcase
+	end
 
-while operaion == "d" && continue == "y"
-	
-	newnum = int1 / int2
+if operation == "q"
+	newnum = Math.sqrt(int1) 
 	puts " #{int1} / #{int2} = #{newnum} "
 	puts "another calculation? y / n "
 	continue = gets.chomp.downcase
+	end
+
 end
 
-while operaion == "m" && continue == "y"
-	
-	newnum = int1 * int2
-	puts " #{int1} * #{int2} = #{newnum} "
-	puts "another calculation? y / n "
-	continue = gets.chomp.downcase
-end
 
 
 
