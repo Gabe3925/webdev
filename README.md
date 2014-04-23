@@ -7,6 +7,3 @@
 | Travis Vander Hoop  | travis@generalassemb.ly
 | JD Maresco          | jdm@generalassemb.ly
 | Seth Novick         | seth@generalassemb.ly
-
-
-favorite lunch dish: soup
