@@ -17,11 +17,19 @@ starting_line = gets.chomp.downcase
 
 puts ""
 puts "Here are the list of stops on the #{starting_line} line:"
-puts red.join", "
+
+if starting_line == "red"
+  puts red.join", "
+elsif starting_line == "turquoise"
+  puts turquoise.join", "
+else
+  puts orange.join", "
+end
 
 puts ""
 puts "Enter the stop you want to get on at."
 starting_station = gets.chomp.downcase
+
 
 puts ""
 puts "Which line do you want to get off at? (red/turquoise/orange)"
@@ -29,7 +37,15 @@ ending_line = gets.chomp.downcase
 
 puts ""
 puts "Here are the list of stops on the #{ending_line} line:"
-puts red.join", "
+
+if ending_line == "red"
+  puts red.join", "
+elsif ending_line == "turquoise"
+  puts turquoise.join", "
+else
+  puts orange.join", "
+end
+
 puts ""
 puts "Enter the stop you want to get off at."
 ending_station = gets.chomp.downcase
@@ -61,6 +77,44 @@ stops_from_center = distance_to_center[ending_station]
 
 total_stops = stops_to_center + stops_from_center
 
+if starting_station == "beltwater" && ending_station == "shaw-howard"
+  total_stops = 1
+elsif ending_station == "beltwater" && starting_station == "shaw-howard"
+  total_stops = 1
+elsif starting_station == "woodley park" && ending_station == "dupont circle"
+  total stops = 1
+elsif ending_station == "woodley park" && starting_station == "dupont circle"
+  total_stops = 1
+elsif starting_station == "woodley park" && ending_station == "farragut north"
+  total_stops = 2
+elsif ending_station == "woodley park" && starting_station == "farragut north"
+  total_stops = 2
+elsif starting_station == "union station" && ending_station == "judiciary square"
+  total_stops = 1
+elsif ending_station == "union station" && starting_station == "judiciary square"
+  total_stops = 1
+elsif starting_station == "farragut west" && ending_station == "mcpherson square"
+  total_stops = 1
+elsif ending_station == "farragut west" && starting_station == "mcpherson square"
+  total_stops = 1
+elsif starting_station == "l'enfant plaza" && ending_station == "smithsonian"
+  total_stops = 1
+elsif ending_station == "l'enfant plaza" && starting_station == "smithsonian"
+  total_stops = 1
+elsif starting_station == "l'enfant plaza" && ending_station == "federal triangle"
+  total_stops = 2
+elsif ending_station == "l'enfant plaza" && starting_station == "federal triangle"
+  total_stops = 2
+elsif starting_station == "smithsonian" && ending_station == "federal triangle"
+  total_stops = 1
+elsif ending_station == "smithsonian" && starting_station == "federal triangle"
+  total_stops = 1
+elsif starting_station == "farragut north" && ending_station == "dupont circle"
+  total_stops = 1
+elsif ending_station == "farragut north" && starting_station == "dupont circle"
+  total_stops = 1
+end
+
 puts ""
-puts "Your trip will have #{total_stops} stops."
+puts "Your trip will have #{total_stops} stop(s)."
 
