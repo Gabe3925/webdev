@@ -9,11 +9,19 @@ dc_metro[:red] = red
 dc_metro[:turquoise] = turquoise
 dc_metro[:orange] = orange
 
-puts "what line do you get on at? (red or turquoise)"
+def stop_printer(user_input, array)
+    return array[user_input.to_sym]
+end
 
-puts "The stops on the red line are: #{red}"
+puts "what line do you get on at? (red or turquoise)"
+user_line = gets.chomp
+puts "The stops on this line are: #{stop_printer(user_line, dc_metro)}"
 puts "What stop are you getting on at?"
 user_enter = gets.chomp
+
+puts "what line are you getting off at? (red or turquoise)"
+user_line_exit = gets.chomp
+puts "The stops on this line are #{stop_printer(user_line_exit, dc_metro)} "
 puts "What stop do you want to get off at?"
 user_exit = gets.chomp
 
@@ -27,6 +35,9 @@ array_downcase(red)
 array_downcase(turquoise)
 array_downcase(orange)
 
+chewed1 = stop_printer(user_line, dc_metro)
+chewed2 =stop_printer(user_line_exit, dc_metro)
+
 def find_station_index(line, stop)
   line.each do |x|
     if x = stop
@@ -35,8 +46,11 @@ def find_station_index(line, stop)
   end
 end
 
-start_station_index = find_station_index(red, user_enter)
-stop_station_index = find_station_index(red, user_exit)
+start_station_index = find_station_index(chewed1, user_enter)
+metro_center_first_index = find_station_index(chewed1, "metro center")
+metro_center_second_index = find_station_index(chewed2, "metro center")
+stop_station_index = find_station_index(chewed2, user_exit)
 
-stops_away = stop_station_index - start_station_index
+stops_away = (start_station_index - metro_center_first_index).abs + (stop_station_index - metro_center_second_index).abs
+
 puts "you are #{stops_away} stops away from your destination."
