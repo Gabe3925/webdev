@@ -12,6 +12,8 @@ dc_metro[:red] = red
 dc_metro[:turquoise] = turquoise
 dc_metro[:orange] = orange
 while (count == 0)
+  puts "Here are your lines:"
+  puts dc_metro.keys
   print "What line will you depart from: "
   start_line = gets.chomp.downcase
   if (start_line == "red")
