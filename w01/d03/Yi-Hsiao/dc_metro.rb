@@ -76,11 +76,6 @@
 
 require "pry"
 
-# get where the user is
-# get where the user is going
-# calculate if i'm going forward or backwards
-# count distance from stops
-
 class Metro
   attr_reader :lines
 
@@ -131,31 +126,32 @@ class Metro
 end
 
 def ask_user question, poss_answers
-  puts question
-  user_response = gets.chomp.split.map(&:capitalize).join(" ")  # capitalizes each word
+  # ask question and repeat if answer is unexpected
+  # if the answer is expected, return response with the correct capitalization
 
-  if poss_answers.include? user_response
-    return user_response
+  puts question
+  user_response = gets.chomp
+
+  # checks if answer is expected and gets the correct capitalization
+  ans_idx = poss_answers.map(&:downcase).index user_response.downcase
+  if ans_idx
+    return poss_answers[ans_idx]
   else
     puts "Sorry, I didn't understand you.  Type 'lines' if you need to find stops.", ""
     ask_user question, poss_answers
   end
 end
 
-# stops in dc metro
-red = ['Woodley Park', 'Dupont Circle', 'Farragut North', 'Metro Center', 'Union Station']
+# Setup DC Metro
+red = ['Woodley Park', 'Dupont Circle', 'Farragut North', 'Metro Center', 'Judiciary Square', 'Union Station']
 turquoise = ['Crystal City', 'Metro Center', 'Shaw-Howard', 'Beltwater']
 orange = ['Farragut West', 'McPherson Sq', 'Metro Center', 'Federal Triangle', 'Smithsonian', "L'enfant Plaza"]
-
-# create metro line object
 dc_metro = Metro.new
 dc_metro.add_lines :red, red
 dc_metro.add_lines :turquoise, turquoise
 dc_metro.add_lines :orange, orange
 
+# find distance between stops
 first_stop = ask_user("Which stop are you currently on?", dc_metro.lines.values.flatten)
 final_stop = ask_user("Which stop do you want to go to?", dc_metro.lines.values.flatten)
-
-# get the line name and stop number for the first and last stop
-puts dc_metro.calc_distance first_stop, final_stop, nil
-
+puts "Your trip will have #{dc_metro.calc_distance(first_stop, final_stop, nil)} stops."
