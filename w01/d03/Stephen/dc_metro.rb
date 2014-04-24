@@ -25,9 +25,9 @@ def prompt_stop(line, stops)
   end
 end
 
-# counts the number of stops to Metro Center (the transfer point)
-def to_mc(stops, stop)
-  return (stops.index("Metro Center") - stops.index(stop)).abs
+# counts the number of stops between two stations on a single line
+def sl_dist(stops, s1, s2)
+  return (stops.index(s1) - stops.index(s2)).abs
 end
 
 
@@ -52,13 +52,12 @@ puts
 
 # no transfer case
 if on_line == off_line
-  line = dc_metro[on_line]
-  num_stops = (line.index(on_stop) - line.index(off_stop)).abs
+  num_stops = sl_dist(dc_metro[on_line], on_stop, off_stop)
 
 # transfer case
 else
-  num_stops = to_mc(dc_metro[on_line], on_stop) +
-    to_mc(dc_metro[off_line], off_stop)
+  num_stops = sl_dist(dc_metro[on_line], on_stop, "Metro Center") +
+    sl_dist(dc_metro[off_line], off_stop, "Metro Center")
 end
 
 puts "==> That trip takes #{num_stops} stops!"
