@@ -12,21 +12,23 @@ dc_metro[:red] = red
 dc_metro[:turquoise] = turquoise
 dc_metro[:orange] = orange
 while (count == 0)
-  puts "Here are your lines:"
   puts dc_metro.keys
   print "What line will you depart from: "
   start_line = gets.chomp.downcase
   if (start_line == "red")
     count = 1
     start_key = :red
+    puts ""
     puts dc_metro[:red].join("\n")
   elsif (start_line == "turquoise")
     count = 1
     start_key = :turquoise
+    puts ""
     puts dc_metro[:turquoise].join("\n")
   elsif (start_line == "orange")
     count = 1
     start_key = :orange
+    puts ""
     puts dc_metro[:orange].join("\n")
   else
     puts "Please try again"
@@ -40,19 +42,24 @@ until (dc_metro[start_key].include?(start))
 end
 
 while (count2 == 0)
-  print "\nWhat line will you arrive on: "
+  puts ""
+  puts dc_metro.keys
+  print "What line will you arrive on: "
   stop_line = gets.chomp.downcase
   if (stop_line == "red")
     count2 = 1
     stop_key = :red
+    puts ""
     puts dc_metro[:red].join("\n")
   elsif (stop_line == "turquoise")
     count2 = 1
     stop_key = :turquoise
+    puts ""
     puts dc_metro[:turquoise].join("\n")
   elsif (stop_line == "orange")
     count2 = 1
     stop_key = :orange
+    puts ""
     puts dc_metro[:orange].join("\n")
   else
     puts "Please try again"
