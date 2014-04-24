@@ -13,18 +13,18 @@ dc_metro[:turquoise] = turquoise
 dc_metro[:orange] = orange
 while (count == 0)
   print "What line will you depart from: "
-  strLine = gets.chomp.downcase
-  if (strLine == "red")
+  start_line = gets.chomp.downcase
+  if (start_line == "red")
     count = 1
-    strKey = :red
+    start_key = :red
     puts dc_metro[:red].join("\n")
-  elsif (strLine == "turquoise")
+  elsif (start_line == "turquoise")
     count = 1
-    strKey = :turquoise
+    start_key = :turquoise
     puts dc_metro[:turquoise].join("\n")
-  elsif (strLine == "orange")
+  elsif (start_line == "orange")
     count = 1
-    strKey = :orange
+    start_key = :orange
     puts dc_metro[:orange].join("\n")
   else
     puts "Please try again"
@@ -32,25 +32,28 @@ while (count == 0)
 end
 
 start = " "
-until (dc_metro.values.flatten.include?(start))
+until (dc_metro[start_key].include?(start))
   print "Please enter the stop you will depart from: "
   start = gets.chomp
 end
 
+# snake_case
+# camelCase
+
 while (count2 == 0)
   print "\nWhat line will you arrive on: "
-  stpLine = gets.chomp.downcase
-  if (stpLine == "red")
+  stop_line = gets.chomp.downcase
+  if (stop_line == "red")
     count2 = 1
-    stpKey = :red
+    stop_key = :red
     puts dc_metro[:red].join("\n")
-  elsif (stpLine == "turquoise")
+  elsif (stop_line == "turquoise")
     count2 = 1
-    stpKey = :turquoise
+    stop_key = :turquoise
     puts dc_metro[:turquoise].join("\n")
-  elsif (stpLine == "orange")
+  elsif (stop_line == "orange")
     count2 = 1
-    stpKey = :orange
+    stop_key = :orange
     puts dc_metro[:orange].join("\n")
   else
     puts "Please try again"
@@ -58,15 +61,24 @@ while (count2 == 0)
 end
 
 stop = " "
-until (dc_metro.values.flatten.include?(stop))
+until (dc_metro[stop_key].include?(stop))
   print "Please enter the stop you will arrive at: "
   stop = gets.chomp
 end
 
-strNum = dc_metro[strKey].index(start)
-stopNum = dc_metro[stpKey].index(stop)
+start_num = dc_metro[start_key].index(start)
+stopNum = dc_metro[stop_key].index(stop)
 
-puts "You will travel #{(stopNum-strNum)} stops"
+if (start_line != stop_line)
+  start_num = ((start_num - dc_metro[start_key].index("Metro Center")).abs)
+  stopNum = ((stopNum - dc_metro[stop_key].index("Metro Center")).abs)
+  puts "You will travel #{(stopNum+start_num)} stops"
+else
+  puts "You will travel #{((stopNum-start_num).abs)} stops"
+end
+
+
+
 
 
 
