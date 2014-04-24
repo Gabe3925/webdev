@@ -44,7 +44,7 @@ if dest_line == "red"
     puts "Which Metro stop are you at?"
     dest = gets.chomp
     dest = cap(dest)
-  elsif dest_line == "Turquoise"
+  elsif dest_line == "turquoise"
     turquoise.each {|i| puts i}
     puts "Which Metro stop are you at?"
     dest = gets.chomp
@@ -56,8 +56,14 @@ if dest_line == "red"
     dest = cap(dest)
   end
 
-  if entry_line == dest_line
+  if entry_line == 'red' &&  dest_line == 'red'
   stops = (dc_metro[:red].index(stop).to_i - dc_metro[:red].index(dest).to_i).abs
+
+  elsif entry_line == 'orange' &&  dest_line == 'orange'
+  stops = (dc_metro[:orange].index(stop).to_i - dc_metro[:orange].index(dest).to_i).abs
+
+  elsif entry_line == 'turquoise' &&  dest_line == 'turquoise'
+  stops = (dc_metro[:turquoise].index(stop).to_i - dc_metro[:turquoise].index(dest).to_i).abs
 
   elsif entry_line == 'red' || entry_line == 'orange' && dest_line == 'orange' || dest_line =='red'
 
@@ -66,7 +72,7 @@ if dest_line == "red"
   elsif entry_line == 'red' || entry_line == 'turquoise' && dest_line == 'turquoise' || dest_line =='red'
 
     stops = (dc_metro[:red].index(stop).to_i - dc_metro[:red].index("Metro Center").to_i).abs + (dc_metro[:turquoise].index("Metro Center").to_i - dc_metro[:turquoise].index(dest).to_i).abs
-
+binding.pry
   else
 
         stops = (dc_metro[:turquoise].index(stop).to_i - dc_metro[:turquoise].index("Metro Center").to_i).abs + (dc_metro[:orange].index("Metro Center").to_i - dc_metro[:orange].index(dest).to_i).abs
