@@ -123,22 +123,28 @@ class Metro
       return first_leg + last_leg
     end
   end
-end
 
-def ask_user question, poss_answers
-  # ask question and repeat if answer is unexpected
-  # if the answer is expected, return response with the correct capitalization
+  def get_stop question
+    # ask question and repeat if answer is unexpected
+    # if the answer is expected, return response with the correct capitalization
 
-  puts question
-  user_response = gets.chomp
+    available_stops = @lines.values.flatten
+    puts question
+    user_response = gets.chomp
 
-  # checks if answer is expected and gets the correct capitalization
-  ans_idx = poss_answers.map(&:downcase).index user_response.downcase
-  if ans_idx
-    return poss_answers[ans_idx]
-  else
-    puts "Sorry, I didn't understand you.  Type 'lines' if you need to find stops.", ""
-    ask_user question, poss_answers
+    # checks if answer is expected and gets the correct capitalization
+    ans_idx = available_stops.map(&:downcase).index user_response.downcase
+    return available_stops[ans_idx] if ans_idx
+
+    # if no available stop was chosen, check if they entered a command to see available stops
+    if user_response.downcase == "stops"
+      @lines.each { |line_name, stops| puts "#{line_name.capitalize}: #{stops.join(", ")}", "" }
+    else
+      puts "Sorry, I didn't understand you.  Type 'STOPS' to see which stops we support.", ""
+    end
+
+    # repeat question to get a valid input
+    get_stop question
   end
 end
 
@@ -148,7 +154,11 @@ dc_metro.add_lines :red, ['Woodley Park', 'Dupont Circle', 'Farragut North', 'Me
 dc_metro.add_lines :turquoise, ['Crystal City', 'Metro Center', 'Shaw-Howard', 'Beltwater']
 dc_metro.add_lines :orange, ['Farragut West', 'McPherson Sq', 'Metro Center', 'Federal Triangle', 'Smithsonian', "L'enfant Plaza"]
 
-# find distance between stops
-first_stop = ask_user("Which stop are you currently on?", dc_metro.lines.values.flatten)
-final_stop = ask_user("Which stop do you want to go to?", dc_metro.lines.values.flatten)
+# introduction
+puts "Hi there, we'd like to help you navigate the metro."
+puts "Type 'STOPS' if you need to know which metro stops we support.", ""
+
+# get the starting and finishing point for the user and calc the # of stops.
+first_stop = dc_metro.get_stop "Which stop are you currently on?"
+final_stop = dc_metro.get_stop "Which stop do you want to go to?"
 puts "Your trip will have #{dc_metro.calc_distance(first_stop, final_stop, nil)} stops."
