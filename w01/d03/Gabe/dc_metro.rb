@@ -7,39 +7,71 @@ dc_metro[:red] = red
 dc_metro[:turquoise] = turquoise
 dc_metro[:orange] = orange
 
-puts "This is the red line: "
-print red.join("---").chomp
+
+	puts "What line are you boarding on? red, orange, turquoise ?"
+	boarding_line = gets.chomp.downcase
+
+	puts dc_metro(boarding_line).join("---")
+
+	puts "What stop will you board at?"
+	boarding_stop = gets.chomp
+
+	puts "What line is your destination on? red, orange, turquoise ?"
+	destination_line = gets.chomp.downcase
+
+	puts dc_metro(destination_line).join("---")
+
+	puts "What stop is your destination at?"
+	destination_stop = gets.chomp
+
+#----------------------------------------------#
 
 
-puts "What stop will you board at?"
-boarding_stop = gets.chomp
 
-puts "What is your destination stop?"
-destination_stop = gets.chomp
 
-#	convert stations into their stop numbers.
+	red.each_with_index do |station, index|
+	end
 
-#	red.each do |station| select a range of stations 
-#			between boarding_stop
-#			and destination_stop
-#			move this range into a new array called trip
-#			count the items in this array and output number.
+	a = (boarding_line).index(boarding_stop)
 
-puts "RED LINE"
-red.each_with_index do |station, index|
-  puts "#{station}(#{index})"
-end
-	
-a = red.index(boarding_stop)
-
-b = red.index(destination_stop)
+	b = (boarding_line).index(destination_stop)
 
 
 
 trip = (a - b)
 trip  = trip.abs
 
-puts "You travelled through #{trip} stations."
+
+puts "You made #{trip} stops."
+
+
+
+
+
+#case boarding_line
+#
+#
+#when red
+#
+#when orange
+#
+#when turquoise
+#
+#
+#	puts "What is your destination stop?"
+#	destination_stop = gets.chomp
+#
+#
+#end
+#	
+#a = red.index(boarding_stop)
+#
+#b = red.index(destination_stop)
+#
+#trip = (a - b)
+#trip  = trip.abs
+#
+#puts "You made #{trip} stops."
 
 
 
