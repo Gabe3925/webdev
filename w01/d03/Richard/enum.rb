@@ -1,7 +1,7 @@
 # ARRAYS
 # ------
 the_array = [5, 8, 15, 16, 23, 42]
-
+#
 
 ## each
 puts "\narray.each"
@@ -24,6 +24,7 @@ puts "\narray.each_with_index"
 
 the_array.each_with_index do |value, index|
   puts "#{value}, #{index}"
+  puts "#{value}" + "," "#{index}"
 end
 
 
@@ -54,6 +55,7 @@ puts "\narray.select"
 
 selected = the_array.select do |i|
   i > 20
+  puts i
 end
 
 puts selected.join(', ')
