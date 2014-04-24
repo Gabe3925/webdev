@@ -4,7 +4,7 @@ def calc_area(length, width)
   return length*width
 end
 
-
+calc_area
 
 
 def cal_vol(length, width, height)

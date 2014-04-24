@@ -3,5 +3,19 @@ def deck_o_cards
   suits = ['hearts', 'diamonds', 'clubs', 'spades']
 
   # ... build your deck ...
-  
+
+  deck = []
+
+  values.each do |i|
+    suits.each do |j|
+      deck.push({i => j})
+    end
+  end
+  return deck.shuffle
 end
+
+deck_o_cards
+
+puts "The deck has #{deck.length} cards"
+top = deck.pop()
+puts "The top card is the #{top[0][0]} of #{top[0][1]}"
