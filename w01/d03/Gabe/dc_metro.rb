@@ -11,7 +11,19 @@ dc_metro[:orange] = orange
 	puts "What line are you boarding on? red, orange, turquoise ?"
 	boarding_line = gets.chomp.downcase
 
-	puts dc_metro(boarding_line).join("---")
+	case boarding_line
+	when "red" 
+		"red" == red
+	when "orange" 
+		"orange" == orange
+	else 
+		 boarding_line == turquoise
+
+	end
+
+	#puts red.join("---")   old line show-er
+
+	puts dc_metro(destination_line).join("---")
 
 	puts "What stop will you board at?"
 	boarding_stop = gets.chomp
@@ -24,17 +36,21 @@ dc_metro[:orange] = orange
 	puts "What stop is your destination at?"
 	destination_stop = gets.chomp
 
+	
+
+
 #----------------------------------------------#
 
 
-
+	puts red.index
 
 	red.each_with_index do |station, index|
 	end
 
-	a = (boarding_line).index(boarding_stop)
+	a = red.index(boarding_stop)
 
-	b = (boarding_line).index(destination_stop)
+	b = red.index(destination_stop)
+	#if I can make these 'red' values variable depending on user boarding-line input, GOOD!
 
 
 
