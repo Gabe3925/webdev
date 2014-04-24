@@ -13,13 +13,13 @@ def stop_printer(user_input, array)
     return array[user_input.to_sym]
 end
 
-puts "what line do you get on at? (red or turquoise)"
+puts "what line do you get on at? (red or turquoise or orange)"
 user_line = gets.chomp
 puts "The stops on this line are: #{stop_printer(user_line, dc_metro)}"
 puts "What stop are you getting on at?"
 user_enter = gets.chomp
 
-puts "what line are you getting off at? (red or turquoise)"
+puts "what line are you getting off at? (red or turquoise or orange)"
 user_line_exit = gets.chomp
 puts "The stops on this line are #{stop_printer(user_line_exit, dc_metro)} "
 puts "What stop do you want to get off at?"
