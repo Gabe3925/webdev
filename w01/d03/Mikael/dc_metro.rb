@@ -22,14 +22,19 @@ puts "What stop are you getting on?"
 start = gets.chomp.downcase
 
 if !dc_metro[line.to_sym].include?(start)
-  puts "You can't get on at #{start}, you're on the #{line} line!"
+  puts "That's not a stop on the #{line} line!"
 else
   puts "What line would you like to get off?"
   dest_line = gets.chomp.downcase
   puts "The stops on the #{dest_line} line are: " + dc_metro[dest_line.to_sym].join(', ')
+  puts "What stop would you like to get off?"
+  dest = gets.chomp.downcase
+  if !dc_metro[dest_line.to_sym].include?(dest)
+    puts "That's not a stop on the #{line} line!"
+  else
+    distance = (dc_metro[dest_line.to_sym].index(dest) - dc_metro[dest_line.to_sym].index("metro center")).abs + (dc_metro[line.to_sym].index("metro center") - dc_metro[line.to_sym].index(start)).abs
+    puts "That stop is #{distance} stops away."
+  end
 
 end
-
-distance = 0
-puts "That stop is #{distance} stops away."
 
