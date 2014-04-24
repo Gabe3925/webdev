@@ -9,62 +9,32 @@ dc_metro[:red] = red
 dc_metro[:turquoise] = turquoise
 dc_metro[:orange] = orange
 
-all_done = "n"
-red_stops = 0
-orange_stops = 0
-turquoise_stops = 0
-
 puts "\nWelcome to Metro.\n"
 
+puts "Here are all of the possible lines\n"
+puts dc_metro.keys
 
+puts "Which line are you starting with?"
+line1 = gets.chomp.to_sym
 
-while all_done == "n"
-  puts "\nWhich line are you taking?\n"
-  puts dc_metro.keys
-  line = gets.chomp.downcase
-  if line == "red"
-    puts "\nWhere are you getting on?\n"
-    puts dc_metro[:red]
-    red_on = gets.chomp.downcase
+puts "Here are the stops on #{line1} line"
+puts dc_metro[line1]
 
-    puts "\nWhere are you getting off?\n"
-    red_off = gets.chomp.downcase
+puts "Where will you start?"
+first_stop = gets.chomp
 
-    red_stops = (red.index(red_off) - red.index(red_on)).abs
-    puts "You are going #{red_stops} stops on the red line. Weekend service expected."
-  end
-  if line == "orange"
-    puts "\nWhere are you getting on?\n"
-    puts dc_metro[:orange]
-    orange_on = gets.chomp.downcase
+puts "On which line will you stop?"
+line2 = gets.chomp.to_sym
 
-    puts "\nWhere are you getting off?\n"
-    orange_off = gets.chomp.downcase
+puts "Here are all of the stops on #{line2}"
+puts dc_metro[line2]
 
-    orange_stops = (orange.index(orange_off) - orange.index(orange_on)).abs
-    puts "You are going #{orange_stops} stops on the orange line. Weekend service expected."
-  end
-  if line == "turquoise"
-    puts "\nWhere are you getting on?\n"
-    puts dc_metro[:turquoise]
-    turquoise_on = gets.chomp.downcase
+puts "What is your final stop?"
+last_stop = gets.chomp
 
-    puts "\nWhere are you getting off?\n"
-    turquoise_off = gets.chomp.downcase
-
-    turquoise_stops = (turquoise.index(turquoise_off) - turquoise.index(turquoise_on)).abs
-    puts "You are going #{turquoise_stops} stops on the turquoise line. Weekend service expected."
-  end
-
-
-  puts "Are you done metroing? (y/n)"
-  all_done = gets.chomp.downcase
-
-  if all_done == "y"
-    total_stops = red_stops + orange_stops + turquoise_stops
-    puts "You are going #{total_stops} stops total. Please note: escalators are broken."
-  end
+if line1 != line2
+  puts "Your #{(dc_metro[line1].index("Metro Center") - dc_metro[line1].index(first_stop) + dc_metro[line2].index(last_stop) - dc_metro[line2].index("Metro Center")).abs} stops"
+else
+  puts "You are riding one line and have no transfers and #{(dc_metro[line1].index(first_stop) - dc_metro[line2].index(last_stop)).abs} stops"
 end
-
-
 
