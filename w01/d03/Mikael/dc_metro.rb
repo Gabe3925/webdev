@@ -8,13 +8,28 @@ dc_metro[:turquoise] = turquoise
 dc_metro[:orange] = orange
 
 
-puts "Welcome to the DC metro!"
-puts "The stops on the red line are: " + dc_metro[:red].join(', ')
-puts "Where would you like to go?"
-dest = gets.chomp.downcase
+puts "Welcome to the DC Metro!"
+puts "What line would you like to get on? (Red, Turquoise, or Orange)"
+line = gets.chomp.downcase
+
+if dc_metro.has_key?(line.to_sym)
+  puts "The stops on the #{line} line are: " + dc_metro[line.to_sym].join(', ')
+else
+  puts "Sorry, not a valid line."
+end
+
 puts "What stop are you getting on?"
 start = gets.chomp.downcase
 
-distance = (dc_metro[:red].index(dest) - dc_metro[:red].index(start)).abs
+if !dc_metro[line.to_sym].include?(start)
+  puts "You can't get on at #{start}, you're on the #{line} line!"
+else
+  puts "What line would you like to get off?"
+  dest_line = gets.chomp.downcase
+  puts "The stops on the #{dest_line} line are: " + dc_metro[dest_line.to_sym].join(', ')
+
+end
+
+distance = 0
 puts "That stop is #{distance} stops away."
 
