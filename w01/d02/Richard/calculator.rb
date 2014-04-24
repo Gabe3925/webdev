@@ -1,7 +1,7 @@
 require 'pry'
 intro = "ARE YOU READY TO CALCULATE!?\n" +
 "Here are a list of operations we can perform: "
-operation = "0"
+#operation = "0"
 operations = [
   "1.  Addition +",
   "2.  Subtraction -",
