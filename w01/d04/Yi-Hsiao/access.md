@@ -65,7 +65,7 @@
 2. How would you add the number 7 to Greg's favorite numbers?
 `users["Greg"][:favorite_numbers] << 7`
 3. How would you add yourself to the users hash?
-`users["Yi-Hsiao"] = {}`
+`users["Yi-Hsiao"] = { github: "yihsiaol", favorite_numbers: [7] }`
 4. How would you return the array of Peter's favorite numbers?
 `users["Peter"][:favorite_numbers]`
 5. How would you return the smallest of Travis's favorite numbers?
