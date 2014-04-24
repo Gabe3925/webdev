@@ -1,4 +1,4 @@
-red = ['Woodley Park', 'Dupont Circle', 'Farragut North', 'Metro Center', 'Union Station']
+red = ['WOODLEY PARK', 'DUPONT CIRCLE', 'FARRAGUT NORTH', 'METRO CENTER', 'UNION STATION']
 # turquoise = ['Crystal City', 'Metro Center', 'Shaw-Howard', 'Beltwater']
 # orange = ['Farragut West', 'McPherson Sq', 'Metro Center', 'Federal Triangle', 'Smithsonian', "L'enfant Plaza"]
 
@@ -8,10 +8,8 @@ red = ['Woodley Park', 'Dupont Circle', 'Farragut North', 'Metro Center', 'Union
 # dc_metro[:orange] = orange
 
 puts "Welcome to DC Metro! You will be travelling on the red line. The stops on the red line are " + red.join(", ") + ". Where would you like to start?"
-start_trip = gets.chomp
+start_trip = gets.chomp.upcase
 puts "Where will you be getting off?"
-end_trip = gets.chomp
+end_trip = gets.chomp.upcase
 
 puts "Your trip will be #{(red.index(start_trip) - red.index(end_trip)).abs} stops."
-
-
