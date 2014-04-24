@@ -13,6 +13,66 @@ dc_metro[:red] = red
 dc_metro[:turquoise] = turquoise
 dc_metro[:orange] = orange
 
+=begin
+
+#========================
+#  Instructor Code
+#========================
+
+#========================
+#  Helper Methods
+#========================
+
+
+
+def prompt_stop(line)
+  puts line
+end
+
+def list_lines(metro_hash)
+  puts metro_hash.keys
+  retrun "LINES!"
+end
+
+#========================
+#   User Input
+#========================
+
+
+puts "What LINE are you getting on at?"
+list_lines(dc_metro)
+boarding_line = gets.chomp.to_sym
+
+puts "What STOP are you getting on at?"
+list_stops(dc_metro[boarding_line])
+boarding_stop = gets.chomp
+
+puts "What LINE are you getting off at?"
+list_lines(dc_metro)
+destination_line = gets.chomp.to_sym
+
+puts "What STOP are you getting off at?"
+list_stops(dc_metro[boarding_line])
+destination_stop = gets.chomp
+
+index_of_boarding_stop = dc_metro[boarding_line]
+
+#=========================
+#  Single Line Functions
+#=========================
+
+
+boarding_index = dc_metro[boarding_line].index(boarding_stop)
+metro_center_index = dc_metro[boarding_line].index("Metro Center")
+first_leg_distance = (boarding_index - metro_center_index).abs
+
+boarding_index = dc_metro[destination_line].index(destination_stop)
+metro_center_index2 = dc_metro[destination_line].index("Metro Center")
+first_leg_distance = (boarding_index - metro_center_index).abs
+
+destination_index = dc_metro[destination_line].index(destination_stop)
+destination_bw_stops = (boarding_index - destination_index).abs
+=end
 colors = ["Red", "Turquoise", "Orange"]
 colors.each {|n| puts n}
 puts "Which Metro line would you like to get on?"
