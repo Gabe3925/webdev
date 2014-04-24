@@ -37,9 +37,6 @@ until (dc_metro[start_key].include?(start))
   start = gets.chomp
 end
 
-# snake_case
-# camelCase
-
 while (count2 == 0)
   print "\nWhat line will you arrive on: "
   stop_line = gets.chomp.downcase
