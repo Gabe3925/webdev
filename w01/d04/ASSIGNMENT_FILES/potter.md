@@ -2,10 +2,12 @@
 
 Included is a `potter.csv` file with a bunch of Harry Potter data. Each line contains the number of times a certain character was mentioned in the Harry Potter series, along with their name and---in some cases---the house they are associated with. Your job will be to slice and dice the data in a variety of ways using File I/O, Arrays & Hashes, Enumeration, and String Manipulation.
 
-### To Do
+### Learning Objectives:
 
-* Write a Ruby program to open in the `potter.csv` file.
-* Figure out the data structure in which you want to store the information, and read in the data.
+* Practice thinking about how to structure data:
+  * Arrays are ordered, while hashes allow you to associate values with certain keywords (keys). Both have their place in the world, and can be mixed and matched. 
+
+* Write a Ruby program to grab data from the `potter.csv` file.
 
 Write a method that does each of the following:
 
