@@ -24,46 +24,40 @@ puts "Enter the stop you want to get on at."
 starting_station = gets.chomp.downcase
 
 puts ""
+puts "Which line do you want to get off at? (red/turquoise/orange)"
+ending_line = gets.chomp.downcase
+
+puts ""
+puts "Here are the list of stops on the #{ending_line} line:"
+puts red.join", "
+puts ""
 puts "Enter the stop you want to get off at."
 ending_station = gets.chomp.downcase
 
-stops_to_center = 0
+distance_to_center = {
+  "woodley park" => 3,
+  "dupont circle" => 2,
+  "farragut north" => 1,
+  "metro center" => 0,
+  "judiciary square" => 1,
+  "union station" => 2,
 
-case starting_station
+  "beltwater" => 2,
+  "shaw-howard" => 1,
+  "crystal city" => 1,
 
-when "woodley park"
-  stops_to_center = 3
-when "dupont circle"
-  stops_to_center = 2
-when "farragut north"
-  stops_to_center = 1
-when "metro center"
-  stops_to_center = 0
-when "judiciary square"
-  stops_to_center = 1
-when "union station"
-  stops_to_center = 2
+  "farragut west" => 2,
+  "mcpherson square" => 1,
+  "federal triangle" => 1,
+  "smithsonian" => 2,
+  "l'enfant plaza" => 3
+}
 
-end
 
-stops_from_center = 0
+stops_to_center = distance_to_center[starting_station]
+stops_from_center = distance_to_center[ending_station]
 
-case ending_station
 
-when "woodley park"
-  stops_from_center = 3
-when "dupont circle"
-  stops_from_center = 2
-when "farragut north"
-  stops_from_center = 1
-when "metro center"
-  stops_from_center = 0
-when "judiciary square"
-  stops_from_center = 1
-when "union station"
-  stops_from_center = 2
-
-end
 
 total_stops = stops_to_center + stops_from_center
 
