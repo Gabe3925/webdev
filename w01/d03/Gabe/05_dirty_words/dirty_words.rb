@@ -1,5 +1,6 @@
 dirty_words = ['pee', 'poop', 'she-dog', 'phallus', 'fornicate', 'frack']
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 puts "Go ahead, say your worst:"
@@ -28,3 +29,24 @@ else
 end
 =======
 >>>>>>> 5269418d61924848620646f9bddc734bff0c15c5
+=======
+
+puts "Go ahead, say your worst:"
+
+phrase = gets.chomp.downcase.split(" ")
+
+is_dirty = false
+
+phrase.each do |word|
+	if !is_dirty
+	then is_dirty = dirty_words.index(word) #a search using index, through array dirty words, looking for 
+	end
+end 
+
+
+if is_dirty
+	puts "No way!"
+else
+	puts "ok"
+end
+>>>>>>> 6be3f245f9f5cbe2977dffc9b67b6e047f812b24

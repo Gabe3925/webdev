@@ -1,4 +1,8 @@
+puts "Do your worst..."
+worst = gets.chomp
+words_to_check = worst.split(' ')
 dirty_words = ['pee', 'poop', 'she-dog', 'phallus', 'fornicate', 'frack']
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 
@@ -28,3 +32,18 @@ else
 end
 =======
 >>>>>>> 5269418d61924848620646f9bddc734bff0c15c5
+=======
+is_dirty = false
+
+words_to_check.each do |word|
+	if !is_dirty
+		is_dirty = dirty_words.include?(word)
+	end
+end
+
+if is_dirty
+	puts "No way!"
+else
+	puts "Ok"
+end
+>>>>>>> 6be3f245f9f5cbe2977dffc9b67b6e047f812b24

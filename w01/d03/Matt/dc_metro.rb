@@ -9,32 +9,43 @@ dc_metro[:red] = red
 dc_metro[:turquoise] = turquoise
 dc_metro[:orange] = orange
 
+lines = dc_metro.keys # key variable
+
 puts "\nWelcome to Metro.\n"
 
-puts "Here are all of the possible lines\n"
-puts dc_metro.keys
+puts "\nHere are all of the possible lines:\n"
+puts lines
 
-puts "Which line are you starting with?"
+puts "\nWhich line are you starting with?"
 line1 = gets.chomp.to_sym
 
-puts "Here are the stops on #{line1} line"
+puts "\nHere are the stops on #{line1} line:\n"
 puts dc_metro[line1]
 
-puts "Where will you start?"
+puts "\nWhere will you start?\n"
 first_stop = gets.chomp
 
-puts "On which line will you stop?"
+puts "\nHere are all of the possible lines:\n"
+puts lines
+
+puts "\nOn which line will you stop?\n"
 line2 = gets.chomp.to_sym
 
-puts "Here are all of the stops on #{line2}"
+puts "\nHere are all of the stops on #{line2} line:\n"
 puts dc_metro[line2]
 
-puts "What is your final stop?"
+puts "\nWhat is your final stop?\n"
 last_stop = gets.chomp
 
-if line1 != line2
-  puts "Your #{(dc_metro[line1].index("Metro Center") - dc_metro[line1].index(first_stop) + dc_metro[line2].index(last_stop) - dc_metro[line2].index("Metro Center")).abs} stops"
+single_trip = (dc_metro[line2].index(last_stop) - dc_metro[line1].index(first_stop)).abs
+double_trip = single_trip + 1
+
+binding.pry
+
+if dc_metro[line1] != dc_metro[line2]
+  puts "\nYou traveled metro for #{double_trip} stops between the #{line1} and #{line2} lines"
 else
-  puts "You are riding one line and have no transfers and #{(dc_metro[line1].index(first_stop) - dc_metro[line2].index(last_stop)).abs} stops"
+  puts "\nYou traveled metro for #{single_trip} stops and 0 transfers."
 end
 
+puts "Please be aware the escalators at #{last_stop.capitalize} are out of order."
