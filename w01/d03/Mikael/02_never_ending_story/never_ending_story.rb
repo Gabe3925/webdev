@@ -5,3 +5,16 @@ story = [
   'The spaceship hits a wormhole and crashes in 1941 Roswell, NM',
   'Fry encounters his grandmother, then inadvertently sires his father'
 ]
+
+i = 0
+
+while true
+  puts "#{story[i]}"
+  puts "Should we continue? (y/n)"
+  cont = gets.chomp
+  break if cont == 'n'
+  i += 1
+  if i == story.length
+    i = 0
+  end
+end
