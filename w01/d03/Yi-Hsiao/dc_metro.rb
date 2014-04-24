@@ -142,14 +142,11 @@ def ask_user question, poss_answers
   end
 end
 
-# Setup DC Metro
-red = ['Woodley Park', 'Dupont Circle', 'Farragut North', 'Metro Center', 'Judiciary Square', 'Union Station']
-turquoise = ['Crystal City', 'Metro Center', 'Shaw-Howard', 'Beltwater']
-orange = ['Farragut West', 'McPherson Sq', 'Metro Center', 'Federal Triangle', 'Smithsonian', "L'enfant Plaza"]
+# setup DC Metro
 dc_metro = Metro.new
-dc_metro.add_lines :red, red
-dc_metro.add_lines :turquoise, turquoise
-dc_metro.add_lines :orange, orange
+dc_metro.add_lines :red, ['Woodley Park', 'Dupont Circle', 'Farragut North', 'Metro Center', 'Judiciary Square', 'Union Station']
+dc_metro.add_lines :turquoise, ['Crystal City', 'Metro Center', 'Shaw-Howard', 'Beltwater']
+dc_metro.add_lines :orange, ['Farragut West', 'McPherson Sq', 'Metro Center', 'Federal Triangle', 'Smithsonian', "L'enfant Plaza"]
 
 # find distance between stops
 first_stop = ask_user("Which stop are you currently on?", dc_metro.lines.values.flatten)
