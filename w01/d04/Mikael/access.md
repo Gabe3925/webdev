@@ -9,7 +9,7 @@
 1. Use pry to access the string `"Peter"`
 2. Use pry to add your name to the end of the array?
 3. Use pry to remove `"Greg"` from the array.
-4. Use pry to access the last item in the array. 
+4. Use pry to access the last item in the array.
 
 **B. Copy and paste the following data structure into pry:**
 
@@ -26,12 +26,33 @@
 `boolean_hash = { true => "It's true!", false => "It's false" }`
 
 1. What is the return value of `boolean_hash[2 + 2 == 4]`?
+
+"It's true!"
+
 2. What is the return value of `boolean_hash["Peter" == "Travis"]`?
+
+It's false
+
+
 3. What is the return value of `boolean_hash[9 > 10]`?
+
+It's false
+
 4. What is the return value of `boolean_hash[0]`?
+
+nil
+
 5. What is the return value of `boolean_hash["Greg"]`?
+
+nil
+
 6. What is the return value of `boolean_hash[false||true]`?
+
+It's true!
+
 6. What is the return value of `boolean_hash[false||"Travis"]`?
+
+nil
 
 ### Arrays & Hashes
 **Given the following data structure:**
@@ -52,8 +73,25 @@
     }
 
 1. How would you access Travis's Github handle (i.e. the string "vanderhoop")?
+
+users["Travis"][:github]
+
 2. How would you add the number 7 to Greg's favorite numbers?
+
+users["Greg"][:favorite_numbers].push(7)
+
 3. How would you add yourself to the users hash?
+
+users["Mikael"] = {}
+
 4. How would you return the array of Peter's favorite numbers?
+
+users["Peter"][:favorite_numbers]
+
 5. How would you return the smallest of Travis's favorite numbers?
+
+users["Travis"][:favorite_numbers].min
+
 6. How would you return an array of Greg's favorite numbers that are also even?
+
+users["Greg"][:favorite_numbers].select{|i| i % 2 == 0}
