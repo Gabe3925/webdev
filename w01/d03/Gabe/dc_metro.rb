@@ -103,4 +103,14 @@ puts "You made #{trip} stops."
 #puts "You made #{trip} stops."
 
 
-
+# TO DO
+# add changed keys for the RED, ORANGAE, TURQ arrays on each line, showing the relation of each stop to
+#metro center. (union station -1  metro center 0   first station 1  second station 2)
+# find boarding statio, line,    dest. station and line
+#find the stations passed through for '1st leg'
+# check if dest is on different line
+# if so, find stations-passed-through for '2nd leg' from 0 to ...?
+#
+# print out total passed through for 1st and 2nd leg.
+#
+#
