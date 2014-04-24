@@ -57,14 +57,17 @@ index_of_boarding_stop = dc_metro[boarding_line]
 #=================
 
 boarding_index = dc_metro[boarding_line].index(boarding_stop)
-metro_center_index = dc_metro[boarding_line].index("Metro Center")
-first_leg_distance = (boarding_index - metro_center).abs
+metro_center_index1 = dc_metro[boarding_line].index("Metro Center")
+first_leg_distance = (boarding_index - metro_center_index1).abs
 
+destination_index = dc_metro[destination_line].index(destination_stop)
+metro_center_index2 = dc_metro[boarding_line].index("Metro Center")
+second_leg_distance = (metro_center_index2 - destination_index).abs
 
-binding.pry
+total_distance = second_leg_distance + first_leg_distance
 
-destination_index = red.index(destination_stop)
-distance_bw_stops = (boarding_index - destination_index).abs
+puts "Your trip is #{total_distance} stops!"
+
 
 
 
