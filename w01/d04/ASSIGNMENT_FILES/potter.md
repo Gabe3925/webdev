@@ -4,9 +4,7 @@ Included is a `potter.csv` file with a bunch of Harry Potter data. Each line con
 
 ### Learning Objectives:
 
-* Practice thinking about how to structure data:
-  * Arrays are ordered, while hashes allow you to associate values with certain keywords (keys). Both have their place in the world, and can be mixed and matched. 
-
+* Practice thinking about how to structure data
 * Write a Ruby program to grab data from the `potter.csv` file.
 
 Write a method that does each of the following:
