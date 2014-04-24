@@ -28,5 +28,6 @@ puts
 puts wine_cellar.select { |w| w[:label].split.size == 2 }
 puts
 
-puts wine_cellar.select { |w| w[:type] == "Pinot Noir" }
+pinots = wine_cellar.select { |w| w[:type] == "Pinot Noir" }
+puts pinots.map { |w| w[:label] }
 puts
