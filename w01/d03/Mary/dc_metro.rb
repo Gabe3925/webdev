@@ -21,3 +21,4 @@ first_leg = (dc_metro[line_start].index(station_start) - dc_metro[line_start].in
 second_leg = (dc_metro[line_stop].index(station_stop) - dc_metro[line_stop].index("METRO CENTER")).abs
 
 puts "Your trip will be #{first_leg + second_leg} stop(s)."
+
