@@ -5,7 +5,7 @@ Included is a `potter.csv` file with a bunch of Harry Potter data. Each line con
 ### Learning Objectives:
 
 * Practice thinking about how to structure data
-* Get some practice using File I/O in a Ruby program by grabbing data from the `potter.csv` file.
+* Get some exposure to File I/O in Ruby by grabbing data from the `potter.csv` file.
 
 Write a method that does each of the following:
 
