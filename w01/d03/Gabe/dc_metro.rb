@@ -8,22 +8,35 @@ dc_metro[:turquoise] = turquoise
 dc_metro[:orange] = orange
 
 
-	puts "What line are you boarding on? red, orange, turquoise ?"
+
+puts "   NOW BOARDING!"
+print "."
+sleep 1
+print "."
+sleep 1
+print "."
+sleep 1
+print "."
+sleep 1
+puts " DC METRO ...."
+puts ""
+
+	puts "What line are you boarding on? red"
 	boarding_line = gets.chomp.downcase
 
-	case boarding_line
-	when "red" 
-		"red" == red
-	when "orange" 
-		"orange" == orange
-	else 
-		 boarding_line == turquoise
+	#case boarding_line
+	#when "red" 
+	#	"red" == red
+	#when "orange" 
+	#	"orange" == orange
+	#else 
+	#	 boarding_line == turquoise
+#
+	#end
 
-	end
+	puts red.join("---")   #good old line show-er
 
-	#puts red.join("---")   old line show-er
-
-	puts dc_metro(destination_line).join("---")
+	#puts dc_metro(destination_line).join("---")   fucked up smart line-show-er
 
 	puts "What stop will you board at?"
 	boarding_stop = gets.chomp
@@ -31,7 +44,7 @@ dc_metro[:orange] = orange
 	puts "What line is your destination on? red, orange, turquoise ?"
 	destination_line = gets.chomp.downcase
 
-	puts dc_metro(destination_line).join("---")
+	#puts dc_metro(destination_line).join("---")
 
 	puts "What stop is your destination at?"
 	destination_stop = gets.chomp
