@@ -1,5 +1,6 @@
 require 'pry'
 
+# define the different operations
 def add(x, y)
   return x + y
 end
@@ -26,6 +27,7 @@ end
 
  exit = false
 
+# create the menu and keep looping until user types "exit"
  while exit == false
   puts "What operation would you like to run:"
   puts "add"
