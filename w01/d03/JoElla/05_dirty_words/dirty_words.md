@@ -8,7 +8,7 @@ Here's an interesting challenge: test a phrase against an array of dirty words t
 4. Print one of the following outcomes:
 	* **"We're rejecting that, you potty mouth."**
 	* **"Okay, we'll publish that."**
-	
+
 ## Now…
 
 Do it without nesting any enumerable blocks inside one another.
