@@ -69,9 +69,9 @@ stopNum = dc_metro[stop_key].index(stop)
 if (start_line != stop_line)
   start_num = ((start_num - dc_metro[start_key].index("Metro Center")).abs)
   stopNum = ((stopNum - dc_metro[stop_key].index("Metro Center")).abs)
-  puts "You will travel #{(stopNum+start_num)} stops"
+  puts "\nYou will travel #{(stopNum+start_num)} stops"
 else
-  puts "You will travel #{((stopNum-start_num).abs)} stops"
+  puts "\nYou will travel #{((stopNum-start_num).abs)} stops"
 end
 
 
