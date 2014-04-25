@@ -83,6 +83,18 @@ def weasel_badger(characters)
   end
 end
 
+def y_so_srs(characters)
+  characters.map do |character|
+    if character[:name].split(" ")[0].reverse.chr == "y"
+      y = character[:name].split(" ")[0]
+      puts y
+      binding.pry
+    end
+  end
+end
+
+
+
 
 
 #puts characters_hash.select { |character| character[:house] == "white"}
@@ -96,3 +108,4 @@ reverse_Slytherin(characters_hash)
 uniq_house(characters_hash)
 uniq_gryff(characters_hash)
 weasel_badger(characters_hash)
+y_so_srs(characters_hash)
