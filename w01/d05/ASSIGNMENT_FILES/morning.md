@@ -7,7 +7,6 @@
 students = ["Adam Barrett","Jacob Cain","Mikael Davis","Salil Doshi","Jon Eva","Elaine Fang","Parker Hart,"Richard Hessler","Mary Hipp","Inhak Kim","Randy Latz","Yi-Hsiao Liu","Alexi Phillipson","Matt Rundo","Gabe Snyder","Stephen Stanwood","Joella Straley","Brett Wallace","Thomas Weaver"]
 ```
 - Write a program that:
-  - prints the name of one random student
   - iterates through the `students` array, printing `"STUDENT_NAME is learning to learn."`
   - iterates through the `students` array using the `each_with_index` method, printing `"STUDENT_NAME is the student in the STUDENTS_INDEX_VALUE index"`
     - You'll probably have to [look it up](http://apidock.com/ruby/Enumerable/each_with_index)
@@ -17,20 +16,23 @@ students = ["Adam Barrett","Jacob Cain","Mikael Davis","Salil Doshi","Jon Eva","
   - Prints a list of all the student names on one line, with each name separated by a pipe: `|`
   - Prints all of the students with J names (Jacob, Jon, and Joella)
 
-### Arrays & Hashes
+### Searching for a Soul Mate
 **Given the following data structure:**
 
-    users = {
-      "Peter" => {
-        :github => "peterylai",
-        :favorite_numbers => [12, 42, 75],
+    ok_cupidites = {
+      "nicestGuy5530" => {
+        :name => "Brad",
+        :hobbies => ["working out", "seeing concerts", "watching sports", "eating"],
+        :seeking => ["friendship", "short-term dating", "a long-term relationship", "anything I can get"]
+        
       },
-      "PJ" => {
-        :github => "h4w5",
-        :favorite_numbers => [8, 12, 24],
+      "southwesternDave" => {
+        :name => "Dave",
+        :hobbies => ["bird watching", "cross-country skiing", "When I'm bored I do this thing I call 'friendly' prank calls, where I just call strangers and kinda ask them how they're doing and stuff, in a friendly way."],
+        :seeking => ["a long-term relationship", "short-term dating"]
       },
-      "Jeff" => {
-        :github => "jkonowitch",
+      "WOOTwootWOOTguy" => {
+        :name => "jkonowitch",
         :favorite_numbers => [12, 14, 85],
       },
     }
