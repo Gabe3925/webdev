@@ -30,9 +30,49 @@ def get_houses(characters)
   houses = characters.map do |character|
     character[:house]
   end
-  houses.select! {|i| i||false }
-  return houses.uniq
+  houses.uniq!.select! {|i| i||false }
+  return houses
 end
+
+def get_single_names(characters)
+  single_name = characters.select do |character|
+    character[:name].include?(" ") == false
+  end
+end
+
+def get_hufflepuffs(characters)
+  count = 0
+  characters.each do |character|
+    if character[:house] == "Hufflepuff"
+      count += 1
+    end
+  end
+  return count
+end
+
+def reverse_slytherin(characters)
+  reversed = characters.map do |character|
+    if character[:house] == "Slytherin"
+      character[:name].reverse!
+    else
+      character[:name]
+    end
+  end
+  return reversed
+end
+
+def get_unique_lasts(characters)
+  gryffindor = characters.select do |character|
+    character[:house] == "Gryffindor"
+  end
+  lasts = gryffindor.map do |name|
+    name[:name].split(" ").last
+  end
+
+  return lasts.uniq
+end
+
+
 
 get_names(chars)
 
