@@ -15,7 +15,7 @@ students = ["Adam Barrett","Jacob Cain","Mikael Davis","Salil Doshi","Jon Eva","
   - Finds and prints the index of `"Stephen Stanwood"`
   - Prints the fifth person
   - Prints a list of all the student names on one line, with each name separated by a pipe: |
-  - Prints all of the students with J names (Jacob, Jon, Joella, John and Julia)
+  - Prints all of the students with J names (Jacob, Jon, and Joella)
 
 ### Arrays & Hashes
 **Given the following data structure:**
