@@ -82,9 +82,25 @@ def return_hufflepuff
   f.close
 end
 
-print return_hufflepuff
+return_hufflepuff
 
 # * Return an array with all of the character names, but for the characters from Slytherin, reverse their names (ie "Draco Malfoy" becomes "yoflaM ocarD")
+
+def reverse_slytherin
+  f = File.new("potter.csv", "r")
+  character_array = []
+  f.each_line do |character|
+    character_info = character.chomp.split(",")
+    if character_info[2] == "Slytherin"
+    character_array.push(character_info[1].reverse)
+    end
+  end
+  return character_array
+  f.close
+end
+
+puts reverse_slytherin
+
 # * Return an array with the unique last names of all the characters from Gryffindor (ie, print Weasley only 1 one time)
 # * Return an array with the names of all the Weasleys, but give each of them a middle name of "Badger"
 # * Return an array with the first names of characters whose first names end in "y"
