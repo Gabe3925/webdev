@@ -10,6 +10,7 @@
 ```
 students = ["Adam Barrett","Jacob Cain","Mikael Davis","Salil Doshi","Jon Eva","Elaine Fang","Parker Hart","Richard Hessler","Mary Hipp","Inhak Kim","Randy Latz","Yi-Hsiao Liu","Alexi Phillipson","Matt Rundo","Gabe Snyder","Stephen Stanwood","Joella Straley","Brett Wallace","Thomas Weaver"]
 ```
+- Your starting point is to identify what type of data structure `students` is.
 - Write a program that:
   - prints `"STUDENT_NAME is learning to learn."` for every student in the class
   - prints `"STUDENT_NAME is the student in the STUDENTS_INDEX_VALUE index"` for every student in the class
