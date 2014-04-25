@@ -120,4 +120,20 @@ end
 puts return_lastnames_gryffindor
 
 # * Return an array with the names of all the Weasleys, but give each of them a middle name of "Badger"
+
+def badger_weasley
+  f = File.new("potter.csv", "r")
+  character_array = []
+  f.each_line do |character|
+    character_info = character.chomp.split(",")
+    split_name = character_info[1].chomp.split(" ")
+    character_array.push(split_name[1])
+    end
+  end
+  return character_array.uniq
+  f.close
+end
+
+puts badger_weasley
+
 # * Return an array with the first names of characters whose first names end in "y"
