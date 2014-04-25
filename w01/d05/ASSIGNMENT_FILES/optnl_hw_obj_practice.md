@@ -1,6 +1,6 @@
 ## Pre-Homework Homework
 
-####Learning Objective:
+####Learning Objectives:
 - To get practice and build muscle memory writing class declarations
 - To get practice instantiating objects of your own design
 
