@@ -82,7 +82,16 @@ def badger_weasleys(characters)
   end
 
   return badgers
+end
 
+def ends_in_y(characters)
+  firsts = characters.map do |character|
+    character[:name].split(" ").first
+  end
+  why = firsts.select do |first|
+    first[-1] == "y"
+  end
+  return why
 end
 
 get_names(chars)
