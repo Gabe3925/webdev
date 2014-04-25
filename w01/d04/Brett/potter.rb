@@ -61,16 +61,29 @@ def find_one_name
     character_info = character.chomp.split(",")
     unless character_info[1].include?(" ")
     character_array.push(character_info)
-    binding.pry
     end
   end
   return character_array
   f.close
 end
 
-puts find_one_name
+find_one_name
 
 # * Return the number of characters from Hufflepuff (Hint: It should be 3)
+
+def return_hufflepuff
+  f = File.new("potter.csv", "r")
+  character_array = []
+  f.each_line do |character|
+    character_info = character.chomp.split(",")
+    character_array.push(character_info[2])
+  end
+  return character_array.count("Hufflepuff")
+  f.close
+end
+
+print return_hufflepuff
+
 # * Return an array with all of the character names, but for the characters from Slytherin, reverse their names (ie "Draco Malfoy" becomes "yoflaM ocarD")
 # * Return an array with the unique last names of all the characters from Gryffindor (ie, print Weasley only 1 one time)
 # * Return an array with the names of all the Weasleys, but give each of them a middle name of "Badger"
