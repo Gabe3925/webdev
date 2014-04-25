@@ -78,3 +78,21 @@ ok_cupidites = {
         :seeking => []
       }
     }
+
+
+#1. Use pry to return an array of keys for the `ok_cupidites` hash.
+######      array_ok_cupid = ok_cupidites.keys
+
+# 2. Use pry to return whether `southwesternDave` is in a relationship.
+######    ok_cupidites["southwesternDave"][:in_a_relationship] =>false
+
+# 3. Use pry to add `watching True Detective` to `WOOTman`'s hobbies.
+######   ok_cupidites["WOOTman"][:hobbies].push("watching True Detective")
+
+#4. Use pry to return all the things that `nicestGuy5530` is seeking.
+######     ok_cupidites["nicestGuy5530"][:seeking]
+
+#5. Use pry to retrieve `southwesternDave`'s third hobby.
+######      ok_cupidites["southwesternDave"][:hobbies][2]
+#6. In English, explain how would you return an array of only the ok_cupities that are single?
+######
