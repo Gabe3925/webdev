@@ -15,7 +15,7 @@ students = ["Adam Barrett","Jacob Cain","Mikael Davis","Salil Doshi","Jon Eva","
   - Prints all of the students with J names (Jacob, Jon, and Joella)
 
 ### Searching for a Soul Mate
-**Given the following data structure:**
+**Copy and paste the following into pry:**
 
     ok_cupidites = {
       "nicestGuy5530" => {
@@ -38,7 +38,7 @@ students = ["Adam Barrett","Jacob Cain","Mikael Davis","Salil Doshi","Jon Eva","
       },
     }
 
-1. How would you access Jeff's Github handle (i.e. the string "jkonowitch")?
+1. Use pry to access `southwesternDave`'s `in_a_relationship` value?
 2. How would you add the number 7 to PJ's favorite numbers?
 3. How would you add yourself to the users hash?
 4. How would you return the array of Peter's favorite numbers?
