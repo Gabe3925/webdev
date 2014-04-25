@@ -3,6 +3,25 @@ require 'pry'
 
 # Write a method that does each of the following:
 
+#create character hash
+
+f = File.new("potter.csv", "r")
+
+char_arr = []
+
+file.each_line do |character_string|
+  char_minus_new_line = character_string.chomp
+  arr_representing_char = char_minus_new_line.split(',')
+
+  character = {}
+
+  character[:mentions] = arr_representing_char[0]
+  character[:name] = arr_representing_char[1]
+  character[:house] = arr_representing_char[2]
+  char_arr << character
+  f.close
+end
+
 # 1. Return an array with just the names of all the characters
 # use a hash
 
