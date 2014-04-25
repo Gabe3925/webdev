@@ -34,8 +34,8 @@ students = ["Adam Barrett","Jacob Cain","Mikael Davis","Salil Doshi","Jon Eva","
         :name => "Jeff Lamplugh",
         :in_a_relationship => true,
         :hobbies => ['improvisational comedy', 'aquacizing', 'private investigation'],
-        :seeking => [],
-      },
+        :seeking => []
+      }
     }
 
 1. Use pry to return an array of keys for the `ok_cupidites` hash.
