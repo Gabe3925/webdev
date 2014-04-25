@@ -19,7 +19,7 @@ def char_names(character_array)
 
   puts name = character_array.map {|name| name["Name"]}
 end
-#char_names(characters)
+char_names(characters)
 
 
 # Return an array with all the characters with more than 500 mentions.
@@ -31,7 +31,7 @@ def popular_characters(character_array)
 
 end
 
-#popular_characters(characters)
+popular_characters(characters)
 
 
 
@@ -43,7 +43,7 @@ def house_name(character_array)
   print unique_house = house_separation.map {|house| house["House"]}
 end
 
-#house_name(characters)
+house_name(characters)
 
 #Return an array with all the characters with one word names.
 #Each entry in the array should contain all information about that character.
@@ -54,7 +54,7 @@ def single_names(character_array)
 
 end
 
-#single_names(characters)
+single_names(characters)
 
 #Return the number of characters from Hufflepuff (Hint: It should be 3)
 
@@ -73,7 +73,7 @@ def hufflepuff (character_array)
   puts "There are #{huffle_names.length} people in hufflepuff: #{huffle_names.join(", ")}."
 end
 
-#hufflepuff(characters)
+hufflepuff(characters)
 
 #Return an array with all of the character names,
 #but for the characters from Slytherin, reverse their names
@@ -92,8 +92,8 @@ def reverse(character_array)
   puts names = rev_name + other_names
 end
 
-#reverse(characters)
-#puts characters
+reverse(characters)
+
 
 
 
@@ -112,7 +112,7 @@ def unique_last(character_array)
       puts last_names.uniq
 end
 
-#unique_last(characters)
+unique_last(characters)
 
 
 # Return an array with the names of all the Weasleys,
@@ -132,7 +132,7 @@ def badger_badger_weasley_weasley(character_array)
   puts badger_weasleys
 end
 
-#badger_badger_weasley_weasley(characters)
+badger_badger_weasley_weasley(characters)
 
 
 # Return an array with the first names
@@ -161,8 +161,18 @@ def y_oh_y(character_array)
 puts print_y
 end
 
-#y_oh_y(characters)
+y_oh_y(characters)
 
+
+
+# =====================================
+# BONUS BONUS BONUS BONUS
+# BONUS BONUS BONUS BONUS
+# BONUS BONUS BONUS BONUS
+# BONUS BONUS BONUS BONUS
+# BONUS BONUS BONUS BONUS
+# BONUS BONUS BONUS BONUS
+# =====================================
 
 # Return an array with all of the characters'
 # names whose name contains "ll" somewhere
@@ -170,7 +180,7 @@ end
 def repeating_l(character_array)
 
   doubles = []
-  character_array.each do |name|
+  character_array.select do |name|
     if name["Name"].include? 'll'
       doubles.push(name["Name"])
     end
@@ -179,3 +189,41 @@ puts doubles
 end
 
 repeating_l(characters)
+
+
+
+# Return an array with all of the characters' names
+# whose name contains multiple k's
+
+
+def multi_k(character_array)
+  all_the_ks = []
+  character_array.select do |name|
+    if name["Name"].downcase.count('k') > 1
+    all_the_ks.push(name["Name"])
+  end
+  end
+  puts all_the_ks
+
+end
+
+multi_k(characters)
+
+
+# Return an array with all of the characters whose first
+# name begins with the same letter as their last name,
+# sorted alphabetically (ie "Bathilda Bagshot". Note:
+# "Nearly Headless Nick" counts here!)
+
+def similar_letters(character_array)
+  same_letters = []
+  character_array.select do |name|
+    if name["Name"].include?(" ") == true && name["Name"].split.first[0] == name["Name"].split.last[0]
+      same_letters.push(name["Name"])
+    end
+  end
+  puts same_letters
+end
+
+
+similar_letters(characters)
