@@ -48,6 +48,6 @@ students = ["Adam Barrett","Jacob Cain","Mikael Davis","Salil Doshi","Jon Eva","
 1. Use pry to return an array of keys for the `ok_cupidites` hash.
 2. Use pry to return whether `southwesternDave` is in a relationship.
 3. Use pry to add `watching True Detective` to `WOOTman`'s hobbies. 
-4. Use pry to return an array of the things `nicestGuy5530` is seeking. 
+4. Use pry to return all the things that `nicestGuy5530` is seeking. 
 5. Use pry to retrieve `southwesternDave`'s third hobby.
-6. How would you return an array of only the ok_cupities that are single?
+6. In English, explain how would you return an array of only the ok_cupities that are single?
