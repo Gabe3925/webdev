@@ -32,16 +32,21 @@
 # ---
 # ###### Written by Peter Lai
 
+require "pry"
+
 potter_data_file = File.open "potter.csv"
 
   # returns an array of Hashes with the keys, mentions, name, house
   potter_data = potter_data_file.readlines.map do |char_data|
-    columns = char_data.chomp.split(',')
-    { mentions: columns[0].to_i, name: columns[1], house: columns [2] }
+    field_values = char_data.chomp.split(',')
+    field_names = [:mentions, :name, :house]
+    Hash[field_names.zip field_values]
   end
 
+  binding.pry
+
   character_names = potter_data.map { |char| char[:name] }
-  chars_w_500_mentions = potter_data.select { |char| char[:mentions] > 500 }
+  chars_w_500_mentions = potter_data.select { |char| char[:mentions].to_i > 500 }
 
   unique_houses = potter_data.map { |char| char[:house] }.uniq.compact
 
