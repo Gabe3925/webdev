@@ -77,7 +77,7 @@ end
 #Part 7 -- IP
 def who_gryffindor(array)
 	gryff_initial_array = array.map do |hash|
-		if hash[:house].include?("ffindo")
+		if hash[:house] == "Gryffindor"
 			hash[:name]
 		end
 	end
@@ -88,10 +88,9 @@ def who_gryffindor(array)
 		value.split(" ")		
 	end
 return gryff_secondary_array
-
 	# gryff_secondary_array = gryff_secondary_array.uniq
-	# end
-	# return gryff_secondary_array
+	# # end
+	# # return gryff_secondary_array
 end
 
 #Part 8 - IP
