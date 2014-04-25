@@ -26,12 +26,6 @@ wine_cellar = [
 #   - Returns an array with the all the wines that have 2-word labels
 #   - Returns an array with the labels of the wines that a type of Pinot Noir
 
-def wine_add(wine)
-
-
-end
-
-
 puts "Would you like to add a bottle to your cellar? yes or no"
 choice = gets.chomp.downcase
 
