@@ -30,3 +30,13 @@ puts "#{students[4]} is the fifth person.\n\n"
 puts "Students with 'J' names:\n\n"
 puts students.select { |s| s[0].upcase == 'J' }
 puts
+
+### SEARCHING FOR A SOUL MATE ###
+
+## (1) ok_cupidites.keys
+## (2) ok_cupidites["southwesternDave"][:in_a_relationship]
+## (3) ok_cupidites["WOOTman"][:hobbies].push("True Detective")
+## (4) ok_cupidites["nicestGuy5530"][:seeking]
+## (5) ok_cupidites["southwesternDave"][:hobbies][2]
+## (6) You would check each entry, see if that person was single, and include
+## them in your resulting list if they are (involves .select method).
