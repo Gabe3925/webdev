@@ -24,14 +24,14 @@ create_name_array
 
 def most_mentioned_characters
   f = File.new("potter.csv", "r")
-  most_mentioned_array = []
+  character_array = []
   f.each_line do |character|
     character_info = character.chomp.split(",")
     if character_info[0].to_i > 500
-      most_mentioned_array.push(character)
+      character_array.push(character)
    end
   end
-  return most_mentioned_array
+  return character_array
   f.close
 end
 
@@ -41,18 +41,35 @@ most_mentioned_characters
 
 def display_houses
   f = File.new("potter.csv", "r")
-  house_array = []
+  character_array = []
   f.each_line do |character|
     character_info = character.chomp.split(",")
-    house_array.push(character_info[2])
+    character_array.push(character_info[2])
   end
-  return house_array.uniq
+  return character_array.uniq
   f.close
 end
 
 display_houses
 
 # * Return an array with all the characters with one word names. Each entry in the array should contain all information about that character. (ie `{:mentions=>1797, :name=>"Voldemort", :house=>"Slytherin"}`)
+
+def find_one_name
+  f = File.new("potter.csv", "r")
+  character_array = []
+  f.each_line do |character|
+    character_info = character.chomp.split(",")
+    unless character_info[1].include?(" ")
+    character_array.push(character_info)
+    binding.pry
+    end
+  end
+  return character_array
+  f.close
+end
+
+puts find_one_name
+
 # * Return the number of characters from Hufflepuff (Hint: It should be 3)
 # * Return an array with all of the character names, but for the characters from Slytherin, reverse their names (ie "Draco Malfoy" becomes "yoflaM ocarD")
 # * Return an array with the unique last names of all the characters from Gryffindor (ie, print Weasley only 1 one time)
