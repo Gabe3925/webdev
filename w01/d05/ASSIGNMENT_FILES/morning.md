@@ -16,11 +16,10 @@ students = ["Adam Barrett","Jacob Cain","Mikael Davis","Salil Doshi","Jon Eva","
   - prints `"STUDENT_NAME is the student in the STUDENTS_INDEX_VALUE index"` for every student in the class
     - What tool will you use? If you don't know, where will you look?
   - Finds and prints the number of students in the class
-    - What tool will you use? If you don't know, where will you look?
+    - What tool will you use? Again, if you don't know, where will you look?
   - Finds and prints the index of `"Stephen Stanwood"`
   - Prints the fifth person
   - Prints all of the students with J names (Jacob, Jon, and Joella)
-    - Break this problem down step by step **without writing any code.**
 
 ### Searching for a Soul Mate
 **Copy and paste the following into pry:**
