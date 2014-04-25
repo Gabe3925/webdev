@@ -37,8 +37,7 @@ potter_data_file = File.open "potter.csv"
   # returns an array of Hashes with the keys, mentions, name, house
   potter_data = potter_data_file.readlines.map do |char_data|
     field_values = char_data.chomp.split(',')
-    field_names = [:mentions, :name, :house]
-    Hash[field_names.zip field_values]
+    Hash[[:mentions, :name, :house].zip field_values]
   end
 
   character_names = potter_data.map { |char| char[:name] }
