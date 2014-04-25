@@ -50,3 +50,5 @@ numbers=[1, 2, 3, 4, 5, 6]
 
 puts numbers.reduce(:+) #this adds the numbers in 'numbers'
 						#together, and spits result (21)
+
+						
