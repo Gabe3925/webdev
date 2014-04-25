@@ -33,16 +33,16 @@ puts all_da_houses #PUTS NAMES OF HOUSES (but needs to remove dupliucates / uniq
 
 puts "---------------"
 
+puts numerical_mentions
 
-puts "$" #ANOTHER ATTEMPT TO PRINT UNIQE NAMES OF HOUSES ONLY -- doesnt work
+puts "$" #TTEMPT TO PRINT MENTIONS OVER 500 BELOW: BROKEN
 
-
-unique = numerical_mentions do |mention_count| mention_count > 500 
-	puts unique
-	end
-puts unique
-
-puts" end$ "
+#unique = numerical_mentions do |mention_count| mention_count > 500 
+#	puts unique
+#	end
+#puts unique
+#
+#puts" end$ "
 
 
 
