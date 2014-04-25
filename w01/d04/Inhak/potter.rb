@@ -36,6 +36,24 @@ def houses (file)
   file.close
 end
 
+def one_word_names (file)
+  jesus_wizards = []
+  file.each_line do |line|
+    name_data = line.chomp.split(",")
+    if !name_data[1].include?(" ")
+      jesus_wizards.push({
+          mentioned: name_data[0],
+          name: name_data[1],
+          house: name_data[2],
+        })
+    end
+  end
+  puts jesus_wizards
+end
+
+def
+
+end
 
 
 puts "NAMES OF PEOPLE"
@@ -44,4 +62,6 @@ puts "\nARRAYS OF PEOPLE MENTIONED A LOT"
 mentioned_alot(File.new("potter.csv", "r"))
 puts "\nHOUSES OF HOGWARTS"
 houses(File.new("potter.csv", "r"))
+puts "\nWIZARDS WITH ONE WORD NAMES"
+one_word_names(File.new("potter.csv", "r"))
 
