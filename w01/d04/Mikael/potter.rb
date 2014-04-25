@@ -72,7 +72,18 @@ def get_unique_lasts(characters)
   return lasts.uniq
 end
 
+def badger_weasleys(characters)
+  weasleys = characters.select do |character|
+    character[:name].include?("Weasley")
+  end
 
+  badgers = weasleys.map do |weasley|
+    weasley[:name].split(" ").insert(1, "Badger").join(" ")
+  end
+
+  return badgers
+
+end
 
 get_names(chars)
 
