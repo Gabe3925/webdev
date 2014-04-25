@@ -24,16 +24,16 @@ students = ["Adam Barrett","Jacob Cain","Mikael Davis","Salil Doshi","Jon Eva","
         :name => "Brad",
         :hobbies => ["working out", "seeing concerts", "watching sports", "eating"],
         :seeking => ["friendship", "short-term dating", "a long-term relationship", "anything I can get"]
-        
       },
       "southwesternDave" => {
         :name => "Dave",
-        :hobbies => ["bird watching", "cross-country skiing", "When I'm bored I do this thing I call 'friendly' prank calls, where I just call strangers and kinda ask them how they're doing and stuff, in a friendly way."],
+        :hobbies => ["bird watching", "cross-country skiing", "When I'm bored I do this thing I call 'friendly' prank calls, where I just call strangers and kinda ask them how they're doing and stuff, in a friendly way"],
         :seeking => ["a long-term relationship", "short-term dating"]
       },
       "WOOTwootWOOTguy" => {
-        :name => "jkonowitch",
-        :favorite_numbers => [12, 14, 85],
+        :name => "Jeff Lamplugh",
+        :hobbies => ['improvisational comedy', 'trail running', 'private investigation'],
+        :seeking => [],
       },
     }
 
