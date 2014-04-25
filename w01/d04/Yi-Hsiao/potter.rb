@@ -32,8 +32,6 @@
 # ---
 # ###### Written by Peter Lai
 
-require "pry"
-
 potter_data_file = File.open "potter.csv"
 
   # returns an array of Hashes with the keys, mentions, name, house
@@ -42,8 +40,6 @@ potter_data_file = File.open "potter.csv"
     field_names = [:mentions, :name, :house]
     Hash[field_names.zip field_values]
   end
-
-  binding.pry
 
   character_names = potter_data.map { |char| char[:name] }
   chars_w_500_mentions = potter_data.select { |char| char[:mentions].to_i > 500 }
