@@ -1,18 +1,19 @@
 #Morning Exercise
 
-### The Student 
-- Create a file called padawans.rb
+### Saved By The Bell: The Newest Class
+- Create a file called saved_by_the_bell.rb
 - Here is an array containing all your names
 ```
-padawans = ["Adam Barrett","Jacob Cain","Mikael Davis","Salil Doshi","Jon Eva","Elaine Fang","Parker Hart,"Richard Hessler","Mary Hipp","Inhak Kim","Randy Latz","Yi-Hsiao Liu","Alexi Phillipson","Matt Rundo","Gabe Snyder","Stephen Stanwood","Joella Straley","Brett Wallace","Thomas Weaver"]
+students = ["Adam Barrett","Jacob Cain","Mikael Davis","Salil Doshi","Jon Eva","Elaine Fang","Parker Hart,"Richard Hessler","Mary Hipp","Inhak Kim","Randy Latz","Yi-Hsiao Liu","Alexi Phillipson","Matt Rundo","Gabe Snyder","Stephen Stanwood","Joella Straley","Brett Wallace","Thomas Weaver"]
 ```
 - Write a program that:
   - prints the name of one random student
-  - iterates through the students array, printing "<name> is a student
+  - iterates through the `students` array, printing `"STUDENT_NAME is learning to learn."`
+  - iterates through the `students` array using the `each_with_index` method, printing `"STUDENT_NAME is the student in the STUDENTS_INDEX_VALUE index"`
+    - You'll probably have to [look it up](http://apidock.com/ruby/Enumerable/each_with_index)
   - Finds and prints the number of students in the class
-  - Finds and prints the index of "Stephen Stanwood"
+  - Finds and prints the index of `"Stephen Stanwood"`
   - Prints the fifth person
-  - Lists
   - Prints a list of all the student names on one line, with each name separated by a pipe: |
   - Prints all of the students with J names (Jacob, Jon, Joella, John and Julia)
 
