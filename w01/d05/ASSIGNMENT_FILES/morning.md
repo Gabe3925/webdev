@@ -1,14 +1,18 @@
 #Morning Exercise
 
+### Learning Objective:
+- Deliberate Practice
+  - You will be commenting each step of your program **BEFORE YOU CODE IT**, explaining in English A) what you need to do to get the desired output and B) what tools you will use to accomplish your goal.
+
 ### Saved By The Bell: The Newest Class
 - Create a file called saved_by_the_bell.rb
-- Here is an array containing all your names
+- Begin with this simple data structure representing your class:
 ```
-students = ["Adam Barrett","Jacob Cain","Mikael Davis","Salil Doshi","Jon Eva","Elaine Fang","Parker Hart,"Richard Hessler","Mary Hipp","Inhak Kim","Randy Latz","Yi-Hsiao Liu","Alexi Phillipson","Matt Rundo","Gabe Snyder","Stephen Stanwood","Joella Straley","Brett Wallace","Thomas Weaver"]
+students = ["Adam Barrett","Jacob Cain","Mikael Davis","Salil Doshi","Jon Eva","Elaine Fang","Parker Hart","Richard Hessler","Mary Hipp","Inhak Kim","Randy Latz","Yi-Hsiao Liu","Alexi Phillipson","Matt Rundo","Gabe Snyder","Stephen Stanwood","Joella Straley","Brett Wallace","Thomas Weaver"]
 ```
 - Write a program that:
-  - iterates through the `students` array, printing `"STUDENT_NAME is learning to learn."`
-  - iterates through the `students` array using the `each_with_index` method, printing `"STUDENT_NAME is the student in the STUDENTS_INDEX_VALUE index"`
+  - prints `"STUDENT_NAME is learning to learn."` for every student in the class
+  - prints `"STUDENT_NAME is the student in the STUDENTS_INDEX_VALUE index"`
   - Finds and prints the number of students in the class
   - Finds and prints the index of `"Stephen Stanwood"`
   - Prints the fifth person
