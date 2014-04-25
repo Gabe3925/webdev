@@ -9,11 +9,10 @@ students = ["Adam Barrett","Jacob Cain","Mikael Davis","Salil Doshi","Jon Eva","
 - Write a program that:
   - iterates through the `students` array, printing `"STUDENT_NAME is learning to learn."`
   - iterates through the `students` array using the `each_with_index` method, printing `"STUDENT_NAME is the student in the STUDENTS_INDEX_VALUE index"`
-    - You'll probably have to [look it up](http://apidock.com/ruby/Enumerable/each_with_index)
+    - **NOTE:** You'll probably have to [look this up](http://apidock.com/ruby/Enumerable/each_with_index)
   - Finds and prints the number of students in the class
   - Finds and prints the index of `"Stephen Stanwood"`
   - Prints the fifth person
-  - Prints a list of all the student names on one line, with each name separated by a pipe: `|`
   - Prints all of the students with J names (Jacob, Jon, and Joella)
 
 ### Searching for a Soul Mate
@@ -21,13 +20,13 @@ students = ["Adam Barrett","Jacob Cain","Mikael Davis","Salil Doshi","Jon Eva","
 
     ok_cupidites = {
       "nicestGuy5530" => {
-        :name => "Brad",
+        :name => "Brad Ladd",
         :in_a_relationship => false,
         :hobbies => ["working out", "seeing concerts", "watching sports", "eating"],
         :seeking => ["friendship", "short-term dating", "a long-term relationship", "anything I can get"]
       },
       "southwesternDave" => {
-        :name => "Dave",
+        :name => "Dave Tacoma",
         :in_a_relationship => false,
         :hobbies => ["bird watching", "cross-country skiing", "When I'm bored I do this thing I call 'friendly' prank calls, where I just call strangers and kinda ask them how they're doing and stuff, in a friendly way"],
         :seeking => ["a long-term relationship", "short-term dating"]
