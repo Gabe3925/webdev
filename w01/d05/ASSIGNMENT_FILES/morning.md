@@ -30,7 +30,7 @@ students = ["Adam Barrett","Jacob Cain","Mikael Davis","Salil Doshi","Jon Eva","
         :hobbies => ["bird watching", "cross-country skiing", "When I'm bored I do this thing I call 'friendly' prank calls, where I just call strangers and kinda ask them how they're doing and stuff, in a friendly way"],
         :seeking => ["a long-term relationship", "short-term dating"]
       },
-      "WOOTwootWOOTguy" => {
+      "WOOTman" => {
         :name => "Jeff Lamplugh",
         :in_a_relationship => true,
         :hobbies => ['improvisational comedy', 'aquacizing', 'private investigation'],
@@ -38,12 +38,9 @@ students = ["Adam Barrett","Jacob Cain","Mikael Davis","Salil Doshi","Jon Eva","
       },
     }
 
-1. Use pry to access `southwesternDave`'s `in_a_relationship` value?
-2. How would you add the number 7 to PJ's favorite numbers?
-3. How would you add yourself to the users hash?
-4. How would you return the array of Peter's favorite numbers?
-5. How would you return the smallest of Jeff's favorite numbers?
-6. How would you return an array of PJ's favorite numbers that are also even?
-7. How would you return an array of the favorite numbers common to all users?
-8. How would you return an array containing all users' favorite numbers, sorted, and excluding duplicates?
-9. How would you change Peter's favorite number 12 into the string "12"?
+1. Use pry to return an array of keys for the `ok_cupidites` hash.
+2. Use pry to return whether `southwesternDave` is in a relationship.
+3. Use pry to add `watching True Detective` to `WOOTman`'s hobbies. 
+4. Use pry to return an array of the things `nicestGuy5530` is seeking. 
+5. Use pry to retrieve `southwesternDave`'s third hobby.
+6. How would you return an array of only the ok_cupities that are single?
