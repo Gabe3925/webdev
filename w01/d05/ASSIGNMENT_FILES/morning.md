@@ -9,7 +9,6 @@ students = ["Adam Barrett","Jacob Cain","Mikael Davis","Salil Doshi","Jon Eva","
 - Write a program that:
   - iterates through the `students` array, printing `"STUDENT_NAME is learning to learn."`
   - iterates through the `students` array using the `each_with_index` method, printing `"STUDENT_NAME is the student in the STUDENTS_INDEX_VALUE index"`
-    - **NOTE:** You'll probably have to [look this up](http://apidock.com/ruby/Enumerable/each_with_index)
   - Finds and prints the number of students in the class
   - Finds and prints the index of `"Stephen Stanwood"`
   - Prints the fifth person
