@@ -3,7 +3,7 @@ characters = []
 
 file = File.new("potter.csv", "r")
 
-file.each do |character|
+file.each_line do |character|
   character_hash = {}
   entry_values = character.chomp.split(',')
   character_hash[:mentions] = entry_values[0]
