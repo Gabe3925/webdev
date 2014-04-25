@@ -94,6 +94,15 @@ def ends_in_y(characters)
   return why
 end
 
-get_names(chars)
+def ll_cool_string(characters)
+  cool_string = characters.select do |char|
+      char[:name].include?("ll")
+  end
+
+  cool = cool_string.map do |string|
+    string[:name]
+  end
+  return cool
+end
 
 binding.pry
