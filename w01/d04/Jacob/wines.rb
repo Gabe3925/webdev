@@ -1,8 +1,3 @@
-### Wine Cellar
-
-- Here is an array containing some wines
-
-```ruby
 wine_cellar = [
   {:label => "Rutherford Hill", :type => "Chardonnay", :color => "white"},
   {:label => "Nina Veneto", :type => "Pinot Grigio", :color => "white"},
@@ -15,13 +10,33 @@ wine_cellar = [
   {:label => "Markham", :type => "Chardonnay", :color => "white"},
   {:label => "Angeline", :type => "Pinot Noir", :color => "red"}
 ]
+wine_cellar.push({:label => "Arbitrary Wine", :type => "Good", :color => "red"})
 
-```
+wine_cellar.sample
 
-Write code that:
-  - Adds a wine of your choice to the cellar
-  - Returns a random wine from the cellar
-  - Returns an array of just the white wines
-  - Returns an array listing the unique types of wine
-  - Returns an array with the all the wines that have 2-word labels
-  - Returns an array with the labels of the wines that a type of Pinot Noir
+white_array = []
+wine_cellar.each do |wine|
+  if wine.has_value?("white")
+    white_array.push(wine)
+  end
+end
+puts white_array
+
+#unique types of wine
+wine_types = wine_cellar.map do |wine|
+  wine[:type]
+end
+wine_types.uniq
+
+#two-word labels
+two_word_labels = wine_cellar.select do |wine|
+  wine[:label].include?(" ")
+end
+
+#only Pinot Noir
+pinot_noir_array = wine_cellar.select do |wine|
+  wine.has_value?("Pinot Noir")
+end
+pinot_noir_labels = pinot_noir_array.map do |wine|
+  wine[:label]
+end
