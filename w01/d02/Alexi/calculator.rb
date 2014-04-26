@@ -48,7 +48,8 @@ while run_program
         return val1 ** val2
       else operation == 6
         #return val1 ** val2
-        return sqrt(val1)
+        #return val1 ** (0.5)
+        Math.sqrt(val1)
       end
     end
     
