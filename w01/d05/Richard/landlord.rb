@@ -78,70 +78,182 @@ end
 
 class Apartment
 
-attr_accessor :address, :rent, :sqft, :num_baths, :num_beds, :renters
+attr_accessor :address, :rent, :sqft, :num_beds, :num_baths, :renters, :apt_array, :total_listings
 
-  def initialize(address, rent, sqft, num_beds, num_baths)
-    @address = address
-    @rent = rent
-    @sqft =  sqft
-    @num_beds = num_beds
-    @num_baths = num_baths
-    @renters = []
+  def initialize(apartment)
+    @address = apartment[:address]
+    @rent = apartment[:rent]
+    @sqft =  apartment[:sqft]
+    @num_beds = apartment[:num_beds]
+    @num_baths = apartment[:num_baths]
+    @renters = apartment[:renters]
   end
 
-
-  def show_apt_info
-    return "The Apartments we have on the market are #{self.address} with a montly rent of $#{self.monthly_rent}.  The square footage is #{self.sqft} sqft with #{self.num_beds} bedroomss and #{self.num_baths} bathrooms)"
-  end
-
-  def to_a
-    apt_array = []
-      return apt_array.push(@address, @rent, @sqft, @num_baths, @num_beds, @renters)
-  end
-
-  # def to_s
-
-  #   return "I understand you're looking for a new place to live!"
-  #   return "Is there anything I can help you with?"
-  #   return ""
-  #   return "1.) Perhaps a listing of all the available apartments?"
-  #   return "2.) A listing of an apartments details?"
-  #   return "3.) Would you like to add an apartment to our listings?"
-  #   return "4.) Would you like to add a tenant to an existing apartment?"
-  #   return "5.) There is nothing you can help me with."
-  #   option = gets.chomp
+  # def address=(address)
+  #   @address = list_address
   # end
-end
-  def report_listings(array_of_listings)
 
-    address_array = array_of_listings.select do |address|
-          address.index[0]
-        end
+  # def rent=(rent)
+  #   @rent = renters
+  # end
+
+  # def sqft=(sqft)
+  #   @sqft = sqft
+  # end
+
+  # def num_beds=(num_beds)
+  #   @num_beds = num_beds
+  # end
+
+  # def num_baths=(num_baths)
+  #   @num_baths = num_baths
+  # end
+
+  # def renters=(renters)
+  #   @renters = renters
+  # end
+
+    # puts address to screen if option is selected
+  def list_address
+    if @renters < 1
+      return "#{@address} is available."
+    else
+    end
   end
 
+
+     # Add some conditional features, ie- multiple bathrooms add plurals
+  def list_details
+      return "The Apartment at #{self.address()} has a montly rent of £#{self.rent()}. \nThe square footage is #{self.sqft()} sqft with #{self.num_beds()} bedrooms and #{self.num_baths()} bathroom(s)."
+  end
+
+end
 
 # turning apt_1,2, & 3 into manageable Class arrays.
-  report_listings(apt_1 = Apartment.new("52 Rathmell Drive, London SW4 8JN, UK",500, 750,2,1).to_a)
-  apt_2 = Apartment.new("1 Strollamus, Broadford, Isle of Skye, Highland IV49 9AL, UK",750, 900, 2,2).to_a
-  apt_3 = Apartment.new("8 Oakfield Road, Londonderry, Derry BT48, UK", 950, 1300, 3,2).to_a
-puts reports_listings(apt_1)
-puts apt_2
-puts atp_3
+  apt_1 = Apartment.new({
+    address: "52 Rathmell Drive, London SW4 8JN, UK",
+    rent:500,
+    sqft: 750,
+    num_beds: 2,
+    num_baths: 2,
+    renters: 2
+    })
+
+
+  # apt_2 = Apartment.new("1 Strollamus, Broadford, Isle of Skye, Highland IV49 9AL, UK",750, 900, 2,0)
+  # apt_3 = Apartment.new("8 Oakfield Road, Londonderry, Derry BT48, UK", 950, 1300, 3,2,0)
+
+class Listings
+  attr_accessor :index, :total_listings
+
+  def initialize
+    @total_listings = []
+    @index = 0
+  end
+
+  def add_listing(apartment)
+    self.total_listings.push(apartment)
+  end
+
+  def listing
+    return self.total_listings[@index]
+  end
+
+  def list_address
+    if self.listing
+      self.listing.list_address()
+    end
+  end
+
+  def list_details
+    if self.listing
+      self.listing.list_details()
+    end
+  end
+
+
+  # def remove_listing(apartment)
+
+  #   self.total_listings.
+  # end
+
+
+end
+
+  def print_menu
+
+    puts  "I understand you're looking for a new place to live!"
+    puts  "Is there anything I can help you with?"
+    puts  ""
+    puts  "1.) Perhaps a listing of all the available apartments?"
+    puts  "2.) A listing of an apartments details?"
+    puts  "3.) Would you like to add an apartment to our listings?"
+    puts  "4.) Would you like to add a tenant to an existing apartment?"
+    puts  "5.) There is nothing you can help me with."
+    option = gets.chomp.to_i
+
+        case option
+          when 1
+            puts apt_1.list_address
+            puts apt_2.list_address
+            puts apt_3.list_address
+          when 2
+            puts apt_1.list_details
+            puts apt_2.list_details
+            puts apt_3.list_details
+          when 3
+            puts "Great! Let's get your apartment on the market"
+            puts "What's the address of the apartment? (Street address, City, State/Provenance Abrv)"
+            new_add = gets.chomp
+            puts "How much would you like the montly rent to be? (In £)"
+            new_rent = gets.chomp.to_i
+            puts "What is the total square footage?"
+            new_sqft = gets.chomp.to_i
+            puts "How many bedrooms are there?"
+            new_beds = gets.chomp.to_i
+            puts "How many bathrooms are there?"
+            new_baths = gets.chomp.to_i
+            puts "Finally, how many tenants can it hold?"
+            new_renters = gets.chomp.to_i
+              if new_renters > new_beds
+                puts "I'm sorry, but regulations mandate the the number of tenants must not" +
+                     "exceed the number of available bedrooms. Please entry a different amount" +
+                     "of alloted renters."
+                     new_renters = gets.chomp.to_i
+              else
+              end
+            new_apt = Apartment.new(new_add, new_rent, new_sqft, new_beds, new_baths, new_renters)
+            puts "#{new_apt.list_details} will be placed on the market! Congrats!"
+          else
+
+          end
+
+  end
+
+total_listings = Listings.new
+total_listings.add_listing(apt_1)
+puts  total_listings.list_details
+
+
+
 
   # apt_1 = Apartment.new({
   # address: "52 Rathmell Drive, London SW4 8JN, UK",
   # rent: 500,
   # sqft: 750,
   # num_beds: 2,
-  # num_baths: 1
+  # num_baths: 1,
+  # renters: 0
   # })
+  # apt_1.list_details
 
   # apt_2 = Apartment.new({
   # address: "1 Strollamus, Broadford, Isle of Skye, Highland IV49 9AL, UK",
   # rent: 500,
   # sqft: 750,
   # num_beds: 2,
-  # num_baths: 1
+  # num_baths: 1,
+  # renters: 0
   # })
 
   # apt_3 = Apartment.new({
@@ -149,7 +261,8 @@ puts atp_3
   # rent: 500,
   # sqft: 750,
   # num_beds: 2,
-  # num_baths: 1
+  # num_baths: 1,
+  # renters: 0
   # })
 
 #report_listings(apt_1)
