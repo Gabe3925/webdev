@@ -2,7 +2,7 @@
 
 def prompt_user(query)
   puts query
-  return gets.chomp
+  return gets.chomp.downcase
 end
 
 class Person
@@ -76,10 +76,14 @@ class Apartment
   end
 
   def add_tenant
-    name = prompt_user("What is this person's name?")
-    age = prompt_user("How old are they?")
-    gender = prompt_user("What is their gender?")
-    @renters.push(Person.new(name, age, gender))
+    if @renters.length == @num_beds
+      puts "This apartment is full."
+    else
+      name = prompt_user("What is the renter's name?")
+      age = prompt_user("How old are they?")
+      gender = prompt_user("What is their gender?")
+      @renters.push(Person.new(name, age, gender))
+    end
   end
 
 end
@@ -102,12 +106,23 @@ while true
   when "list"
     i = 0
     apartments.each do |apt|
-      puts "Apt #{i + 1}: " + apt.address
+        puts "Apt #{i + 1}: " + apt.address
+        if apt.renters.length == 0
+          puts "This is a #{apt.beds} bedroom, #{apt.baths} bath, #{apt.size} square ft space. The rent is $#{apt.rent} per month."
+        else
+          apt.renters.each do |ten|
+            puts "#{ten.name} lives here."
+          end
+        end
       i += 1
     end
   when "view"
     choice = prompt_user("Please enter the number of the apartment you would like to see details for.").to_i
-    puts apartments[choice - 1].details
+    if choice < apartments.length
+      puts apartments[choice - 1].details
+    else
+      puts "That is not a valid apartment number."
+    end
   when "add"
     addy = prompt_user("What is the address?")
     rent = prompt_user("How much is the rent?")
@@ -121,8 +136,12 @@ while true
     end
     apartments.push(new_apt)
   when "tenant"
-
-
+    num = prompt_user("Which apartment number does the tenant live in?").to_i
+    if num < apartments.length
+      apartments[num - 1].add_tenant
+    else
+      puts "That is not a valid apartment number."
+    end
   else
     puts "Sorry, that's not a valid option. Please enter [list], [view], [add], [tenant], or [quit]."
   end
