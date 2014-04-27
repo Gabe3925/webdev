@@ -51,9 +51,19 @@ hips_dont_lie = Song.new({
   genre: "Puhp"
 })
 
-puts hips_dont_lie.title()
-puts hips_dont_lie.artist()
-puts hips_dont_lie.genre()
+hips_do_lie = Song.new({
+  title: "Hips Don't Lie",
+  artist: "Shakira",
+  genre: "Puhp"
+})
+
+# puts hips_dont_lie.title()
+# puts hips_dont_lie.artist()
+# puts hips_dont_lie.genre()
+
+# puts hips_do_lie.title()
+# puts hips_do_lie.artist()
+# puts hips_do_lie.genre()
 
 
 # Playlist
@@ -105,4 +115,6 @@ end
 
 playlist = Playlist.new
 playlist.add_song(hips_dont_lie)
-playlist.play()
+playlist.add_song(hips_do_lie)
+
+puts playlist.play()

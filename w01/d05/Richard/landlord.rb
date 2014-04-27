@@ -140,8 +140,23 @@ end
     })
 
 
-  # apt_2 = Apartment.new("1 Strollamus, Broadford, Isle of Skye, Highland IV49 9AL, UK",750, 900, 2,0)
-  # apt_3 = Apartment.new("8 Oakfield Road, Londonderry, Derry BT48, UK", 950, 1300, 3,2,0)
+  apt_2 = Apartment.new({
+    address: "1 Strollamus, Broadford, Isle of Skye, Highland IV49 9AL, UK",
+    rent: 750,
+    sqft: 900,
+    num_beds: 2,
+    num_baths: 1,
+    renters: 0
+
+    })
+  apt_3 = Apartment.new({
+    address: "8 Oakfield Road, Londonderry, Derry BT48, UK",
+    rent: 950,
+    sqft: 1300,
+    num_beds: 3,
+    num_baths: 2,
+    renters: 0
+    })
 
 class Listings
   attr_accessor :index, :total_listings
@@ -153,22 +168,31 @@ class Listings
 
   def add_listing(apartment)
     self.total_listings.push(apartment)
+
   end
 
-  def listing
-    return self.total_listings[@index]
+  def listing(index)
+
+      return self.total_listings[index]
+
   end
 
   def list_address
     if self.listing
       self.listing.list_address()
+
     end
   end
 
   def list_details
-    if self.listing
-      self.listing.list_details()
-    end
+      while @index < total_listings.length
+       self.listing(@index)
+        puts self.listing(@index).list_details()
+        @index += 1
+        #puts @index
+      end
+      #binding.pry
+
   end
 
 
@@ -232,7 +256,10 @@ end
 
 total_listings = Listings.new
 total_listings.add_listing(apt_1)
-puts  total_listings.list_details
+total_listings.add_listing(apt_2)
+total_listings.add_listing(apt_3)
+puts total_listings.list_details
+
 
 
 
