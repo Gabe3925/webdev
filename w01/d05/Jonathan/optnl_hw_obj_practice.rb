@@ -23,13 +23,13 @@ class Shirt
   end
 end
 
-pearl_jam_t = Shirt.new("Yield Tour 1998")
-puts pearl_jam_t.text
+pearl_jam_t = Shirt.new("Extra Large", "Nicely Faded Black", "Yield Tour 1998")
+puts pearl_jam_t
 
-hipster_plaid = Shirt.new("NO LOGO!")
-puts hipster_plaid.text
+hipster_plaid = Shirt.new("Medium","Red", "NO LOGO!")
+puts hipster_plaid
 
-david_beckham_jersey - Shirt.new("Beckham :)")
-puts david_beckham_jersey.text
+david_beckham_jersey = Shirt.new("White", "Large", "Beckham")
+puts david_beckham_jersey
 
 # binding.pry
