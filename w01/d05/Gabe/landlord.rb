@@ -80,8 +80,13 @@ all_apt_addresses.push(apt2.address)
 all_apt_addresses.push(apt3.address)
 all_apt_addresses.push(apt4.address)
 
-all_apts_arr = []
-all_apts_arr << {:apt1 => "apt1.address", "apt1.sqft"}
+
+
+apt_hash = []
+apt_hash << {apt1_address: apt1.address, apt1_sqft: apt1.sqft, apt1_rent: apt1.rent, apt1_bed: apt1.num_beds, apt1_bath: apt1.num_baths, apt1_renters: apt1.num_renters}
+apt_hash << {apt2_address: apt2.address, apt2_sqft: apt2.sqft, apt2_rent: apt2.rent, apt2_bed: apt2.num_beds, apt2_bath: apt2.num_baths, apt2_renters: apt2.num_renters}
+apt_hash << {apt3_address: apt3.address, apt3_sqft: apt3.sqft, apt3_rent: apt3.rent, apt3_bed: apt3.num_beds, apt3_bath: apt3.num_baths, apt3_renters: apt3.num_renters}
+apt_hash << {apt4_address: apt4.address, apt4_sqft: apt4.sqft, apt4_rent: apt4.rent, apt4_bed: apt4.num_beds, apt4_bath: apt4.num_baths, apt4_renters: apt4.num_renters}
 
 
 #heres the re-useable menu
@@ -89,7 +94,7 @@ def menu
 puts "@@@@@@@@@@@@ menu 1 @@@@@@@@@@@@@"
 puts "@                               @"
 puts "@  1 - List all Apartments      @"
-puts "@  2 - View an Apt. details     @"
+puts "@  2 - View an Apt.s details    @"
 puts "@  3 - Add an apartment         @"
 puts "@  4 - Add a tenant to an Apt.  @"
 puts "@  q - Quit                     @"
@@ -122,13 +127,18 @@ while menu_selection != "q" #initial menu at start-up
         puts "(#)       (address)    "
         puts all_apt_addresses.map.with_index {|w,i| "#{i} : #{w}" }
  			  puts " "
- 		
-        puts all_apts_arr[0]
 
+        puts "AAAAAAAAAA"
+        puts apt_hash
+        
 
 			when "2"
 
-  			puts "menu 2"
+  			puts "VIEW AN APTS DETAILS : "
+        puts "which apt were you interested in?"
+
+        puts apt_hash[0] 
+        puts apt_hash[0][:apt1_renters]
 
   
 			when "3"
