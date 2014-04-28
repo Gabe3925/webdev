@@ -12,9 +12,9 @@ def gets_input(prompt)
 end
 
 def create_animal
-  name = gets_input("What is your pet's name?")
+  name = gets_input("What is the pet's name?")
   species = gets_input("What is #{name}'s species?")
-  toys = gets_input("How many toys does your animal have?")
+  toys = gets_input("How many toys does this pet have?")
   new_animal = Animal.new(name, species)
   new_animal.add_toys(toys)
   return new_animal
@@ -31,22 +31,29 @@ def create_client
       new_client.add_pets(create_animal)
       count += 1
     end
+    return new_client
   else
     new_client = Client.new(name, age)
+    return new_client
   end
 end
 
 
 def main_menu
   puts "Welcome to the GA shelter!"
-  puts "(1) to Create an Animal"
-  puts "(2) to Create a Client"
-  puts "(3) to Quit"
+  puts "-->(1) to Create an Animal"
+  puts "-->(2) to Create a Client"
+  puts "-->(3) to List all the Animals"
+  puts "-->(4) to List all the Clients"
+  puts "-->(5) to Adpopt and Animal"
+  puts "-->(6) to Return an Animal"
+  puts "-->(7) to Quit"
+  prints "--> "
 end
 
 answer = "Wooooooo"
 
-while answer != "3"
+while answer != "7"
   main_menu
   answer = gets.chomp
   case answer
@@ -55,6 +62,14 @@ while answer != "3"
   when "2"
     ga_shelter.add_client(create_client)
   when "3"
+    ga_shelter.disp_animals
+  when "4"
+    ga_shelter.disp_clients
+  when "5"
+    ga_shelter.adopt
+  # when "6"
+  #   ga_shelter.disp_clients
+  when "7"
     break
   else
     puts "Please try again."

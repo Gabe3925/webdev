@@ -26,13 +26,28 @@ class Shelter
     @clients.push(client)
   end
 
-  def disp_clients
+  def disp_animals
+    @animals.each do |animal|
+      puts "#{animal.name} the #{animal.species}"
+    end
   end
 
-  def disp_animals
+  def disp_clients
+    @clients.each do |client|
+      puts client.name
+    end
   end
 
   def adopt
+    count = 0
+    @animals.each do |animal|
+      puts "Press #{count} for #{animal.name} the #{animal.species}"
+      count += 1
+    end
+    animal_index = gets.to_i
+    puts @animials[animal_index].name
+    binding.pry
+
   end
 
   def return
