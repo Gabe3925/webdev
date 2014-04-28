@@ -64,7 +64,7 @@
 require "pry"
 
 class Person
-  attr_reader :name
+  attr_reader :name, :age, :gender
 
   def initialize(name, age, gender)
     @name = name
@@ -103,7 +103,10 @@ def get_valid_answer(question, valid_answers)
   user_input = gets.chomp
 
   answer = case valid_answers
-    when Array then valid_answers.detect { |possible_answer| possible_answer.casecmp(user_input) == 0 }
+    when Array then valid_answers.detect do |possible_answer|
+      # checks if string is a case-insensitive match or if numeric values are equal
+      possible_answer.is_a?(String) ? possible_answer.casecmp(user_input) == 0 : possible_answer == user_input.to_f
+    end
     when Regexp then user_input.match(valid_answers) { |match| match[0] }
   end
   return answer if answer
@@ -112,11 +115,11 @@ end
 
 def add_apartment
   # ask users info to add an apartment to our listings (address, monthly rent, square footage, # beds/baths)
-  address = get_valid_answer("What is the address of the apartment you wish to add?", /.+/)
+  address = get_valid_answer("What is the apartment number you wish to add (e.g. 1234 or 1A)?", /^[0-9]+.+/)
 
   # checks if address already exists before creating a new apartment record
   if Apartment.find_apt(address)
-    puts "We already have a record of this apartment."
+    puts "We already have a record of this apartment number."
   else
     pos_int_regex = /^[0-9]+$/
 
@@ -143,24 +146,43 @@ def add_tenant
     tenant = Person.new(name, age, gender)
 
     # ask the user to pick an available apartment.  re-ask until user chooses an avail. apt.
-    apt_choices = avail_apts.collect { |apt_address| "* #{apt_address}" }.join("\n")
-    tenant_address = get_valid_answer("Where does #{name} want to live?\n#{apt_choices}", avail_apts)
-    Apartment.find_apt(tenant_address).renters << tenant
+    tenant_apt_choices = "\n* " + avail_apts.join("\n* ")
+    apt_options = avail_apts + ["CANCEL"]
+    live_apt_answer = get_valid_answer("Which apartment does #{name} want to live in (Or type 'CANCEL' to cancel)? #{tenant_apt_choices}", apt_options)
+    Apartment.find_apt(live_apt_answer).renters << tenant unless live_apt_answer == "CANCEL"
   end
 end
 
 def evict_tenant
   # evict tenant from apartment (removes them from Apartment.renters array)
 
-  apt_address = get_valid_answer("Which apartment do you wish to evict?", /.+/)
-  if apt = Apartment.find_apt(apt_address)
-    tenants = apt.renters
-    avail_tenants = tenants.collect { |renter| renter.name }
-    tenant_choices = "\n* " + avail_tenants.join("\n* "); #=> * Name 1 (line break) * Name 2 (line break), etc.
-    evicted_tenant = get_valid_answer("Which tenant do you wish to evict? #{tenant_choices}", avail_tenants)
-    tenants.delete_if { |renter| renter.name.casecmp(evicted_tenant) == 0 }
+  apt_w_tenants = Apartment.list.collect { |apt| apt.address if apt.renters.length > 0 }.compact
+
+  if apt_w_tenants.empty?
+    puts "Sorry, there's nobody to evict from the apartment."
   else
-    puts "Sorry, there is no apartment on record with that address."
+    evict_apt_options = "\n* " + apt_w_tenants.join("\n* ")
+    evict_apt_answer = get_valid_answer("Which apartment do you wish to evict? #{evict_apt_options}", apt_w_tenants)
+
+    apt = Apartment.find_apt(evict_apt_answer)
+    tenants = apt.renters
+    num_tenants = apt.renters.length
+
+    # if only one tenant
+    if num_tenants == 1
+      evict_tenant_answer = get_valid_answer("Do you wish to evict #{tenants[0].name} (Y/N/Or type 'CANCEL' to cancel action)?", ["Y", "N", "CANCEL"])
+      tenants.delete_at(0) unless evict_tenant_answer == "CANCEL"
+    else
+      tenant_names = tenants.each_with_index.map { |renter, index| "#{index+1}. #{renter.name}, #{renter.age} years old, #{renter.gender}" }
+      tenant_names = "\n" + tenant_names.join("\n")
+
+      index_adj = 1  # adjusts 0-index, so user sees a numbered list starting from 1 that they can select users to evict.
+      evict_options = (index_adj..num_tenants).to_a + ["CANCEL"]  # add cancel to list of possible options
+      binding.pry
+
+      evict_tenant_answer = get_valid_answer("Which tenant do you wish to evict (Or type 'CANCEL' to cancel action)? #{tenant_names}", evict_options)
+      tenants.delete_at(evict_tenant_answer - index_adj) unless evict_tenant_answer == "CANCEL"
+    end
   end
 end
 
@@ -173,33 +195,43 @@ end
 
 def view_apt
   # prints info about a specific apartment
-  apt_addresses = Apartment.list.collect { |apt| apt.address }
-  address = get_valid_answer("What is the address of the apartment you wish to view?", apt_addresses)
-  apt = Apartment.find_apt(address)
-  tenants = apt.renters
 
-  # if apartment is unoccupied prints important details about the apt for prospective tenants
-  if tenants.length == 0
-    bed_correct_plural = apt.num_beds == 1 ? "bed" : "beds"
-    bath_correct_plural = apt.num_baths == 1 ? "bath" : "baths"
-    apt_details = "Apt #{apt.address} is #{apt.sq_ft} sq ft, has #{apt.num_beds} #{bed_correct_plural}, and #{apt.num_beds} #{bath_correct_plural}. "
-    apt_details += "It costs $#{apt.monthly_rent} month."
-    puts apt_details
+  view_options = Apartment.list.collect { |apt| apt.address }.push("LIST")  # apartments stored in the directory
+  address = get_valid_answer("What is the address of the apartment you wish to view (Or type 'LIST' to see available apartments)?", view_options)
+
+  # if user selects option to see a directory of apartments, show apartments, then ask for apartment address again
+  if address == "LIST"
+    list_apts
+    puts
+    view_apt
   else
-  # if apt is occupied, prints current tenants in the apt
-    renter_names = tenants.collect { |renter| renter.name }
-    renter_plural = case renter_names.length
-      when 1 then "#{renter_names[0]} lives"
-      when 2 then "#{renter_names[0]} and #{renter_names[1]} live"
-      when 3 then "#{renter_names[0...-1].join(", ")}, and #{renter_names[-1]} live"
-    end
+    apt = Apartment.find_apt(address)
+    tenants = apt.renters
 
-    puts "#{renter_plural} in apt #{apt.address}."
+    # if apartment is unoccupied prints important details about the apt for prospective tenants
+    if tenants.length == 0
+      bed_correct_plural = apt.num_beds == 1 ? "bed" : "beds"
+      bath_correct_plural = apt.num_baths == 1 ? "bath" : "baths"
+      apt_details = "Apt #{apt.address} is #{apt.sq_ft} sq ft, has #{apt.num_beds} #{bed_correct_plural}, and #{apt.num_beds} #{bath_correct_plural}. "
+      apt_details += "It costs $#{apt.monthly_rent} month."
+      puts apt_details
+    else
+    # if apt is occupied, prints current tenants in the apt
+      renter_names = tenants.collect { |renter| renter.name }
+      renter_plural = case renter_names.length
+        when 1 then "#{renter_names[0]} lives"
+        when 2 then "#{renter_names[0]} and #{renter_names[1]} live"
+        when 3 then "#{renter_names[0...-1].join(", ")}, and #{renter_names[-1]} live"
+      end
+
+      puts "#{renter_plural} in apt #{apt.address}."
+    end
   end
 end
 
 def show_menu
-  puts
+# prints a menu of options for this program
+
   menu_text = []
   menu_text << "L - List all apartments"
   menu_text << "V - View an apartment's details"
@@ -208,6 +240,8 @@ def show_menu
   menu_text << "E - Evict a tenant from an apartment"
   menu_text << "Q - Quit"
   menu_options = menu_text.collect { |line| line[0] }
+
+  puts
   menu_choice = get_valid_answer(menu_text, menu_options)
   puts
 
@@ -219,11 +253,19 @@ def show_menu
     when "E" then evict_tenant
     when "Q" then puts "Goodbye, thanks for checking out our apartments."
   end
+
   show_menu unless menu_choice == "Q"
 end
 
 
-apt_1a = Apartment.new "1A", 2000, 557, 1, 1
-apt_1b = Apartment.new "1B", 2200, 704, 2, 2
-apt_1c = Apartment.new "1C", 3225, 965, 3, 3
-binding.pry
+apt_1a = Apartment.new("1000", 2000, 557, 1, 1)
+apt_1b = Apartment.new("1007", 2200, 704, 2, 2)
+apt_1c = Apartment.new("1A", 3225, 965, 3, 3)
+
+person_a = Person.new("Yi-Hsiao", 29, "M")
+person_b = Person.new("Wendy", 25, "F")
+
+apt_1b.renters << person_a
+apt_1b.renters << person_b
+
+show_menu
