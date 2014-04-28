@@ -32,12 +32,14 @@ def shelter_menu
   puts "Welcome to #{$shelter.shelter_name}"
   puts "(1) Add an animal to the shelter"
   puts "(2) Add a client to the shelter"
-  puts "(3) Quit"
+  puts "(3) View all animals"
+  puts "(4) View all clients"
+  puts "(5) Quit"
   puts ""
 end
 
 add_shelter
-while menu_answer != '3'
+while menu_answer != '5'
   #create shelter
   #display shelter menu
   shelter_menu
@@ -49,8 +51,15 @@ while menu_answer != '3'
   when '2'
     ###add client
     new_client = $shelter.add_client
+  when '3'
+    ###all animals
+    show_all_animals = $shelter.show_all_animals
+  when '4'
+    ###all clients
+    show_all_clients = $shelter.show_all_clients
   else
   end
+  # binding.pry
 end
 
 # binding.pry

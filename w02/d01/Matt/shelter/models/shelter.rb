@@ -44,6 +44,20 @@ class Shelter
     clients << new_client
   end
 
+  #show all animals
+  def show_all_animals
+    @animals.each do |animal|
+      puts "#{animal.animal_name} the #{animal.species}"
+    end
+  end
+
+  #show all clients
+  def show_all_clients
+    @clients.each do |client|
+      puts "#{client.client_name}"
+    end
+  end
+
   #animal getters
   def animals
     return @animals
