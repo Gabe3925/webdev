@@ -1,4 +1,3 @@
-require 'pry'
 
 #Defining the 'Animals' class
 class Animals
@@ -35,4 +34,3 @@ class Animals
   end
 
 end
-binding.pry

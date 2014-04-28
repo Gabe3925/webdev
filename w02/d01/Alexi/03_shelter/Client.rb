@@ -1,4 +1,4 @@
-require 'pry'
+
 
 class Clients
   def initialize(name, age)
@@ -33,4 +33,3 @@ class Clients
   end
 
 end
-binding.pry
