@@ -54,7 +54,13 @@ def add_client(client_array)
   puts "Great. You've added #{client.name} to your collection of clients."
 end
 
-
+#=======================
+# Seed Data (objects at start of program)
+#=======================
+animal_1 = Animal.new("Emma", "dog")
+animal_2 = Animal.new("Lucy", "cat")
+animal_array << animal_1
+animal_array << animal_2
 
 
 #=======================
