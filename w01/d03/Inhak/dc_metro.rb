@@ -14,16 +14,16 @@ def stop_printer(user_input, array)
 end
 
 puts "what line do you get on at? (red or turquoise or orange)"
-user_line = gets.chomp
+user_line = gets.chomp.downcase
 puts "The stops on this line are: #{stop_printer(user_line, dc_metro)}"
 puts "What stop are you getting on at?"
-user_enter = gets.chomp
+user_enter = gets.chomp.downcase
 
 puts "what line are you getting off at? (red or turquoise or orange)"
-user_line_exit = gets.chomp
+user_line_exit = gets.chomp.downcase
 puts "The stops on this line are #{stop_printer(user_line_exit, dc_metro)} "
 puts "What stop do you want to get off at?"
-user_exit = gets.chomp
+user_exit = gets.chomp.downcase
 
 def array_downcase(array)
   array.each do |x|

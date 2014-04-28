@@ -87,3 +87,39 @@ elsif on_color == "turquoise" && off_color == "orange"
 
 end
 
+#Helper Methods
+def list_stops(line)
+  puts line
+end
+
+def list_lines(metro_hash)
+  puts metro_hash.keys
+  return "Here are the lines."
+end
+
+#grabbing user input
+puts "Which LINE are you getting on at?"
+list_lines(dc_metro)
+boarding_line = gets.chomp.to_sym
+
+puts "Which stop on the #{boarding_line} line will you be boarding at?"
+list_stops(dc_metro[boarding_line])
+boarding_stop = gets.chomp
+
+puts "Which LINE are you getting off at?"
+list_lines(dc_metro)
+departing_line = gets.chomp.to_sym
+
+puts "Which stop on the #{departing_line} line will you be getting off at?"
+list_stops(dc_metro[departing_line])
+departing_stop = gets.chomp
+
+index_of_boarding_stop = dc_metro[boarding_line]
+
+boarding_index = dc_metro[boarding_line].index(boarding_stop)
+metro_center_1 = dc_metro[boarding_line].index("Metro Center")
+first_leg_distance = (boarding_index - metro_center_1).abs
+
+departing_index = dc_metro[departing_line].index(departing_stop)
+metro_center_2 = dc_metro[departing_line].index("Metro Center")
+second_leg_distance = (departing_index - metro_center_2).abs
