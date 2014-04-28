@@ -38,10 +38,11 @@ class Shelter
 
   def adopt
     puts "Which client is adopting?"
-    self.return_clients
+    count = 1
+    puts self.return_clients
     adopter = gets.chomp.to_i
     puts "Which animal is being adopted?"
-    self.return_animals
+    puts self.return_animals
     pet = gets.chomp.to_i
     @clients[adopter - 1].add_pet(@animals[pet-1])
     @animals.delete(@animals[pet-1])
@@ -49,12 +50,13 @@ class Shelter
 
   def unadopt
     puts "Which client is returning their pet?"
+    puts self.return_clients
     adopter = gets.chomp
-    self.return_clients
     puts "Which animal is he returning?"
     pet = gets.chomp
     @client.remove_pet()
     @animals.push(pet)
   end
+  binding.pry
 end
 
