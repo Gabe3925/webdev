@@ -3,5 +3,18 @@ def deck_o_cards
   suits = ['hearts', 'diamonds', 'clubs', 'spades']
 
   # ... build your deck ...
-  
+
+  deck = []
+  values.each do |s|
+    suits.each do |v|
+      deck.push{
+        value: s,
+        suit: v
+      }
+    end
+  end
+
+  return deck.shuffle
 end
+
+puts deck_o_cards()
