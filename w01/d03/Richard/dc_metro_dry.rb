@@ -1,8 +1,8 @@
 require 'pry'
-
-red = ['Woodley Park', 'Dupont Circle', 'Farragut North', 'Metro Center', 'Judiciary Square', 'Union Station']
-turquoise = ['Crystal City', 'Metro Center', 'Shaw-Howard', 'Beltwater']
-orange = ['Farragut West', 'McPherson Sq', 'Metro Center', 'Federal Triangle', 'Smithsonian', "L'enfant Plaza"]
+class metro
+@red = ['Woodley Park', 'Dupont Circle', 'Farragut North', 'Metro Center', 'Judiciary Square', 'Union Station']
+@turquoise = ['Crystal City', 'Metro Center', 'Shaw-Howard', 'Beltwater']
+@orange = ['Farragut West', 'McPherson Sq', 'Metro Center', 'Federal Triangle', 'Smithsonian', "L'enfant Plaza"]
 
 # def dist_from_metro(line)
 #   line.each_with_index do |stop, index|
@@ -20,9 +20,9 @@ orange = ['Farragut West', 'McPherson Sq', 'Metro Center', 'Federal Triangle', '
 # puts red_hash.each {|key, value| puts [key, value]}
 
 dc_metro = {}
-dc_metro[:red] = red
-dc_metro[:turquoise] = turquoise
-dc_metro[:orange] = orange
+dc_metro[:red] = @red
+dc_metro[:turquoise] = @turquoise
+dc_metro[:orange] = @orange
 
 def cap(string)
   string.split(" ").map(&:capitalize).join(" ")
@@ -102,5 +102,6 @@ if dest_line == "red"
   else
 
         stops = (dc_metro[:turquoise].index(stop).to_i - dc_metro[:turquoise].index("Metro Center").to_i).abs + (dc_metro[:orange].index("Metro Center").to_i - dc_metro[:orange].index(dest).to_i).abs
+end
 end
 puts "There are #{stops} stops between #{stop} and #{dest}."
