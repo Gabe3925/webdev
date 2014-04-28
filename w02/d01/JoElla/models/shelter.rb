@@ -7,6 +7,7 @@ class Shelter
 
   attr_accessor :name
   attr_accessor :clients
+  attr_accessor :animals
 
   def add_clients(name)
     @clients.push(name)
@@ -16,14 +17,22 @@ class Shelter
     @animals.push(animal)
   end
 
-  def adoption(shelter, client, animal)
-    #moves animal from shelter's array to client's
-
+  def list_animals
+      puts "Our animals are: #{@animals}"
   end
 
-  def return(shelter, client, animal)
+  def list_clients
+    puts "Our clients are: #{@clients}"
+  end
+
+  def adoption(clientname, animal)
+    #deletes animal from shelter's, pushes animal name to client's array
+  end
+
+  def return(client, animal)
     #moves animal from the client's array to the given shelter's array
   end
+
 
 
 
