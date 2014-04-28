@@ -5,10 +5,15 @@
 
 class Client
   attr_accessor :pets
+  attr_reader :name
 
   def initialize(name="", age=0)
     @name = name
     @age = age
     @pets = []
+  end
+
+  def to_s
+    @name
   end
 end
