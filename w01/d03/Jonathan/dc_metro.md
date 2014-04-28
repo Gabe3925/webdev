@@ -4,7 +4,7 @@
   * exercise your problem modeling skills (whiteboard first!!!)
   * practice working with collections
   * continue practicing your git commands (ABC = "Always Be Committing")
-  
+
 
 ###The Program:
 - You will be creating a program that models a simple subway system.
@@ -13,39 +13,39 @@ and stop that user is getting off at and prints the total number of stops for th
 
 ### The Deets:
 - There are 3 subway lines:
-  - The Red line, which has the following stops: 
+  - The Red line, which has the following stops:
     - Woodley Park
     - Dupont Circle
     - Farragut North
     - __Metro Center__
     - Judiciary Square
     - Union Station
-    
-    
-   * The Fictional "Turquoise" line, which has the following stops: 
+
+
+   * The Fictional "Turquoise" line, which has the following stops:
      * Crystal City
      * __Metro Center__
      * Shaw-Howard
      * Beltwater
-   
-   * The Orange line, which has the following stops: 
+
+   * The Orange line, which has the following stops:
      - Farragut West
      - McPherson Sq
      - __Metro Center__
      - Federal Triangle
      - Smithsonian
      - L'enfant Plaza
-     
+
 
 ###The Process
 1) Before you start coding away, close your laptops and draw a diagram of the metro lines with their stops and how they intersect.
 
 2) Write out---step by step, in plain English---how you would find the number of stops between the Woodley Park stop on the Red line and the Beltwater stop on the Turqoise line. What values do you need, and how will you use them?
-	
+
 3) Re-open your laptops and set up your data at the top of your program; the kindly DC Metro Authority has gone to the trouble of arranging your data for you:
 
 ```ruby
-red = ['Woodley Park', 'Dupont Circle', 'Farragut North', 'Metro Center', 'Union Station']
+red = ['Woodley Park', 'Dupont Circle', 'Farragut North', 'Metro Center', 'Judiciary Square', Union Station']
 turquoise = ['Crystal City', 'Metro Center', 'Shaw-Howard', 'Beltwater']
 orange = ['Farragut West', 'McPherson Sq', 'Metro Center', 'Federal Triangle', 'Smithsonian', "L'enfant Plaza"]
 
