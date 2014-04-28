@@ -18,7 +18,6 @@ class Shelter
 
   def adopt_pet(pet, client)
     client.pets << @animals.delete(pet)
-    binding.pry
   end
 
   def return_pet(pet, client)
