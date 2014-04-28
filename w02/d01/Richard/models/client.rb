@@ -4,8 +4,7 @@
 #   - A client can have multiple pets (animals), but it doesn't start with any.
 
 class Client
-  attr_reader :client_name, :age
-  attr_accessor :pets
+  attr_accessor :client_name, :age, :pets
 
   def initialize
     @client_name = client_name

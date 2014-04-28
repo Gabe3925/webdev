@@ -8,8 +8,8 @@
 #   - A shelter should be able to facilitate a return (one of its clients returning his/her pet to the shelter)
 
 class Shelter
-  attr_reader :shelter_name,
-  attr_accessor :animal_name, :client_name
+  attr_accessor :shelter_nam, :animals_in_shelter, :clients_of_shelter
+
   def initialize
     @shelter_name = shelter_name
     @animals_in_shelter = []
@@ -36,4 +36,4 @@ class Shelter
     # return method here
   end
 
-def
+end

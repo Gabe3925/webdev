@@ -14,13 +14,12 @@
 
 
 class Animal
-  attr_reader :animal_name, :species
-  attr_accessor :toys
+  attr_accessor :animal_name, :species, :toys
 
-  def initialize
-    @animal_name = name
+  def initialize (animal_name, species, toys)
+    @animal_name = animal_name
     @species = species
-    @toys = []
+    @toys = 0
   end
 
 end
