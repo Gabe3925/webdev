@@ -9,7 +9,7 @@
 1. Use pry to access the string `"Peter"`
 2. Use pry to add your name to the end of the array?
 3. Use pry to remove `"Greg"` from the array.
-4. Use pry to access the last item in the array. 
+4. Use pry to access the last item in the array.
 
 **B. Copy and paste the following data structure into pry:**
 
