@@ -11,7 +11,7 @@
 students = ["Adam Barrett","Jacob Cain","Mikael Davis","Salil Doshi","Jon Eva","Elaine Fang","Parker Hart","Richard Hessler","Mary Hipp","Inhak Kim","Randy Latz","Yi-Hsiao Liu","Alexi Phillipson","Matt Rundo","Gabe Snyder","Stephen Stanwood","Joella Straley","Brett Wallace","Thomas Weaver"]
 ```
 - Write a program that:
-  - beings with a comment identifying what type of data structure `students` is. 
+  - beings with a comment identifying what type of data structure `students` is.
   - prints `"STUDENT_NAME is learning to learn."` for every student in the class
   - prints `"STUDENT_NAME is the student in the STUDENTS_INDEX_VALUE index"` for every student in the class
     - What tool will you use? If you don't know, where will you look?
@@ -45,9 +45,11 @@ students = ["Adam Barrett","Jacob Cain","Mikael Davis","Salil Doshi","Jon Eva","
       }
     }
 
-1. Use pry to return an array of keys for the `ok_cupidites` hash.
-2. Use pry to return whether `southwesternDave` is in a relationship.
-3. Use pry to add `watching True Detective` to `WOOTman`'s hobbies. 
-4. Use pry to return all the things that `nicestGuy5530` is seeking. 
-5. Use pry to retrieve `southwesternDave`'s third hobby.
+1. Use pry to return an array of keys for the `ok_cupidites` hash. (ok_cupidites.keys)
+2. Use pry to return whether `southwesternDave` is in a relationship. #look at key "southwesterDave", look at symbol :in_a_relationship if ture or false
+3. Use pry to add `watching True Detective` to `WOOTman`'s hobbies. #ok_cupidites["WOOTman"][:hobbies].push("watching True detective")
+4. Use pry to return all the things that `nicestGuy5530` is seeking. #ok_cupidites["nicestGuy5530"][:seeking]
+5. Use pry to retrieve `southwesternDave`'s third hobby. #ok_cupidites["southwesternDave"][:hobbies][2]
 6. In English, explain how would you return an array of only the ok_cupities that are single?
+
+# Look at their user and then look at their value for "in a relationship". If it's false it means they are single

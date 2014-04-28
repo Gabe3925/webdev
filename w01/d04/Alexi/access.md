@@ -8,6 +8,8 @@
 
 1. Use pry to access the string `"Peter"`
 2. Use pry to add your name to the end of the array?
+  [1,2,3] << 4 
+  [1,2,3].push(4)
 3. Use pry to remove `"Greg"` from the array.
 4. Use pry to access the last item in the array. 
 
@@ -18,6 +20,10 @@
 1. Use pry to return the string `"Riding ponies"`
 2. Use pry to return the string `"a5Mjp257GHMGH23e5qxE"`
 3. Use pry to add the key-value pair `"number_of_wishes" => "three"` to `vladimir_putins_brain`
+
+my_hash = {:a => 5}
+my_hash[:key] = "value"
+
 4. Use pry to add the key-value pair `4 => "four"`
 5. Use pry to remove the key-value pair `"prideful?" => true`
 
@@ -31,7 +37,15 @@
 4. What is the return value of `boolean_hash[0]`?
 5. What is the return value of `boolean_hash["Greg"]`?
 6. What is the return value of `boolean_hash[false||true]`?
+    true...
 6. What is the return value of `boolean_hash[false||"Travis"]`?
+  false || "string"
+  true || true
+  "string" || true
+  true || "string"
+  "string" || "string"
+  0 || true
+  true || 0
 
 ### Arrays & Hashes
 **Given the following data structure:**
@@ -51,8 +65,14 @@
       }
     }
 
+users.keys !!! makes life easier
+chaining access [][][]...
+.select --> returns info given select criteria
+
 1. How would you access Travis's Github handle (i.e. the string "vanderhoop")?
+        users["Travis"][:github]
 2. How would you add the number 7 to Greg's favorite numbers?
+
 3. How would you add yourself to the users hash?
 4. How would you return the array of Peter's favorite numbers?
 5. How would you return the smallest of Travis's favorite numbers?
