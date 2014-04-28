@@ -81,15 +81,14 @@ while menu_choice != "5"
     puts "Who's renting?"
     renters = gets.chomp
     main_listing.push([address, monthly_rent, sqft, num_beds, num_baths, renters])
+  when "4"
+
   when "5"
     menu_choice = "5"
   end
 end
 
 
-#Add an apartment. Make sure to get the appropriate input from the user when creating an apartment
 
 #Add a tenant to the apartment. Make sure to get the appropriate input from the user to create your person. Make sure to ask which apartment they want to live in. Add the person to that apartment. NOTE: Only two people can live in an apartment.
-
-#The program should return to the menu until the user quits
 
