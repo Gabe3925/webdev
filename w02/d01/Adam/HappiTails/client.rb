@@ -3,7 +3,7 @@
 #==========================
 
 class Client
-  def initialize(name, age, animals)
+  def initialize(name, age)
     @name = name
     @age = age
     @animals = []
@@ -31,8 +31,7 @@ class Client
     return @animals
   end
 
-  def animals=(animals)
-    @animals = animals
-    return @animals
+  def add_animal(animal)
+    @animals.push(animal)
   end
 end

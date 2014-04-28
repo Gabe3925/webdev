@@ -3,7 +3,7 @@
 #==========================
 
 class Animal
-  def initialize(name, species, toys)
+  def initialize(name, species)
     @name = name
     @species = species
     @toys = []
@@ -31,8 +31,7 @@ class Animal
     return @toys
   end
 
-  def toys=(toys)
-    @toys = toys
-    return @toys
+  def add_toy(toy)
+    @toys.push(toy)
   end
 end
