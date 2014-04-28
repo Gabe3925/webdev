@@ -3,6 +3,8 @@ require 'pry'
 require_relative "HappiTails/client"
 require_relative "HappiTails/animal"
 require_relative "HappiTails/shelter"
+require_relative "HappiTails/seeds"
+
 
 def get_answer_to(question)
   puts question
@@ -10,7 +12,6 @@ def get_answer_to(question)
   return answer
 end
 
-shelter_01 = Shelter.new("Happi Tails")
 puts "Welcome to Happi Tails Shelter!"
 menu_choice = false
 while menu_choice != "7"
@@ -25,16 +26,16 @@ while menu_choice != "7"
   menu_choice = gets.chomp
   case menu_choice
   when "1"
-    shelter_01.add_animal
+    $shelter_01.add_animal
   when "2"
-    shelter_01.add_client
+    $shelter_01.add_client
   when "3"
-    puts shelter_01.animals
+    puts $shelter_01.animals
   when "4"
-    puts shelter_01.clients
+    puts $shelter_01.clients
   when "5"
-    puts shelter_01.facilitate_adoption
+    puts $shelter_01.facilitate_adoption
   when "6"
-    puts shelter_01.facilitate_put_up_for_adoption
+    puts $shelter_01.facilitate_put_up_for_adoption
   end
 end
