@@ -1,3 +1,5 @@
+
+
 class Client
   def initialize(name, age)
     @name = name
@@ -17,8 +19,9 @@ class Client
     return @pets
   end
 
-  def add_pet(pet)
-    @pets.push(pet)
-    return @pets
+  def add_animal
+    animal = Animal.new(name,species)
+    @pets.push(animal)
+    retun @pets
   end
 end
