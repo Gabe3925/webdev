@@ -56,6 +56,11 @@ def create_tenant(new_name, new_age, new_gender)
   Person.new(new_name, new_age, new_gender)
 end    
 
+def get_input(question)
+  puts question
+  answer = gets.chomp
+end
+
 #================================#
 #============Menu================#
 #================================#
@@ -66,32 +71,27 @@ menu_operation = gets.chomp
 while menu_operation != "q"
   case menu_operation
     when "1" then apartment_list
-    when "2" then tentant_list()
+    when "2" then tentant_list
     when "3" then new_apart()
-      puts "Enter apartment number:"
-        new_ad = gets.chomp.to_s
-      puts "Enter aparment rent ($):"
-        new_rent = gets.chomp.to_i
-      puts "Enter square footage:"
-        new_sqft = gets.chomp.to_i
-      puts "Enter number of bedrooms:"
-        new_bed = gets.chomp.to_i
-      puts "Enter number of baths:"
-        new_baths = gets.chomp.to_i
-      puts "Enter renter name. If none, enter nil:"
-        new_renter = gets.chomp
+      new_ad = get_input("Enter apartment number:").to_s
+      new_rent = get_input("Enter aparment rent ($):").to_i
+      new_sqft = get_input("Enter square footage:").to_i
+      new_bed = get_input("Enter number of bedrooms:").to_i
+      new_baths = get_input("Enter number of baths:").to_i
+      new_renter = get_input("Enter renter name. If none, enter nil:").to_s
+
       apartment_list.push(new_apt(new_ad, new_rent, new_sqft, new_bed, new_baths, new_renter))
     
-    when "4" then puts new_tentnat
-      puts "Enter name"
-        new_name = gets.chomp.to_s
-      puts "Enter gender"
-        new_gender = gets.chomp.to_s
-      puts "Enter age"
-        new_age = gets.chomp.to_i
-    tenant_list.push(create_tenant(new_ad, new_rent, new_sqft, new_bed, new_baths, new_renter))
-  end 
-end
+    when "4" then new_tentnat
+      new_name = get_input("Enter name:")
+      new_gender = get_input("Enter gender:")
+      new_age = get_input("Enter age:")
+      
+      tenant_list.push(create_tenant(new_ad, new_rent, new_sqft, new_bed, new_baths, new_renter))
+    else
+      break
+    end
+  end
 
 #================================#
 #=======Instantiation============#
