@@ -27,14 +27,20 @@ class Apartment
 
   def return_address
     if @renters.empty? == true
-      return "This aprtment is located at #{@address}. It is #{@sqft} square feet, has #{@num_beds} beds and #{@num_baths} baths."
-    else
+      return "This apartment is located at #{@address}. It is #{@sqft} square feet, has #{@num_beds} beds and #{@num_baths} baths."
+    elsif @renters.length == 1
       return "#{@renters[0].name} lives here. (#{@address})"
+    elsif @renters.length == 2
+      return "#{@renters[0].name} and #{@renters[1].name} live here. (#{@address})"
     end
   end
 
   def address
     return @address
+  end
+
+  def add_renter=(renta)
+      @renters.push(renta)
   end
 
   def return_details
@@ -98,10 +104,22 @@ while in_operation == true
     age = gets.chomp.to_i
     puts "gender of resident?"
     gender = gets.chomp
-
     apartments.push(Apartment.new(addy, sqft, num_beds, num_baths, Person.new(name, age, gender)))
   when "4"
-
+    puts "What is the tenant's name?"
+    tenant = gets.chomp
+    puts "Age of tenant?"
+    age = gets.chomp.to_i
+    puts "gender of tenant?"
+    gender = gets.chomp
+    puts "Which apartment do you want to put the tenant?"
+    count = 1
+    apartments.each do |apartment|
+      puts "(#{count}) #{apartment.address}"
+      count += 1
+    end
+    choice = gets.chomp.to_i
+    puts apartments[choice-1].add_renter =(Person.new(tenant, age, gender))
   when "q"
     in_operation = false
   end
