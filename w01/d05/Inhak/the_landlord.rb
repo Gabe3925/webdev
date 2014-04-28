@@ -27,23 +27,27 @@ class Apartment
 
   def return_address
     if @renters.empty? == true
-      return "This aprtment is located at #{@address}. It is #{@sqft}, has #{@num_beds} beds and #{@num_baths} baths."
+      return "This aprtment is located at #{@address}. It is #{@sqft} square feet, has #{@num_beds} beds and #{@num_baths} baths."
     else
       return "#{@renters[0].name} lives here. (#{@address})"
     end
   end
 
+  def address
+    return @address
+  end
+
   def return_details
-    return
+    return "This apartment is located at #{@address}. It is #{@sqft} sq ft. It has #{@num_baths} bathrooms and #{@num_beds} beds."
   end
 end
 
-peter = Person.new("Peter", 27, "male")
+jessica_alba = Person.new("Jessica Alba", 32, "female")
 travis = Person.new("Travis", 26, "male")
-stanley_kubrick = Person.new("Stanley", 99, "male")
+stanley_kubrick = Person.new("Stanley", 85, "male")
 
 morningside_heights = Apartment.new("1500 116th St., New York City, NY unit 605", 2100, 500, 1, 1, [travis, stanley_kubrick])
-green_point = Apartment.new("200 5th st., Brooklyn NYC, NY unit 202", 1300, 600, 2, 1, [peter])
+green_point = Apartment.new("200 5th st., Brooklyn NYC, NY unit 202", 1300, 600, 2, 1, [jessica_alba])
 williamsburg = Apartment.new("1324 16th st., Brooklyn NYC, NY unit 22", 4500, 800, 3, 1, [])
 
 apartments = [morningside_heights, green_point, williamsburg]
@@ -60,6 +64,7 @@ while in_operation == true
   puts "(3) Add a listing"
   puts "(4) Add a tenant"
   puts "(q) Quit"
+  puts " "
   user_selection = gets.chomp
 
   case user_selection
@@ -71,18 +76,32 @@ while in_operation == true
     puts "Which apartment do you want to see?"
     count = 1
     apartments.each do |apartment|
-      puts "(#{count}) #{apartment}"
+      puts "(#{count}) #{apartment.address}"
       count += 1
     end
-    address = gets.chomp
-    puts
+    choice = gets.chomp.to_i
+    puts apartments[choice-1].return_details + "\n"
 
   when "3"
     puts "Please enter appropriate values!"
     puts "What is the address? (include unit)"
     addy = gets.chomp
-    puts ""
+    puts "What is the square footage of the apartment?"
+    sqft = gets.chomp.to_i
+    puts "How many beds in this apartment?"
+    num_beds = gets.chomp.to_i
+    puts "How many bathrooms?"
+    num_baths = gets.chomp.to_i
+    puts "Name of resident?"
+    name = gets.chomp
+    puts "Age of resident?"
+    age = gets.chomp.to_i
+    puts "gender of resident?"
+    gender = gets.chomp
+
+    apartments.push(Apartment.new(addy, sqft, num_beds, num_baths, Person.new(name, age, gender)))
   when "4"
+
   when "q"
     in_operation = false
   end
