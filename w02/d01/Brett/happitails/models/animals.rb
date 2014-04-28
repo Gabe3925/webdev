@@ -21,6 +21,5 @@ class Animal
   end
 end
 
-animal_1 = Animal.new("Max", "dog", "ducky")
-puts animal_1.name
-binding.pry
+# animal_1 = Animal.new("Max", "dog", "ducky")
+# puts animal_1.name

@@ -1,18 +1,26 @@
-require pry
 
 class Client
-  def initialize(name, age, animals)
+ def initialize(name, age, animals)
     @name = name
     @age = age
-    #PLACEHOLDER for animals
+    @animals = animals
   end
 
   def name
-    return name
+    return @name
+  end
+
+  def name=(name)
+    @name = name
+    return @name
   end
 
   def age
     return @age
+  end
+
+  def age=(age)
+    @age = age
   end
 end
 
