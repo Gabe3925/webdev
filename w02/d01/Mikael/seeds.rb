@@ -1,0 +1,12 @@
+mike = Client.new("Mikael", 23)
+jon = Client.new("Jon Snow", 17)
+gretch = Animal.new("Gretchen", "dog")
+lex = Animal.new("Alexis", "snake")
+ghost = Animal.new("Ghost", "direwolf")
+$fosters = Shelter.new("Foster's Home for Imaginary Friends")
+
+$fosters.add_client(mike)
+$fosters.add_client(jon)
+$fosters.add_animal(gretch)
+$fosters.add_animal(lex)
+$fosters.add_animal(ghost)

@@ -3,17 +3,7 @@ require 'pry'
 require_relative 'animal.rb'
 require_relative 'client.rb'
 require_relative 'shelter.rb'
-
-mike = Client.new("Mikael", 23)
-gretch = Animal.new("Gretchen", "dog")
-lex = Animal.new("Alexis", "dog")
-fosters = Shelter.new("Foster's Home for Imaginary Friends")
-
-
-
-fosters.add_client(mike)
-fosters.add_animal(gretch)
-fosters.add_animal(lex)
+require_relative 'seeds.rb'
 
 
 def prompt_user(query)
@@ -68,7 +58,7 @@ def rejection(shelter)
 end
 
 
-puts "Welcome to #{fosters.name}!"
+puts "Welcome to #{$fosters.name}!"
 while true
   puts "You may create an [animal], create a [client], display all [animals], display all [clients], [adopt] an animal, put an animal up for [adoption] or [quit]."
   input = prompt_user("What would you like to do?")
@@ -76,17 +66,17 @@ while true
 
   case input
   when "animal"
-    new_animal(fosters)
+    new_animal($fosters)
   when "client"
-    new_client(fosters)
+    new_client($fosters)
   when "animals"
-    puts "We currently hold #{fosters.animals.join(", ")}."
+    puts "We currently hold #{$fosters.animals.join(", ")}."
   when "clients"
-    puts "We currently work with #{fosters.clients.join(", ")}."
+    puts "We currently work with #{$fosters.clients.join(", ")}."
   when "adopt"
-    adoption(fosters)
+    adoption($fosters)
   when "adoption"
-    rejection(fosters)
+    rejection($fosters)
   else
     puts "That is not a valid option."
   end
