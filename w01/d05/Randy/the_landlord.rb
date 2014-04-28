@@ -35,7 +35,7 @@ class Apartment
 	attr_accessor :num_baths
 	attr_accessor :renters
 
-	def initialize (address, monthly_rent, sqft, num_beds, num_baths, renters)
+	def initialize (address, monthly_rent, sqft, num_beds, num_baths, *renters)
 		@address = address
 		@monthly_rent = monthly_rent
 		@sqft = sqft
@@ -49,13 +49,18 @@ end
 # If the apartment is occupied by a tenant, you should say something like: Travis lives in Apt 1A
 
 def display_of_all_apartments_method(array)
-	 array.each{|instance|
-	 	if instance.renters.class == Person
-	 		puts "#{instance.renters.name} lives in apartment #{instance.address}."	
-	 	else
-	 		puts "#{instance.address} is #{instance.sqft} square feet, with #{instance.num_beds} bedrooms & #{instance.num_baths} bathrooms. Rent is $#{instance.monthly_rent} a month"		
-    	end
-    	}
+	 array.each do |instance|
+	 	#binding.pry
+	 	if instance.renters[0].class == Person && instance.renters != "Unoccupied"
+	 		instance.renters.each do |tenant|
+		 		puts "#{tenant.name} lives in apartment #{instance.address}."	
+		 	end
+		elsif instance.renters[0] == "Unoccupied"
+		 		puts "#{instance.address} is #{instance.sqft} square feet, with #{instance.num_beds} bedrooms & #{instance.num_baths} bathrooms. Rent is $#{instance.monthly_rent} a month"		
+	    end
+	    #end
+	end
+
 end
 #Need to add the ability to select which apartment. (value.address) and display infor accordingly
 def apartment_details(array)
@@ -65,25 +70,32 @@ def apartment_details(array)
     		   puts "#{instance.address} -- "}
          	  which_apt = gets.chomp.to_s
  	array.each{|instance|
- 		if instance.address == which_apt
- 			if instance.renters.class == Person
- 			  puts "#{instance.renters.name} lives in apartment #{instance.address}\n"
- 			else
+ 		if instance.address == which_apt && instance.renters == "Unoccupied"
  			puts "\nApartment #{instance.address}: Monthly Rent: #{instance.monthly_rent} Square Feet: #{instance.sqft}\nBedrooms: #{instance.num_beds} Bathrooms: #{instance.num_baths} Tenants: Unoccupied\n"	
- 			end
+ 		elsif 
+ 		  instance.address == which_apt && instance.renters[0].class == Person && instance.renters != "Unoccupied"
+ 		  	instance.renters.each do |tenant|
+ 		  		puts "\nApartment #{instance.address}: Monthly Rent: #{instance.monthly_rent} Square Feet: #{instance.sqft}\nBedrooms: #{instance.num_beds} Bathrooms: #{instance.num_baths} Tenants: #{tenant.name}\n"
+		 	end
+ 		    	
  		end}
 end
 #Add an apartment
 def create_an_apartment(address, monthly_rent, sqft, num_beds, num_baths, renters)
-	if  renters.class != Person && renters != nil
+	if  renters.class == Person && renters != "Unoccupied"
+		Apartment.new(address, monthly_rent, sqft, num_beds, num_baths, *renters)
+	elsif renters == "Unoccupied" 
+		Apartment.new(address, monthly_rent, sqft, num_beds, num_baths, *renters)
+	elsif renters.class != Array && renters != "Unoccupied" && renters.class == String
 		name = renters
 		puts "What is the renters age?"
-		age = gets.chomp
+			age = gets.chomp
 		puts "What is the renters gender?"
-		gender = gets.chomp
-		renters = Person.new(renters, age, gender)
+			gender = gets.chomp
+			renters = Person.new(name, age, gender)
+		Apartment.new(address, monthly_rent, sqft, num_beds, num_baths, *renters)
 	end
-	Apartment.new(address, monthly_rent, sqft, num_beds, num_baths, renters)
+	
 end
 
 def add_a_new_tenant()
@@ -103,10 +115,10 @@ rich = Person.new("Rich", 33, "Male")
 oliver = Person.new("Oliver", 50, "Male")
 
 list_of_apartments.push(create_an_apartment("101A", "400", "75", "2", "1", sally))
-list_of_apartments.push(create_an_apartment("206L", "123", "12", "1", "0", john))
-list_of_apartments.push(create_an_apartment("345B", "17000", "8000", "6", "14", rich))
-list_of_apartments.push(create_an_apartment("145B", "8000", "900", "6", "4", oliver))
-list_of_apartments.push(create_an_apartment("Penthouse", "45000", "9000", "8", "9", nil))
+list_of_apartments.push(create_an_apartment("106C", "123", "12", "1", "0", john))
+list_of_apartments.push(create_an_apartment("200B", "17000", "8000", "6", "14", rich))
+list_of_apartments.push(create_an_apartment("300B", "8000", "900", "6", "4", oliver))
+list_of_apartments.push(create_an_apartment("Penthouse", "45000", "9000", "8", "9", "Unoccupied"))
 
 
 menu_choice = ""
@@ -153,6 +165,8 @@ menu_choice = gets.chomp
 	renters = gets.chomp
 
 	list_of_apartments.push(create_an_apartment(address, monthly_rent, sqft, num_beds, num_baths, renters))
+	binding.pry
+
 #The "Add a tenant" option should:
 	#Check that the input from the user is of the correct type (input.class == the correct class)
 	#Ask what apartment they want to live in
