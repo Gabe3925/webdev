@@ -9,10 +9,17 @@ class Animal
     return @name
   end
 
+  def name=(name)
+    @name = name
+  end
+
   def species
     return @species
   end
 
+  def toys
+    return @toys
+  end
 
 
 
