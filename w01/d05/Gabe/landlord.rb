@@ -23,7 +23,8 @@ class Person
 
 end
 
-
+Gabe = Person.new("Gabe Snyder", 30, "male")
+Peggy = Person.new("Peggy Peterson", 24, "female")
 
 
 
@@ -74,13 +75,30 @@ apt2 =  Apartment.new("701 East 33rd Street, Baltimore, MD", 1200, 1345, 4, 2, 0
 apt3 = Apartment.new("2740 Saint Paul Street, Apt 2, Baltimore, MD", 650, 525, 0, 1, 0)
 apt4 = Apartment.new("302 South Pine Street, Richmond, VA", 1500, 745, 2, 2, 2)
 
+#I WILL NOW STORE ALL THIS DATA IN NESTED ARRAYS;\:
+
+#create all the empty arrays first.
 all_apt_addresses= []
-all_apt_addresses.push(apt1.address)
-all_apt_addresses.push(apt2.address)
-all_apt_addresses.push(apt3.address)
-all_apt_addresses.push(apt4.address)
+apt1_array = []
+apt2_array = []
+apt3_array = []
+apt4_array = []
+
+#fill, then push apt 1 onto the array all-apt-addesses:
+apt1_array.push(apt1.address, apt1.rent, apt1.sqft, apt1.num_beds, apt1.num_baths, apt1.num_renters)
+all_apt_addresses.push(apt1_array)
+
+apt2_array.push(apt2.address, apt2.rent, apt2.sqft, apt2.num_beds, apt2.num_baths, apt2.num_renters)
+all_apt_addresses.push(apt2_array)
+
+apt3_array.push(apt3.address, apt3.rent, apt3.sqft, apt3.num_beds, apt3.num_baths, apt3.num_renters)
+all_apt_addresses.push(apt3_array)
+
+apt4_array.push(apt4.address, apt4.rent, apt4.sqft, apt4.num_beds, apt4.num_baths, apt4.num_renters)
+all_apt_addresses.push(apt4_array)
 
 
+#also, made a hash here, of same info.
 
 apt_hash = []
 apt_hash << {apt1_address: apt1.address, apt1_sqft: apt1.sqft, apt1_rent: apt1.rent, apt1_bed: apt1.num_beds, apt1_bath: apt1.num_baths, apt1_renters: apt1.num_renters}
@@ -115,6 +133,8 @@ while menu_selection != "q" #initial menu at start-up
   puts menu
   puts "enter a selection number :"
   menu_selection = gets.to_s.chomp
+  puts " "
+  puts "--------------------------------------------------------------------"
 
   
 	case menu_selection
@@ -124,35 +144,165 @@ while menu_selection != "q" #initial menu at start-up
   			puts "LIST ALL APARTMENTS"
 
         puts "THE FOLLOWING APTs EXIST: "
-        puts "(#)       (address)    "
+        puts "(#)       (address)   (rent)    (sqft)   (beds #) (bath #) (curr. renters)   "
         puts all_apt_addresses.map.with_index {|w,i| "#{i} : #{w}" }
  			  puts " "
-
-        puts "AAAAAAAAAA"
-        puts apt_hash
+        puts "--------------------------------------------------------------------"
         
 
 			when "2"
 
-  			puts "VIEW AN APTS DETAILS : "
-        puts "which apt were you interested in?"
+  			puts "VIEW AN APTS DETAILS"
+        puts "Which apt were you interested in?"
 
-        puts apt_hash[0] 
-        puts apt_hash[0][:apt1_renters]
+        interested_in_num = gets.to_i
+        
+        puts "This apt. is at #{all_apt_addresses[interested_in_num][0]}." 
+        puts "It's rent is $#{all_apt_addresses[interested_in_num][1]} a month."
+        puts "It is approx. #{all_apt_addresses[interested_in_num][2]} square feet."
+        puts "It has #{all_apt_addresses[interested_in_num][3]} beds and #{all_apt_addresses[interested_in_num][4]} bathrooms."
+        puts "It currently has #{all_apt_addresses[interested_in_num][4]} tenants."
+        puts " "
+        puts "--------------------------------------------------------------------"
 
   
 			when "3"
 
-			puts "menu 3"
-	
+
+      puts "YOU WILL ADD AN APARTMENT"
+      puts "Please enter full apt. address (address, apt, city, state, zip) :"
+      new_address = gets.chomp
+
+      
+      puts "Please enter monthly rent:"
+      rent_input = gets.chomp.to_i
+      #HERE  #this should attempt to remove the $, from possible inputs.
+      new_rent = rent_input
+
+      puts "Please enter square feet:"
+      new_sqft = gets.chomp.to_i
+
+      puts "Please enter number of bedrooms:"
+      new_num_beds = gets.chomp.to_i
+
+      puts "Please enter number of bathrooms:"
+      new_num_baths = gets.chomp.to_i
+
+      puts "Please enter current number of tenants:"
+      new_number_tenants = gets.chomp.to_i
+
+
+      
+#make the new apt
+doink = Apartment.new(new_address, new_rent, new_sqft, new_num_beds, new_num_baths, new_number_tenants)
+
+
+
+#DONT NEED THIS ANYMORE:
+#newindexnum = all_apt_addresses.count + 1#finds the next number to use for the new array name
+
+
+#make the new arrays
+user_made_apt_array = []
+
+#push new apt data onto new arrays, and new array into master array
+user_made_apt_array.push(doink.address, doink.rent, doink.sqft, doink.num_beds, doink.num_baths, doink.num_renters)
+all_apt_addresses.push(user_made_apt_array)
+
+puts " "
+puts "Apartment Added! :"
+puts " "
+puts all_apt_addresses[-1]
+puts " "
+puts "--------------------------------------------------------------------"
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      #"apt" + newindexnum.to_s+".address"
+#
+#
+      #"apt" + newindexnum.to_s + "_array".push("apt" + newindexnum.to_s+".address", "apt" + newindexnum.to_s+".rent", "apt" + newindexnum.to_s+".sqft", "apt" + newindexnum.to_s+".num_beds", "apt" + newindexnum.to_s+".num_baths", "apt" + newindexnum.to_s+"num_renters")
+      #all_apt_addresses.push(apt1_array)
+#
+      #array.each_with_index do |element, i|
+      #instance_variable_set "@array#{i + 1}", element
+
+
+
+
+
+
+
+
+
 
 			when "4"
 
-			puts "4444444"
 
 
 
+			puts " "
+      puts "ADD A NEW TENANT TO AN APARTMENT :"
+      puts " "
+      
+      #GET NEW PERSON INFORMATION
+      puts "Person name: (First Last) "
+      user_made_name = gets.chomp.capitalize
 
+      puts "Person's age, in years :"
+      user_made_age = gets.chomp.to_i
+
+      puts "Persons gender (male or female)"
+      user_made_gender = gets.chomp.downcase
+
+      #CREATE THAT PERSON, USING ABOVE INFO
+      user_made_person = Person.new(user_made_name, user_made_age, user_made_gender)
+
+      #shows apt list then ask what apt
+
+      puts "CURRENTLY AVAILABLE HOUSES:"
+
+      not_crowded_apts_array = [] #make this new array first
+
+      not_crowded_apts_array = all_apt_addresses.select { |a, b, c, d, e, f| f < 2}   #makes new array of available apts]
+
+      puts not_crowded_apts_array.map.with_index {|w,i| "#{i} : #{w}" }
+        puts " "
+        puts "--------------------------------------------------------------------"
+
+      puts "Which apt do you want this person to live in? Enter the # : "
+      apt_choice = gets.chomp
+        
+
+      puts apt_choice
+      puts user_made_person.name
+
+      puts "You want to move into #{all_apt_addresses[apt_choice.to_i]} ?"
+
+      old_tenant_count = all_apt_addresses[apt_choice.to_i][5]
+
+      new_tenant_count =  old_tenant_count + 1 #creates new apt tenant count
+
+      all_apt_addresses[apt_choice.to_i].pop #remove old tenant count
+
+      all_apt_addresses[apt_choice.to_i].push(new_tenant_count) #push a new, updated count 
+
+      puts "DONE!"
+
+
+      
 
 
 			else
