@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 orders = {};
 
 while true
@@ -26,3 +27,26 @@ orders.each_pair do |key, values|
     puts "#{key} wants a #{values.join(', ')} & #{last}"
   end
 end
+=======
+orders={}
+
+  puts "Name for order:"
+  name = gets.chomp
+
+while true
+
+  puts "#{name}, what would you like to order:"
+  item = gets.chomp
+
+  if !orders.has_key?(name)
+    orders[name] = []
+    puts "#{name}, would you like to order another item? Enter (y) or (n)"
+    orders[name].push(item)
+    quit = gets.chomp.downcase
+   break if quit.include? 'y'
+  end
+
+end
+
+puts orders
+>>>>>>> cdff1657cd43d0c9dfc39f74ebe18a86917356af
