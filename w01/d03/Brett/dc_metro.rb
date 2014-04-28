@@ -12,11 +12,11 @@ dc_metro[:red] = red
 dc_metro[:turquoise] = turquoise
 dc_metro[:orange] = orange
 
-#  Determine what line the rider wants to ride.
 puts "What line do you want to get on?"
-puts "- Red"
-puts "- Turquoise"
-puts "- Orange"
+# puts "- Red"
+# puts "- Turquoise"
+# puts "- Orange"
+puts dc_metro.keys
 line_depart = gets.chomp.downcase.to_sym
 
 puts "The stations on the #{line_depart} are " + dc_metro[line_depart].join(", ")
@@ -24,16 +24,26 @@ puts "What station are you departing from? (case-sensitive)"
 station_depart = gets.chomp
 
 puts "What line are you getting off on?"
-puts "- Red"
-puts "- Turquoise"
-puts "- Orange"
+# puts "- Red"
+# puts "- Turquoise"
+# puts "- Orange"
+puts dc_metro.keys
 line_arrive = gets.chomp.downcase.to_sym
 
 puts "The stations on the #{line_arrive} are " + dc_metro[line_arrive].join(", ")
 puts "What station are you arriving at? (case-sensitive)"
 station_arrive = gets.chomp
 
-to_metro_center = (dc_metro[line_depart].index(station_depart) - dc_metro[line_depart].index("Metro Center")).abs
-from_metro_center = (dc_metro[line_arrive].index(station_arrive) - dc_metro[line_arrive].index("Metro Center")).abs
+if line_depart != line_arrive
+  to_metro_center = (dc_metro[line_depart].index(station_depart) - dc_metro[line_depart].index("Metro Center")).abs
+  from_metro_center = (dc_metro[line_arrive].index(station_arrive) - dc_metro[line_arrive].index("Metro Center")).abs
 
-puts "Your trip will be  #{to_metro_center + from_metro_center} stop(s)."
+  puts "Your trip will be  #{to_metro_center + from_metro_center} stop(s)."
+
+else
+  boarding_index = dc_metro[line_depart(station_depart).index]
+  destination_index = dc_metro[line_arrive(station_arrive).index]
+
+  puts "Your trip will be #{(boarding_index - destination_index).abs} stops."
+
+end

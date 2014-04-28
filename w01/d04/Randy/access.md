@@ -51,9 +51,16 @@
       }
     }
 
-1. How would you access Travis's Github handle (i.e. the string "vanderhoop")?
-2. How would you add the number 7 to Greg's favorite numbers?
-3. How would you add yourself to the users hash?
-4. How would you return the array of Peter's favorite numbers?
-5. How would you return the smallest of Travis's favorite numbers?
-6. How would you return an array of Greg's favorite numbers that are also even?
+1. How would you access Travis's Github handle (i.e. the string "vanderhoop")? -- 
+        users["Travis"][:favorite_numbers]
+2. How would you add the number 7 to Greg's favorite numbers? --                  
+        users["Greg"][:favorite_numbers].push(7)
+3. How would you add yourself to the users hash? -                                
+        users["Randy"] = {}
+4. How would you return the array of Peter's favorite numbers?                    
+        users["Peter"][:favorite_numbers]
+5. How would you return the smallest of Travis's favorite numbers?                
+        users["Travis"][:favorite_numbers].min
+6. How would you return an array of Greg's favorite numbers that are also even?   
+        users["Greg"][:favorite_numbers].select{|num| num%2 == 0}
+or:     users["Greg"][:favorite_number].selecet{|num| num.even?}
