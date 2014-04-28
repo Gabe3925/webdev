@@ -1,17 +1,17 @@
 class Client
-  def initialize(name, age, pets)
-    @name = name
+  def initialize(client_name, age, pets)
+    @client_name = client_name
     @age = age
     @pets = pets
   end
 
-  def name
-    return @name
+  def client_name
+    return @client_name
   end
 
-  def name=(name)
-    @name = name
-    returns @name
+  def client_name=(client_name)
+    @client_name = client_name
+    returns @client_name
   end
 
   def age
@@ -31,4 +31,9 @@ class Client
     @pets = pets
     returns @pets
   end
+
+  # def pets=(pets)
+  #   @pets = pets
+  #   returns @pets
+  # end
 end

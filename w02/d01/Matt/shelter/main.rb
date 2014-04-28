@@ -9,30 +9,67 @@ require_relative 'models/shelter.rb'
 #   end
 # end
 
-all = []
-
-def add(item)
+def add_detail(item)
   puts item
   value = gets.chomp
   return value
 end
 
-def add_animal(animal_array)
-  name = add("What is the animal's name?")
-  species = add("What species is the animal?")
-  toys = add("What toys does the animal have?")
-  new_animal = Animal.new(name, species, toys)
-  animal_array << new_animal
-  puts ""
-  puts "You added #{new_animal.name}"
+all_animals = []
+menu_answer = 0
+
+###create shelter
+def add_shelter
+  #get shelter name
+  shelter_name = add_detail("What is the shelter's name?")
+  #add shelter name
+  $shelter = Shelter.new(shelter_name)
 end
 
-binding.pry
+###shelter menu
+def shelter_menu
+  puts ""
+  puts "Welcome to #{$shelter.shelter_name}"
+  puts "(1) Add an animal to the shelter"
+  puts "(2) Add a client to the shelter"
+  puts "(3) Quit"
+  puts ""
+end
 
-animal1 = Animal.new("Rolf", "Dog", "Bone")
-all << animal1
+add_shelter
+while menu_answer != '3'
+  #create shelter
+  #display shelter menu
+  shelter_menu
+  menu_answer = gets.chomp
+  case menu_answer
+  when '1'
+    ###add animal
+    new_animal = $shelter.add_animal
+  when '2'
+    ###add client
+    new_client = $shelter.add_client
+  else
+  end
+end
 
-# add = add_animal.new()
-# puts add
+# binding.pry
 
+# animal1 = Animal.new("Rolf", "Dog", "Bone")
+# all_animals << animal1
 
+# client1 = Client.new("R Kelly", "65", "Dog")
+# all_animals << client1
+# binding.pry
+
+# shelter = add_shelter(all)
+# puts shelter
+
+# client = add_client(all_animals)
+# puts client
+
+# animal = add_animal(all_animals)
+# puts animal
+
+# binding.pry
+# end

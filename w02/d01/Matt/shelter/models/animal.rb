@@ -1,17 +1,27 @@
 class Animal
-  def initialize(name, species, toys)
-    @name = name
+  def initialize(animal_name, species, toys)
+    @animal_name = animal_name
     @species = species
     @toys = toys
   end
 
-  def name
-    return @name
+  def add_animal(animal_array)
+    animal_name = add("What is the animal's name?")
+    species = add("What species is the animal?")
+    toys = add("What toys does the animal have?")
+    new_animal = Animal.new(animal_name, species, toys)
+    animal_array << new_animal
+    puts ""
+    puts "You added #{new_animal.name}"
   end
 
-  def name=(name)
-    @name = name
-    returns @name
+  def animal_name
+    return @animal_name
+  end
+
+  def animal_name=(animal_name)
+    @animal_name = animal_name
+    returns @animal_name
   end
 
   def species
