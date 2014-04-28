@@ -64,6 +64,40 @@ class Fighter
   end
 end
 
-fighter = Fighter.new
-fighter.action("A").action("S").action("Z").action("X")
-fighter.action("S").action("S").action("Z").action("X")
+# fighter = Fighter.new
+# fighter.action("A").action("S").action("Z").action("X")
+# fighter.action("S").action("S").action("Z").action("X")
+
+
+
+
+class Guile < Fighter
+  def initialize
+    super
+    @name = "Guile"
+  end
+
+   def test_for_special(combo)
+    case combo
+    when "ASSA"
+      self.special_attack1()
+      return true
+    when "XXZA"
+      self.special_attack2()
+      return true
+    end
+    return false
+  end
+
+  def special_attack1
+    puts "Sonin Boom!"
+  end
+
+  def special_attack2
+    puts "Flash kick"
+  end
+end
+
+guile = Guile.new
+guile.action("A").action("S").action("S").action("A")
+guile.action("X").action("X").action("Z").action("A")
