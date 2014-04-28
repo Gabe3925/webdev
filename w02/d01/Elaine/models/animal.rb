@@ -9,5 +9,11 @@ class Animal
     return @name
   end
 
+  def species
+    return @species
+  end
+
+
+
 
 end

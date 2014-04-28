@@ -9,6 +9,10 @@ class Shelter
     return @name
   end
 
+  def name=(name)
+    @name = name
+  end
+
   def animals
     return @animals
   end
@@ -16,5 +20,9 @@ class Shelter
   def clients
     return @clients
   end
+
+
+
+
 
 end
