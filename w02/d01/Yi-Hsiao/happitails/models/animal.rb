@@ -4,7 +4,7 @@
 #   - An animal can have multiple toys, but doesn't start with any.
 
 class Animal
-  attr_reader :name
+  attr_reader :name, :species
 
   def initialize(name="", species="")
     @name = name

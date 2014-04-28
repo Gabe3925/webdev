@@ -17,14 +17,10 @@ class Shelter
   end
 
   def adopt_pet(pet, client)
-    if client.pets.length < 2
-      client.pets << @animals.delete(pet)
-    else
-      puts "You have 2 pets already. Don't be a crazy cat lady."
-    end
+    @animals.delete(pet) if client.add_pet(pet)
   end
 
   def return_pet(pet, client)
-    @animals << client.pets.delete(pet)
+    @animals.push(pet) if client.remove_pet(pet)
   end
 end
