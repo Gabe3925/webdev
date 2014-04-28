@@ -22,7 +22,7 @@ class Shelter
     puts "the clients are:"
     count = 1
     @clients.each do |client|
-      return "(#{count}) #{client.name}"
+      puts "(#{count}) #{client.name}"
       count += 1
     end
   end
@@ -31,17 +31,16 @@ class Shelter
     puts "the animals are:"
     count = 1
     @animals.each do |animal|
-      return "(#{count}) #{animal.name}"
+      puts "(#{count}) #{animal.name}"
       count += 1
     end
   end
 
   def adopt
-    puts "Which client is adopting?"
-    count = 1
-    puts self.return_clients
+    puts "Which client is adopting?(NUMBER ANSWER)"
+    self.return_clients
     adopter = gets.chomp.to_i
-    puts "Which animal is being adopted?"
+    puts "Which animal is being adopted? (NUMBER ANSWER)"
     puts self.return_animals
     pet = gets.chomp.to_i
     @clients[adopter - 1].add_pet(@animals[pet-1])
@@ -49,14 +48,16 @@ class Shelter
   end
 
   def unadopt
-    puts "Which client is returning their pet?"
-    puts self.return_clients
-    adopter = gets.chomp
-    puts "Which animal is he returning?"
-    pet = gets.chomp
-    @client.remove_pet()
-    @animals.push(pet)
+    puts "Which client is returning their pet? (NUMBER ANSWER)"
+    self.return_clients
+    adopter = gets.chomp.to_i
+    puts "Which animal is s/he returning? (NUMBER ANSWER)"
+    puts "#{@clients[adopter-1].show_off_pets}"
+    pet = gets.chomp.to_i
+    @animals.push(@clients[adopter-1].index_pet(pet-1))
+    @clients[adopter-1].remove_pet_index(pet-1)
   end
   binding.pry
 end
+
 
