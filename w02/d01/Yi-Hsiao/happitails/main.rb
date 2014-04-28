@@ -3,6 +3,7 @@ require "pry"
 require_relative "models/animal"
 require_relative "models/client"
 require_relative "models/shelter"
+require_relative "models/seed"
 
 def get_valid_answer(question, valid_answers)
   # checks and validates if user input matches possible answers, 'valid_answers'
@@ -33,8 +34,8 @@ def get_user_selection(shelter)
   menu = [
     {command: "launch_add_animal_wizard", menu_text: "Add an animal to the shelter"},
     {command: "launch_add_client_wizard", menu_text: "Add a potential client"},
-    {command: "display_all_animals", menu_text: "Display all clients"},
-    {command: "display_all_clients", menu_text: "Display all animals"},
+    {command: "display_all_animals", menu_text: "Display all animals"},
+    {command: "display_all_clients", menu_text: "Display all clients"},
     {command: "adopt_pet", menu_text: "Adopt an animal"},
     {command: "return_pet", menu_text: "Put an animal up for adoption"},
     {command: "quit", menu_text: "Quit"}
@@ -120,14 +121,4 @@ def return_pet(shelter)
   end
 end
 
-local_shelter = Shelter.new("DC Shelter")
-
-einstein_corgi = Animal.new("Einstein", "Corgi")
-yihsiao_client = Client.new("Yi-Hsiao", 29)
-
-local_shelter.animals << einstein_corgi
-local_shelter.clients << yihsiao_client
-
-get_user_selection(local_shelter)
-# local_shelter.adopt_pet(local_shelter.animals[0], yihsiao_client)
-# local_shelter.return_pet(yihsiao_client.pets[0], yihsiao_client)
+get_user_selection($local_shelter)
