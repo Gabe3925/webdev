@@ -19,37 +19,9 @@ puts "1 --> Create an Animal"
 puts "2 --> Create a Client"
 puts "3 --> View a List of Animals"
 puts "4 --> View a List of Clients"
+puts "5 --> Client wants to Adopt"
+puts "6 --> Put an Animal up for Adoption"
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 menu_answer = ""
 puts "Welcome to #{totally_legit_shelter.name}"
@@ -66,6 +38,10 @@ while menu_answer != "0"
 		totally_legit_shelter.list_animals
 	when "4"
 		totally_legit_shelter.list_clients
+	when "5"
+		totally_legit_shelter.adopt_an_animal
+	when "6"
+		totally_legit_shelter.up_for_adoption
 	end
 end
 
