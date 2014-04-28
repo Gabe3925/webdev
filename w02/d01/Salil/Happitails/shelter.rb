@@ -1,10 +1,29 @@
 
+
+def gets_input(prompt)
+  puts prompt
+  answer = gets.chomp
+  return answer
+end
+
 class Shelter
 
-  def intialize
-    @name
-    @animals = 0
-    @clients = 0
+  attr_accessor :name
+  attr_accessor :animals
+  attr_accessor :clients
+
+  def initialize(name)
+    @name = name
+    @animals = []
+    @clients = []
+  end
+
+  def add_animal(animal)
+    @animals.push(animal)
+  end
+
+  def add_client(client)
+    @clients.push(client)
   end
 
   def disp_clients
