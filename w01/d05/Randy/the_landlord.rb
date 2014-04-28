@@ -52,8 +52,14 @@ def display_of_all_apartments_method(array)
 	 array.each do |instance|
 	 	#binding.pry
 	 	if instance.renters[0].class == Person && instance.renters != "Unoccupied"
-	 		instance.renters.each do |tenant|
-		 		puts "#{tenant.name} lives in apartment #{instance.address}."	
+	 		if instance.renters.length == 1
+	 			instance.renters.each do |tenant|
+		 		puts "#{tenant.name} lives in apartment #{instance.address}."
+		 			end
+		 	else 
+		 		instance.renters.each do |person| 
+		 			puts "#{person.name} lives in apartment #{instance.address}"
+		 		end
 		 	end
 		elsif instance.renters[0] == "Unoccupied"
 		 		puts "#{instance.address} is #{instance.sqft} square feet, with #{instance.num_beds} bedrooms & #{instance.num_baths} bathrooms. Rent is $#{instance.monthly_rent} a month"		
@@ -64,7 +70,6 @@ def display_of_all_apartments_method(array)
 end
 #Need to add the ability to select which apartment. (value.address) and display infor accordingly
 def apartment_details(array)
-  which_apt = ""
   puts "What apartment would you like to see more about?"
 	array.each{|instance|
     		   puts "#{instance.address} -- "}
@@ -98,7 +103,24 @@ def create_an_apartment(address, monthly_rent, sqft, num_beds, num_baths, renter
 	
 end
 
-def add_a_new_tenant()
+def add_a_new_tenant(array)
+	puts "To which apartment would you like to add a tenant?"
+	array.each do |instance|
+    		  puts "#{instance.address} -- "
+    		end
+         	  which_apt = gets.chomp.to_s
+ 	array.each do |instance|
+ 		if instance.address == which_apt
+ 			 puts "What is the tenants name?"
+         	 name = gets.chomp
+         	 puts "What is the tenants age?"
+         	 age = gets.chomp
+         	 puts "What is the tenants gender?"
+         	 gender = gets.chomp
+         	 new_tenant = Person.new(name, age, gender)
+         	 instance.renters.push(new_tenant)
+        end
+        end
 end
 
 #I will need to create several new instances of the apartment class 
@@ -173,7 +195,7 @@ menu_choice = gets.chomp
 	#Add the person to the apartment
 		#At first ONLY 2 people may occupy one apartment	
 	when "4"
-
+		add_a_new_tenant(list_of_apartments)
 	else 
 		puts "Please select an appropriate option"
     end
