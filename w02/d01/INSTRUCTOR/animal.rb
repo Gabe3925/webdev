@@ -7,11 +7,4 @@ class Animal
     @toys = []
   end
 
-  def add_animal
-    name    = get_answer_to("Great. What's the animal's name?")
-    species = get_answer_to("What species is the animal?")
-    new_animal = Animal.new(name, species)
-  end
-
-
 end
