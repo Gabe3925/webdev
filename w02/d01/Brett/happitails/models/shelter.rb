@@ -1,33 +1,50 @@
 
 class Shelter
   def initialize(name)
-    $shelter_name = name
-    $animals = ["Max", "Polly", "Lassie"]
-    $clients = ["Brett", "Brent", "Lara"]
+    @shelter_name = name
+    @animals = ["Max", "Polly", "Lassie"]
+    @clients = ["Brett", "Brent", "Lara"]
   end
 
   def name
     return @name
   end
 
-  # def clients
-  #   return $clients
-  # end
+  def name=(name)
+    @name = name
+    return @name
+  end
 
-  # def animals
-  #   return $animals
-  # end
-
-  def adopt_animal(name)
-    $animals.delete(name)
-    puts "#{name} was adopted!"
+  def add_animal(name)
+    @animals << name
     return @animals
   end
 
+  def add_client(name)
+    @clients << name
+    return @clients
+  end
+
+def prints_clients_names
+    @clients.each do |client|
+      puts client
+    end
+  end
+
+  def prints_animals_names
+    @animals.each do |animal|
+      puts animal
+    end
+  end
+
+  def adopt_animal(name)
+    @animals.delete(name)
+    puts "#{name} was adopted!"
+  end
+
   def return_animal(name)
-    $animals.push(name)
+    @animals.push(name)
     puts "#{name} was returned!"
-    return @animals
   end
 end
 

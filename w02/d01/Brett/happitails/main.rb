@@ -8,18 +8,6 @@ fairy_tales = Shelter.new("Fairy Tails")
 # It should display a menu of options for the user to choose from:
 
 
-def prints_clients_names
-    $clients.each do |client|
-      puts client
-    end
-  end
-
-  def prints_animals_names
-    $animals.each do |animal|
-      puts animal
-    end
-  end
-
 answer = "blah"
 def list_options
   puts ""
@@ -30,6 +18,8 @@ def list_options
   puts "3. Quit"
   puts "4. Display all animals"
   puts "5. Display all clients"
+  puts "6. Adopt an animal"
+  puts "7. Return an animal"
   puts ""
 end
 
@@ -45,7 +35,7 @@ while answer != "3"
     species = gets.chomp
     toy = " "
     animal = Animal.new(name, species, toy)
-    $animals << animal.name
+      fairy_tales.add_animal(name)
     binding.pry
   when "2"
     puts "What's the client's name?"
@@ -54,14 +44,23 @@ while answer != "3"
     age = gets.chomp
     animals = " "
     client = Client.new(name, age, animals)
-      $clients << client.name
+      fairy_tales.add_client(name)
       binding.pry
   when "3"
     "Quitting..."
   when "4"
-    prints_animals_names
+    fairy_tales.prints_animals_names
   when "5"
-    prints_clients_names
+    fairy_tales.prints_clients_names
+  when "6"
+    puts "Which animal would you like to adopt?"
+    name = gets.chomp
+    binding.pry
+    fairy_tales.adopt_animal(name)
+  when "7"
+    puts "Which animal would you like to return?"
+    name = gets.chomp
+    fairy_tales.return_animal(name)
   end
 end
 # When creating an animal or client, the user is prompted for information like names, age etc. Newly created animals and clients should be added to the shelter.

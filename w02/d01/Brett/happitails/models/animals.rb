@@ -19,6 +19,17 @@ class Animal
   def toys
     return @toys
   end
+
+def adopt_animal(name)
+    @animals.delete(name)
+    puts "#{name} was adopted!"
+  end
+
+  def return_animal(name)
+    @animals.push(name)
+    puts "#{name} was returned!"
+  end
+
 end
 
 # animal_1 = Animal.new("Max", "dog", "ducky")
