@@ -2,9 +2,28 @@
 require 'CSV'
 require 'pry'
 
+#char_arr = []
 
-# Method parsing through CSV file
-#
+
+# file = File.new("potter.csv", "r")
+
+# file.each_line do |character_string|
+# character_minus_new_line = character_string.chomp
+# arr_represent_char = character_minus_new_line.split(',')
+# character = {}
+# character[:mentions] = arr_represent_char[0]
+# character[:name] = arr_represent_char[1]
+# character[:house] = arr_represent_char[2]
+
+# char_arr<<character #char_arr.push(character)
+# binding.pry
+# character
+# end
+
+
+
+# # Method parsing through CSV file
+
  def csv_to_array(file)
     csv = CSV::parse(File.open(file, 'r') {|f| f.read})
     columns = csv.shift
