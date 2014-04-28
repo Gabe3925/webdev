@@ -30,6 +30,6 @@ terminate = gets.chomp
 if line1 != line2 
    puts "Your journey involve\'s a transfer and will be #{dc_metro[line1].index('Metro Center') - dc_metro[line1].index(start) + (dc_metro[line2].index(terminate) - dc_metro[line2].index('Metro Center')).abs} stops."
 else
-   puts "Your journey does not involve a transfer and will be #{dc_metro[line2].index(terminate) - dc_metro[line1].index(start)} stops"
+   puts "Your journey does not involve a transfer and will be #{dc_metro[line1].index(terminate) - dc_metro[line1].index(start)} stops"
 end   
  
