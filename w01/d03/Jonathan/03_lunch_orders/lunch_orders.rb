@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 orders={}
 
   puts "Name for order:"
@@ -19,3 +20,33 @@ while true
 end
 
 puts orders
+=======
+orders = {};
+
+while true
+  puts "Name for order:"
+  name = gets.chomp
+
+  puts "#{name} wants to order:"
+  order = gets.chomp
+
+  orders[name] ||= []
+  orders[name].push(order)
+
+  puts "Add another item to the order? (y/n)"
+  break if !gets.index('y')
+end
+
+puts "\nAll orders:"
+#puts orders
+
+
+orders.each_pair do |key, values|
+  if values.length == 1
+    puts "#{key} wants a #{values[0]}"
+  elsif values.length > 1
+    last = values.pop
+    puts "#{key} wants a #{values.join(', ')} & #{last}"
+  end
+end
+>>>>>>> 7f9384e37fa2584e5cfa86e7d4be27cfe4da8e92
