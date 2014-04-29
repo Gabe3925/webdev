@@ -1,16 +1,34 @@
-require 'pry'
-
 require_relative 'models/Animal'
 require_relative 'models/Client'
 require_relative 'models/Shelter'
+require_relative 'Seeds/seeds'
 
-dog1 = Animal.new("Fido", "Dog")
-dog1.toys.push("Tennis Ball","Frisbee")
-cat1 = Animal.new("Fluffy", "Cat")
-cat1.toys.push("'Nip", "Dead Mouse")
 
-totally_legit_shelter = Shelter.new("Totally Legit Animals")
-totally_legit_shelter.animals.push(dog1, cat1)
+def create_an_animal_local(shelter_instance)
+	shelter_instance.animals << shelter_instance.create_an_animal
+end
+
+def create_a_client_local(shelter_instance)
+	shelter_instance.clients << shelter_instance.create_a_client
+end
+
+def view_list_of_animals_local(shelter_instance)
+	shelter_instance.list_animals
+end
+
+def view_list_of_clients_local(shelter_instance)
+	shelter_instance.list_clients
+end
+
+def adoption_local(shelter_instance)
+	shelter_instance.adopt_an_animal
+end
+
+def up_for_adoption_local(shelter_instance)
+	shelter_instance.up_for_adoption
+end
+
+
 
 def list_options
 puts "Please select an option:"
@@ -24,38 +42,23 @@ puts "6 --> Put an Animal up for Adoption"
 end
 
 menu_answer = ""
-puts "Welcome to #{totally_legit_shelter.name}"
+puts "Welcome to #{$totally_legit_shelter.name}"
 while menu_answer != "0"
 
 	list_options
 	menu_answer = gets.chomp
 	case menu_answer
 	when "1"
-		totally_legit_shelter.animals << totally_legit_shelter.create_an_animal
+		create_an_animal_local($totally_legit_shelter)
 	when "2"
-		totally_legit_shelter.clients << totally_legit_shelter.create_a_client
+		create_a_client_local($totally_legit_shelter)
 	when "3"
-		totally_legit_shelter.list_animals
+		view_list_of_animals_local($totally_legit_shelter)
 	when "4"
-		totally_legit_shelter.list_clients
+		view_list_of_clients_local($totally_legit_shelter)
 	when "5"
-		totally_legit_shelter.adopt_an_animal
+		adoption_local($totally_legit_shelter)
 	when "6"
-		totally_legit_shelter.up_for_adoption
+		up_for_adoption_local($totally_legit_shelter)
 	end
 end
-
-
-
-
-
-
-
-
-
-
-# def adoption
-# 	self.animals.each do |animal|
-# 		puts "#{animal.name}"
-# 	end
-# end
