@@ -9,11 +9,11 @@
 1. Use pry to access the string `"Peter"`
 2. Use pry to add your name to the end of the array?
 3. Use pry to remove `"Greg"` from the array.
-4. Use pry to access the last item in the array. 
+4. Use pry to access the last item in the array.
 
 **B. Copy and paste the following data structure into pry:**
 
-`vladimir_putins_brain = { :launch_code => "a5Mjp257GHMGH23e5qxE", :fav_hobby => "Riding ponies", "prideful?" => true }`
+`<ins>"("</ins>`
 
 1. Use pry to return the string `"Riding ponies"`
 2. Use pry to return the string `"a5Mjp257GHMGH23e5qxE"`
