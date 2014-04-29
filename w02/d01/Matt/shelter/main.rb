@@ -2,6 +2,7 @@ require "pry"
 require_relative 'models/animal.rb'
 require_relative 'models/client.rb'
 require_relative 'models/shelter.rb'
+# require_relative 'models/seeds.rb'
 
 # class
 #   def initialize
@@ -34,12 +35,14 @@ def shelter_menu
   puts "(2) Add a client to the shelter"
   puts "(3) View all animals"
   puts "(4) View all clients"
-  puts "(5) Quit"
+  puts "(5) Adopt an animal"
+  puts "(6) Get rid of a pet!"
+  puts "(7) Quit"
   puts ""
 end
 
 add_shelter
-while menu_answer != '5'
+while menu_answer != '7'
   #create shelter
   #display shelter menu
   shelter_menu
@@ -57,6 +60,9 @@ while menu_answer != '5'
   when '4'
     ###all clients
     show_all_clients = $shelter.show_all_clients
+  when '6'
+    ###give away pet
+    give_away_pet = $shelter.give_away_pet
   else
   end
   # binding.pry
@@ -67,8 +73,7 @@ end
 # animal1 = Animal.new("Rolf", "Dog", "Bone")
 # all_animals << animal1
 
-# client1 = Client.new("R Kelly", "65", "Dog")
-# all_animals << client1
+
 # binding.pry
 
 # shelter = add_shelter(all)

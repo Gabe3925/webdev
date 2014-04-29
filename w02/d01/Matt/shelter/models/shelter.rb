@@ -1,8 +1,11 @@
+# require_relative 'models/seeds.rb'
+
 class Shelter
   def initialize(shelter_name)
     @shelter_name = shelter_name
     @animals = []
     @clients = []
+    @family = []
   end
 
   #shelter_name getter
@@ -56,7 +59,38 @@ class Shelter
     @clients.each do |client|
       puts "#{client.client_name}"
     end
+    binding.pry
   end
+
+  # #has pet?
+  def has_pet?
+    @clients.each do |client|
+      if pets == "none"
+        return true
+      else
+        return false
+      end
+    end
+  end
+
+  def give_away_pet
+    @clients.each do |give_away|
+      animals << client.pets
+    end
+  end
+
+  # #add animal to client
+  # def animal_client
+  #   if has_pet? == false
+  #     puts "#{show_all_animals}"
+  #     put ""
+  #     puts "Enter the name of the pet you want:"
+  #     pet_adopt = gets.chomp
+  #     if "#{pet_adopt}" == "#{animal.animal_name}"
+  #       clients << animals
+  #     end
+  #   end
+  # end
 
   #animal getters
   def animals
@@ -90,6 +124,10 @@ class Shelter
 
   def pets
     return @pets
+  end
+
+  def family
+    return @family
   end
 
 end
