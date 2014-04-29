@@ -4,19 +4,13 @@ require_relative 'models/client.rb'
 require_relative 'models/shelter.rb'
 # require_relative 'models/seeds.rb'
 
-# class
-#   def initialize
-#     @name = ''
-#   end
-# end
-
+#method to add a string
 def add_detail(item)
   puts item
   value = gets.chomp
   return value
 end
 
-all_animals = []
 menu_answer = 0
 
 ###create shelter
@@ -41,9 +35,9 @@ def shelter_menu
   puts ""
 end
 
+#create shelter
 add_shelter
 while menu_answer != '7'
-  #create shelter
   #display shelter menu
   shelter_menu
   menu_answer = gets.chomp
@@ -60,30 +54,12 @@ while menu_answer != '7'
   when '4'
     ###all clients
     show_all_clients = $shelter.show_all_clients
+  when '5'
+    ###adopt an animal
+    adopt_animal = $shelter.adopt_animal
   when '6'
     ###give away pet
     give_away_pet = $shelter.give_away_pet
   else
   end
-  # binding.pry
 end
-
-# binding.pry
-
-# animal1 = Animal.new("Rolf", "Dog", "Bone")
-# all_animals << animal1
-
-
-# binding.pry
-
-# shelter = add_shelter(all)
-# puts shelter
-
-# client = add_client(all_animals)
-# puts client
-
-# animal = add_animal(all_animals)
-# puts animal
-
-# binding.pry
-# end

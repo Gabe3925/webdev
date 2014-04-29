@@ -54,12 +54,39 @@ class Shelter
     end
   end
 
+  #adopt an animal
+  def adopt_animal
+    puts "Have you already registered as a client? (Y/N)"
+    client_confirm = gets.chomp.downcase
+    if client_confirm == "y"
+      puts "Enter your account number"
+        @clients.each_with_index do |client, index|
+          puts "(#{index +1}) #{client.client_name}"
+        end
+        client_index = gets.chomp.to_i
+    else
+        add_client
+    end
+    puts "Enter the number of the pet you want"
+    @animals.each_with_index do |animal, index|
+      puts "(#{index +1}) #{animal.species} #{animal.animal_name}"
+    end
+    adopt_index = gets.chomp.to_i
+    puts "Are you sure? (Y/N)"
+    adopt_confirm = gets.chomp.downcase
+    if adopt_confirm == "y"
+      clients[client_index] << animals[adopt_index]
+      puts "Thanks #{client.client_name}, #{animal.animal_name} is now your pet"
+    else
+    end
+  end
+
   #show all clients
   def show_all_clients
     @clients.each do |client|
       puts "#{client.client_name}"
     end
-    binding.pry
+    # binding.pry
   end
 
   # #has pet?
@@ -73,24 +100,12 @@ class Shelter
     end
   end
 
+  #give away pet
   def give_away_pet
     @clients.each do |give_away|
       animals << client.pets
     end
   end
-
-  # #add animal to client
-  # def animal_client
-  #   if has_pet? == false
-  #     puts "#{show_all_animals}"
-  #     put ""
-  #     puts "Enter the name of the pet you want:"
-  #     pet_adopt = gets.chomp
-  #     if "#{pet_adopt}" == "#{animal.animal_name}"
-  #       clients << animals
-  #     end
-  #   end
-  # end
 
   #animal getters
   def animals
