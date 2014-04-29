@@ -1,13 +1,9 @@
-<<<<<<< HEAD
-orders = {};
-=======
+
 orders = {}
->>>>>>> 6be3f245f9f5cbe2977dffc9b67b6e047f812b24
 
 while true
   puts "Name for order:"
   name = gets.chomp
-<<<<<<< HEAD
 
   puts "#{name} wants to order:"
   order = gets.chomp
@@ -31,7 +27,7 @@ orders.each_pair do |key, values|
     puts "#{key} wants a #{values.join(', ')} & #{last}"
   end
 end
-=======
+
   puts "#{name} wants to order:"
   order = gets.chomp
   if !orders.has_key?(name)
@@ -44,4 +40,3 @@ end
 end
 
 puts orders
->>>>>>> 6be3f245f9f5cbe2977dffc9b67b6e047f812b24
