@@ -4,7 +4,6 @@ require_relative 'models/animals'
 require_relative 'models/client'
 
 # It should create a new shelter for you
-fairy_tales = Shelter.new("Fairy Tails")
 # It should display a menu of options for the user to choose from:
 
 
