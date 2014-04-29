@@ -64,9 +64,13 @@ NoMethodError: undefined method `say_hello' for Utopia:Class
 
   * `Utopia.say_hello_again`
 
+<<<<<<< HEAD
 NoMethodError: undefined method `say_hello_again' for Utopia:Class
 
 ### Part II. Arrays, Sorting & Slocks
+=======
+### Part II. Arrays, Sorting & Blocks
+>>>>>>> a07fe3fb30352da331cf14d965fd8ca895c14a06
 
 For the following array, how would I...
 
