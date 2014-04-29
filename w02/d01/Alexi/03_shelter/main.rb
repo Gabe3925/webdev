@@ -27,8 +27,8 @@ animals_list = shelter.animals()
 
 
 # Birth of client --> instance
-client = Clients.new()
-client_list = shelter.client()
+# client = Clients.new()
+# client_list = shelter.client()
 
 #============================#
 #============Menu============#
@@ -39,27 +39,35 @@ def menu_options
   puts "HappiTails v1.0, Copyright 1993"
   puts ""
   puts "Enter the NUMBER from the list of actions below:"
-  puts ""
+  puts " "
   puts "1. Add animal to shelter"
   puts "2. Add client"
-  puts "3. Quit"
-  puts ""
+  puts "3. Display animals in shelter"
+  puts "4. Display shelter clients"
+  puts "5. Quit"
+  puts " "
 end
 
 answer = "arbitrary string!"
 
-while answer != '3' #String or integer?
+while answer != '5' #String or integer?
   menu_options
   answer = gets.chomp
   case answer
   when '1'
     puts "Please enter the following information about the new animal:"
     shelter.add_animal()
-binding.pry
   when '2'
     puts "Please enter the new client\'s name:"
-
+    shelter.add_client()
   when '3'
+    puts "Inventory of HappiTails animals:"
+    shelter.disp_animals()
+
+  when '4'
+    puts "Client list:"
+    shelter.disp_clients()
+  when '5'
     puts " "
     puts "Exiting..."
     puts " "
