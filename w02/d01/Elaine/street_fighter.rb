@@ -65,17 +65,17 @@ class Fighter
 end
 
 class Guile < Fighter
+
   def initialize
     super
-    @name = "Guile"
   end
 
   def test_for_special(combo)
     case combo
-    when "ASSA"
+    when "ASZX"
       self.special_attack1()
       return true
-    when "ZZZX"
+    when "SSZX"
       self.special_attack2()
       return true
     end
@@ -83,68 +83,31 @@ class Guile < Fighter
   end
 
   def special_attack1
-    puts "Sonic Boom!"
+    puts "Special Attack 1!"
   end
 
   def special_attack2
-    puts "Flash Kick!"
+    puts "Special Attack 2!"
   end
 
 end
 
-class ChunLi < Fighter
+class Chun-Li < Fighter
+
   def initialize
     super
-    @name = "Chun Li"
   end
 
-  def test_for_special(combo)
-    case combo
-    when "XZXZ"
-      self.special_attack1()
-      return true
-    when "AXXZ"
-      self.special_attack2()
-      return true
-    end
-    return false
-  end
-
-  def special_attack1
-    puts "Lightning Kick!"
-  end
-
-  def special_attack2
-    puts "Spinning Bird Kick!"
-  end
 end
 
 class Blanka < Fighter
+
   def initialize
     super
-    @name = "Chun Li"
   end
 
-  def test_for_special(combo)
-    case combo
-    when "SSAA"
-      self.special_attack1()
-      return true
-    when "XXZA"
-      self.special_attack2()
-      return true
-    end
-    return false
-  end
-
-  def special_attack1
-    puts "Electric Thunder!"
-  end
-
-  def special_attack2
-    puts "Rolling Attack!"
-  end
 end
+
 
 fighter = Fighter.new
 fighter.action("A").action("S").action("Z").action("X")
