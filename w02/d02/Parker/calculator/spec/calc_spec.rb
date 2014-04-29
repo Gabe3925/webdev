@@ -8,7 +8,7 @@ describe Calculator do
       expect(Calculator.new.add(2, 2)).to eq(4)
     end
 
-    it "adds a negative and positive number" do
+    it "adds a negative and postive number" do
       expect(Calculator.new.add(-1, 2)).to eq(1)
     end
   end
@@ -20,7 +20,7 @@ describe Calculator do
   end
 
   describe "#power" do
-    it "raises one number to the power of another number"
+    it "0 ** 3"
   end
 
   describe "#sum" do
