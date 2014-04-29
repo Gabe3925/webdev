@@ -13,7 +13,9 @@ class Animal
     @toys.push(toy)
   end
 
-
+  # def to_s
+  #   return "We have #{name} the #{species}"
+  # end
 
 
 

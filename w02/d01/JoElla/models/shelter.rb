@@ -1,8 +1,8 @@
 class Shelter
   def initialize(name)
-  @name = name
-  @animals = []
-  @clients = []
+    @name = name
+    @animals = []
+    @clients = []
   end
 
   attr_accessor :name
@@ -18,22 +18,31 @@ class Shelter
   end
 
   def list_animals
-      puts "Our animals are: #{@animals}"
+    @animals.each_with_index do |animal, index|
+    puts "#{index + 1}: #{animal.name} the #{animal.species}"
+    end
   end
 
   def list_clients
-    puts "Our clients are: #{@clients}"
+    @clients.each_with_index do |client, index|
+      puts "#{index + 1}: #{client.name}, age #{client.age}"
+    end
   end
 
-  def adoption(clientname, animal)
-    #deletes animal from shelter's, pushes animal name to client's array
+  def adoption(adopterindex, adopteeindex)
+    #deletes animal from shelter's
+    adopted = @animals.delete_at(adopteeindex)
+    #pushes animal name to client's array
+
   end
+
+
+
 
   def return(client, animal)
     #moves animal from the client's array to the given shelter's array
   end
 
-
-
-
 end
+
+

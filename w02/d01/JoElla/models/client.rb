@@ -13,4 +13,8 @@ class Client
     @pets.push(petname)
   end
 
+  # def to_s
+  #   return "Our client #{name} is #{age} years old"
+  # end
+
 end
