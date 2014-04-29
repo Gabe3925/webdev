@@ -77,6 +77,7 @@ class Shelter
     index_of_pet_to_adopt = gets.chomp.to_i - 1
     puts "You've adopted #{$new_shelter.animals_in_shelter[0].animal_name}!"
     clients_of_shelter[client_index].pets << animals_in_shelter.delete_at(index_of_pet_to_adopt)
+    binding.pry
   end
 
   def drop_animal
