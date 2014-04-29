@@ -33,24 +33,33 @@ class Shelter
   end
 
   def disp_clients
-    @clients.each do |client|
+    @clients.each_with_index do |client, index|
       puts client.name
     end
   end
 
-  def adopt
-    count = 0
-    @animals.each do |animal|
-      puts "Press #{count} for #{animal.name} the #{animal.species}"
-      count += 1
+  def choose_client
+    @clients.each_with_index do |client, index|
+      puts "Press #{index} for #{client.name}"
     end
-    animal_index = gets.to_i
-    puts @animials[animal_index].name
-    binding.pry
-
+    client_index = gets.to_i
+    return @clients[client_index]
   end
 
-  def return
+  def adopt_animal
+    @animals.each_with_index do |animal, index|
+      puts "Press #{index} for #{animal.name} the #{animal.species}"
+    end
+    animal_index = gets.to_i
+    puts "\nYou adopted #{@animals[animal_index].name} the #{@animals[animal_index].species}! :D"
+    puts ""
+    adopted = @animals[animal_index]
+    @animals.delete_at(animal_index)
+    return adopted
+  end
+
+  def return_animal
+
   end
 
 end

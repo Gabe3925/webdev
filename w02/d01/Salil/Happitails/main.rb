@@ -45,10 +45,10 @@ def main_menu
   puts "-->(2) to Create a Client"
   puts "-->(3) to List all the Animals"
   puts "-->(4) to List all the Clients"
-  puts "-->(5) to Adpopt and Animal"
+  puts "-->(5) to Adopt an Animal"
   puts "-->(6) to Return an Animal"
   puts "-->(7) to Quit"
-  prints "--> "
+  print "--> "
 end
 
 answer = "Wooooooo"
@@ -66,7 +66,9 @@ while answer != "7"
   when "4"
     ga_shelter.disp_clients
   when "5"
-    ga_shelter.adopt
+    client = ga_shelter.choose_client
+    animal = ga_shelter.adopt_animal
+    client.add_pets(animal)
   # when "6"
   #   ga_shelter.disp_clients
   when "7"
