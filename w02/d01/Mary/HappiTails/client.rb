@@ -23,9 +23,8 @@ class Client
     return "#{@name}, who is #{@age}."
   end
 
-  def add_animal
-    animal = Animal.new(name,species)
+  def adopt_pet(animal)
     @pets.push(animal)
-    retun @pets
+    return @pets
   end
 end
