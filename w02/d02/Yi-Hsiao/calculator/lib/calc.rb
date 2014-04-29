@@ -20,6 +20,6 @@ class Calculator
   end
 
   def factorial(num)
-      num > 0 ? (1..num).reduce(:*) : 1
+    (1..num).reduce(:*) || 1
   end
 end
