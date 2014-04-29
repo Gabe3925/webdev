@@ -1,7 +1,7 @@
 class Fighter
   def initialize
-    @name = ""
     @actions = []
+    @specials = {}
   end
 
   def action(code)
@@ -15,55 +15,48 @@ class Fighter
     else
       case code
       when "A"
-        self.high_punch()
+        puts "High Punch!"
       when "S"
-        self.low_punch()
+        puts "Low Punch!"
       when "Z"
-        self.high_kick()
+        puts "High Kick!"
       when "X"
-        self.low_kick()
+        puts "Low Kick!"
       end
     end
     return self
   end
 
-  def high_punch
-    puts "High Punch!"
-  end
-
-  def low_punch
-    puts "Low Punch!"
-  end
-
-  def high_kick
-    puts "High Kick!"
-  end
-
-  def low_kick
-    puts "Low Kick!"
-  end
-
   def test_for_special(combo)
-    case combo
-    when "ASZX"
-      self.special_attack1()
-      return true
-    when "SSZX"
-      self.special_attack2()
+    if specials.has_key?(combo)
+      puts specials[combo]
       return true
     end
+
     return false
-  end
-
-  def special_attack1
-    puts "Special Attack 1!"
-  end
-
-  def special_attack2
-    puts "Special Attack 2!"
   end
 end
 
-fighter = Fighter.new
-fighter.action("A").action("S").action("Z").action("X")
-fighter.action("S").action("S").action("Z").action("X")
+class Guile < Fighter
+  def initialize
+    name = "Guile"
+    specials["ASSA"] = "Sonic Boom"
+    specials["ZZZX"] = "Flash kick"
+  end
+end
+
+class ChunLi < Fighter
+  def initialize
+    name = "Chun-Li"
+    specials["XZXZ"] = "Lightning Kick"
+    specials["AXXZ"] = "Spinning bird kick"
+  end
+end
+
+class Blanka < Fighter
+  def initialize
+    name = "Blanka"
+    specials["SSAA"] = "Electric Thunder"
+    specials["XXZA"] = "Rolling Attack"
+  end
+end

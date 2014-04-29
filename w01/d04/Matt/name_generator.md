@@ -3,10 +3,28 @@
 Create a file called `name.rb`
 
 1. Retrieve "Bumblebee" from the firstname list
+
+firstnamelist.index('Bumblebee')
+
 2. Add "Peter" to the firstnamelist
+
+firstnamelist << ("Peter")
+
 3. Remove "Muffinmitts" from the firstnamelist
+
+firstnamelist.delete('Muffinmitts')
+
 4. Find out the index of "Scratchnsniff" in lastnamelist
+
+lastnamelist.index('Scratchnsniff')
+
 5. Combine 1 randomly selected name from `firstnamelist` and 1 randomly selected name from `lastnamelist` to form a name.
+
+def random_name()
+  random = firstnamelist.sample + lastnamelist.sample
+  return random
+end
+
 6. Create a program that asks the user if they would like to generate a random name. As long as they keep saying yes, generate a new name for them and print it to the screen.
 
 ```
