@@ -58,7 +58,7 @@ end
   * `Utopia.say_hello_again`
   # error; undefined method
 
-### Part II. Arrays, Sorting & Slocks
+### Part II. Arrays, Sorting & Blocks
 
 For the following array, how would I...
 
