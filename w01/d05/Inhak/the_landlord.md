@@ -1,7 +1,7 @@
 ##The Landlord
 
 ####Prompt:
-You are a landlord in need of an app that will track your apartments and tenants. 
+You are a landlord in need of an app that will track your apartments and tenants.
 
 #### Part 1 - Creating the classes
 
