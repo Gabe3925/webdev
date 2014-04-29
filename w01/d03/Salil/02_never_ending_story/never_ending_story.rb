@@ -4,6 +4,9 @@ story = [
   'In the future, Fry works on a spaceship',
   'The spaceship hits a wormhole and crashes in 1941 Roswell, NM',
   'Fry encounters his grandmother, then inadvertently sires his father'
+<<<<<<< HEAD
+]
+=======
 ]
 ans = "y"
 count = 0;
@@ -24,3 +27,4 @@ while ans == "y"
 end
 
 
+>>>>>>> 5269418d61924848620646f9bddc734bff0c15c5
