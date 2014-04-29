@@ -20,7 +20,7 @@ describe Bank do
 
     it "has no accounts" do
       accounts = bank.accounts
-      expect(accounts.empty?).to be_true
+      expect(accounts.empty?).to eq(true)
     end
 
     # in rspec, the '#' sign stands for instance method, so #open_account in
@@ -52,7 +52,7 @@ describe Bank do
         it "it doesn't add the account" do
           bank.open_account("Travis", 198.00)
           accounts = bank.accounts
-          expect(accounts.empty?).to be_true
+          expect(accounts.empty?).to eq(true)
         end
 
       end # context - when opening deposit < 200.00
@@ -143,7 +143,7 @@ describe Bank do
           initial_balance = trav_account[:balance]
           bank.deposit("Travis Vander Hoop", 2450.00)
           balance_after = trav_account[:balance]
-          expect(initial_balance < balance_after).to be_true
+          expect(initial_balance < balance_after).to eq(true)
         end
 
         it "adds the specified amount to the users account" do
