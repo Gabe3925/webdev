@@ -111,7 +111,7 @@ def adopt_pet_wizard(shelter)
   end
 end
 
-def return_pet(shelter)
+def return_pet_wizard(shelter)
   # returns pets and adds the pet back to the shelter
 
   # only clients with pets can return pets
