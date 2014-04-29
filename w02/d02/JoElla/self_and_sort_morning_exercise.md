@@ -51,7 +51,7 @@ end
   * `Utopia.say_hello`
   * `Utopia.say_hello_again`
 
-### Part II. Arrays, Sorting & Slocks
+### Part II. Arrays, Sorting & Blocks
 
 For the following array, how would I...
 
