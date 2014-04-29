@@ -1,7 +1,7 @@
 # Stephen Stanwood (stephen@stanwoodsolutions.com)
 
 class ScrabbleWord
-  @@values = {
+  VALUES = {
     "a" => 1, "b" => 3, "c" => 3, "d" => 2, "e" => 1,
     "f" => 4, "g" => 2, "h" => 4, "i" => 1, "j" => 8,
     "k" => 5, "l" => 1, "m" => 3, "n" => 1, "o" => 1,
@@ -21,7 +21,7 @@ class ScrabbleWord
 
   # Returns the total score for the word
   def score
-    return word.chars.inject(0) { |total, c| total + @@values[c] }
+    return word.chars.inject(0) { |total, c| total + VALUES[c] }
   end
 
   # Returns the total score for the word, multiplied by a specified factor
