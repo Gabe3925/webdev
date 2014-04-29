@@ -11,7 +11,7 @@
 students = ["Adam Barrett","Jacob Cain","Mikael Davis","Salil Doshi","Jon Eva","Elaine Fang","Parker Hart","Richard Hessler","Mary Hipp","Inhak Kim","Randy Latz","Yi-Hsiao Liu","Alexi Phillipson","Matt Rundo","Gabe Snyder","Stephen Stanwood","Joella Straley","Brett Wallace","Thomas Weaver"]
 ```
 - Write a program that:
-  - beings with a comment identifying what type of data structure `students` is. 
+  - beings with a comment identifying what type of data structure `students` is.
   - prints `"STUDENT_NAME is learning to learn."` for every student in the class
   - prints `"STUDENT_NAME is the student in the STUDENTS_INDEX_VALUE index"` for every student in the class
     - What tool will you use? If you don't know, where will you look?
@@ -47,7 +47,8 @@ students = ["Adam Barrett","Jacob Cain","Mikael Davis","Salil Doshi","Jon Eva","
 
 1. Use pry to return an array of keys for the `ok_cupidites` hash.
 2. Use pry to return whether `southwesternDave` is in a relationship.
-3. Use pry to add `watching True Detective` to `WOOTman`'s hobbies. 
-4. Use pry to return all the things that `nicestGuy5530` is seeking. 
+3. Use pry to add `watching True Detective` to `WOOTman`'s hobbies.
+4. Use pry to return all the things that `nicestGuy5530` is seeking.
 5. Use pry to retrieve `southwesternDave`'s third hobby.
 6. In English, explain how would you return an array of only the ok_cupities that are single?
+I would access ok_cupidites and then return an array of the users who have the value "false" in their hash, because the only option for that string is the in_a_relationship key. The more thorough way to do this would be to access the username hash to test specifically for the key in_a_relationship
