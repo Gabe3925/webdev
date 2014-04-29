@@ -1,8 +1,3 @@
-### Wine Cellar
-
-- Here is an array containing some wines
-
-```ruby
 wine_cellar = [
   {:label => "Rutherford Hill", :type => "Chardonnay", :color => "white"},
   {:label => "Nina Veneto", :type => "Pinot Grigio", :color => "white"},
@@ -16,12 +11,27 @@ wine_cellar = [
   {:label => "Angeline", :type => "Pinot Noir", :color => "red"}
 ]
 
-```
+puts wine_cellar[0]
+# puts "What is the name?"
+# name = gets.chomp.capitalize
+# puts "What is the type?"
+# category = gets.chomp.capitalize
+# puts "What is the color?"
+# shade = gets.chomp.capitalize
 
-Write code that:
-  - Adds a wine of your choice to the cellar
-  - Returns a random wine from the cellar
-  - Returns an array of just the white wines
-  - Returns an array listing the unique types of wine
-  - Returns an array with the all the wines that have 2-word labels
-  - Returns an array with the labels of the wines that are a type of Pinot Noir
+# wine_cellar.push(label: name, type: category, color: shade)
+
+# puts wine_cellar.sample
+
+# puts wine_cellar.select { |wine| wine[:color] == "white"}
+# puts wine_cellar.map {|wine| wine[:type]}
+# puts wine_cellar.select { |wine| wine[:label].include?(" ")}
+# return_value = wine_cellar.each do |wine|
+#  if wine[:type] == "Pinot Noir"
+#     puts wine[:label]
+#   end
+# end
+
+
+
+
