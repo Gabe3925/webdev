@@ -35,6 +35,7 @@ class Shelter
     @clients_list = clients_list
   end
 
+
   # Add an animal
   def add_animal
     animal_name = get_answer_to("What's the animal's name?")

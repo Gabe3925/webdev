@@ -1,12 +1,22 @@
-require 'pry'
+# require 'pry'
 
 require_relative 'models/animal'
 require_relative 'models/client'
 require_relative 'models/shelter'
 require_relative 'models/seeds'
 
-# Instantiates a shelter
-happi_tails = Shelter.new("HappiTails")
+
+# Adds clients and animals
+$happi_tails.clients_list.push($sammy)
+$happi_tails.clients_list.push($donald)
+$happi_tails.clients_list.push($rachel)
+$happi_tails.clients_list.push($daffy)
+
+$happi_tails.animals_list.push($meeko)
+$happi_tails.animals_list.push($pluto)
+$happi_tails.animals_list.push($bugs)
+$happi_tails.animals_list.push($fluffy)
+$happi_tails.animals_list.push($spot)
 
 # Helpful Methods
 
@@ -40,29 +50,29 @@ while answer != "7"
   answer = gets.chomp
   case answer
   when "1"
-    happi_tails.add_animal
+    $happi_tails.add_animal
 
   when "2"
-    happi_tails.add_client
+    $happi_tails.add_client
 
   # Displays all animals
   when "3"
-    happi_tails.list_animals
+    $happi_tails.list_animals
 
 
   # Displays all clients
   when "4"
-    happi_tails.list_clients
+    $happi_tails.list_clients
 
   when "5"
     puts ""
     puts "Here are the animals available for adoption:"
-    happi_tails.list_animals
-    happi_tails.adopt_animal
+    $happi_tails.list_animals
+    $happi_tails.adopt_animal
 
   when "6"
 
-    happi_tails.return_animal
+    $happi_tails.return_animal
 
 
   when "7"
