@@ -2,10 +2,10 @@ require 'pry'
 
 class Animal
 
-  def initialize(name, species, toys)
-    @name = name
+  def initialize(animal_name, species)
+    @name = animal_name
     @species = species
-    @toys = [toys]
+    @toys = []
   end
 
   def name
@@ -20,15 +20,15 @@ class Animal
     return @toys
   end
 
-def adopt_animal(name)
-    @animals.delete(name)
-    puts "#{name} was adopted!"
-  end
+# def adopt_animal(name)
+#     @animals.delete(name)
+#     puts "#{name} was adopted!"
+#   end
 
-  def return_animal(name)
-    @animals.push(name)
-    puts "#{name} was returned!"
-  end
+#   def return_animal(name)
+#     @animals.push(name)
+#     puts "#{name} was returned!"
+#   end
 
 end
 

@@ -1,9 +1,9 @@
 
 class Shelter
-  def initialize(name)
+  def initialize(name, animals)
     @shelter_name = name
-    @animals = ["Max", "Polly", "Lassie"]
-    @clients = ["Brett", "Brent", "Lara"]
+    @animals = []
+    @clients = []
   end
 
   def name
@@ -15,36 +15,42 @@ class Shelter
     return @name
   end
 
-  def add_animal(name)
-    @animals << name
+  def add_animal(name, species)
+    @animals << Animal.new(name, species)
     return @animals
   end
 
-  def add_client(name)
-    @clients << name
+# add client and their pet to the shelter
+  def add_client(client_name, animal_name, age, species)
+    @animals << Animal.new(animal_name, species)
+    @clients << Client.new(client_name, age)
     return @clients
   end
 
 def prints_clients_names
     @clients.each do |client|
-      puts client
+      puts "#{@clients.index(client)+1} #{client.name}"
     end
   end
 
   def prints_animals_names
     @animals.each do |animal|
-      puts animal
+      puts "#{@animals.index(animal)+1} #{animal.name} - #{animal.species}"
     end
   end
 
-  def adopt_animal(name)
-    @animals.delete(name)
-    puts "#{name} was adopted!"
+  def adopt(animal, client)
+    puts "#{@animals[animal].name} was adopted!"
+    @animals.delete_at(animal)
+    binding.pry
+    @clients[client].adopt_pet(animal)
   end
 
-  def return_animal(name)
-    @animals.push(name)
-    puts "#{name} was returned!"
+  def return(animal, client)
+    @animals.push(animal)
+    @clients[client].return_pet(animal)
+    puts "#{@animals[animal].name} was returned!"
+
   end
 end
 

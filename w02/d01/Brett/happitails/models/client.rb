@@ -1,9 +1,9 @@
 
 class Client
- def initialize(name, age, animals)
+ def initialize(name, age)
     @name = name
     @age = age
-    @animals = animals
+    @pets = []
   end
 
   def name
@@ -15,12 +15,28 @@ class Client
     return @name
   end
 
+  def pets
+    return @pets
+  end
+
   def age
     return @age
   end
 
-  def age=(age)
-    @age = age
+  def adopt_pet(animal)
+    @pets.push(animal)
+    return @pets
+  end
+
+  def return_pet(animal)
+    @pets.delete(animal)
+    return @pets
+  end
+
+  def prints_pets_names
+     @pets.each do |pet|
+      puts "#{@pets.index(pet)+1} #{pet.name} - #{pet.species}"
+    end
   end
 end
 
