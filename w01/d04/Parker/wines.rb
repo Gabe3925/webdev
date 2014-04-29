@@ -22,5 +22,24 @@ wine_cellar = [
 wine_cellar.push({:label => "DC Wine", :type => "Merlot", :color => "Red"}
 )
 
+wine_cellar.sample
 
+puts 
+white_wines = wine_cellar.select do |wine|
+	wine[:color].include? ("white")
+end
 
+puts 
+wine_types = wine_cellar.map do |wine|
+	wine[:type]
+end
+
+puts
+two_word_labels = wine_cellar.select do |wine|
+	wine[:label].include?(" ")
+end
+
+puts 
+pinot_noirs = wine+cellar.select do |wine|
+	wine.has_value?("Pinot Noir")
+end

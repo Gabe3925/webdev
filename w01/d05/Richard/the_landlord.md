@@ -1,7 +1,7 @@
-##The Landlord
+  ##The Landlord
 
 ####Prompt:
-You are a landlord in need of an app that will track your apartments and tenants. 
+You are a landlord in need of an app that will track your apartments and tenants.
 
 #### Part 1 - Creating the classes
 
@@ -36,7 +36,8 @@ Okay, now take 20 minutes to first read-through and think about the methods & be
 * The program should return to the menu until the user quits
 
 #### View apartment details
-* Tell the user the address, monthly_rent, sqft, num_beds, num_baths, and renters
+* Tell the user the address, monthly_rent, sqft, num_beds, num_baths, and
+renters
 
 #### Adding an apartment
 * Make sure to get the appropriate input from the user when creating an apartment
