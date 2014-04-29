@@ -57,7 +57,6 @@ class Shelter
     @animals.push(@clients[adopter-1].index_pet(pet-1))
     @clients[adopter-1].remove_pet_index(pet-1)
   end
-  binding.pry
 end
 
 
