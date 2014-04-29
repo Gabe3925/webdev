@@ -10,7 +10,7 @@ describe Bank do
 
   describe "a newly instantiated bank" do
     ##################################################################################
-    ####IMPORTANT. THE LINE BELOW SETS UP A VARIABLE, bank, THAT REPRESENTS A NEW BANK
+    ####IMPORTANT. THE LINE BELOW SETS UP A VARIABLE, bank, THAT REPRESENTS A NEW BANK.
     ####           WE USE THAT VARIABLE THROUGHOUT THE FILE!
     ##################################################################################
     let(:bank) { Bank.new("Wisconsin State Bank") }
@@ -23,8 +23,8 @@ describe Bank do
       expect(accounts.empty?).to be_true
     end
 
-    # the '#' sign stands for instance method, so #open_account means the object's
-    # open_account method.
+    # in rspec, the '#' sign stands for instance method, so #open_account in
+    # the line below refers to the bank's instance method, open_account.
     describe "#open_account" do
 
       context "when the opening deposit is > 200.00" do
