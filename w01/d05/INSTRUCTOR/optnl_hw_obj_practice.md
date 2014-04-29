@@ -1,4 +1,4 @@
-1## Pre-Homework Homework
+## Pre-Homework Homework
 
 ####Learning Objectives:
 - To get practice and build muscle memory writing class declarations
