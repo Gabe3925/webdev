@@ -14,13 +14,12 @@ class Calculator
   end
 
   def sum(arr)
-    return 0 if arr.empty?
-    arr.reduce(:+)
+    arr.reduce(0, :+)
   end
 
   # Accepts either two numbers or an array of several & multiplies them.
   def multiply(arr)
-    return arr.reduce(:*)
+    arr.reduce(:*)
   end
 
   # Calculates the factorial of a given number
@@ -30,6 +29,7 @@ class Calculator
     x * factorial(x-1)
   end
 
+  # Identifies the greatest common divisor for two integers
   def gcd(x,y)
     return x.gcd(y)
   end
