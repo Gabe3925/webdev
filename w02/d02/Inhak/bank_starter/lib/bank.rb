@@ -40,6 +40,9 @@ class Bank
     end
   end
 
+  def deposit(name, amount)
+    return find_account(name)[:balance] = return_balance(name) + amount
+  end
 
 
 end
