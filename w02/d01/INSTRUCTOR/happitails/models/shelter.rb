@@ -1,11 +1,17 @@
 class Shelter
-  attr_accessor :name
-  attr_reader :animals, :clients
 
   def initialize(name)
     @name = name
     @animals = []
     @clients = []
+  end
+
+  def animals
+    @animals
+  end
+
+  def clients
+    @clients
   end
 
   # a shelter should be able to display all of its clients
