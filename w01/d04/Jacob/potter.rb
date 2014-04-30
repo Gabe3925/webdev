@@ -3,11 +3,13 @@ require 'pry'
 #Change the 'csv' file into an array.
 characters= []
 p = File.new("potter.csv", "r")
-  p.each_line do |line|
-    names = line.chomp.split(",")
-    characters.push({:mentions => names[0].to_i,
-      :name => names[1], :house => names[2]})
-  end
+
+p.each_line do |line|
+  names = line.chomp.split(",")
+  characters.push({:mentions => names[0].to_i,
+    :name => names[1], :house => names[2]})
+end
+
 p.close
 
 #1. List the names of all the characters.
@@ -71,8 +73,6 @@ def ugln(list)
   end
   return last_names.uniq
 end
-
-
 
 # #8. List the names of all of the Weasleys, with Badger as their middle name.
 # def badger_weasleys(list)
