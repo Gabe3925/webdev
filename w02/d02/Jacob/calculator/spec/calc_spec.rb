@@ -20,27 +20,51 @@ describe Calculator do
   end
 
   describe "#power" do
-    it "raises one number to the power of another number"
+    it "raises one number to the power of another number" do
+      expect(Calculator.new.power(2, 3)).to eq(8)
+    end
   end
 
   describe "#sum" do
-    it "computes the sum of an empty array"
-    it "computes the sum of an array of one number"
-    it "computes the sum of an array of two numbers"
-    it "computes the sum of an array of many numbers"
+    it "computes the sum of an empty array" do
+      expect(Calculator.new.sum([])).to eq(0)
+    end
+    it "computes the sum of an array of one number" do
+      expect(Calculator.new.sum([5])).to eq(5)
+    end
+    it "computes the sum of an array of two numbers" do
+      expect(Calculator.new.sum([2,6])).to eq(8)
+    end
+    it "computes the sum of an array of many numbers" do
+      expect(Calculator.new.sum([1,2,3])).to eq(6)
+    end
   end
 
   describe "#multiply" do
-    it "multiplies two numbers"
-    it "multiplies several numbers"
+    it "computes the product of an array of two numbers" do
+      expect(Calculator.new.multiply([3,5])).to eq(15)
+    end
+    it "computes the product of an array of many numbers" do
+      expect(Calculator.new.multiply([6,4,3])).to eq(72)
+    end
   end
 
   describe "#factorial" do
-    it "computes the factorial of 0"
-    it "computes the factorial of 1"
-    it "computes the factorial of 2"
-    it "computes the factorial of 5" 
-    it "computes the factorial of 10"
+    it "computes the factorial of 0" do
+      expect(Calculator.new.factorial(0)).to eq(1)
+    end
+    it "computes the factorial of 1" do
+      expect(Calculator.new.factorial(1)).to eq(1)
+    end
+    it "computes the factorial of 2" do
+      expect(Calculator.new.factorial(2)).to eq(2)
+    end
+    it "computes the factorial of 5" do
+      expect(Calculator.new.factorial(5)).to eq(120)
+    end
+    it "computes the factorial of 10" do
+      expect(Calculator.new.factorial(10)).to eq(3628800)
+    end
   end
 
 end

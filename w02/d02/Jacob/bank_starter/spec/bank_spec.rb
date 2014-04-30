@@ -91,7 +91,7 @@ describe Bank do
 
     end # return balance
 
-    # describes the .withdraw instance method
+    # # describes the .withdraw instance method
     describe "#withdraw" do
 
       context "when a user has an account" do
