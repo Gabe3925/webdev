@@ -17,10 +17,18 @@ class Shelter
   end
 
   def adopt_pet(pet, client)
-    client.pets << @animals.delete(pet)
+    @animals.delete(pet) if client.add_pet(pet)
   end
 
   def return_pet(pet, client)
-    @animals << client.pets.delete(pet)
+    @animals.push(returned_pet) if client.remove_pet(returned_pet)
+  end
+
+  def add_animal(name, species)
+    @animals << Animal.new(name, species)
+  end
+
+  def add_client_wizard(name, age)
+    @clients << Client.new(name, age)
   end
 end

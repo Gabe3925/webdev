@@ -2,15 +2,11 @@ class Animal
   def initialize(name, species)
     @name = name
     @species = species
-    @toys = ''
+    @toys = []
   end
 
   def name
     return @name
-  end
-
-  def name=(name)
-    @name = name
   end
 
   def species
@@ -20,7 +16,5 @@ class Animal
   def toys
     return @toys
   end
-
-
 
 end
