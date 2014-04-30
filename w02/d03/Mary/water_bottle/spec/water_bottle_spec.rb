@@ -23,26 +23,34 @@ describe WaterBottle do
       before { bottle.dispense1 }
 
       describe "#dispense" do
-        it "cannot dispense water if bottle is  empty" do
-          expect( bottle.can_dispense? ).to be_falsey
-        end
-
-        it "bottle will be empty after being dispensed three times" do
-          bottle.dispense2
-          bottle.dispense3
-          expect( bottle.empty? ).to be_truthy
+        it "can dispense water" do
+          expect( bottle.can_dispense? ).to be_truthy
         end
 
         it "bottle will not be empty after dispensed once" do
           expect( bottle.empty? ).to be_falsey
         end
 
-        it "bottle will not be empty after dispensed twice" do
-          bottle.dispense2
-          expect( bottle.empty? ).to be_falsey
-        end
+        context "when the water bottle is dispensed at least twice" do
+          before { bottle.dispense2 }
 
-      end #--describe dispense
+          it "bottle will not be empty after dispensed twice" do
+            expect( bottle.empty? ).to be_falsey
+          end
+
+          it "bottle will be empty after being dispensed three times" do
+            bottle.dispense3
+            expect( bottle.empty? ).to be_truthy
+          end
+
+          it "cannot dispense water if bottle is  empty" do
+            bottle.dispense3
+            expect( bottle.can_dispense? ).to be_falsey
+          end
+
+        end #-- context #dispense2
+
+      end #--describe #dispense
 
     end #-- context #dispense1
 

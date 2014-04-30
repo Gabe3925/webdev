@@ -24,7 +24,11 @@ class WaterBottle
   end
 
   def can_dispense?
-    false if @empty == true
+    if @empty == true
+      false
+    else
+      true
+    end
   end
 
 end
