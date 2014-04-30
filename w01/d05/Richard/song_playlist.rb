@@ -117,4 +117,5 @@ playlist = Playlist.new
 playlist.add_song(hips_dont_lie)
 playlist.add_song(hips_do_lie)
 
+
 puts playlist.play()
