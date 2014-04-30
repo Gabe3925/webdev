@@ -18,8 +18,8 @@ class Calculator
   end
 
   # Accepts either two numbers or an array of several & multiplies them.
-  def multiply(arr)
-    arr.reduce(:*)
+  def multiply(*nums)
+    nums.reduce(1, :*)
   end
 
   # Calculates the factorial of a given number
