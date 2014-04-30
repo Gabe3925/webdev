@@ -72,15 +72,18 @@ def view_apt_details(array)
   end
 end
 
+#Method for getting answers to questions; mainly for Option 3.
 def answer(to_question)
   puts to_question
   answer = gets.chomp
 end
 
+#Method for Option 3
 def add_apt(address, monthly_rent, sqft, num_beds, num_baths, renters)
   Apartment.new(address, monthly_rent, sqft, num_beds, num_baths, renters)
 end
 
+#Method for Option 4
 def add_tenant
 end
 

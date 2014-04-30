@@ -13,3 +13,16 @@ It's springtime! Let's grow some flowers… Complete this exercise in a new file
 3. Customize the `harvest_rules` instructions…
 	* All flowers should specify "Break the stem" by default.
 	* A rose should instruct us to wear gloves!
+
+
+class Flower
+  initialize
+    @type = ''
+    @color = ''
+    @harvest_rules =  ''
+  end
+
+  def flower_type
+
+  end
+end
