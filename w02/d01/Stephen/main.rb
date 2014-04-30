@@ -5,6 +5,7 @@ require 'pry'
 require_relative "models/Animal.rb"
 require_relative "models/Client.rb"
 require_relative "models/Shelter.rb"
+require_relative "models/CatLady.rb"
 require_relative "seeds.rb"
 
 def header
@@ -59,6 +60,11 @@ def prompt_animal
 end
 
 def return_prompt(client)
+  if client.pets.size == 0
+    puts "#{client.name.capitalize} has no pets!"
+    return nil
+  end
+
   puts "#{client.name.capitalize}'s pets: " + client.pets.join(", ") + "\n"
   while true
     print "==> Return which animal (name)? "

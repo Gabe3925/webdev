@@ -11,7 +11,7 @@
 * If you've never played the game Scrabble before, you may want to ask your neighbor about the rules of the game and how words are scored.
 
 * Define a class named ScrabbleWord with an `initialize` method that takes one argument, `word`, and stores it in an instance variable `@word`.
-
+	
 * Write a "getter" for this instance variable `@word` that returns the word as a lowercase string.
 
 1. Define a method `.score` that returns the scrabble score of the word.
