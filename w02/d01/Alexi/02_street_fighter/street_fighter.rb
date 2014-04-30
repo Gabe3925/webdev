@@ -64,6 +64,16 @@ class Fighter
   end
 end
 
+class Guile < Fighter
+  def initialize
+    super
+    @name = "Ryu"
+  end
+
+
+end
+
+
 fighter = Fighter.new
 fighter.action("A").action("S").action("Z").action("X")
 fighter.action("S").action("S").action("Z").action("X")

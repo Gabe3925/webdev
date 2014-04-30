@@ -64,6 +64,50 @@ class Fighter
   end
 end
 
+
+class Guile < Fighter
+  def initialize
+    super
+  end
+
+  def test_for_special(combo)
+    case combo
+    when "ASZX"
+      self.special_attack1()
+      return true
+    when "SSZX"
+      self.special_attack2()
+      return true
+    end
+    return false
+  end
+
+  def special_attack1
+    puts "Super Guile attack!"
+  end
+
+  def special_attack2
+    puts "Mondo Special sneaky attack!!"
+  end
+
+end
+
+
+
+
+
+
+class ChunLi < Fighter
+end
+
+class Blanka < Fighter
+end
+
 fighter = Fighter.new
-fighter.action("A").action("S").action("Z").action("X")
-fighter.action("S").action("S").action("Z").action("X")
+puts fighter.action("A").action("S").action("Z").action("X")
+puts fighter.action("S").action("S").action("Z").action("X")
+
+
+
+guile1 = Guile.new
+puts guile1.action("A").action("S").action("Z").action("X")
