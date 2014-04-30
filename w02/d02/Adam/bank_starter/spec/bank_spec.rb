@@ -130,33 +130,34 @@ describe Bank do
       end # context - when user has account
 
     end # describe - withdraw
-
-    describe "#deposit" do
-
-      context "when a user has an account" do
-        let(:trav_account){ bank.find_account("Travis Vander Hoop") }
-        before(:each) do
-          bank.open_account("Travis Vander Hoop", 250.00)
-        end
-
-        it "adds to the users balance" do
-          initial_balance = trav_account[:balance]
-          bank.deposit("Travis Vander Hoop", 2450.00)
-          balance_after = trav_account[:balance]
-          expect(initial_balance < balance_after).to eq(true)
-        end
-
-        it "adds the specified amount to the users account" do
-          initial_balance = trav_account[:balance]
-          bank.deposit("Travis Vander Hoop", 230.00)
-          balance_after = trav_account[:balance]
-          expect(balance_after - initial_balance).to eq(230.00)
-        end
-
-      end # context - when user has an account
-
-    end # describe - #deposit
-
+#
+#    describe "#deposit" do
+#
+#      context "when a user has an account" do
+#        let(:trav_account){ bank.find_account("Travis Vander Hoop") }
+#        before(:each) do
+#          bank.open_account("Travis Vander Hoop", 250.00)
+#        end
+#
+#        it "adds to the users balance" do
+#          initial_balance = trav_account[:balance]
+#          bank.deposit("Travis Vander Hoop", 2450.00)
+#          balance_after = trav_account[:balance]
+#          expect(initial_balance < balance_after).to eq(true)
+#        end
+#
+#        it "adds the specified amount to the users account" do
+#          initial_balance = trav_account[:balance]
+#          bank.deposit("Travis Vander Hoop", 230.00)
+#          balance_after = trav_account[:balance]
+#          expect(balance_after - initial_balance).to eq(230.00)
+#        end
+#
+#      end # context - when user has an account
+#
+#    end # describe - #deposit
+#
   end # describe - newly instantiated bank
 
 end # describe - Bank
+#
