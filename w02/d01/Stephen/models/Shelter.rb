@@ -28,8 +28,19 @@ class Shelter
   end
 
   def adopt(animal, client)
-    @animals.delete(animal)
-    client.adopt(animal)
+    if client.class.name == "CatLady"
+      if animal.species.downcase != "cat"
+        puts "I DON'T TAKE NON-CATS!!!"
+      else
+        @animals.delete(animal)
+        client.adopt(animal)
+      end
+    elsif (client.pets.size >= 2)
+      puts "Can't adopt--#{client.name} already has two pets!"
+    else
+      @animals.delete(animal)
+      client.adopt(animal)
+    end
   end
 
   def return(client, animal)

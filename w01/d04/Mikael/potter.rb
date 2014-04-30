@@ -11,7 +11,6 @@ f = File.new("potter.csv", "r")
     end
 f.close
 
-
 def get_names(characters)
   names = characters.map do |character|
     character[:name]
@@ -30,8 +29,7 @@ def get_houses(characters)
   houses = characters.map do |character|
     character[:house]
   end
-  houses.uniq!.select! {|i| i||false }
-  return houses
+  return houses.compact.uniq
 end
 
 def get_single_names(characters)
@@ -103,6 +101,21 @@ def ll_cool_string(characters)
     string[:name]
   end
   return cool
+end
+
+def okay_okay_okay(characters)
+  kay = characters.map do |character|
+    if character[:name].include?("k")
+      character[:name]
+    end
+  end
+
+  kay.compact!
+  kays = kay.select do |name|
+    name.downcase.count("k") > 1
+  end
+
+  return kays
 end
 
 binding.pry

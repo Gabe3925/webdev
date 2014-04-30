@@ -75,21 +75,31 @@ class Playlist
   end
 
   def current_song
-    return self.songs[@index]
+    return self.songs[@index]       #self it a way for the instance to refer to itself
   end
 
   def add_song(song)
-    self.songs.push(song)
+    self.songs.push(song)       #self it a way for the instance to refer to itself
   end
 
   def remove_song(song)
-    self.songs.push(delete)
+    self.songs.push(delete)       #self it a way for the instance to refer to itself
   end
 
   def play
-    if self.current_song
-      self.current_song.play()
+    if self.current_song        #self it a way for the instance to refer to itself
+      self.current_song.play()        #self it a way for the instance to refer to itself
     end
+  end
+
+      #shuffle order of song array
+  def shuffle
+
+  end
+
+      #should playlist repeat when it gets to end?
+  def should_repeat?
+
   end
 end
 
