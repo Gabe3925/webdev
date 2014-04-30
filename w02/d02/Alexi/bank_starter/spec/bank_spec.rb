@@ -9,11 +9,12 @@ describe Bank do
   end
 
   describe "a newly instantiated bank" do
-    ##################################################################################
-    ####IMPORTANT. THE LINE BELOW SETS UP A VARIABLE, bank, THAT REPRESENTS A NEW BANK.
-    ####           WE USE THAT VARIABLE THROUGHOUT THE FILE!
-    ##################################################################################
+#################################################################################
+###IMPORTANT. THE LINE BELOW SETS UP A VARIABLE, bank, THAT REPRESENTS A NEW BANK.
+###           WE USE THAT VARIABLE THROUGHOUT THE FILE!
+#################################################################################
     let(:bank) { Bank.new("Wisconsin State Bank") }
+    
     it "has a name" do
       expect(bank.name).to eq("Wisconsin State Bank")
     end
@@ -63,6 +64,7 @@ describe Bank do
 
       context "when the user has an account" do
         before(:each) do
+
           bank.open_account("Mike Ekvall", 3_950.55)
         end
 
@@ -91,16 +93,16 @@ describe Bank do
 
     end # return balance
 
-    # describes the .withdraw instance method
+    #describes the .withdraw instance method
     describe "#withdraw" do
-
+# Don't have to do this again
       context "when a user has an account" do
-        before(:each) do
-          bank.open_account("Travis Vander Hoop", 250.00)
-        end
-
+# Don't have to do this again...for the test
         context "when the user has enough money" do
-
+          before(:each) do
+            bank.open_account("Travis Vander Hoop", 250.00)
+          end
+# This is all we have to do...
           it "takes the specified amount from the account" do
             travs_account = bank.find_account("Travis Vander Hoop")
             balance_before = travs_account[:balance]
@@ -109,7 +111,7 @@ describe Bank do
             difference = balance_before - balance_after
             expect(difference).to eq(200)
           end
-
+  
         end # context - when user has enough
 
         context "when the user doesn't have enough money" do
@@ -125,7 +127,7 @@ describe Bank do
             expect(balance_before - balance_after).to eq(30.00)
           end
 
-        end # context - when user doesn't have enough
+         end # context - when user doesn't have enough
 
       end # context - when user has account
 
