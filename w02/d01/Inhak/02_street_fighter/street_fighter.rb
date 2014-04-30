@@ -2,6 +2,7 @@ class Fighter
   def initialize
     @name = ""
     @actions = []
+    @combos = []
   end
 
   def action(code)
@@ -45,10 +46,10 @@ class Fighter
 
   def test_for_special(combo)
     case combo
-    when "ASZX"
+    when "combos[0]"
       self.special_attack1()
       return true
-    when "SSZX"
+    when "combos[1]"
       self.special_attack2()
       return true
     end
@@ -63,6 +64,23 @@ class Fighter
     puts "Special Attack 2!"
   end
 end
+
+class Guile < Fighter
+  def initialize
+    super
+    @name = "Guile"
+    @combos = ["ASSA", "ZZZX"]
+  end
+
+  def special_attack1
+    puts "Sonic boom!"
+  end
+
+  def special_attack2
+    puts "Flash kick"
+  end
+end
+
 
 fighter = Fighter.new
 fighter.action("A").action("S").action("Z").action("X")
