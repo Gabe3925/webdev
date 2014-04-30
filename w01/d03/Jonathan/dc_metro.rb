@@ -13,7 +13,6 @@ dc_metro[:orange] = orange
 puts "DC Metro: Red, Turquoise and Orange Lines"
 puts "What line would you like to travel on?"
 line_1 = gets.chomp.to_sym.downcase
-puts
 
 puts "Great, here are the choices on that line"
 puts dc_metro[line_1]
