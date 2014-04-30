@@ -64,6 +64,51 @@ class Fighter
   end
 end
 
+class Guile < Fighter
+  def test_for_special(combo)
+    case combo
+    when "ASSA"
+      puts "Sonic Boom!"
+      return true
+    when "ZZZX"
+      puts "Flash kick!"
+      return true
+    end
+  end
+end
+
+class ChunLi < Fighter
+  def test_for_special(combo)
+    case combo
+    when "XZXZ"
+      puts "Lightning Kick"
+      return true
+    when "AXXZ"
+      puts "Spinning bird kick!"
+      return true
+    end
+  end
+end
+
+class Blanka < Fighter
+  def test_for_special(combo)
+    case combo
+    when "SSAA"
+      puts "Electric Thunder"
+      return true
+    when "XXZA"
+      puts "Rolling attack!"
+      return true
+    end
+  end
+end
+
 fighter = Fighter.new
 fighter.action("A").action("S").action("Z").action("X")
 fighter.action("S").action("S").action("Z").action("X")
+
+guile = Guile.new
+guile.action("A").action("S").action("S").action("A")
+guile.action("Z").action("Z").action("Z").action("X")
+
+chunli = ChunLi.new
