@@ -7,6 +7,12 @@
 # Instantiate a few songs to test your class.
 
 class Song
+  def initialize(options)
+    @title = options[:title]
+    @artist = options[:artist]
+    @genre = options[:genre]
+  end
+
   def title=(title)
     @title = title
   end
@@ -33,6 +39,10 @@ class Song
 
   def play
     return "#{self.title()} by #{self.artist()} is playing."
+  end
+
+  def stop
+
   end
 end
 
