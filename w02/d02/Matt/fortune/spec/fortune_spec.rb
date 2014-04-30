@@ -39,7 +39,6 @@ let( :fortune ){ FortuneCookie.new }
     context "when the fortune cookie is unwrapped" do
       before { fortune.unwrap!}
 
-
       it "tells you to crack it if it is still uncracked" do
         expect( fortune.read ).to eq("Crack")
       end
