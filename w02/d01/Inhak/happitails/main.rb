@@ -39,6 +39,7 @@ while in_operation == true
     yesno = gets.chomp.downcase
     if yesno == "y"
       $happitails.adopt
+
     else
       puts "What is the client's name?"
       name = gets.chomp
