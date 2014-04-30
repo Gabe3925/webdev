@@ -5,11 +5,11 @@ describe Calculator do
 
   describe "#add" do
     it "adds two positive numbers" do
-      expect(Calculator.new.add(2, 2)).to eq(4)
+      expect(Calculator.new.add(2, 2)).to eq 4
     end
 
     it "adds a negative and positive number" do
-      expect(Calculator.new.add(-1, 2)).to eq(1)
+      expect(Calculator.new.add(-1, 2)).to eq 1
     end
   end
 
@@ -20,7 +20,9 @@ describe Calculator do
   end
 
   describe "#power" do
-    it "raises one number to the power of another number"
+    it "raises one number to the power of another number" do
+      expect(Calculator.new.power(3, 2)).to eq(9)
+    end
   end
 
   describe "#sum" do
@@ -39,7 +41,7 @@ describe Calculator do
     it "computes the factorial of 0"
     it "computes the factorial of 1"
     it "computes the factorial of 2"
-    it "computes the factorial of 5" 
+    it "computes the factorial of 5"
     it "computes the factorial of 10"
   end
 
