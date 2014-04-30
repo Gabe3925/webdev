@@ -24,4 +24,4 @@ Write code that:
   - Returns an array of just the white wines
   - Returns an array listing the unique types of wine
   - Returns an array with the all the wines that have 2-word labels
-  - Returns an array with the labels of the wines that a type of Pinot Noir
+  - Returns an array with the labels of the wines that are a type of Pinot Noir
