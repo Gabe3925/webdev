@@ -67,3 +67,11 @@ end
 fighter = Fighter.new
 fighter.action("A").action("S").action("Z").action("X")
 fighter.action("S").action("S").action("Z").action("X")
+
+class Guile < Fighter
+  def initialize
+    super
+    @codes = ["ASSA", "ZZZX"]
+  end
+
+end
