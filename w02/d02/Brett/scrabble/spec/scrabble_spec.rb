@@ -19,15 +19,15 @@ describe ScrabbleWord do
     end
   end
 
-  describe "#multiplier_score" do
-    it "multiplies score by a factor of 2" do
-      word = ScrabbleWord.new("snowflake")
-      expect( word.multiplier_score(2) ).to eq 38
-    end
+  # describe "#multiplier_score" do
+  #   it "multiplies score by a factor of 2" do
+  #     word = ScrabbleWord.new("snowflake")
+  #     expect( word.multiplier_score(2) ).to eq 38
+  #   end
 
-    it "multiplies score by a factor of 3" do
-      word = ScrabbleWord.new("mittens")
-      expect( word.multiplier_score(3) ).to eq 27
-    end
-  end
+  #   it "multiplies score by a factor of 3" do
+  #     word = ScrabbleWord.new("mittens")
+  #     expect( word.multiplier_score(3) ).to eq 27
+  #   end
+  # end
 end
