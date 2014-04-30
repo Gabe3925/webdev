@@ -20,8 +20,31 @@ wine_cellar = [
 
 Write code that:
   - Adds a wine of your choice to the cellar
+  wine_cellar.push({ :label => "Franz", :type => "Jug", :color => "Whiteish" })
   - Returns a random wine from the cellar
+  wine_cellar.sample(1)
   - Returns an array of just the white wines
+
+  red_wines = wine_cellar.select do |wine|
+    wine[:color].include?('red')
+  end
   - Returns an array listing the unique types of wine
+
+  wine_types = wine_cellar.map do |unique|
+    unique[:type]
+  end
+  puts wine_types.uniq
+
   - Returns an array with the all the wines that have 2-word labels
+  red_wines = wine_cellar.select do |space|
+    space[:label].include?(' ')
+  end
   - Returns an array with the labels of the wines that a type of Pinot Noir
+
+pinot_noir = wine_cellar.select do |wine|
+  wine.has_value?('Pinot Noir')
+end
+
+pinot_noir_labels = pinor_noirs.map dp |wine|
+  wine[:label]
+end
