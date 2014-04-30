@@ -11,10 +11,13 @@ class WaterBottle
   end
 
   def fill!
-    @water_level = @max_capacity
+    @water_level = @max_capacity unless @water_level == @max_capacity
   end
 
   def dispense
-    @water_level -= 1 if @water_level > 0
+    if @water_level > 0
+      @water_level -= 1
+      "water"
+    end
   end
 end
