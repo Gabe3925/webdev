@@ -114,7 +114,7 @@ describe Bank do
 
         context "when the user doesn't have enough money" do
           before(:each) do
-            bank.open_account("Tony McGibbon", 232.00)
+            bank.open_account("Tony McGibbon", 222.00)
           end
 
           it "docks the user $30.00" do
