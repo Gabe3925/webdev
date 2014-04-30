@@ -14,7 +14,7 @@ class FortuneCookie
   end
 
   def cracked?
-    return @cracked
+   return @cracked
   end
 
   def crack!
@@ -27,11 +27,12 @@ class FortuneCookie
 
   def read
     if wrapped?
-      return "Unwrap me!"
+      return "Unwrap me"
     elsif !cracked?
-      return "Crack me!"
+      return "Crack"
     else
-      return "You will be really good at testing"
+      return "Yo"
     end
   end
+
 end
