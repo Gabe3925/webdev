@@ -1,3 +1,5 @@
+require "pry"
+
 class Fighter
   def initialize
     @name = ""
@@ -45,10 +47,10 @@ class Fighter
 
   def test_for_special(combo)
     case combo
-    when "ASZX"
+    when combo_code
       self.special_attack1()
       return true
-    when "SSZX"
+    when combo_code
       self.special_attack2()
       return true
     end
@@ -64,6 +66,15 @@ class Fighter
   end
 end
 
+class Guile < Fighter
+  def initialize
+    super
+    @codes = ["ASSA", "ZZZX"]
+  end
+end
+
 fighter = Fighter.new
 fighter.action("A").action("S").action("Z").action("X")
 fighter.action("S").action("S").action("Z").action("X")
+
+binding.pry
