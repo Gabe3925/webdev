@@ -70,6 +70,7 @@ describe VendingMachine do
     end
 
     it "should clear the status message state" do
+      vm.vend
       vm.refund
       expect( vm.status ).to eq('')
     end
@@ -143,14 +144,14 @@ describe VendingMachine do
       end
 
       it "should add the purchased product into purchases" do
-        expect( vm.purchases.last.product ).to eq("Coke")
+        expect( vm.purchases.last ).to eq("Coke")
       end
 
       it "should add new purchases into existing purchases" do
         vm.insert_cash(1.50)
         vm.enter_code('1')
         vm.vend
-        expect( vm.purchases.last.quantity ).to eq(2)
+        expect( vm.purchases.last ).to eq("Coke")
       end
 
     end # context - sufficient credit, valid SKU

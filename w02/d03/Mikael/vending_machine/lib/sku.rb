@@ -1,8 +1,5 @@
 class Sku
   attr_reader :code, :product, :price, :quantity
-  attr_writer
-  attr_accessor
-
 
   def initialize(code, product='', price=0, quantity=0)
     @code = code

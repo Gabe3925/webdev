@@ -33,22 +33,22 @@ class VendingMachine
   end
 
   def vend
-    if get_sku(@code) == nil
+    sku = get_sku(@code)
+    if sku == nil
       @status = "Please enter a valid code."
       enter_code("")
 
-    elsif get_sku(@code).quantity == 0
+    elsif sku.quantity == 0
       @status = "Out of stock."
       enter_code("")
-    elsif credit < get_sku(@code).price
-      @status = "Insufficient funds. Selected item costs $#{get_sku(@code).price}"
+    elsif credit < sku.price
+      @status = "Insufficient funds. Selected item costs $#{sku.price}"
     else
-      get_sku(@code).purchase
-      @credit -= get_sku(@code).price
+      sku.purchase
+      @credit -= sku.price
       @change += @credit
       @credit = 0
-      @purchases.push(get_sku(@code))
-
+      @purchases << sku.product
     end
 
   end

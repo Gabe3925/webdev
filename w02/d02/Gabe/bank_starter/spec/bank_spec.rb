@@ -129,8 +129,7 @@ describe Bank do
 
       end # context - when user has account
 
-    end # describe - withdraw
-
+   end # describe - withdraw
     describe "#deposit" do
 
       context "when a user has an account" do
