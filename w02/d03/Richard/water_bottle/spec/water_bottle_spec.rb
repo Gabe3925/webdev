@@ -1,5 +1,5 @@
-# require 'spec_helper'
-# require 'pry'
+require 'spec_helper'
+require 'pry'
 require_relative '../lib/water_bottle'
 
 describe WaterBottle do
@@ -15,20 +15,20 @@ describe WaterBottle do
     it "starts off empty with cap on" do
       expect( bottle.is_empty ).to be_truthy
       expect( bottle.cap_on ).to be_truthy
-    end
+    end # - starts of empty with cap on
 
     describe "#twist_cap!" do
 
       it "opens the bottle" do
         bottle.twist_cap!
         expect( bottle.cap_on ).to be_falsey
-      end
+      end # = opens the bottle
 
       it "closes the bottle" do
         bottle.twist_cap!
         bottle.twist_cap!
         expect( bottle.cap_on ).to be_truthy
-      end
+      end # closes the bottle
     end
 
     describe "#fill_bottle" do
