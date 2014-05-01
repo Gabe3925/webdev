@@ -7,10 +7,8 @@ class Sku
     @price = price
     @quantity = quantity
   end
-
+  
   def purchase
     @quantity = 1
   end
-
-
 end # END Sku class
