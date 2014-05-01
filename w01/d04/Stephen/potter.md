@@ -18,13 +18,20 @@ Write a method that does each of the following:
 * Return an array with all of the character names, but for the characters from Slytherin, reverse their names (ie "Draco Malfoy" becomes "yoflaM ocarD")
 * Return an array with the unique last names of all the characters from Gryffindor (ie, print Weasley only 1 one time)
 * Return an array with the names of all the Weasleys, but give each of them a middle name of "Badger"
+<<<<<<< HEAD
+
+=======
+>>>>>>> 9a860de93c30968e6d6dda3a663586e8bf7f9022
 * Return an array with the first names of characters whose first names end in "y"
 
 ### Bonus
 
 * Return an array with all of the characters' names whose name contains "ll" somewhere
+<<<<<<< HEAD
+=======
 
 * Return an array with all of the characters' names whose name contains multiple k's
+>>>>>>> 9a860de93c30968e6d6dda3a663586e8bf7f9022
 
 * Return an array with all of the characters' names whose name contains multiple k's
 

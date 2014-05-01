@@ -27,5 +27,5 @@ describe Light do
     end
 
   end
-  
+
 end
