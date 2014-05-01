@@ -42,14 +42,10 @@ while response == "y"
     num_1 = gets.to_i
     num_2 = gets.to_i
     case operation
-      when "add"
-        puts add(num_1, num_2)
-      when "subtract"
-        puts subtract(num_1, num_2)
-      when "multiply"
-        puts multiply(num_1, num_2)
-      when "divide"
-        puts divide(num_1, num_2)
+      when "add" then puts add(num_1, num_2)
+      when "subtract" then puts subtract(num_1, num_2)
+      when "multiply" then puts multiply(num_1, num_2)
+      when "divide" then puts divide(num_1, num_2)
       end
   end
   puts "Would you like to perform another operation (y/n)?"

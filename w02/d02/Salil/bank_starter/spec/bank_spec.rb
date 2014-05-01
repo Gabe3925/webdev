@@ -95,11 +95,11 @@ describe Bank do
     describe "#withdraw" do
 
       context "when a user has an account" do
-        before(:each) do
-          bank.open_account("Travis Vander Hoop", 250.00)
-        end
 
         context "when the user has enough money" do
+          before(:each) do
+            bank.open_account("Travis Vander Hoop", 250.00)
+          end
 
           it "takes the specified amount from the account" do
             travs_account = bank.find_account("Travis Vander Hoop")
