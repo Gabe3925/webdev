@@ -1,5 +1,5 @@
+require_relative 'models/Gladiator'
 class Arena
-  require 'Gladiator'
   attr_accessor :name, :gladiators
 
   def initialize(name, gladiators = [])
