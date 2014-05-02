@@ -1,12 +1,10 @@
-require "pry"
-
 class Conway
   attr_reader :curr_phase, :next_phase
 
   def initialize(curr_phase = {})
     @curr_phase = curr_phase
     @next_phase = {}
-    @standstill = true
+    @standstill = false
   end
 
   def add_cell(x_pos, y_pos, phase=@curr_phase)
@@ -72,6 +70,8 @@ class Conway
 
   def update_phase
     # get all (x, y) coordinates that need to be checked
+    return if @standstill
+
     x_y_checks = get_coords_to_scan
     x_y_checks.each do |x_pos, y_coords|
       y_coords.each do |y_pos|
@@ -79,7 +79,8 @@ class Conway
         add_cell(x_pos, y_pos, @next_phase) if will_live?(x_pos, y_pos)
       end
     end
-    # commits the changes
-    @curr_phase, @next_phase = @next_phase, {}
+
+    @standstill = true if @curr_phase == @next_phase # if there's no evolution, then set a standstill flag
+    @curr_phase, @next_phase = @next_phase, {} # commits the changes
   end
 end
