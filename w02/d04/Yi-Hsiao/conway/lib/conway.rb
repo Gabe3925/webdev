@@ -86,4 +86,4 @@ class Conway
     @standstill = true if @curr_phase == @next_phase # if there's no evolution, then set a standstill flag
     @curr_phase, @next_phase = @next_phase, {} # commits the changes
   end
-end
+endå
