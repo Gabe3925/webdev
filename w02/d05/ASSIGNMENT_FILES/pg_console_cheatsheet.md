@@ -10,5 +10,5 @@
 
 `\c database_name` connects you to `database_name`
 
-`\d` lists all tables of current database.
+`\d` lists all tables of current database
 
