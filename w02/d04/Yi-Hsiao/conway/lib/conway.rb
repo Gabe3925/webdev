@@ -1,3 +1,5 @@
+require "pry"
+
 class Conway
   attr_reader :curr_phase, :next_phase
 
@@ -9,6 +11,7 @@ class Conway
 
   def add_cell(x_pos, y_pos, phase=@curr_phase)
     # add cell with a (x, y) coordinate and remember its location
+    @standstill = false
 
     if phase.has_key?(x_pos)
       phase[x_pos].push(y_pos).uniq!
