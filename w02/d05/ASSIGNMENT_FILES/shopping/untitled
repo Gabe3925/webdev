@@ -1,2 +1,0 @@
-1. SELECT SUM((number_of_items)) FROM receipts;
-2. SELECT SUM((price)) FROM receipts WHERE store = 'Sears';
