@@ -1,4 +1,5 @@
 # SQL Clauses & Aggregation
+# Stephen Stanwood (stephen@stanwoodsolutions.com)
 
 ### Part 1
 
