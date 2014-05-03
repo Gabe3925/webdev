@@ -48,8 +48,7 @@ Research all of the items you listed, and write in either an explanation (if the
 	- **`.reduce`**
 
 8. Explain the difference between `.each` and `.map` and when you would use each one
-	- **`.each`**
-	- **`.map`**
+	- .each will return the same information, .map will return a array with updated data.
 
 9. Explain what **yield** does in the context of a block
 	- Yield forces a method to take a block for its argument
