@@ -14,7 +14,7 @@
 	- nba_db=# SELECT * FROM players ORDER BY points ASC;
 	
 4. Name and Points per game (points/games), for the players with the top 20 points per game
-	- SELECT 
+	-  
  
 5. The average age for all players
 6. The average age for all players on the Oklahoma City Thunder (OKC)
