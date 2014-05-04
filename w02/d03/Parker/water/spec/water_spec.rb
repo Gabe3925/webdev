@@ -14,16 +14,23 @@ require_relative "../lib/water"
 		end
 
 	context "when it's full" do
+		let (:wb) ( WaterBottle.new)
 		before do 
-			wb =WaterBottle.new
 			wb.fill
 		end
 
-		it "can dispense water" do
-			wb.dispense
-			expect(wb.dispense).to eq("Water")
+	it "can dispense water" do
+		wb.dispense
+		expect(wb.dispense).to eq("Water")
 		end
+
+	context "when empty" do
+		it "can't dispense water" do
+		wb = WaterBottle.new
+		expect(wb.d)
 	end
+
+end
 
 
 
