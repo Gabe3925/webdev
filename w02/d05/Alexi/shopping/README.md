@@ -12,10 +12,11 @@
 #### SQL Queries
 - Your task is to mine the receipts table for the following data, documenting the queries you used in the empty bullet points provided:
     - All the attributes from all the receipts
-      - 
+     	- id, store, item, number_of_items, price, buy_date
 
     - The store and item names from all the receipts
-      - 
+      - Sears, Toys R Us, Sears, Borders, Local book store, Macy's, JC Penny
+      - PS4, XBox One, TMNT Collectors Set, Lego set, Blood Meridian, Ham on Rye, The Last Tycoon, Button Down Shirt, Nikes, Tube socks, reeboks, umbrella, boxer shorts, tmnt bedspread, packers jersye, life, laptop bag
 
     - All the attributes from all purchases made at Toys R Us
       - 
