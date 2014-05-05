@@ -1,12 +1,24 @@
-## Peter Lai's Ruby Powered Shopping Spree
+## The Ruby Powered Shopping Spree
 
 ####Background:
-Early this morning, Peter Lai infused his credit card with the essence of a powerful Ruby. He's been on a preposterous shopping spree ever since.
+Early this morning, Peter Lai went on a shopping spree with a powerful new credit card. You are his accountant.
+
+
+__Step 1:__
+Go into pry.
+
+__Step 2:__
+Require the 'pg' gem
+
+__Step 3:__
+Copy and paste the following data into pry:
 
 ```Ruby
-store = ["Chipotle", "Eden Prairie Mall", "McDonalds", "Kohls", "Mall of America"]
+stores = ["Street Vendor", "The White House Gift Shop", "Nordstrom Rack"]
 
-quantities = [30, 5, 10, 20, 50]
+quantities = [5, 10, 15]
+
+prices = [4.99, 9.99, 50.00, 100.00]
 
 items = [
   "Gummy Cola Bottle",
@@ -15,23 +27,31 @@ items = [
   "Bibimbop",
   "Burrito",
   "Channa Masala",
-  "Lettuce Wraps",
+  "Lettuce Wrap",
   "PIZZA",
   "Cheese",
-  "(Disney Soundtrack)"
+  "(Disney Soundtrack)",
   "Whiskey",
   "Athletic Socks",
   "Teach Like a Champion",
   "Practice Perfect"
 ]
 ```
+__Step 4:__
+Open a connection to your `shopping_db` database and store it in the variable `pg_connection`. Using this connection, add 5 of Peter's purchases to the receipts table, randomly assigning a store, quantity, item, and price.
 
-__Step 1.__
-Using the "pg" gem, connect to your `shopping_db`. Add 50 purchases at 50 stores, randomly assigning a store, quantity, item, and price 
+  - __Hint:__ look up the `Array.sample` method.
 
-__Step 2.__ 
-Add 25 receipts to the `receipts` table, randomly assigning a store, quantity, item, and price.
-  - Hint: look up the `.sample` method.
+__Step 5:__
+Peter calls you and tells you he just experienced a repressed memory regarding Toys "R" Us, and wants you to delete all records having to do with Toys R Us immediately.
+
+__Step 6:__ 
+Peter calls you and tells you he traded in his Packers Jersey (purchased at Sears on March 23rd) for a Giants Jersey. He wants the receipts database to reflect the change.
+
+__Step 7:__
+Peter calls yet AGAIN, and tells you Sears dropped the price of the PS4 from $400 to $350, and they gave him the discount when he threatened to write a bad yelp review. He wants the receipts table to reflect the change.
+
+__Last Step:__  __Close your database_connection__
 
 
 
