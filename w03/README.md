@@ -1,4 +1,4 @@
-#Week 3 - Persistent Storage, Databases & Into to Web Apps
+#Week 3 - Persistent Storage, Databases & Intro to Web Apps
 
 ###What did we do last week?
 - We dove into object-oriented programming and domain modeling and developed software using TDD.
@@ -7,7 +7,7 @@
 
 |Monday         | Tuesday         |Wednesday        |Thursday         |  Friday
 |:-----         |:-----           |:-----           |:-----           |:----- 
-Modeling, Foreign Keys & SQL CRUD | Intro to ActiveRecord | ActiveRecord Associations | Into to the Web & Sinatra | Views & HTML
+Modeling, Foreign Keys & SQL CRUD | Intro to ActiveRecord | ActiveRecord Associations | Intro to the Web & Sinatra | Views & HTML
 
 ###What are we doing next week?
 - We are going to delve deeper into web apps and get our first introduction to Ruby on Rails
