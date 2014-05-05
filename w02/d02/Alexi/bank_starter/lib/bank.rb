@@ -3,6 +3,16 @@ class Bank
 # Sets and gets name
   attr_accessor :name
 
+  # Setter
+  # def name(name)
+  #   @name = name
+  # end
+
+  # Getter
+  # def name
+  #   return @name
+  # end
+
   def initialize(name)
     @name = name
     @accounts = []
@@ -11,14 +21,13 @@ class Bank
 # This redefines @accounts as a method. 
 # The accounts method will be used throughout 
 # the program.
+# Getter -->
   def accounts
     return @accounts
   end
 
 # This method accepts name and balance arguments
-# and if the balance is less than $200, the 
-# method will call on the accounts array
-# (by way of the accounts method). The
+#. The
 # 'accounts.push' syntax will push the given
 # parameters into the accounts array as a
 # hash.  
@@ -35,9 +44,9 @@ class Bank
 # which is not only able to search through
 # an array, but also reach inside hashes too.
 # Accounts.find's work is dumped into a local
-# variable, name_arg - name_arg acts as an array.
+# variable, name_arg - name_arg acts as an hash.
 # The method reaches into the hash, explicitly calling
-# on the name hash and determines (using boolean logic)
+# on the name hash (using a key) and determines (using boolean logic)
 # whether it equals the parameter passed to the method's
 # argument. The argument should automatically return name.
 # 
@@ -79,7 +88,7 @@ class Bank
 # method to isolate a hash, using a given name.
 # Once the hash is "retrieved" and set to a new
 # local variable, a boolean operation is performed
-# to determine if the balance is great than the 
+# to determine if the balance is greater than the 
 # balance in the hash. If the boolean operation
 # is true, then the desired withdrawal amount is
 # subtracted from the original balance, and the
@@ -129,6 +138,5 @@ class Bank
   # balance_after = user[:balance]
   # return balance_after
   end
-
 end
 
