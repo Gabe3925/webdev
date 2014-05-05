@@ -10,9 +10,10 @@ Target 10 concepts or mechanics you feel unsure of, and write them into the numb
 Research all of the items you listed, and write in either an explanation (if the item is a concept), or the necessary code snippet (if the item is a mechanical question).
 
 
-1.
+1. Forking from an existing repository on GitHub
+(having a hard time locating the instructions that were uploaded by Travis, the link was posted in HipChat somewhere.)
 
-2.
+2. Cloning a forked repository onto my machine
 
 3.
 
