@@ -1,7 +1,7 @@
 ## The Ruby Powered Shopping Spree
 
 ####Background:
-Early this morning, Peter Lai went on a shopping spree with a powerful new credit card. You are his accountant.
+Early this morning, Peter Lai went on a shopping spree with a powerful new credit card. You are his accountant, and must make the appropriate changes to the `shopping_db` database using Ruby's 'pg' gem. 
 
 
 __Step 1:__
