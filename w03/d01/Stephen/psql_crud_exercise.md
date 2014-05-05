@@ -19,7 +19,7 @@ Peter Lai continues to shop. Your task is to make the appropriate updates to his
   - Update the 'returned' value for 'The Last Tycoon' to true.
 
   ALTER TABLE receipts
-  ADD returned BOOLEAN;
+  ADD COLUMN returned BOOLEAN DEFAULT(false);
 
   UPDATE receipts
   SET returned = true
