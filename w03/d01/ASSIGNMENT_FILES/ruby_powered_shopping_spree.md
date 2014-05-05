@@ -38,7 +38,7 @@ items = [
 ]
 ```
 __Step 4:__
-Open a connection to your `shopping_db` database and store it in the variable `pg_connection`. Using this connection, add 5 of Peter's purchases to the receipts table, randomly assigning a store, quantity, item, and price.
+Open a connection to your `shopping_db` database and store it in the variable `pg_connection`. Using this connection, add 5 purchases to the receipts table, randomly assigning a store, quantity, item, and price. The date purchased should be today's date.
 
   - __Hint:__ look up the `Array.sample` method.
 
@@ -52,6 +52,8 @@ __Step 7:__
 Peter calls yet AGAIN, and tells you Sears dropped the price of the PS4 from $400 to $350, and they gave him the discount when he threatened to write a bad yelp review. He wants the receipts table to reflect the change.
 
 __Last Step:__  __Close your database_connection__
+
+`pg_connection.close`
 
 
 
