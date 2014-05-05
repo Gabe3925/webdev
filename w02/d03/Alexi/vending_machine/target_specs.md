@@ -1,12 +1,12 @@
 #Sku
 
 * **::new**
-  * should set the provided product code.
-  * should set the provided product name.
-  * should set the provided price.
-  * should set the provided quantity.
+  x- should set the provided product code.
+  x- should set the provided product name.
+  x- should set the provided price.
+  x- should set the provided quantity.
 * **\#purchase**
-  * should decrease its available quantity by one.
+  x- should decrease its available quantity by one.
 
 #VendingMachine
 
