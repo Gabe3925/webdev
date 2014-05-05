@@ -21,5 +21,7 @@ students.each_with_index {|index, val| puts "#{val}. #{index}"}
 
 
 
+
+
 binding pry
 
