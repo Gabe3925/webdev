@@ -10,6 +10,21 @@ class VendingMachine
     @inventory = inventory
   end
 
-  # Go...!
+  def get_sku(code)
+    @inventory.find do |sku|
+      sku.code == code
+  end
+  
+  def insert_cash(cash)
+    @credit += cash.to_f
+  end
 
+  def enter_code(code)
+    @code = code
+  end
+
+  def refund
+    @change = @credit
+    @credit = 0
+  end
 end
