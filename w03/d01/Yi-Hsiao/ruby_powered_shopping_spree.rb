@@ -30,9 +30,7 @@ values_placeholder = 5.times.map do |iteration|
   "($#{ base + 1 }, $#{ base + 2 }, $#{ base + 3 }, $#{ base + 4 })"
 end
 purchase_statement << values_placeholder.join(",")
-# build values
 insert_values = 5.times.map { |iteration| [stores.sample, quantities.sample, items.sample, prices.sample] }.flatten
-# execute query
 pg_connection.exec_params(purchase_statement, insert_values)
 
 # Peter calls you and tells you he just experienced a repressed memory regarding Toys "R" Us, and wants you to delete all records having to do with Toys R Us immediately.
