@@ -1,23 +1,24 @@
 class WaterBottle
 
   def initialize
-    @empty = 0
+    @water = 0
   end
 
-  def empty?
-    return @empty
+  def water
+    return @water
   end
 
   def fill!
-    @empty = 3
+    @water = 3
     return "Filled!"
   end
 
   def dispense!
-    if empty? == 0
+    if water == 0
       return "There is no water in here."
     else
-      @empty -= 1
+      @water -= 1
+      return "water"
     end
   end
 
