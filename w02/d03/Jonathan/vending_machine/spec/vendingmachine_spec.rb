@@ -9,7 +9,22 @@ describe VendingMachine do
       Sku.new('3')
     ])
   end
+end
 
-  # Go...!
-  
+describe "#get_sku" do
+
+  vm = VendingMachine.new
+
+  it "should return a Sku object for a valid code." do
+    expect( vm.get_sku ("full_slot" )).to eq ("full_slot")
+  end
+
+  it "should return nil for an invalid code." do
+    expect( vm.get_sku ("empty_slot"))
+  end
+end
+
+describe "#insert_cash" do
+
+
 end
