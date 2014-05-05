@@ -32,7 +32,7 @@ describe Arena do
 
   end
 
-  describe "#fight" do
+  describe "#battle" do
     context "there are 2 fighters in the arena" do
 
       it "should trident beats spear" do
