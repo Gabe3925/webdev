@@ -10,7 +10,7 @@ Target 10 concepts or mechanics you feel unsure of, and write them into the numb
 Research all of the items you listed, and write in either an explanation (if the item is a concept), or the necessary code snippet (if the item is a mechanical question).
 
 
-1.
+1. Enumeration - Enumeration is the process of going through each value
 
 2.
 
