@@ -11,5 +11,5 @@ Procrastination
 
 # 2) How can you combat or minimize those habits' effects on your experience at General Assembly?
 
-Get started right away.  No web surfing.
+Get started right away.  No web surfing.ex
 

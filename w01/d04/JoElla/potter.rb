@@ -29,17 +29,16 @@ end
 
 #-----Slytherin incomplete
 #all ppl, with Slytherin ppl reversed
-just_name = ppl.map do |person|
-  person[:name]
+
+
+def reverse_slytherin(arry)
+  ppl.each
+  if arry[:house] == "Slytherin"
+    sly_back = array[:name].reverse
+  end
 end
 
-# def reverse_slytherin (name_array)
-#   if name_array[:house] == "Slytherin"
-#     name_array[:name].reverse
-#   end
-# end
-
-# reverse_slytherin(ppl)
+reverse_slytherin(ppl)
 
 slytherin = ppl.select do |person|
  person[:house] == "Slytherin"
