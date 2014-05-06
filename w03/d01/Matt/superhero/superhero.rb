@@ -2,8 +2,6 @@ require 'pg'
 
 answer = "Z"
 
-# binding.pry
-
 ### seed data
 # 1) create superhero_db 2) cd into superhero 3) run command "psql -d superhero -f superhero.sql"
 
