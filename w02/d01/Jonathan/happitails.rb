@@ -16,7 +16,7 @@ def menu
   puts "3. Print animal roster"
   puts "4. Print client roster"
   puts "5. Adopt an animal"
-  puts "6ha. Quit"
+  puts "6. Quit"
 end
 
 # For all answers
