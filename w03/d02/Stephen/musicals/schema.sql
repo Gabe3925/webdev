@@ -1,0 +1,7 @@
+CREATE TABLE musicals (
+  id SERIAL PRIMARY KEY,
+  title VARCHAR(100) NOT NULL,
+  year INTEGER NOT NULL,
+  composer VARCHAR(100) NOT NULL,
+  lyricist VARCHAR(100) NOT NULL
+);
