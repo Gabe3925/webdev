@@ -6,4 +6,10 @@ class Word
   def original_word
     return @original_word.downcase
   end
+
+  def starts_with_vowel(letter)
+    letter = original_word
+    letter.ch
+  end
+
 end
