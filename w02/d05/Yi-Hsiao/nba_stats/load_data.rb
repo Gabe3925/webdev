@@ -11,7 +11,6 @@ file.each do |line|
   team = player[2]
   games_played = player[3]
   points = player[4]
-
   sql  = "INSERT INTO players (name, age, team, games, points)"
   sql += "VALUES ( '#{name}', '#{age}', '#{team}', '#{games_played}', '#{points}');"
 
