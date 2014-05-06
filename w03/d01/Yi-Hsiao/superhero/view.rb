@@ -10,7 +10,7 @@ class Display
   def print_values(values_arr, intro = nil)
     # prints out a bullet point for each value in an array
     intro ? puts("", intro) : puts("")
-    values_arr.each { |value| puts "* #{ value }" }
+    values_arr.each { |value| puts "* #{ value }" unless value }
     puts
   end
 

@@ -53,7 +53,10 @@ class SuperHero
   end
 
   def create
-    super_hero = {}
+    # starts a wizard to create a new super hero record
+
+    super_hero = {}  # attributes of super hero to be created
+
     @display.print("What is the super hero's name?")
     super_hero[:name] = gets.chomp.split.map(&:capitalize).join(" ")
 
@@ -77,6 +80,20 @@ class SuperHero
     else
       @display.print("#{ super_hero[:name] } is already in the history books.")
     end
+  end
+
+  def view
+    @display.print("Which superhero do you want to view more details on?")
+    requested_name = gets.chomp
+
+    requested_hero_data = @superhero_data.get_all(["name", "alter_ego", "has_cape", "archnemesis"], "name ilike '#{ requested_name }'")
+    @display.print_values(requested_hero_data)
+  end
+
+  def update
+  end
+
+  def delete
   end
 
   def quit

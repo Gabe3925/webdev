@@ -22,7 +22,7 @@ class DBTable
     end
   end
 
-  def get_all(fields_arr, filters)
+  def get_all(fields_arr, filters = "")
     # given any number of field names, return an array of all the data from the table
     select_statement = "SELECT #{ fields_arr.join(",") } FROM #{ @table }"
     select_statement += " WHERE #{ filters }" unless filters.empty?
