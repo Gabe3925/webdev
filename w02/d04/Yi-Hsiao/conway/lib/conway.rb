@@ -43,11 +43,7 @@ class Conway
     # checks if this cell is alive or not
     if @curr_phase.has_key?(x_pos) && @curr_phase[x_pos].include?(y_pos)
       # if alive and has 2-3 neighbors, then it survives, else it dies
-      case num_neighbors
-      when 1 then false
-      when 2..3 then true
-      when 4..8 then false
-      end
+      (2..3).cover?(num_neighbors) ? true : false
     else
       # if not yet alive and has exactly 3 neighbors, it will come alive
       num_neighbors == 3 ? true : false
