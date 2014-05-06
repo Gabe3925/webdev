@@ -16,13 +16,18 @@ while true
 
   puts "These are your choices on the #{line_on} line: #{dc_metro[line_on].join(', ')}"
 
-
-
+  # real_choice = false
+  # while real_choice == true
+  #   puts "What stop do you want to get on?"
+  #   on_stop = gets.chomp
+  #     if !dc_metro.include?(on_stop)
+  #       puts "Not a choice!"
+  #       real_choice = false
+  #     end
+  # end
   puts "What stop do you want to get on?"
   on_stop = gets.chomp
-  # if !dc_metro.include?(on_stop)
-  #   puts "Not a choice!"
-  # end
+
 
   puts "What line do you want to get off on?"
   line_off = gets.chomp.to_sym
