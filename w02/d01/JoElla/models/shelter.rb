@@ -1,3 +1,4 @@
+
 class Shelter
   def initialize(name)
     @name = name
@@ -33,7 +34,9 @@ class Shelter
     #deletes animal from shelter's
     adopted = @animals.delete_at(adopteeindex)
     #pushes animal name to client's array
-
+    #we have the animal object stored in adopted
+    #@clients.push(adopted)
+    #I think the problem is that the pets array has never been pushed into the client array here
   end
 
 
