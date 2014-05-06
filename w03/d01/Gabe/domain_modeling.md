@@ -10,6 +10,15 @@ We'll be looking at a few web applications. We want to compose a tangible databa
 
 1. Break into pairs.
 * Spend 10 minutes reviewing the application. Consider what it does.
+
+-shows an events
+-allows you to rsvp
+-shows who made the event
+-shows WHO has rsvp
+-shows who has been invited
+-shows WHEN invitees have responded
+
+
 * Compose an ERD mapping entities, their attributes, and their relationships.
 * When you feel your ERD is complete, circulate the room and see what other groups have. See if another group found something that you missed.
 * Create a new `.sql` file for the application. Compose SQL that would build all database tables with their attributes and relationships defined. Define attribute datatypes, defaults, and constraints where appropriate.

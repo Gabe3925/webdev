@@ -2,7 +2,7 @@
 
 ####Background:
 Early this morning, Peter Lai went on a shopping spree with a powerful new credit card. You are his accountant, and must make the appropriate changes to the `shopping_db` database using Ruby's 'pg' gem. 
-
+ls
 
 __Step 1:__
 Go into pry.
@@ -20,7 +20,7 @@ quantities = [5, 10, 15]
 
 prices = [4.99, 9.99, 50.00, 100.00]
 
-items = [
+items = [d
   "Gummy Cola Bottle",
   "Guava Candy",
   "Taco",
@@ -38,7 +38,8 @@ items = [
 ]
 ```
 __Step 4:__
-Open a connection to your `shopping_db` database and store it in the variable `pg_connection`. Using this connection, add 5 purchases to the receipts table, randomly assigning a store, quantity, item, and price. The date purchased should be today's date.
+Open a connection to your `shopping_db` database and store it in the variable `pg_connection`. Usla
+ing this connection, add 5 purchases to the receipts table, randomly assigning a store, quantity, item, and price. The date purchased should be today's date.
 
   - __Hint:__ look up the `Array.sample` method.
 
