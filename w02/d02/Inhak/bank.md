@@ -1,11 +1,11 @@
 # Test-Driven Bank
 
-### Prompt: 
+### Prompt:
 You're going to open a bank. You know that opening a bank is serious business, so you've thoughtfully written out your expectations for the bank both in Enlish (below) and in RSpec (in the `spec/bank_spec.rb` file).
 
 Head into the `bank_starter` directory and run the `rspec` command. Rspec will run your tests, all of which will fail. It is your job to read the error and write the code to make the tests pass. You will write your code in the `lib/bank.rb` file.
 
-__NOTE:__ You will be running into error after error. This is by design. 
+__NOTE:__ You will be running into error after error. This is by design.
 
 ###Specifications for your Bank
 
