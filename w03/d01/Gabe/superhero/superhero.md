@@ -6,7 +6,7 @@ Design a Ruby program that manages a database of superheros. The database should
 
 ### Directions
 
-* Don't use objects
+* Don't use objectsi
 * Don't write tests
 
 ### Menu Spec
