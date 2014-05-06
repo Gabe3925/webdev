@@ -44,6 +44,5 @@ class Bank
     return find_account(name)[:balance] = return_balance(name) + amount
   end
 
-
 end
 
