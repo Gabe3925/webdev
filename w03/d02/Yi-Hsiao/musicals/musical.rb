@@ -13,6 +13,7 @@ ActiveRecord::Base.establish_connection(
 )
 
 class Musical < ActiveRecord::Base
+
   def self.find_title(title)
     self.find_by(title: title)
   end
