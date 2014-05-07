@@ -12,7 +12,8 @@ Find a musical by its title
 
 Find all musicals composed by Richard Rodgers
 
-=> Musical.find_in_batches(composer: 'Richard Rogers').take
+=> Musical.where(composer: 'Richard Rogers')
+OR => Musical.where("composer = 'Richard Rogers'")
 
 Order the musicals by year
 
