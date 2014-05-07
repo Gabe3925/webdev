@@ -13,9 +13,21 @@ ActiveRecord::Base.establish_connection(
 )
 
 class Musical < ActiveRecord::Base
+	has_many :songs, dependent: :destroy
 end
 
 class Song < ActiveRecord::Base
+	belongs_to :musical
+	has_many :performances
+end
+
+class Character < ActiveRecord::Base
+	has_many :performances
+end
+
+class Performance < ActiveRecord::Base
+	belongs_to :song
+	belongs_to :character
 end
 
 binding.pry
