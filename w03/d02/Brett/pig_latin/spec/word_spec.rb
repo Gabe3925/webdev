@@ -11,4 +11,19 @@ describe Word do
     end
   end
 
+  describe "#piglatinize" do
+    context "If the word begins with a vowel" do
+      it "adds 'way' to the end of the word" do
+        word = Word.new("egg")
+        expect(word.piglatinize).to eq("eggway")
+      end
+    end
+    context "If the word begins with a consonant" do
+      it "The initial consonant or consonant cluster is moved to the end of the word, and 'ay' is added" do
+        word = Word.new("glove")
+        expect(word.piglatinize).to eq("oveglay")
+      end
+    end
+  end
+
 end
