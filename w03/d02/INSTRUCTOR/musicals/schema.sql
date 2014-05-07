@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 
@@ -719,6 +720,8 @@
 </html>
 
 =======
+=======
+>>>>>>> a12b2c1084799a4757a744377320753e5e652709
 DROP TABLE IF EXISTS performances;
 DROP TABLE IF EXISTS characters;
 DROP TABLE IF EXISTS songs;
@@ -748,4 +751,7 @@ CREATE TABLE performances (
   song_id integer references songs(id),
   character_id integer references characters(id)
 );
+<<<<<<< HEAD
 >>>>>>> b46a9cd0f32223919edea29e4b18aed66f371b17
+=======
+>>>>>>> a12b2c1084799a4757a744377320753e5e652709
