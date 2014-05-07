@@ -8,7 +8,7 @@ class DBTable
     @table = ""
   end
 
-  def add(key_val_pairs)
+  def self.add(key_val_pairs)
     # given a hash with keys and values, insert a single row into a db
     field_names = key_val_pairs.keys.join(",")
     field_values = key_val_pairs.values
