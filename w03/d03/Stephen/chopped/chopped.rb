@@ -36,9 +36,6 @@ require 'pry'
 # Logger will print out the actual SQL that runs to the Terminal
 ActiveRecord::Base.logger = Logger.new(STDOUT)
 
-# require our code
-Dir[File.join(File.dirname(__FILE__), 'chopped', '*.rb')].each {|file| require file }
-
 # Connect to our postgres database for musicals
 ActiveRecord::Base.establish_connection(
   :adapter => "postgresql",
