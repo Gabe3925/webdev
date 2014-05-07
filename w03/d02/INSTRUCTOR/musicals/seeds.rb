@@ -1,3 +1,4 @@
+
 require_relative './musical'
 
 Musical.delete_all
