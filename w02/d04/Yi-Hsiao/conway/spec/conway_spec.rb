@@ -1,6 +1,7 @@
 require "spec_helper"
 require_relative "../lib/conway"
 
+# be more descriptive about the class, e.g. game
 describe Conway do
   subject(:game) { Conway.new }
 
@@ -9,6 +10,7 @@ describe Conway do
       x_pos = 1
       y_pos = 1
       game.add_cell(x_pos, y_pos)
+      # be sure to label and explain any new concepts
       expect(game.curr_phase[x_pos]).to include(y_pos)
     end
 
@@ -26,6 +28,7 @@ describe Conway do
     end
   end
 
+  # could be better as a Cell instance method
   describe "#count_neighbors" do
     it "counts the number of adjacent cells to a specific coordinate" do
       game.add_cell(-1, -1)
