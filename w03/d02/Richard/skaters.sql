@@ -1,4 +1,4 @@
-CREATE TABLE skaters (
+CREATE TABLE user (
   id serial PRIMARY KEY,
   name varchar(50) NOT NULL,
   county varchar(100) NOT NULL,
