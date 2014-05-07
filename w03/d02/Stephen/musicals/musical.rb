@@ -24,6 +24,8 @@ ActiveRecord::Base.establish_connection(
   :database => "musicals_db")
 
 class Musical < ActiveRecord::Base
+  has_many :songs
+
   # Returns a musical as a readable string
   def to_s
     # special case where the composer and lyricist are the same person
@@ -32,6 +34,10 @@ class Musical < ActiveRecord::Base
     # default case with a different composer & lyricist
     return "\"#{title}\" (#{year}, #{composer} & #{lyricist})"
   end
+end
+
+class Song < ActiveRecord::Base
+  belongs_to :musical
 end
 
 Musical.delete_all
