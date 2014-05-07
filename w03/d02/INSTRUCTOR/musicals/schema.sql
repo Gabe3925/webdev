@@ -1,7 +1,15 @@
+DROP TABLE IF EXISTS musicals CASCADE;
 CREATE TABLE musicals (
-  id serial primary key,
-  title varchar(100) NOT NULL,
-  year integer NOT NULL,
-  composer varchar(100) NOT NULL,
-  lyricist varchar(100) NOT NULL
+  id SERIAL PRIMARY KEY,
+  title VARCHAR(100) NOT NULL,
+  year INTEGER NOT NULL,
+  composer VARCHAR(100) NOT NULL,
+  lyricist VARCHAR(100) NOT NULL
+);
+
+DROP TABLE IF EXISTS songs CASCADE;
+CREATE TABLE songs (
+  id SERIAL PRIMARY KEY,
+  title VARCHAR(100) NOT NULL,
+  musical_id INTEGER REFERENCES musicals(id)
 );
