@@ -32,17 +32,51 @@ Save the pry commands to a file called `ar_commands.txt`
 2. Create a new Painting (Starry Night) and save it to your database
 
 3. Return all Artists
+```ruby
+Artist.all
+```
 4. Return all Paintings
+```ruby
+Painting.all
+```
 
 5. Return the artist with an id of 2
+```ruby
+Artist.find(2)
+```
 6. Return the artist with a name of "Vincent Van Gogh"
+```ruby
+Artist.find_by(name: "Vincent Van Gogh")
+```
 7. Return all the artists who are "Spanish"
+```ruby
+Artist.find_by(nationality: "Spanish")
+```
 
 8. Return the painting with an id of 1
+```ruby
+Painting.find(1)
+```
 9. Return the painting with a name of "Guernica"
+```ruby
+Painting.find_by(title: "Guernica")
+```
 
 10. Return all the paintings that "Pablo Picasso" painted
+```ruby
+Artist.find_by(name: "Pablo Picasso").paintings
+```
 11. Return the artist of "Guernica"
+```ruby
+Painting.find_by(artist: "Guernica").artist
+```
 
-12. Change Vincent Van Gogh's nationality to "American"
-13. Change "Starry Night" to be one of Pablo Picasso's paintings
+12. Change Vincent Van Gogh"s nationality to "American"
+```ruby
+Artist.find_by(name: "Vincent Van Gogh").update(nationality: "American")
+```
+13. Change "Starry Night" to be one of Pablo Picasso"s paintings
+```ruby
+picasso = Artist.find_by(name: "Pablo Picasso")
+Painting.find_by(name: "Starry Night").update(artist: picasso)
+```
