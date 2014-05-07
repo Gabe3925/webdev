@@ -1,21 +1,10 @@
+require 'spec_helper'
 require_relative '../lib/nightclub'
 
 describe Clubber do
   let(:clubber) { Clubber.new }
 
-  context "#name validation" do
-    it "should be invalid with fewer than two letters" do
-      clubber.name = 'T';
-      clubber.valid?
-      expect( clubber.errors.has_key?(:name) ).to eq true
-    end
-
-    it "should be valid with two or more letters" do
-      clubber.name = 'TJ';
-      clubber.valid?
-      expect( clubber.errors.has_key?(:name) ).to eq false
-    end
-  end
+  it { should ensure_length_of(:name).is_at_least(2) }
 
   context "#age validation" do
     it "should be invalid when under 21" do
