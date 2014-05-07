@@ -23,6 +23,7 @@ end
 
 class Character < ActiveRecord::Base
 	has_many :performances
+	has_many =:performances
 end
 
 class Performance < ActiveRecord::Base
