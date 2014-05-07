@@ -1,4 +1,4 @@
- require 'spec_helper'
+require 'spec_helper'
 require_relative '../lib/word'
 
 describe Word do
@@ -6,31 +6,35 @@ describe Word do
   describe "#original_word" do
     let(:word) { Word.new("bazinga") }
 
-    it "has returns the original word" do
+    it "returns the original word" do
       expect( word.original_word ).to eq("bazinga")
     end
   end
 
   describe "#piglatinize" do
-    context "when the word begins with a vowel" do
+    context "when word begins with a vowel" do
       let(:word) { Word.new("egg") }
-      it "returns the original word + 'way'" do
+
+      it "returns the same word plus way at the end" do
         expect( word.piglatinize ).to eq("eggway")
       end
-
     end
 
-    context "when the word begins with a consonant" do
+    context "when word begins with one consonant" do
+      let(:word) { Word.new("happy") }
+
+      it "returns the consonant sound plus ay moved to the back" do
+        expect( word.piglatinize ).to eq("appyhay")
+      end
+    end
+
+    context "when word begins with multiple consonants" do
       let(:word) { Word.new("glove") }
-      it "moves the first consonant cluster to the end of the word and appends 'ay'" do
+
+      it "returns the consonant sound plus ay moved to the back" do
         expect( word.piglatinize ).to eq("oveglay")
       end
-
-      it "moves the first consonant to the end of the word and appends 'ay'" do
-        word2 = Word.new("cap")
-        expect( word2.piglatinize ).to eq("apcay")
-      end
     end
-  end
 
+  end
 end

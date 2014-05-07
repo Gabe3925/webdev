@@ -9,7 +9,6 @@ class Word
 
   def starts_with_vowel(letter)
     letter = original_word
-    letter.ch
   end
 
 end
