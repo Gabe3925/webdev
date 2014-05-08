@@ -1,4 +1,5 @@
 class Chef < ActiveRecord::Base
+<<<<<<< HEAD
   has_many :dishes
 
   validates :name,
@@ -9,3 +10,6 @@ class Chef < ActiveRecord::Base
     numericality: true
 
 end
+=======
+end
+>>>>>>> 6d9b2704dc3fc6afc5ca02cd897756bc9cc2ad82
