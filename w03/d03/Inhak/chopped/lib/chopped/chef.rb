@@ -1,7 +1,7 @@
 class Chef < ActiveRecord::Base
   has_many :dishes
-  belongs_to :episodes
+  belongs_to :episode
 
   validates_presence_of :name, :age, :gender
-  validates_associated :episodes, :dishes
+  validates_associated :episode, :dishes
 end

@@ -1,6 +1,6 @@
 class Score < ActiveRecord::Base
-  belongs_to :dishes
-  belongs_to :judges
+  belongs_to :dish
+  belongs_to :judge
 
-  validates_associated :dishes, :judges
+  validates_associated :dish, :judge
 end

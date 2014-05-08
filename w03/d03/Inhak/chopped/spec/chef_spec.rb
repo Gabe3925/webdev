@@ -1,9 +1,15 @@
 require 'spec_helper'
 
 describe Chef do
-  it{should validate_presence_of(:name)}
-  it{should validate_presence_of(:age)}
+  describe "name validation" do
+    it{should validate_presence_of(:name)}
+  end
+  describe "age validation" do
+    it{should validate_presence_of(:age)}
+  end
   it{should validate_presence_of(:gender)}
-  it{should validate_associate(:episodes)}
-  it{should validate_associate(:dishes)}
+  describe "relationship validations" do
+    it{should belong_to(:episode)}
+    it{should have_many(:dishes)}
+  end
 end

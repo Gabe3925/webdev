@@ -45,7 +45,8 @@ CREATE TABLE dishes(
 
 CREATE TABLE judgments(
   judge_id integer REFERENCES judges(id),
-  dish_id integer REFERENCES dishes(id)
+  dish_id integer REFERENCES dishes(id),
+  episode_id integer REFERENCES episodes(id)
 );
 
 CREATE TABLE scores(

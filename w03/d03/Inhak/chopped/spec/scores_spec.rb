@@ -1,5 +1,6 @@
 require 'spec_helper'
 
 describe Score do
-  it{should validates_associated :dishes, :judges}
+  it{should belong_to(:dish)}
+  it{should belong_to(:judge)}
 end
