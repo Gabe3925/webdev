@@ -19,3 +19,5 @@
 ###Bonus
 - Translate one line of your DC Metro app to Sinatra
   - Example: When I visit `/dc_metro/woodleyp/farragutn` using a GET, I should see "Your trip length from woodleyp to farragutn is 2 stops." in the browser.
+
+- Okay, hotshot. Now make your calculator persist to a database using Active Record. 
