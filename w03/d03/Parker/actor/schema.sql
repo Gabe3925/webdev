@@ -4,7 +4,7 @@ DROP TABLE IF EXISTS actors;
 DROP TABLE IF EXISTS roles;
 
 CREATE TABLE movies (
-id serial primary key
+id serial primary key,
 title varchar(100) NOT NULL,
 director varchar(100) NOT NULL
 );
