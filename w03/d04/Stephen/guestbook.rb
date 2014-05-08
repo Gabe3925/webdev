@@ -15,3 +15,6 @@ get '/guest_book/:id' do
   return "#{guest_book[params[:id].to_i]}"
 end
 
+post '/guest_book' do
+  guest_book[guest_book.keys.max + 1] = params[:id]
+end
