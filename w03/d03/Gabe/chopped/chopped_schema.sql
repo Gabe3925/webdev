@@ -6,6 +6,7 @@ DROP TABLE IF EXISTS scores CASCADE;
 
 CREATE TABLE rounds(
 id SERIAL PRIMARY KEY NOT NULL,
+round_id
 round_name VARCHAR(50) NOT NULL);
 
 CREATE TABLE judges(

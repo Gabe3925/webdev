@@ -2,7 +2,7 @@ class Chef < ActiveRecord::Base
   validates_presence_of :id
   validates_presence_of :chef_name
   validates_presence_of :round
-  belongs_to :round
+  belongs_to :round, foreign_key: 'round_id'
   has_many :dishes
   has_many :scores, through: :dishes
 
