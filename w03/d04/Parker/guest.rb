@@ -20,3 +20,5 @@ post '/guest_book' do
 	new_key = guest_book.keys.last + 1
 	guest_book[new_key] = params[:id]
 end
+end
+
