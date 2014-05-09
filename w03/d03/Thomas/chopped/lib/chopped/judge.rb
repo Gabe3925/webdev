@@ -1,2 +1,2 @@
-class Judge < ActiveRecord::Base
-end
+# class Judge < ActiveRecord::Base
+# end

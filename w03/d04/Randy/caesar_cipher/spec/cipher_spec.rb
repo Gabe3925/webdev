@@ -1,3 +1,4 @@
+require 'pry'
 require 'spec_helper'
 require_relative '../lib/cipher'
 
@@ -12,5 +13,5 @@ describe Cipher do
       expect( Cipher.encode( "peter") ).to eq("crgre")
     end
   end
-  
+
 end

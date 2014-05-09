@@ -29,9 +29,4 @@ class Arena
       end
     end
   end
-
-
-
-
-
 end
