@@ -113,7 +113,10 @@ elsif starting_station == "farragut north" && ending_station == "dupont circle"
   total_stops = 1
 elsif ending_station == "farragut north" && starting_station == "dupont circle"
   total_stops = 1
+elsif starting_station == ending_station
+  total_stops = 0
 end
+
 
 puts ""
 puts "Your trip will have #{total_stops} stop(s)."
