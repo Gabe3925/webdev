@@ -34,7 +34,7 @@ puts ""
 #
 	#end
 
-	puts red.join("---")   #good old line show-er
+	puts red.index.join("---")   #good old line show-er
 
 	#puts dc_metro(destination_line).join("---")   fucked up smart line-show-er
 
