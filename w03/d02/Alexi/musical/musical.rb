@@ -17,6 +17,24 @@ end
 
 # musical = Musical.create(title: "Guys and Dolls", year: 2000, composer: "Elton", lyricist: "Elton" )
 
-puts Musical
+class Song < ActiveRecord::Base
+  has_many :songs
+  has_many :performances
+  has_many :characters, :through => :performances
+end
+
+#Song.create(title: "Circle of Life", musical_id: 7)
+
+
+class Character < ActiveRecord::Base
+  has_many :performances
+  has_many :songs, :through => :performances
+end
+
+class Performance < ActiveRecord::Base
+  belongs_to :song
+  belongs_to :character
+
+end
 
 binding.pry
