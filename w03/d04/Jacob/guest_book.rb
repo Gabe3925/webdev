@@ -19,6 +19,6 @@ get '/guest_book/:id' do
 end
 
 post '/guest_book' do
-  new_key = guest_book.keys.last + 1
-  guests[new_key] = params[:id]
+  new_key = guests.keys.last + 1
+  guests[new_key] = params[:name]
 end
