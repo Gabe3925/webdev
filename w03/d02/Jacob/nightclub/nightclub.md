@@ -1,4 +1,4 @@
-# Nightclub
+\# Nightclub
 
 We all know night clubs are foolishly exclusive. Let's build a model that handles all that pretentious validation that we want to enforce before letting records into our database. We'll build a model with the following validations:
 

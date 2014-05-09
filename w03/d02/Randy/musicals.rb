@@ -13,6 +13,10 @@ ActiveRecord::Base.establish_connection(
   )
 
 class Musical < ActiveRecord::Base
+  has_many :songs
+end
+
+class Song < ActiveRecord::Base
 end
 
 binding.pry

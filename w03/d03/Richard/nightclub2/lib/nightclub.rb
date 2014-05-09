@@ -1,4 +1,5 @@
 require 'active_record'
+require 'spec_helper'
 
 I18n.enforce_available_locales = false
 $connection = ActiveRecord::Base.establish_connection("postgres://localhost/nightclub")
@@ -30,7 +31,7 @@ class Clubber < ActiveRecord::Base
     if gender == 'm'
       males = Clubber.where(gender: 'm').count()
       females = Clubber.where(gender: 'f').count()
-      
+
       if males*2 >= females
         errors.add(:gender_ratio, "requires twice as many females in the nightclub")
       end
