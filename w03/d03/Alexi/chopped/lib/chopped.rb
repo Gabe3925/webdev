@@ -6,12 +6,12 @@ require 'active_record'
 Dir[File.join(File.dirname(__FILE__), 'chopped', '*.rb')].each {|file| require file } 
 
 # Configure Active Record
-# ActiveRecord::Base.logger = Logger.new(STDOUT)
+ActiveRecord::Base.logger = Logger.new(STDOUT)
 
 ActiveRecord::Base.establish_connection(
   :adapter => "postgresql",
   :host => "localhost",
-  :username => "peterlai",
+  :username => "admin",
   :password => "",
   :database => "chopped"
 )

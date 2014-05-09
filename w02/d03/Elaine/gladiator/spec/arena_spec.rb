@@ -36,18 +36,21 @@ describe Arena do
   end # ends add_gladiator
 
   describe "#fight" do
-    it "should eliminate one gladiator if there are two gladiators in the arena" do
-      arena.add_gladiator(gladiator1)
-      arena.add_gladiator(gladiator2)
-      arena.fight
-      expect( arena.gladiators.length ).to eq(1)
-    end
 
-    it "should allow gladiator with the Trident to beat the one with the Spear" do
-      arena.add_gladiator(gladiator1)
-      arena.add_gladiator(gladiator2)
-      arena.fight
-      expect( arena.gladiators[0].name ).to eq("Max")
+    context "when gladiators 1 and 2 are in the arena" do
+      before do
+        arena.add_gladiator(gladiator1)
+        arena.add_gladiator(gladiator2)
+        arena.fight
+      end
+
+      it "should eliminate one gladiator if there are two gladiators in the arena" do
+        expect( arena.gladiators.length ).to eq(1)
+      end
+
+      it "should allow gladiator with the Trident to beat the one with the Spear" do
+        expect( arena.gladiators[0].name ).to eq("Max")
+      end
     end
 
     it "should allow gladiator with the Spear to beat the one with the Club" do
