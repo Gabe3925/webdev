@@ -15,6 +15,7 @@ answer = "n"
     puts "Your difference is #{num1 / num2}"
   end
 
+
   def exp (num1, num2)
     puts "Your number is #{num1 ** num2}"
   end
