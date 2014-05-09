@@ -7,12 +7,12 @@ guest_book = {
   2 => "Shelly Duvall",
   3 => "Danny Lloyd"
 }
-
+# Handlers
 get '/guest_book' do
   guest_book.values.join(", ")
-
 end
 
+# Handlers
 get '/guest_book/:id' do
   id = params[:id].to_i
   guest_book[id]
