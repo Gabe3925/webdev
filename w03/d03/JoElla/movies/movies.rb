@@ -13,11 +13,13 @@ ActiveRecord::Base.establish_connection(
 
 
 class Movie < ActiveRecord::Base
+  has_many :roles
   has_many :actors, :through => :roles
 end
 
 class Actor < ActiveRecord::Base
-  has_many :movie, :through => :roles
+  has_many :roles
+  has_many :movies, :through => :roles
 end
 
 class Role < ActiveRecord::Base

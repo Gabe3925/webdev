@@ -15,3 +15,7 @@ ActiveRecord::Base.establish_connection(
   :password => "",
   :database => "chopped_db"
 )
+
+Episode.new({"title" => "EpTitle1"})
+
+
