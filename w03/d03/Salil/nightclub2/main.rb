@@ -1,3 +1,4 @@
+
 require_relative 'lib/nightclub'
 
 # Prints all clubbers in the nightclub:

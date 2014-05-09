@@ -11,6 +11,11 @@ describe Cipher do
     it "encodes the word 'peter'" do
       expect( Cipher.encode( "peter") ).to eq("crgre")
     end
+
+    it "encodes a string of words" do
+      expect( Cipher.encode( "inhak kim") ).to eq("vaunx xvz")
+
+    end
   end
-  
+
 end
