@@ -13,3 +13,4 @@ CREATE TABLE paintings (
   title varchar(100) NOT NULL,
   artist_id integer REFERENCES artists (id) NOT NULL
 );
+
