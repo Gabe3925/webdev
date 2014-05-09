@@ -2,7 +2,7 @@
 
 ### Mission…
 
-Create your own version of [Emergency Compliment](http://emergencycompliment.com/), except the compliments WDI-themed. When a user visits the site, they should be greeted with a WDI-themed compliment to cheer them up.
+Create your own version of [Emergency Compliment](http://emergencycompliment.com/), except the compliments will be WDI-themed. When a user visits the site, they should be greeted with a WDI-themed compliment to cheer them up.
 
 Create a new directory called `emergency_compliment` that holds your Sinatra app. Within this folder, create the following files:
 
@@ -31,7 +31,7 @@ colors = ["#FFBF00", "#0080FF","#01DF3A","#FF0080"]
 
 ### Level 2: Personalized Compliment
 
-When you visit `"/name"` (ie: `"/randy"`), the greeting should personalize itself to the provided name. There should still be a random compliment and background color.
+When you visit `"/:name"` (ie: `"/randy"`), the greeting should personalize itself to the provided name. There should still be a random compliment and background color.
 
 ### Level 3: User-Submitted Compliments
 
