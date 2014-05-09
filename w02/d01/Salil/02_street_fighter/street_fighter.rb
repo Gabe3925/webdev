@@ -64,6 +64,23 @@ class Fighter
   end
 end
 
+
+class Guile < Fighter
+  super
+  def initialize
+    super
+    @codes = ["ASSA", "ZZZX"]
+  end
+
+  def special_attack1
+    puts "Sonic Boom!"
+  end
+
+  def special_attack2
+    puts "Flash Kick!"
+  end
+end
+
 fighter = Fighter.new
 fighter.action("A").action("S").action("Z").action("X")
 fighter.action("S").action("S").action("Z").action("X")

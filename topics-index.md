@@ -10,7 +10,7 @@
 
 **Week 2**
 
-* Day 1: inheritance, happitales
+* Day 1: class inheritance, happitales
 * Day 2: Rspec intro
 * Day 3: problem modeling, Rspec vending machine
 * Day 4: code retreat
@@ -21,3 +21,9 @@
 * Day 1: foreign keys, pg gem
 * Day 2: ActiveRecord intro, validations
 * Day 3: ActiveRecord relationships
+* Day 4: Internet, Sinatra intro
+* Day 5: HTML, Sinatra views
+
+**Week 4**
+
+* Day 1: 
