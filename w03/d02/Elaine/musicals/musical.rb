@@ -13,10 +13,17 @@ ActiveRecord::Base.establish_connection(
 )
 
 class Musical < ActiveRecord::Base
+  has_many :songs, dependent: :destroy
 end
 
-# Musical.create(
-#   { title: "The Lion King", year: 2000, composer: "Elton John", lyricist: "Elton John" }
-# )
+class Song < ActiveRecord::Base
+  belongs_to :musical
+end
+
+class Character < ActiveRecord::Base
+end
+
+class Performance < ActiveRecord::Base
+end
 
 binding.pry
