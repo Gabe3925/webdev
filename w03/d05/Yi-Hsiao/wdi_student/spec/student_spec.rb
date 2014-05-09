@@ -22,8 +22,8 @@ describe Student do
     context "when a student codes once" do
       before { student.code }
 
-      it "adds 1 knowledge point for every 20 points in your energy level" do
-        expect(student.knowledge_level).to eq(5)
+      it "adds 1 knowledge point for every 20 points in your energy level and returns the knowledge level" do
+        expect(student.code).to eq(9)
       end
 
       it "deducts 20 points from the energy pool" do
@@ -34,7 +34,7 @@ describe Student do
     context "when a student codes five times non-stop" do
       before { 5.times {student.code} }
 
-      it "adds 15 knowledge points, e.g. (5pts + 4pts + 3pts + 2pts + 1pt)" do
+      it "adds 15 knowledge points" do
         expect(student.knowledge_level).to eq(15)
       end
 
@@ -43,28 +43,42 @@ describe Student do
       end
 
       it "does not gain anymore knowledge points on consecutive coding sessions" do
-        student.code
-        expect(student.knowledge_level).to eq(15)
+        expect(student.code).to eq(15)
       end
 
-      it "dies if it codes with 0 energy" do
+      it "dies if it codes with it hits negative energy" do
         student.code
         expect(student.alive?).to be(false)
+      end
+    end
+
+    context "when a student is dead" do
+      before { 6.times { student.code } }
+
+      it "cannot code anymore" do
+        expect(student.code).to be(nil)
       end
     end
   end
 
   describe "#rest" do
-    it "adds 30 energy points up to the maximum of 100" do
+    it "adds 30 energy points up to the maximum of 100 and returns the new energy level" do
       student.code
-      student.rest
-      expect(student.energy_level).to eq(100)
+      expect(student.rest).to eq(100)
     end
 
     it "adds 60 energy points, if a student with 40 energy points rests twice" do
       3.times { student.code }
-      2.times { student.rest }
-      expect(student.energy_level).to eq(100)
+      student.rest
+      expect(student.rest).to eq(100)
+    end
+
+    context "when a student is dead" do
+      before { 6.times { student.code } }
+
+      it "cannot rest anymore" do
+        expect(student.rest).to be(nil)
+      end
     end
   end
 end
