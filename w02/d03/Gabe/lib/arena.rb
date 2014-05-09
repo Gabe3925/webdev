@@ -1,12 +1,11 @@
 require 'pry'
 
 class Arena
-  attr_reader :name, :roster, :arena
+  attr_accessor :name, :roster, :arena
 
-  def initialize(name='', roster=[], arena=[])
+  def initialize(name='defaultname')
     @name = name.capitalize
-    @roster = roster
-    @arena= arena
+    @arena= []
   end
 
 
@@ -17,71 +16,79 @@ class Arena
   end
 
 
-  def get_name(who) #finds gladiator in roster, and returns name, or not
-    return @roster.find { |gladiator| gladiator.name == who}
-  end
 
+  def add_to_arena(which_one) 
 
-  def add_to_arena(which_one) #looks in roster for a name, if found, moves to arena
     if arena[1] == nil
-    	arena.push(get_name(which_one))
+    	arena.push(which_one)
      	return "added #{which_one} to arena."
 	else 
 		return "You cannot add more than two gladiators at a time!"
-	end
+	
   end
+
+end
 
 
 
   def fight
 
-  	#while arena[1] == true
+  	
+    if @arena.length < 2
+      
+      return "You need two gladiators to call a fight!"
+    end
 
-    	battler1 = arena[0]#checks the weapons of the two battlers
-    	battler2 = arena[1]
+    
+
+    	battler1 = arena[0].weapon #gets the weapons of the two battlers
+    	battler2 = arena[1].weapon
+
+      
     	###################################### trident
-    	if battler1.weapon  == "trident"
+    	if battler1  == "trident"
 	
-    	elsif battler2.weapon == "spear"
+    	elsif battler2 == "spear"
     		arena.pop
 	
-    	elsif battler2.weapon == "club"
-    		arena.pull!
+    	elsif battler2 == "club"
+    		arena.shift
 	
-    	elsif battler2.weapon== "trident"
-    		return "Its a draw!"
-    		@arena = []
+    	elsif battler2 == "trident"
+    		return "Its a draw! All gladiators die!"
+    		arena = []
     	else 
     	  return "unknown weapons!"
     	end
     	###################################### spear
-    	if battler1  == "spear"
+    	if battler1 == "spear"
 	
     	elsif battler2 == "club"
-    		arena.pop!
+    		arena.pop
 	
     	elsif battler2 == "trident"
-    		arena.pull!
+    		arena.shift
 	
     	elsif battler2 == "spear"
-    		return "Its a draw!"
-    		@arena = []
+    		return "Its a draw! All gladiators die!"
+    		arena = []
     	else 
     	  return "unknown weapons!"
     	end
 	
     	###################################### club
     	if battler1  == "club"
+        binding.pry
 	
     	elsif battler2 == "trident"
-    		arena.pop!
+    		arena.pop
 	
     	elsif battler2 == "spear"
-    		arena.pull!
+    		arena.shift
 	
     	elsif battler2 == "club"
-    		return "Its a draw!"
-    		@arena = []
+    		return "Its a draw! All gladiators die!"
+    		arena = []
     	else 
     	  return "unknown weapons!"
     	end
