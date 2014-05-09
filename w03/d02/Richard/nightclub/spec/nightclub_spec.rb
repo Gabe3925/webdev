@@ -3,6 +3,9 @@ require_relative '../lib/nightclub'
 describe Clubber do
   let(:clubber) { Clubber.new }
 
+    it { should ensure_length_of(:name).is_at_least(2) }
+
+
   context "#name validation" do
     it "should be invalid with fewer than two letters" do
       clubber.name = 'T';
