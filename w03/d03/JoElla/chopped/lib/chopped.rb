@@ -3,7 +3,7 @@ require 'pry'
 require 'active_record'
 
 # require our code
-Dir[File.join(File.dirname(__FILE__), 'chopped', '*.rb')].each {|file| require file } 
+Dir[File.join(File.dirname(__FILE__), 'chopped', '*.rb')].each {|file| require file }
 
 # Configure Active Record
 # ActiveRecord::Base.logger = Logger.new(STDOUT)
@@ -11,7 +11,11 @@ Dir[File.join(File.dirname(__FILE__), 'chopped', '*.rb')].each {|file| require f
 ActiveRecord::Base.establish_connection(
   :adapter => "postgresql",
   :host => "localhost",
-  :username => "peterlai",
+  :username => "joellastraley",
   :password => "",
-  :database => "chopped"
+  :database => "chopped_db"
 )
+
+Episode.new({"title" => "EpTitle1"})
+
+
