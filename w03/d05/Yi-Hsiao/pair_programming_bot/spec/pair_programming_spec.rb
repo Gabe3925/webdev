@@ -16,7 +16,6 @@ describe "pair programming bot" do
     end
 
     context "when the user answers 'Yes'" do
-
       it "asks the user if the test passed" do
         click_link "Yes"
 
@@ -27,7 +26,6 @@ describe "pair programming bot" do
     end
 
     context "when the user answers 'No'" do
-
       it "asks the user if the test passed" do
         click_link "No"
 
@@ -37,7 +35,31 @@ describe "pair programming bot" do
     end
   end
 
-  describe "'did your test pass' question page"
+  describe "'did your test pass?' page" do
+    before do
+      visit "/"
+      click_link "Yes"
+    end
+
+    context "when the user answers 'Yes" do
+      it "asks the user if the code needs refactoring" do
+        click_link "Yes"
+
+        expect(page).to have_content "Need to refactor?"
+        expect(page).to have_selector ".yes"
+        expect(page).to have_selector ".no"
+      end
+    end
+
+    context "when the user answers 'No'" do
+      it "asks the user if the test passed" do
+        click_link "No"
+
+        expect(page).to have_content "Write just enough code for the test to pass."
+        expect(page).to have_selector ".done"
+      end
+    end
+  end
 
   # context "when the user answers 'No' to having a test" do
   #    before do
