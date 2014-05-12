@@ -1,61 +1,69 @@
+require 'spec_helper'
 require_relative '../lib/nightclub'
 
 describe Clubber do
   let(:clubber) { Clubber.new }
 
-  context "#name validation" do
-    it "should be invalid with fewer than two letters" do
-      clubber.name = 'T';
-      clubber.valid?
-      expect( clubber.errors.has_key?(:name) ).to eq true
-    end
+  it { should ensure_length_of(:name).is_at_least(2) }
 
-    it "should be valid with two or more letters" do
-      clubber.name = 'TJ';
-      clubber.valid?
-      expect( clubber.errors.has_key?(:name) ).to eq false
-    end
-  end
+  # context "#name validation" do
+  #   it "should be invalid with fewer than two letters" do
+  #     clubber.name = 'T';
+  #     clubber.valid?
+  #     expect( clubber.errors.has_key?(:name) ).to eq true
+  #   end
 
-  context "#age validation" do
-    it "should be invalid when under 21" do
-      clubber.age = 20;
-      clubber.valid?
-      expect( clubber.errors.has_key?(:age) ).to eq true
-    end
+  #   it "should be valid with two or more letters" do
+  #     clubber.name = 'TJ';
+  #     clubber.valid?
+  #     expect( clubber.errors.has_key?(:name) ).to eq false
+  #   end
+  # end
 
-    it "should be invalid when age is 60 or above" do
-      clubber.age = 60;
-      clubber.valid?
-      expect( clubber.errors.has_key?(:age) ).to eq true
-    end
+  it { should validate_numericality_of(:age).is_greater_than_or_equal_to(21) }
+  it { should validate_numericality_of(:age).is_less_than(60) }
 
-    it "should be valid when age is between 21 and 60" do
-      clubber.age = 21;
-      clubber.valid?
-      expect( clubber.errors.has_key?(:age) ).to eq false
-    end
-  end
+  # context "#age validation" do
+  #   it "should be invalid when under 21" do
+  #     clubber.age = 20;
+  #     clubber.valid?
+  #     expect( clubber.errors.has_key?(:age) ).to eq true
+  #   end
 
-  context "#gender validation" do
-    it "should be invalid for anything but 'm' or 'f'" do
-      clubber.gender = "x";
-      clubber.valid?
-      expect( clubber.errors.has_key?(:gender) ).to eq true
-    end
+  #   it "should be invalid when age is 60 or above" do
+  #     clubber.age = 60;
+  #     clubber.valid?
+  #     expect( clubber.errors.has_key?(:age) ).to eq true
+  #   end
 
-    it "should be valid for value 'm'" do
-      clubber.gender = "m";
-      clubber.valid?
-      expect( clubber.errors.has_key?(:gender) ).to eq false
-    end
+  #   it "should be valid when age is between 21 and 60" do
+  #     clubber.age = 21;
+  #     clubber.valid?
+  #     expect( clubber.errors.has_key?(:age) ).to eq false
+  #   end
+  # end
 
-    it "should be valid for value 'f'" do
-      clubber.gender = "f";
-      clubber.valid?
-      expect( clubber.errors.has_key?(:gender) ).to eq false
-    end
-  end
+  it { should ensure_inclusion_of(:gender).in_array(%w(m f)) }
+
+  # context "#gender validation" do
+  #   it "should be invalid for anything but 'm' or 'f'" do
+  #     clubber.gender = "x";
+  #     clubber.valid?
+  #     expect( clubber.errors.has_key?(:gender) ).to eq true
+  #   end
+
+  #   it "should be valid for value 'm'" do
+  #     clubber.gender = "m";
+  #     clubber.valid?
+  #     expect( clubber.errors.has_key?(:gender) ).to eq false
+  #   end
+
+  #   it "should be valid for value 'f'" do
+  #     clubber.gender = "f";
+  #     clubber.valid?
+  #     expect( clubber.errors.has_key?(:gender) ).to eq false
+  #   end
+  # end
 
   context "#gender_ratio validation" do
     before {
@@ -66,6 +74,7 @@ describe Clubber do
     after {
       Clubber.destroy_all()
     }
+
 
     it "should always be valid for females" do
       clubber.gender = "f"
