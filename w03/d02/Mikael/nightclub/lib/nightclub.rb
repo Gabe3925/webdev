@@ -4,7 +4,7 @@ I18n.enforce_available_locales = false
 $connection = ActiveRecord::Base.establish_connection(:adapter => "postgresql",
   :host => "localhost",
   :username => "postgres",
-  :password => "M4GN3Th1gh8",
+  :password => " ",
   :database => "nightclub_db")
 
 class Clubber < ActiveRecord::Base
