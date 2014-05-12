@@ -3,6 +3,9 @@ require_relative 'lib/nightclub'
 # Prints all clubbers in the nightclub:
 def print_clubbers
   puts "# Current clubbers: #"
+  Clubber.all.each do |clubber|
+    puts clubber.name
+  end
 
   # Print all clubbers...
 
@@ -10,11 +13,21 @@ end
 
 # Adds clubbers to the nightclub:
 def add_clubber
+  clubber = Clubber.new
+  puts "What is their name?"
+  clubber.name = gets.chomp
+  puts "What is their gender?"
+  clubber.gender = gets.chomp
+  puts "What is their age?"
+  clubber.age = gets.chomp
 
 end
 
 # Removes clubbers from the nightclub:
 def remove_clubber
+  puts "What is the name of the clubber you would like to remove?"
+  clubber = Clubber.find_by(name: gets.chomp)
+  clubber.destroy
 
 end
 
