@@ -1,4 +1,4 @@
-## Postgres Console Commands
+mu## Postgres Console Commands
 
 #### From the Terminal
 `psql` opens the postgres console
