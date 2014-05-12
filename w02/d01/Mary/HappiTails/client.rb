@@ -20,7 +20,7 @@ class Client
   end
 
   def print_client
-    return "#{@name}, who is #{@age}."
+    return "#{@name}"
   end
 
   def adopt_pet(animal)
