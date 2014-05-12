@@ -1,3 +1,4 @@
+  
 DROP TABLE IF EXISTS receipts;
 
 CREATE TABLE receipts (
