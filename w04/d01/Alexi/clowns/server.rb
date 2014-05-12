@@ -3,7 +3,7 @@ require 'active_record'
 require 'sinatra'
 require 'sinatra/reloader'
 
-require_relative './models/clown'
+require_relative './models/roller_coaster'
 require_relative './models/config'
 
 get '/' do
