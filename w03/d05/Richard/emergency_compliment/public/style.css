@@ -1,7 +1,7 @@
 body {
   color: #fff;
   text-align:center;
-  font-family: 'Arial';
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 24px;
 
 }
@@ -15,6 +15,7 @@ a {
     text-decoration: none;
     margin: 20px;
     padding: 10px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 a:hover {
@@ -33,6 +34,7 @@ a:hover {
     border-bottom: 3px #040 solid;
     border-right: 3px #040 solid;
     background: #080;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 .no {
@@ -40,4 +42,6 @@ a:hover {
     border-bottom: 3px #600 solid;
     border-right: 3px #600 solid;
     background: #a00;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
+
