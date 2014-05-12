@@ -28,11 +28,46 @@ end
 # Create Action
 # Creates the clown
 post '/clowns' do
-  Clown.create({
+  clown = Clown.create({
     name: params[:name],
     talent: params[:talent],
-    is_creepy: params[:is_creepy],
+    is_creepy: (params[:is_creepy] || false),
     image_url: params[:image_url]
   })
-  "Hi Mary"
+  redirect to('/clowns/' + clown.id.to_s)
+end
+
+# Show Action
+# Displays a single clown
+get '/clowns/:id' do
+  @clown = Clown.find(params[:id])
+  erb :'clowns/show'
+end
+
+# Edit Action
+# Displays a form to Edit
+get '/clowns/:id/edit' do
+  @clown = Clown.find(params[:id])
+  erb :'clowns/edit'
+end
+
+# Update Action
+# Updates the clown
+patch '/clowns/:id' do
+  clown = Clown.find(params[:id])
+  clown.update({
+    name: params[:name],
+    talent: params[:talent],
+    is_creepy: (params[:is_creepy] || false),
+    image_url: params[:image_url]
+  })
+  redirect to('/clowns/' + clown.id.to_s)
+end
+
+# Destroy Action
+# Deletes the clown
+delete '/clowns/:id' do
+  clown = Clown.find(params[:id])
+  clown.destroy
+  redirect to('/clowns')
 end
