@@ -1,7 +1,7 @@
 require_relative 'lib/arena'
 
 describe Gladiator do
-	describe "the Gladiator has a weapon"
+	describe "the Gladiator has a weapon" dogit 
 end
 
 	

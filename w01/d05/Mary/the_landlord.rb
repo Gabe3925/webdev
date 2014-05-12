@@ -1,26 +1,10 @@
-class Person
-  def initialize(options)
-    @name = options[:name]
-    @age = options[:age]
-    @gender = options[:gender]
-  end
-end
 
-class Apartment
-  def initialize(options)
-    @address = options[:address]
-    @monthly_rent = options[:monthly_rent]
-    @sqft = options[:sqft]
-    @num_beds = options[:num_beds]
-    @num_baths = options[:num_baths]
-    @renters = options[:renters]
-  end
-end
 
 apartment_array = [
 {address: "1325 15th Street, Apt 830", monthly_rent: "2000", sqft: "650", num_beds: "1", num_baths: "1", renters: "1"},
 {address: "17 New York Avenue, Apt 108", monthly_rent: "1250", sqft: "575", num_beds: "0", num_baths: "1", renters: "1"},
 {address: "4478 34th Street, Apt 1755", monthly_rent: "3000", sqft: "1000", num_beds: "2", num_baths: "1", renters: "2"}]
+
 
 menu_choice = true
 while menu_choice != "QUIT"
@@ -75,9 +59,6 @@ while menu_choice != "QUIT"
       add_person("What is the new tenant's age?", :age, new_person_hash)
       add_person("What is the new tenant's gender?", :gender, new_person_hash)
       apartment_array[apartment_choice.to_i - 1][:renters].push(new_person_hash)
-
-
-
 
   end
 end
