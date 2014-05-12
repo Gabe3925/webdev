@@ -2,7 +2,7 @@
 # @Author: stephenstanwood
 # @Date:   2014-05-12 15:43:56
 # @Last Modified by:   stephenstanwood
-# @Last Modified time: 2014-05-12 16:29:01
+# @Last Modified time: 2014-05-12 16:45:23
 
 # DROP TABLE IF EXISTS coasters;
 # CREATE TABLE coasters(
@@ -49,7 +49,6 @@ end
 # displays information for a single roller coaster
 get '/coasters/:id' do
   @coaster = Coaster.find(params[:id])
-  @img_url = @coaster.image_url
   erb :'coasters/show'
 end
 
