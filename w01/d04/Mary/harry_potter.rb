@@ -1,34 +1,37 @@
+f = File.new("potter.csv", "r")
 
+#from class
+char_arr = []
 
-# method to return an array of all character names
-def character_name_array
-  f = File.new("potter.csv", "r")
-  character_array = []
-  f.each_line do |character|
-    character_info = character.chomp.split(",")
-    character_array.push(character_info[1])
-  end
-  return character_array
-  f.close
+f.each_line do |character_string|
+  char_min_new_line = character_string.chomp
+  arr_representing_char = char_mine_new_line.split(",")
+  character = {}
+  character[:mention] = arr_representing_char[0]
+  character[:name] = arr_representing_char[1]
+  character[:house] = arr_representing_char[2]
+  char_arr.push(character)
 end
 
-character_name_array
-
-# method to return an array of all of the characters mentioned more than 500 times
-def popular_character_array
-  f = File.new("potter.csv", "r")
-  character_array = []
-  f.each_line do |character|
-    character_info = character.chomp.split(",")
-    if character_info[0].to_i > 500
-      character_array.push(character)
-    end
+# method to return an array of all character names; edited to make sense with classwork above
+def character_name_array(array)
+  names = array.map do |characters|
+    character[:name]
   end
-  return character_array
-  f.close
+  return names
 end
 
-popular_character_array
+character_name_array(char_arr)
+
+# method to return an array of all of the characters mentioned more than 500 times; edited to make sense with classwork above
+def popular_character_array(array)
+  popular_names = array.select do |characters|
+    character[:mention].to_i > 500
+  end
+  return popular_names
+end
+
+popular_character_array(char_arr)
 
 # method to return an array of all of the houses once
 def hogwarts_houses
@@ -148,3 +151,4 @@ end
 
 first_names_end_with_y
 
+f.close
