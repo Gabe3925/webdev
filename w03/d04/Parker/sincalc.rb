@@ -80,13 +80,13 @@ end
 
 
 
-__END__
+# __END__
 
-@@ layout
-%html
-  = yield
+# @@ layout
+# %html
+#   = yield
 
-@@ index
-%div.title Hello world.
+# @@ index
+# %div.title Hello world.
 
 
