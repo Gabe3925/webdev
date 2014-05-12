@@ -15,5 +15,6 @@ end
 # Index Action
 # Read all of the clowns
 get '/clowns' do
+  @clowns = Clown.all
   erb :'clowns/index'
 end
