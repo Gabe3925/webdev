@@ -27,4 +27,24 @@ class VendingMachine
     @change = @credit
     @credit = 0
   end
+
+  def vend
+    sku = get_sku(@code)
+    if !sku
+      @status = "Invalid code"
+      @code = ''
+
+   elseif sku.quanity <= 0 
+    @status = "out of stock"
+    @code = "" 
+
+   elseif sku.price > @credit
+      @status ="need more money"
+    else
+      sku.purchase
+      @purchases.push(sku.product)
+      @credit = 
+
+     elseif 
+  end
 end

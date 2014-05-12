@@ -49,5 +49,4 @@ class VendingMachine
     @credit = 0
     @code = ''
     @status = ''
-  end
-end
+  en
