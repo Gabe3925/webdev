@@ -1,36 +1,28 @@
 require "spec_helper"
 require_relative "../lib/pair_programming"
 
-
-
 describe "pair programming bot" do
   Capybara.app = PairProgrammingBot
 
   describe "'do you have a test?' page" do
-    before { visit "/" }
-
-    it "asks the user if they have written a test" do
-      expect(page).to have_content "Do you have a test for that?"
-      expect(page).to have_selector ".yes"
-      expect(page).to have_selector ".no"
+    before do
+      visit "/"
     end
 
-    context "when the user answers 'Yes'" do
-      it "asks the user if the test passed" do
-        click_link "Yes"
+    it_behaves_like "a question page", "Do you have a test for that?"
 
-        expect(page).to have_content "Does the test pass?"
-        expect(page).to have_selector ".yes"
-        expect(page).to have_selector ".no"
-      end
+    context "when the user answers 'Yes'" do
+      before { click_link "Yes" }
+      it_behaves_like "a question page", "Does the test pass?"
     end
 
     context "when the user answers 'No'" do
-      it "asks the user if the test passed" do
-        click_link "No"
+      before { click_link "No" }
+      it_behaves_like "an advice page", "Write a test."
 
-        expect(page).to have_content "Write a test."
-        expect(page).to have_selector ".done"
+      context "when the user is done" do
+        before { click_link "Done" }
+        it_behaves_like "a question page", "Does the test pass?"
       end
     end
   end
@@ -42,39 +34,45 @@ describe "pair programming bot" do
     end
 
     context "when the user answers 'Yes" do
-      it "asks the user if the code needs refactoring" do
-        click_link "Yes"
-
-        expect(page).to have_content "Need to refactor?"
-        expect(page).to have_selector ".yes"
-        expect(page).to have_selector ".no"
-      end
+      before { click_link "Yes" }
+      it_behaves_like "a question page", "Need to refactor?"
     end
 
     context "when the user answers 'No'" do
-      it "asks the user if the test passed" do
-        click_link "No"
+      before { click_link "No" }
+      it_behaves_like "an advice page", "Write just enough code for the test to pass."
 
-        expect(page).to have_content "Write just enough code for the test to pass."
-        expect(page).to have_selector ".done"
+      context "when the user is done" do
+        before { click_link "Done" }
+        it_behaves_like "a question page", "Need to refactor?"
       end
     end
   end
 
-  # context "when the user answers 'No' to having a test" do
-  #    before do
-  #     visit "/"     # asks the user if the they've written a test
-  #     click "No"
-  #   end
+  describe "'need to refactor?' page" do
+    before do
+      visit "/"
+      2.times { click_link "Yes" }
+    end
 
-  #   it "asks the user to write a test" do
-  #     expect(page).to have_content "Write a test."
-  #     expec(page).to have_selector ".done"
-  #   end
+    context "when the user answers 'Yes" do
+      before { click_link "Yes" }
+      it_behaves_like "an advice page", "Refactor the code."
 
-  #   it "tells the user to write just enough code for the test to pass" do
-  #     visit "/"
-  #     click_button
-  #   end
-  # end
+      context "when the user is done" do
+        before { click_link "Done" }
+        it_behaves_like "a question page", "Does the test pass?"
+      end
+    end
+
+    context "when the user answers 'No'" do
+      before { click_link "No" }
+      it_behaves_like "an advice page", "Select a new feature to implement."
+
+      context "when the user is done" do
+        before { click_link "Done" }
+        it_behaves_like "a question page", "Do you have a test for that?"
+      end
+    end
+  end
 end
