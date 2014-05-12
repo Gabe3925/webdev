@@ -1,11 +1,6 @@
-# require libraries
 require 'pry'
 require 'active_record'
 
-# require our code
-Dir[File.join(File.dirname(__FILE__), 'chopped', '*.rb')].each {|file| require file }
-
-Configure Active Record
 ActiveRecord::Base.logger = Logger.new(STDOUT)
 
 ActiveRecord::Base.establish_connection(
@@ -13,5 +8,15 @@ ActiveRecord::Base.establish_connection(
   :host => "localhost",
   :username => "BYWallace",
   :password => "",
-  :database => "chopped"
-)
+  :database => "moma_db"
+  )
+
+class Artist < ActiveRecord::Base
+  has_many :paintings
+end
+
+class Painting < ActiveRecord::Base
+  belongs_to :artist
+end
+
+binding.pry
