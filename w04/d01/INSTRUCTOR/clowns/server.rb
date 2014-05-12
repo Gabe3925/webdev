@@ -9,3 +9,5 @@ require_relative './models/clown'
 get '/' do
   erb :home
 end
+
+binding.pry
