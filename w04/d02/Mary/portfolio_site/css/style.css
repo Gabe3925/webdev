@@ -73,11 +73,13 @@ body {
   width: 980px;
 }
 
-li img {
-  width:225px;
-  float:right;
-  margin:5px;
-  border:1px double black;
+ul {
+  overflow: auto;
+}
+
+li  {
+  width:25%;
+  float:left;
 }
 
 .footer p {
