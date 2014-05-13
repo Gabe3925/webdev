@@ -58,7 +58,8 @@ describe Bank do
       end # context - when opening deposit < 200.00
     end # describe - #open_account
 
-    # a bank should be able to locate a certain users account
+    # a bank should be able to locate a ce
+    # rtain users account
     describe "#find_account" do
 
       context "when the user has an account" do
@@ -134,6 +135,7 @@ describe Bank do
     describe "#deposit" do
 
       context "when a user has an account" do
+        #Trav_account equals the hash of trav's info
         let(:trav_account){ bank.find_account("Travis Vander Hoop") }
         before(:each) do
           bank.open_account("Travis Vander Hoop", 250.00)

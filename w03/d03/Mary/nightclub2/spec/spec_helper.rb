@@ -7,6 +7,7 @@
 
 require_relative '../lib/nightclub'
 
+#added by Peter
 require 'shoulda-matchers'
 require "database_cleaner"
 
@@ -21,6 +22,7 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = 'random'
 
+  #added by Peter
   DatabaseCleaner.strategy = :truncation
 
   # then, whenever you need to clean the DB
