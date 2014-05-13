@@ -60,5 +60,11 @@ patch '/rollercoasters/:id' do
     top_speed: params[:top_speed],
     image_url: params[:image_url]
     })
-  redirect to ('/rollercoasters/' + rollercoaster.id.to_s )
+  redirect to('/rollercoasters/' + rollercoaster.id.to_s )
+end
+
+delete '/koopas/:id' do
+  koopa = Koopa.find(params[:id])
+  koopa.destroy
+  redirect to('/koopas')
 end
