@@ -1,2 +1,11 @@
-- for record in @records do
-  p #{ record }
+table class="pure-table my_table"
+  thead
+    tr
+      th id
+      th Calculation
+  tbody
+    - for row in @records do
+      tr
+        td #{ row[0] }
+        td #{ row[1] }
+
