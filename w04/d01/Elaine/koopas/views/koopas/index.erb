@@ -4,7 +4,7 @@
   <ol>
     <% @koopas.each do |koopa| %>
       <li>
-        <a href="/koopas/<%= koopa.id %>"><%= koopa.name %></a> is <%= koopa.color %>.
+        <a href="/koopas/<%= koopa.id %>"><%= koopa.name %></a> is <%= koopa.color %><%= " and has no shell" if koopa.has_shell == false %>.
       </li>
     <% end %>
   </ul>

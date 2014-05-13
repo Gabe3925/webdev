@@ -14,17 +14,17 @@
     <li>
       <label>
         Color:
-        <input type="radio" name="color" value="<%= @koopa.color %>">green
-        <input type="radio" name="color" value="<%= @koopa.color %>">red
-        <input type="radio" name="color" value="<%= @koopa.color %>">blue
-        <input type="radio" name="color" value="<%= @koopa.color %>">yellow
+        <input type="radio" name="color" value="<%= @koopa.color ? "green" : "" %>">green
+        <input type="radio" name="color" value="<%= @koopa.color ? "red" : "" %>">red
+        <input type="radio" name="color" value="<%= @koopa.color ? "blue" : "" %>">blue
+        <input type="radio" name="color" value="<%= @koopa.color ? "yellow" : "" %>">yellow
       </label>
     </li>
 
     <li>
       <label>
         Has shell?
-        <input type="checkbox" name="has_shell" value="<%= @koopa.has_shell %>">
+        <input type="checkbox" name="has_shell" value="<%= @koopa.has_shell ? "checked" : "" %>">
       </label>
     </li>
 
