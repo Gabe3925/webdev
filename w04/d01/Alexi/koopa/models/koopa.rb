@@ -1,2 +1,2 @@
-class Koopas < ActiveRecord::Base
+class Koopa < ActiveRecord::Base
 end

@@ -15,12 +15,11 @@
 
   <label>
     Has shell?
-    <input type="checkbox" name="has_shell" <%= @koopa.has_shell ? "checked" : ""%>>
+    <input type="checkbox" name="has_shell" <%= @koopa.has_shell ? "checked" : "" %> >
   </label>
 
   <label>
     Image URL:
-    <input type="text" name="iamge_url" value"<%= koopa.image_url %>">
+    <input type="text" name="image_url" value"<%= @koopa.image_url %>">
   </label>
-
 </form>

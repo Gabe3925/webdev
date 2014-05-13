@@ -12,7 +12,7 @@ end
 
 # Display all Koopas
 get '/koopas' do
-  @koopas = Koopa.all
+  @koopa = Koopa.all
   erb :'koopas/index'
 end
 
@@ -22,7 +22,7 @@ get '/koopas/new' do
 end
 
 post '/koopas' do
-  koopa = Koopa.create({ # Sinatra is telling me Koopa is unitialized...
+  koopa = Koopa.create({ # active record class was pluran instead of singular
     name: params[:name],
     color: params[:color],
     has_shell: (params[:has_shell] || false),
