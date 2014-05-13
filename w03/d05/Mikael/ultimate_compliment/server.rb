@@ -1,9 +1,7 @@
 require 'sinatra'
 require 'sinatra_reloader'
 
-
-
-compliments = [
+@compliments = [
   "Your instructors love you",
   "High five = ^5",
   "Is it Ruby Tuesday yet?",
@@ -11,12 +9,12 @@ compliments = [
   "The Force is strong with you"
 ]
 
-colors = ["#FFBF00", "#0080FF","#01DF3A","#FF0080"]
+@colors = ["#FFBF00", "#0080FF","#01DF3A","#FF0080"]
 
 get '/' do
   compliments.sample
 end
 
 get '/:name' do
-  "Hey #{:name}! " + compliments.sample
+  "Hey #{params[:name]}! " + compliments.sample
 end
