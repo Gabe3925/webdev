@@ -14,12 +14,12 @@ body {
   background: url("../images/pattern1.png");
   color: #272822;
   font-family: Georgia, serif;
+  font-size: 16px;
 }
 
 /* helper class to make text cursive and capitalized */
 .sub-header {
   font-family: Helvetica, sans-serif;
-  font-size: 16px;
   font-weight: 900;
   margin: 8px;
   text-decoration: underline;
@@ -29,13 +29,19 @@ body {
 /* container for content in the page */
 .page {
   margin: 0 auto;
-  width: 720px;
+  width: 920px;
 }
 
 /* top-most section of the page */
 .banner {
   background: #F92672;
   padding: 16px;
+}
+
+.banner p {
+  font-family: Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 900;
 }
 
 /* styling for company name */
@@ -56,10 +62,6 @@ body {
 .main-content {
   background: #F8F8F0;
   padding: 16px;
-}
-
-.main-content .content-section {
-  margin: 16px 0;
 }
 
 .main-content p {
