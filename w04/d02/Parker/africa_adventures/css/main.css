@@ -1,0 +1,15 @@
+body {
+	background-color: gray;
+
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	font: 15px/1.4em Arail, Helvetica, sans-serif;
+
+}
+
+.container {
+	border: 5px solid red; 
+	margin: 0 auto;
+	width: 600px;
+
+}
