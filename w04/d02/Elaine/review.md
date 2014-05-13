@@ -44,3 +44,27 @@ Tomorrow we combine all that we've learned over the past 3.5 weeks and dive into
   - POST
   - PATCH/PUT
   - DELETE
+
+####Sample Data
+
+```ruby
+num_array = [2, 44, 101, 73, 15, 9, 12, 34, 31, 79]
+
+word_array = ["horse", "drawn", "carriage"]
+
+simple_hash = { 
+  :address => "1210 Western Avenue",
+  :exterior_paint => "brown"
+}
+
+nested_hash = {
+  :larry => {
+    :dob => "01-21-1932",
+    :eye_color => "blue"
+  },
+  :curly => {
+    :eye_color => "blue",
+    :dob => "undocumented"
+  }
+}
+```
