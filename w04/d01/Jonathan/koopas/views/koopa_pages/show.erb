@@ -1,0 +1,13 @@
+<h2><%= @koopa.name %></h2>
+<br>
+<p>
+  <%= @koopa.color %>
+  <%= @koopa.has_shell %>
+</p>
+<br>
+<img src="<%= @koopa.image_url %>" >
+
+<form action="/koopa_pages/<%= @koopa.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button>Delete</button>
+</form>
