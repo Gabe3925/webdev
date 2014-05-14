@@ -1,0 +1,44 @@
+body{
+  background-color: #D1D1D1;
+}
+
+.page .header {
+  height: 170px;
+  border: 40px;
+  text-align: center;
+  background-image: url("../images/background.jpg");
+}
+
+.page .main {
+  background-color: white;
+  padding: 25px;
+  margin: 60px 0px 0px 160px;
+  width: 600px;
+  float: left;
+}
+
+.page h2{
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.page .sidebar {
+  background-color: white;
+  height: 600px;
+  padding: 25px;
+  width: 200px;
+  margin: 60px, 0px, 0px, 0px;
+  float: left;
+}
+
+.page .sidebar img{
+  text-align: center;
+}
+
+.page .footer li{
+  float: left;
+  text-align: center;
+  width: 40%;
+}
