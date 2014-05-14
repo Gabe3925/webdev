@@ -12,6 +12,9 @@ get '/' do
   erb :home
 end
 
+<<<<<<< HEAD
+binding.pry
+=======
 # Index Action
 # Read all of the clowns
 get '/clowns' do
@@ -71,3 +74,4 @@ delete '/clowns/:id' do
   clown.destroy
   redirect to('/clowns')
 end
+>>>>>>> 52749e8ae3d0b5e54f8130872d81374d9c88f308
