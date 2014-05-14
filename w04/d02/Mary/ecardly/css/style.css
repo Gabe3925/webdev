@@ -13,7 +13,7 @@ body {
 }
 
 .container .banner {
-  text-align:center;
+  text-align: center;
 }
 
 .container .main a {
@@ -59,7 +59,7 @@ body {
   padding: 10px 0 20px 0;
 }
 
-.main .image {
+.main img {
   padding: 20px 0 0 0;
 }
 
@@ -84,7 +84,7 @@ body {
   padding: 0 0 10px 0;
 }
 
-.complementary .image {
+.complementary img {
   display: block;
   margin: 0 auto;
   padding:10px 10px 20px 10px;
