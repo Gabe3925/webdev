@@ -37,7 +37,7 @@ div.banner img{
 
  }
 
-.content {
+div.content {
 
   text-align: center;
   overflow: hidden;
@@ -45,7 +45,8 @@ div.banner img{
 }
 
 h1{
-  font-size: 12px;
+  font-size: 18px;
+  font-weight: bold;
 
 }
 
