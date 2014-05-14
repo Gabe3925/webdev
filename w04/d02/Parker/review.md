@@ -36,7 +36,6 @@ Tomorrow we combine all that we've learned over the past 3.5 weeks and dive into
   - why do we use them?
 - Naming conventions for a model and its corresponding table in the db
 - What is ActiveRecord? What do we have to do to make use of it?
-- What class methods does ActiveRecord 
 
 ####HTTP requests
 - what are the following HTTP requests?
