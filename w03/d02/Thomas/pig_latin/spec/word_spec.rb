@@ -11,4 +11,17 @@ describe Word do
     end
   end
 
+  describe "#piglatinize" do
+    let (:word) {Word.new("inbox")}
+    let (:word) {Word.new("train")}
+
+    it "adds 'way' to the end of words beginning with vowels" do
+      expect(word.piglatinize("inbox")).to eq("inboxway")
+    end
+
+    it "piglatinizes words not beginning in vowels" do
+      expect(word.piglatinize("train")).to eq("raintay")
+    end
+  end
+
 end
