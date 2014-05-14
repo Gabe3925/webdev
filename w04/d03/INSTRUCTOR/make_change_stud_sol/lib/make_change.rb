@@ -19,5 +19,4 @@ def make_change(cents)
     pennies = cents
   end
   return "#{quarters} quarters, #{dimes} dimes, #{nickels} nickels, #{pennies} pennies"
-
 end
