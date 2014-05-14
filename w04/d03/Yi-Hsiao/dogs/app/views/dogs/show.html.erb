@@ -1,0 +1,7 @@
+<h1>About <%= @dog.name %></h1>
+
+<dt>Age:</dt>
+<dd><%= @dog.age %></dd>
+
+<dt>Photo: </dt>
+<dd><img src="<%= image_path(@dog.image_url) %>" alt=""></dd>
