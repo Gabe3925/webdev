@@ -49,12 +49,12 @@ body{
   padding: 15px;
 }
 
-.page h2 {
+.page .main h2 {
   text-decoration: underline;
   text-transform: uppercase;
 }
 
-.page p{
+.page .main p{
   margin: 10px 0;
 }
 
