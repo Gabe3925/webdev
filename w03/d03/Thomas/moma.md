@@ -35,14 +35,22 @@ Save the pry commands to a file called `ar_commands.txt`
 4. Return all Paintings
 
 5. Return the artist with an id of 2
+    Artist.find(2)
 6. Return the artist with a name of "Vincent Van Gogh"
+    Artist.find_by(name: "Vincent Van Gogh")
 7. Return all the artists who are "Spanish"
-
+    Artist.where(nationality: "Spanish")
 8. Return the painting with an id of 1
+    Painting.find(1)
 9. Return the painting with a name of "Guernica"
-
+    Painting.find_by(title: "Guernica")
 10. Return all the paintings that "Pablo Picasso" painted
+    Artist.find_by(name: "Pablo Picasso").paintings
 11. Return the artist of "Guernica"
-
+    Painting.find_by(title: "Guernica").artist
 12. Change Vincent Van Gogh's nationality to "American"
+    vangogh = Artist.find_by(name: "Vincent Van Gogh")
+    vangogh.update(nationality: "American")
+    #this immediately persists the change
 13. Change "Starry Night" to be one of Pablo Picasso's paintings
+
