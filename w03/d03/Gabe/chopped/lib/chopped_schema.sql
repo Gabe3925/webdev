@@ -1,7 +1,6 @@
 CREATE TABLE rounds(
 id SERIAL PRIMARY KEY NOT NULL,
-round_name VARCHAR(50) NOT NULL,
-chopped? INTEGER REFERENCES chefs(id));
+round_name VARCHAR(50) NOT NULL);
 
 CREATE TABLE judges(
 id SERIAL PRIMARY KEY,
@@ -11,6 +10,11 @@ CREATE TABLE chefs(
 id SERIAL PRIMARY KEY,
 chef_name VARCHAR(50) NOT NULL);
 
+CREATE TABLE appearances(
+id SERIAL PRIMARY KEY,
+which_chef INTEGER REFERENCES chef(id),
+which_round INTEGER REFERENCES round(id));
+
 CREATE TABLE dishes(
 id SERIAL PRIMARY KEY,
 description VARCHAR(100) NOT NULL,
@@ -19,7 +23,7 @@ which_chef INTEGER REFERENCES chefs(id));
 CREATE TABLE scores(
 id SERIAL PRIMARY KEY,
 which_dish INTEGER REFERENCES dishes(id),
-which_judge INTEGER REFERENCES judges(id)
+which_judge INTEGER REFERENCES judges(id),
 dish_score INTEGER NOT NULL);
 
 
