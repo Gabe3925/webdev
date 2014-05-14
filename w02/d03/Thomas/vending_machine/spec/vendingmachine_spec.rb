@@ -86,7 +86,7 @@ describe VendingMachine do
       end
 
       it "should have a clear code state" do
-        #vm.enter_code("gibberish")
+        vm.enter_code("gibberish")
         vm.vend
         expect( vm.code ).to eq("")
       end

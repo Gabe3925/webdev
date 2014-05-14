@@ -1,19 +1,51 @@
-/* 
 
-Style Hints: 
+body {
+  background-image: url("../images/pattern1.png");
+  color: black;
+  font-size: 14px;
+  font-family: serif;
+}
 
-Body Font Size = 14px
-	 Font Family = "Times New Roman", serif
-	 Font Color = black
-	 Background: #F3EBE9
+.page {
+  background-color: #fff;
+  margin: 0 auto;
+  width: 980px;
+}
 
-H1 Font Size = 50px
-   Font Family = Arial, Helvetica, sans-serif
-   Text-transform: uppercase;
-   color: #FFFFFF;	(White)
+.page .header {
+  background-color: salmon;
+  padding: 10px;
+}
 
-H2: Font Size = 18px
-	Text-Transform: uppercase;
-	Font-Family: cursive, Helvetica, sans-serif;
+.page .header h1 {
+  color: #fff;
+  font-size: 50px;
+  font-family: Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+}
 
-*/
+.page .main {
+  padding: 10px;
+}
+
+.page h2 {
+  margin: 10px 0;
+  padding: 5px;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+.page p {
+  margin: 10px 0;
+}
+
+.page .photo_list li {
+  float: left;
+  width: 25%;
+  text-align: center;
+}
+
+.page .footer {
+  background-color: salmon;
+  text-align: right;
+  padding: 15px;
+}
