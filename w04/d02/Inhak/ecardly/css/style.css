@@ -68,10 +68,10 @@ body{
 
 .page .footer {
   float: left;
-  margin: 400px 100px 100px 100px;
+  margin: 10px 100px 30px 600px;
   text-align: center;
 }
 
-.page .footer li{
-  width: 33%;
+.page .footer ul li{
+  display: inline;
 }
