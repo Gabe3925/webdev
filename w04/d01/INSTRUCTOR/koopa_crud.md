@@ -25,3 +25,4 @@ You are Bowser, aka The King Koopa, and you have decided to design a Sinatra app
 ### Bonus
 
 * Only display the link for destroying a particular koopa when they don't have a shell.
+<div></div>
