@@ -44,6 +44,7 @@ Your Rails app should have the following controller actions:
 
 - `rake db:create`
 - `rake db:migrate`
+- `rake db:seed`
 - `rails server`
 - `rails console`
 - `rails db`
