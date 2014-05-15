@@ -9,4 +9,5 @@
 Dog.delete_all
 
 Dog.create(name: "Fifi", age: 10, image_url: "http://cdn.superbwallpapers.com/wallpapers/animals/poodle-puppy-5719-1920x1200.jpg")
-Dog.create(name: "Sparky", age: 1, image_url: "http://best-wallpaper.net/wallpaper/1920x1200/1206/Pomeranian-puppy-is-cute_1920x1200.jpg")
+Dog.create(name: "Sparky", age: 1, image_url: "https://pbs.twimg.com/profile_images/378800000822867536/3f5a00acf72df93528b6bb7cd0a4fd0c.jpeg")
+Dog.create(name: "Tim", age: 5, image_url: "http://www.assisianimalhealth.com/news/wp-content/uploads/2013/01/dachshund-back-problems.jpg")
