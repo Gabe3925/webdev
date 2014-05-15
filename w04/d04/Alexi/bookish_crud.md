@@ -16,7 +16,7 @@ A __Book__ points back at an author, has multiple characters, and has these addi
 * release_date
 * genre
 
-A __Character__ can appear in many books, and has these additional attributes
+A __Character__ belongs to a book, and has these additional attributes
 
 * name
 * gender
