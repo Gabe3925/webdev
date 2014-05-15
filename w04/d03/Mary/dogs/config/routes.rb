@@ -6,11 +6,16 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get '/about' => 'welcome#about'
 
-  get '/dogs' => 'dogs#index'
-  get '/dogs/new' => 'dogs#new'
-  post '/dogs' => 'dogs#create'
+  resources :dogs, { :only => [:index, :new, :create, :show] } do
+    resources :toys
+  end
 
-  get '/dogs/:id' => 'dogs#show'
+  resources :toys
+  # get '/dogs' => 'dogs#index'
+  # get '/dogs/new' => 'dogs#new'
+  # post '/dogs' => 'dogs#create'
+
+  # get '/dogs/:id' => 'dogs#show'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
