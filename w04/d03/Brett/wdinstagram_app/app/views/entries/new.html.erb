@@ -1,15 +1,12 @@
-<%= form_for :article do |f| %>
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
+<h1>Add a new entry</h1>
 
-  <p>
-    <%= f.label :text %><br>
-    <%= f.text_area :text %>
-  </p>
+<form action="/entries" method="post">
+<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<label>Author:<input type="text" name="author"></label>
+<label>Photo URL:<input type="text" name="photo_url"></label>
+<label>Date Taken:<input type="date" name="date_taken"></label>
+
+<input type="submit" value="Add entry">
+
+</form>

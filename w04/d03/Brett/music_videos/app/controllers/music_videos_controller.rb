@@ -20,7 +20,7 @@ class MusicVideosController < ApplicationController
   end
 
   def delete
-    @video = MusicVideo.find(params[:id]).destroy
+    MusicVideo.find(params[:id]).destroy
     redirect_to '/music_videos'
   end
 

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'entries' => 'entries#index'
   get 'entries/new' => 'entries#new'
   post 'entries' => 'entries#create'
-  get 'entries/edit' => 'entries#edit'
+  get 'entries/edit/:id' => 'entries#edit'
   patch 'entries' => 'entries#update'
   get 'entries/:id' =>'entries#show'
   delete 'entries/:id' => 'entries#delete'
