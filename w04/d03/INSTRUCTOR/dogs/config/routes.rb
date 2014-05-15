@@ -6,12 +6,6 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get '/about' => 'welcome#about'
 
-
-  # get '/dogs' => 'dogs#index'
-  # get '/dogs/new' => 'dogs#new'
-  # post '/dogs' => 'dogs#create'
-  # get '/dogs/:id' => 'dogs#show'
-
   resources :dogs, { :only => [:index, :new, :create, :show] } do
     resources :toys
   end
