@@ -1,6 +1,6 @@
 <h1>Add another character</h1>
 
-<form action="/books" method="post">
+<form action="authors/@author_id/books/@books_id/characters" method="post">
   <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" >
 
   <label for="name-attribute">
