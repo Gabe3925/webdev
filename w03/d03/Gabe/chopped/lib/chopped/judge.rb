@@ -1,5 +1,4 @@
 class Judge < ActiveRecord::Base
-  validates_presence_of :id
   validates_presence_of :judge_name
   belongs_to :round
   has_many :scores
