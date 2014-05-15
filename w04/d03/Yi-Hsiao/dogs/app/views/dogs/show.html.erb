@@ -1,7 +1,20 @@
 <h1>About <%= @dog.name %></h1>
 
-<dt>Age:</dt>
-<dd><%= @dog.age %></dd>
+<dl>
+  <dt>Age:</dt>
+  <dd><%= @dog.age %></dd>
+  
+  <dt>Photo:</dt>
+  <dd><%= image_tag(@dog.image_url, alt: @dog.name) %></dd>
 
-<dt>Photo: </dt>
-<dd><img src="<%= image_path(@dog.image_url) %>" alt=""></dd>
+  <% if @dog.toys.any? %>
+    <dt>Toys:</dt>
+    <dd>
+      <ul>
+        <% @dog.toys.each do |toy| %>
+        <li><%= link_to toy.name, toy %></li>
+        <% end %>
+      </ul>
+    </dd>
+  <% end %>
+</dl>
