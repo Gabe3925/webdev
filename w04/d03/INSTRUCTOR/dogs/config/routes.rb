@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   # post '/dogs' => 'dogs#create'
   # get '/dogs/:id' => 'dogs#show'
 
-  resources :dogs, { :only => [:index, :new, :create, :show] }
+  resources :dogs, { :only => [:index, :new, :create, :show] } do
+    resources :toys
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
