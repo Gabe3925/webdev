@@ -55,5 +55,6 @@ Here's here you find the video_id:
 
 - Make it pretty
 - Allow an event to have many bands, like a festival
+- Deploy your app to Heroku
 
 
