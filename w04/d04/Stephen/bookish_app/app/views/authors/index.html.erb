@@ -1,0 +1,16 @@
+<!--
+
+@Author: stephenstanwood
+@Date:   2014-05-14 16:19:40
+@Last Modified by:   stephenstanwood
+@Last Modified time: 2014-05-15 16:16:39
+
+ -->
+
+<h2>All Authors</h2>
+
+<% @authors.each do |a| %>
+  <h3><%= a.name %>, <%= a.gender %> born on <%= a.dob %>,
+  <%= a.has_pseudonym ? "has a pseudonym " : "doesn't have a pseudonym" %></h3>
+  <h4><a href="/authors/<%= a.id %>">Link to Profile</a></h4>
+<% end %>

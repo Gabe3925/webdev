@@ -1,0 +1,13 @@
+<h1>All about <%= @book.title %></h1>
+
+<h2>Release Date: <%= @book.release_date %></h2>
+<h2>Genre: <%= @book.genre %></h2>
+
+
+<form action="/authors/<%= @book.author_id %>/books/<%= @book.id %>" method="post">
+  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" >
+  <input type="hidden" name="_method" value="delete">
+    <button>Delete this book</button>
+</form>
+<a href="/authors/<%= @book.author_id %>/books/<%=@book.id%>/characters">Character List</a>
+<a href="/authors/<%= @book.author_id %>/books">Back to booklist</a>
