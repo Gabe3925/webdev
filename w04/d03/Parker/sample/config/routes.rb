@@ -1,14 +1,13 @@
 Rails.application.routes.draw do
-  get 'authors/index'
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'authors#index'
-    resources :authors, :books, :characters
+  root 'welcome#index'
 
-    # get 'authors/:id' => 'authors#show'
+  get '/about' => 'welcome#about'
+  get '/wdc' => 'welcome#wdc'
+  get '/sfo' => 'welcome#sfo'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
