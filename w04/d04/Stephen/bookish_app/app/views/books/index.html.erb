@@ -1,0 +1,15 @@
+<!--
+
+@Author: stephenstanwood
+@Date:   2014-05-14 16:19:40
+@Last Modified by:   stephenstanwood
+@Last Modified time: 2014-05-15 16:20:05
+
+ -->
+
+<h2>All Books by <%= @author.name %></h2>
+
+<% @books.each do |b| %>
+  <h3><%= b.title %>, released <%= b.release_date %>, genre: <%= b.genre %>,
+  <h4><a href="/authors/#{author_id}/books/<%= b.id %>">Link to Profile</a></h4>
+<% end %>
