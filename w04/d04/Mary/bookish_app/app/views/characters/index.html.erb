@@ -2,9 +2,7 @@
 
 <% @characters.each do |character| %>
 <ul>
-  <li><a href="/<%= character.book_id %>/characters/character.id"><%= character.name %></a></li>
+  <li><a href="/characters/<%=character.id %>"><%= character.name %></a></li>
 
 </ul>
 <% end %>
-
-<a href="characters/new">Add new character for this book</a>
