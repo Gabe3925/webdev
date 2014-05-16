@@ -69,5 +69,5 @@ end
 delete '/rollercoasters/:id' do
   rollercoaster = Rollercoaster.find(params[:id])
   rollercoaster.destroy
-  redirect to('/rollercoasters')
+  redirect_to('/rollercoasters')
 end
