@@ -29,6 +29,15 @@ A __Band__ has many events, and the following attributes:
 - name
 - genre
 - explicit_lyrics (a boolean)
+- video_embed_url
+
+__NOTE:__ Check out [how to embed a youtube video](https://developers.google.com/youtube/player_parameters#Embedding_a_Player)
+
+Here's what the url looks like:
+![youtube_url](youtube_url.png)
+
+Here's here you find the video_id:
+![video_id](youtube_id.png)
 
 ####Behavioral Specs 
 

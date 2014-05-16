@@ -1,11 +1,9 @@
 <h1>Edit <%= @hero.name %></h1>
 
-<%= render "manage_form" %>
+<!-- Hero Edit Form -->
 
 <hr>
 
-<%= form_for @hero, method: 'delete' do |f| %>
-  <%= f.submit "Delete" %>
-<% end %>
+<!-- Hero Delete -->
 
-<p><%= link_to "Cancel", @hero %></p>
+<!-- Cancel -->
