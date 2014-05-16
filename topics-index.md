@@ -29,3 +29,5 @@
 * Day 1: Sinatra MVC, CRUD apps
 * Day 2: accessibility, CSS layout
 * Day 3: Rails
+* Day 4: Rails + nested resources
+* Day 5: Rails helpers
