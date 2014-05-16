@@ -5,8 +5,11 @@ class CharactersController < ApplicationController
 
   def new
     @book_id = params[:book_id]
-    @author_id = Book.find(params[:author_id])
+    render :new
+  end
 
+  def show
+    @character = Character.find(params[:id])
   end
 
   def create
@@ -16,6 +19,12 @@ class CharactersController < ApplicationController
       quirk: params[:quirk],
       book_id: params[:book_id]
     )
+    redirect_to("/characters")
+  end
+
+  def destroy
+    @character = Character.find(params[:id])
+    @character.destroy
     redirect_to("/characters")
   end
 
