@@ -1,5 +1,6 @@
 class HerosController < ApplicationController
   def index
+    @index = Hero.all
   end
 
   def new
@@ -9,6 +10,7 @@ class HerosController < ApplicationController
   end
 
   def show
+    @hero = Hero.find(params[:id])
   end
 
   def edit
