@@ -1,4 +1,4 @@
-##Bookish CRUD
+A##Bookish CRUD
 
 #### Prompt
 You've been tasked with building a three-model Rails CRUD App that allows bookish types to track their favorite authors' books and characters. The model specs are as follows:
@@ -16,7 +16,7 @@ A __Book__ points back at an author, has multiple characters, and has these addi
 * release_date
 * genre
 
-A __Character__ can appear in many books, and has these additional attributes
+A __Character__ belongs to a book, and has these additional attributes
 
 * name
 * gender
