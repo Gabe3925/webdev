@@ -14,6 +14,7 @@ class HerosController < ApplicationController
   end
 
   def edit
+    @hero = Hero.
   end
 
   def update
