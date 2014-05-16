@@ -16,7 +16,7 @@ A __Book__ points back at an author, has multiple characters, and has these addi
 * release_date
 * genre
 
-A __Character__ can appear in many books, and has these additional attributes
+A __Character__ belongs to a book, and has these additional attributes
 
 * name
 * gender
@@ -24,17 +24,17 @@ A __Character__ can appear in many books, and has these additional attributes
 
 Your Rails app should make use of RESTful routes, and allow you to RESTfully manage every book and character for a particular author. The RESTful actions are below:
 
-* index 
-* show 
+* index
+* show
 * new
 * create
-* edit <- Will the basic info for a book or a character need updating? You make the call. 
-* update <- You're the client. You don't need to 
+* edit <- Will the basic info for a book or a character need updating? You make the call.
+* update <- You're the client. You don't need to
 * destroy
 
 #### Instructions
 
-1. Whiteboard an Entity Relationship Diagram (ERD) for the entities and relationships outlined above. 
+1. Whiteboard an Entity Relationship Diagram (ERD) for the entities and relationships outlined above.
 2. Create a new rails app called `bookish_app`
    - `rails new bookish_app -d postgresql`
 3. Create a database for your app using `rake db:create`
