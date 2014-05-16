@@ -17,6 +17,7 @@ class AuthorsController < ApplicationController
   def show
     @author = Author.find(params[:id])
     @books = Book.where(author_id: params["author_id"])
+
     render :show
   end
 
@@ -27,9 +28,10 @@ class AuthorsController < ApplicationController
 
   def update
     @author = Author.find(params[:id])
-    Author.find(params[:id]).update({
+    @author.update({
       name: params[:name],
       dob: params[:dob],
+      gender: params[:gender],
       has_pseudonym: params[:has_pseudonym]
       })
     redirect_to ('/authors/' + @author.id.to_s)
