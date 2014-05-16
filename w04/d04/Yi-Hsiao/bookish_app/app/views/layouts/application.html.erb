@@ -8,6 +8,12 @@
 </head>
 <body>
 
+  <ul>
+    <li><%= link_to "View all authors", authors_path %></li>
+    <li><%= link_to "Add an author", new_author_path %></li>
+    <% if @author && !@author.new_record? %><li><%= link_to "Add a book for #{@author.name}", new_author_book_path(@author) %></li><% end %>
+  </ul>
+
 <%= yield %>
 
 </body>
