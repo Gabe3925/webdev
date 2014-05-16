@@ -1,10 +1,11 @@
 class BooksController < ApplicationController
   def index
-    @books = Book.where(author_id: params["author_id"])
+    @books = Book.all
   end
 
   def show
     @book = Book.find(params[:id])
+    @characters = Character.where(book_id: @book.id)
   end
 
   def new
@@ -18,13 +19,13 @@ class BooksController < ApplicationController
       genre: params[:genre],
       author_id: params[:author_id]
     )
-    redirect_to("/authors/#{params[:author_id]}/books")
+    redirect_to("/authors/#{params[:author_id]}")
   end
 
   def destroy
     @book = Book.find(params[:id])
     @book.destroy
-    redirect_to("/authors/#{params[:author_id]}/books")
+    redirect_to("/books")
   end
 
 end

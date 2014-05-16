@@ -1,8 +1,17 @@
 <h1>All about <%= @author.name %></h1>
 
-<h2>Date of birth: <%= @author.date_of_birth %></h2>
-<h2>Gender: <%= @author.gender %></h2>
-<h2>Has a pseudonym: <%= @author.has_pseudonym %></h2>
+<p>Date of birth: <%= @author.date_of_birth %></p>
+<p>Gender: <%= @author.gender %></p>
+<p>Has a pseudonym: <%= @author.has_pseudonym %></p>
+
+<p><%= @author.name %>'s Books:</p>
+<% @books.each do |book| %>
+<ul>
+<li><a href="/books/<%= book.id %>"><%= book.title %></a></li>
+</ul>
+<% end %>
+
+<a href="/authors/<%= @author.id %>/books/new">Add a book by this author</a>
 
 <form action="/authors/<%= @author.id %>" method="post">
   <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" >
@@ -10,4 +19,4 @@
     <button>Delete this author</button>
 </form>
 
-<a href="/authors/<%= @author.id %>/books">See this author's books</a>
+
