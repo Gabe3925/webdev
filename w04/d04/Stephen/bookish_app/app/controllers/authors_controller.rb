@@ -2,7 +2,7 @@
 # @Author: stephenstanwood
 # @Date:   2014-05-15 15:30:56
 # @Last Modified by:   stephenstanwood
-# @Last Modified time: 2014-05-15 17:18:17
+# @Last Modified time: 2014-05-16 08:00:26
 
 class AuthorsController < ApplicationController
 
@@ -24,6 +24,7 @@ class AuthorsController < ApplicationController
 
   # Offers the user the chance to add an author
   def new
+    @book = params[:book_id]
     render :new
   end
 

@@ -3,14 +3,19 @@
 @Author: stephenstanwood
 @Date:   2014-05-14 16:19:40
 @Last Modified by:   stephenstanwood
-@Last Modified time: 2014-05-15 16:02:52
+@Last Modified time: 2014-05-16 08:13:58
 
  -->
 
-<h2>All Characters</h2>
+<h2>All Characters from "<%= @book.title %>" by <%= @author.name %></h2>
 
-<% @characters.each do |c| %>
-  <h3><%= c.name %>, a <%= c.gender %> who <%= c.quirk %></h3>
-  <h4><a href="/characters/<%= c.id %>">Profile Link</a></h4>
+<ul>
+  <% @characters.each do |c| %>
+    <li><a href="/books/<%= c.book_id %>/characters/<%= c.id %>"><%= c.name %></a>, a <%= c.gender %> who <%= c.quirk %></li>
+  <% end %>
+</ul>
 
-<% end %>
+<form action="/books/<%= @book.id %>/characters/new" method="get">
+  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" >
+  <input type="submit" value="New Character">
+</form>

@@ -9,7 +9,9 @@ Rails.application.routes.draw do
     resources :books, except: [:update, :edit]
   end
 
-  resources :characters, except: [:update, :edit]
+  resources :books, except: [:update, :edit] do
+    resources :characters, except: [:update, :edit]
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
