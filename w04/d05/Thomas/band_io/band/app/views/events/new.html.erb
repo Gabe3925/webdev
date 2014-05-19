@@ -1,0 +1,12 @@
+<h1>Book a band for the <%= @venue.name %></h1>
+
+<% @bands.each do |band| %>
+<ul>
+  <li>
+    <%= band.name %> ID: <%= band.id %><%= render "manage_form" %>
+  </li>
+</ul>
+<% end %>
+
+<p><%= link_to "Cancel", venue_events_path %></p>
+
