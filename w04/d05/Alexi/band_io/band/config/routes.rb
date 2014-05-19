@@ -8,12 +8,12 @@ Rails.application.routes.draw do
   root 'venues#index'
 
   shallow do
-    resources :venues, {except: [:update,:update, :edit] } do
+    resources :venues, { except: [:update, :edit] } do
       resources :events
     end
   end
 
-  resources :bands , {except: [:update,:update, :edit] }
+  resources :bands
 
 
   # Example of regular route:
