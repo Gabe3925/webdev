@@ -4,8 +4,6 @@ class WelcomeController < ApplicationController
     render :index
   end
 
-  def about
-    render :about
-  end
+
 
 end
