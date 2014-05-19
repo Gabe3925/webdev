@@ -1,3 +1,7 @@
 <h1><%= @artist.name %></h1>
 <p><%= @artist.genre%></p>
 <img src="<%= @artist.photo_url %>">
+
+<%= form_for @artist, method: 'delete' do |f| %>
+  <%= f.submit "destroy" %>
+<% end %>

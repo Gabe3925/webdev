@@ -1,5 +1,5 @@
 class ArtistsController < ActionController::Base
-  before_action :find_artist, only: [:show, :edit, :update]
+  before_action :find_artist, only: [:show, :edit, :update, :destroy]
 
   def new
     @artist = Artist.new
@@ -19,6 +19,11 @@ class ArtistsController < ActionController::Base
   def update
     @artist.update(artist_params)
     redirect_to @artist
+  end
+
+  def destroy
+    @artist.destroy
+    redirect_to new_artist_path
   end
 
   private

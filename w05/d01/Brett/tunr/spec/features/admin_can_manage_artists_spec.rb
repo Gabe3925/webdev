@@ -25,4 +25,10 @@ describe "Admin can manage artists"  do
     expect(page).to have_content "Queen Bey"
   end
 
+  it "can destroy an artist" do
+    visit artist_path(beyonce)
+    click_button("destroy")
+    expect(page).to_not have_content("Beyonce")
+  end
+
 end
