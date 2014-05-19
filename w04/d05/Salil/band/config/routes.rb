@@ -3,14 +3,15 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'venues#index'
+  root 'welcome#index'
+
   shallow do
-    resources :venue, { except: [:update, :edit]} do
-     resources :event
+    resources :venues do
+     resources :events
   end
 end
 
-  resources :band, {except: [:update, :edit]}
+  resources :bands
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
