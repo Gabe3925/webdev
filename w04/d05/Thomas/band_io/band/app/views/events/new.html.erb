@@ -3,10 +3,12 @@
 <% @bands.each do |band| %>
 <ul>
   <li>
-    <%= band.name %> ID: <%= band.id %><%= render "manage_form" %>
+    <%= band.name %><%= render "manage_form" %>
+    <label>Band ID:</label>
+    <input type="integer" value="<%= band.id %>">
   </li>
 </ul>
 <% end %>
 
-<p><%= link_to "Cancel", venue_events_path %></p>
+<button><%= link_to "Cancel", venue_events_path %></button>
 

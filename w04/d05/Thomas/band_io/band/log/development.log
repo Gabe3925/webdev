@@ -24163,3 +24163,2008 @@ Processing by EventsController#new as HTML
   Rendered events/_manage_form.html.erb (2.8ms)
   Rendered events/new.html.erb within layouts/application (14.5ms)
 Completed 200 OK in 27ms (Views: 19.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/venues/2/events/new" for 127.0.0.1 at 2014-05-18 17:37:19 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#new as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[35mVenue Load (0.6ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mBand Load (0.4ms)[0m  [1mSELECT "bands".* FROM "bands"[0m
+  Rendered events/_manage_form.html.erb (19.3ms)
+  Rendered events/_manage_form.html.erb (1.6ms)
+  Rendered events/_manage_form.html.erb (1.4ms)
+  Rendered events/new.html.erb within layouts/application (35.3ms)
+Completed 200 OK in 105ms (Views: 68.1ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 17:37:20 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 17:37:20 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 17:37:20 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 17:37:20 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-18 17:37:20 -0400
+
+
+Started GET "/venues/2/events/new" for 127.0.0.1 at 2014-05-18 17:38:01 -0400
+Processing by EventsController#new as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[35mVenue Load (0.3ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mBand Load (0.3ms)[0m  [1mSELECT "bands".* FROM "bands"[0m
+  Rendered events/_manage_form.html.erb (13.6ms)
+  Rendered events/new.html.erb within layouts/application (15.3ms)
+Completed 500 Internal Server Error in 19ms
+
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    10:   <%= f.label :time %>
+    11:   <%= f.text_field :time %>
+    12: 
+    13:   <input type="integer" value="<%= @band.id %>">
+    14: 
+    15:   <%= f.submit "Book" %>
+    16: 
+  app/views/events/_manage_form.html.erb:13:in `block in _app_views_events__manage_form_html_erb__3729251373223882165_70358204338120'
+  app/views/events/_manage_form.html.erb:5:in `_app_views_events__manage_form_html_erb__3729251373223882165_70358204338120'
+  app/views/events/new.html.erb:6:in `block in _app_views_events_new_html_erb___953551204672290124_70358169132520'
+  app/views/events/new.html.erb:3:in `_app_views_events_new_html_erb___953551204672290124_70358169132520'
+
+
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.3ms)
+
+
+Started GET "/venues/2/events/new" for 127.0.0.1 at 2014-05-18 17:38:11 -0400
+Processing by EventsController#new as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[35mVenue Load (0.3ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mBand Load (0.3ms)[0m  [1mSELECT "bands".* FROM "bands"[0m
+  Rendered events/_manage_form.html.erb (3.1ms)
+  Rendered events/new.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 10ms
+
+ActionView::Template::Error (undefined method `band_id' for nil:NilClass):
+    10:   <%= f.label :time %>
+    11:   <%= f.text_field :time %>
+    12: 
+    13:   <input type="integer" value="<%= @band.band_id %>">
+    14: 
+    15:   <%= f.submit "Book" %>
+    16: 
+  app/views/events/_manage_form.html.erb:13:in `block in _app_views_events__manage_form_html_erb__3729251373223882165_70358169507500'
+  app/views/events/_manage_form.html.erb:5:in `_app_views_events__manage_form_html_erb__3729251373223882165_70358169507500'
+  app/views/events/new.html.erb:6:in `block in _app_views_events_new_html_erb___953551204672290124_70358169132520'
+  app/views/events/new.html.erb:3:in `_app_views_events_new_html_erb___953551204672290124_70358169132520'
+
+
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.7ms)
+
+
+Started GET "/venues/2/events/new" for 127.0.0.1 at 2014-05-18 17:38:51 -0400
+Processing by EventsController#new as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[35mVenue Load (0.2ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mBand Load (0.2ms)[0m  [1mSELECT "bands".* FROM "bands"[0m
+  Rendered events/_manage_form.html.erb (4.7ms)
+  Rendered events/new.html.erb within layouts/application (6.7ms)
+Completed 500 Internal Server Error in 10ms
+
+ActionView::Template::Error (undefined method `id' for #<Band::ActiveRecord_Relation:0x007ffb163bf100>):
+    10:   <%= f.label :time %>
+    11:   <%= f.text_field :time %>
+    12: 
+    13:   <input type="integer" value="<%= @bands.id %>">
+    14: 
+    15:   <%= f.submit "Book" %>
+    16: 
+  app/views/events/_manage_form.html.erb:13:in `block in _app_views_events__manage_form_html_erb__3729251373223882165_70358193236900'
+  app/views/events/_manage_form.html.erb:5:in `_app_views_events__manage_form_html_erb__3729251373223882165_70358193236900'
+  app/views/events/new.html.erb:6:in `block in _app_views_events_new_html_erb___953551204672290124_70358169132520'
+  app/views/events/new.html.erb:3:in `_app_views_events_new_html_erb___953551204672290124_70358169132520'
+
+
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.9ms)
+
+
+Started GET "/venues/2/events/new" for 127.0.0.1 at 2014-05-18 17:38:59 -0400
+Processing by EventsController#new as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[35mVenue Load (0.3ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mBand Load (0.3ms)[0m  [1mSELECT "bands".* FROM "bands"[0m
+  Rendered events/_manage_form.html.erb (3.1ms)
+  Rendered events/new.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (undefined method `band_id' for #<Band::ActiveRecord_Relation:0x007ffb1614f938>):
+    10:   <%= f.label :time %>
+    11:   <%= f.text_field :time %>
+    12: 
+    13:   <input type="integer" value="<%= @bands.band_id %>">
+    14: 
+    15:   <%= f.submit "Book" %>
+    16: 
+  app/views/events/_manage_form.html.erb:13:in `block in _app_views_events__manage_form_html_erb__3729251373223882165_70358169126280'
+  app/views/events/_manage_form.html.erb:5:in `_app_views_events__manage_form_html_erb__3729251373223882165_70358169126280'
+  app/views/events/new.html.erb:6:in `block in _app_views_events_new_html_erb___953551204672290124_70358169132520'
+  app/views/events/new.html.erb:3:in `_app_views_events_new_html_erb___953551204672290124_70358169132520'
+
+
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.9ms)
+
+
+Started GET "/venues/2/events/new" for 127.0.0.1 at 2014-05-18 17:39:23 -0400
+Processing by EventsController#new as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[35mVenue Load (0.3ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mBand Load (0.2ms)[0m  [1mSELECT "bands".* FROM "bands"[0m
+  Rendered events/_manage_form.html.erb (2.3ms)
+  Rendered events/_manage_form.html.erb (1.3ms)
+  Rendered events/_manage_form.html.erb (1.4ms)
+  Rendered events/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 13ms (Views: 11.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 17:39:23 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 17:39:23 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 17:39:23 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 17:39:23 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-18 17:39:23 -0400
+
+
+Started GET "/venues/2/events/new" for 127.0.0.1 at 2014-05-18 17:39:57 -0400
+Processing by EventsController#new as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[35mVenue Load (0.2ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mBand Load (0.2ms)[0m  [1mSELECT "bands".* FROM "bands"[0m
+  Rendered events/_manage_form.html.erb (2.4ms)
+  Rendered events/_manage_form.html.erb (1.5ms)
+  Rendered events/_manage_form.html.erb (1.4ms)
+  Rendered events/new.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 17:39:57 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 17:39:57 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-18 17:39:57 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 17:39:57 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 17:39:57 -0400
+
+
+Started GET "/venues/2/events/new" for 127.0.0.1 at 2014-05-18 17:40:25 -0400
+Processing by EventsController#new as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[35mVenue Load (0.2ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mBand Load (0.2ms)[0m  [1mSELECT "bands".* FROM "bands"[0m
+  Rendered events/_manage_form.html.erb (1.7ms)
+  Rendered events/_manage_form.html.erb (1.6ms)
+  Rendered events/_manage_form.html.erb (1.4ms)
+  Rendered events/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 13ms (Views: 11.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 17:40:25 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 17:40:25 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 17:40:25 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-18 17:40:25 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 17:40:25 -0400
+
+
+Started GET "/venues/2/events/new" for 127.0.0.1 at 2014-05-18 17:40:44 -0400
+Processing by EventsController#new as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[35mVenue Load (0.2ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mBand Load (0.2ms)[0m  [1mSELECT "bands".* FROM "bands"[0m
+  Rendered events/_manage_form.html.erb (1.8ms)
+  Rendered events/_manage_form.html.erb (1.6ms)
+  Rendered events/_manage_form.html.erb (1.3ms)
+  Rendered events/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-18 17:40:44 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 17:40:44 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 17:40:44 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 17:40:44 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 17:40:44 -0400
+
+
+Started GET "/venues/2/events/new" for 127.0.0.1 at 2014-05-18 17:40:53 -0400
+Processing by EventsController#new as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[35mVenue Load (0.2ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mBand Load (0.2ms)[0m  [1mSELECT "bands".* FROM "bands"[0m
+  Rendered events/_manage_form.html.erb (2.4ms)
+  Rendered events/_manage_form.html.erb (1.9ms)
+  Rendered events/_manage_form.html.erb (1.7ms)
+  Rendered events/new.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 16ms (Views: 14.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-18 17:40:53 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 17:40:53 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 17:40:53 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 17:40:53 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 17:40:53 -0400
+
+
+Started GET "/venues/2/events/new" for 127.0.0.1 at 2014-05-18 17:41:05 -0400
+Processing by EventsController#new as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[35mVenue Load (0.2ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mBand Load (0.2ms)[0m  [1mSELECT "bands".* FROM "bands"[0m
+  Rendered events/_manage_form.html.erb (2.3ms)
+  Rendered events/_manage_form.html.erb (1.4ms)
+  Rendered events/_manage_form.html.erb (1.2ms)
+  Rendered events/new.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 17:41:05 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 17:41:05 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 17:41:05 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-18 17:41:05 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 17:41:05 -0400
+
+
+Started GET "/venues/2/events/new" for 127.0.0.1 at 2014-05-18 17:41:20 -0400
+Processing by EventsController#new as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[35mVenue Load (0.2ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mBand Load (0.3ms)[0m  [1mSELECT "bands".* FROM "bands"[0m
+  Rendered events/_manage_form.html.erb (13.2ms)
+  Rendered events/new.html.erb within layouts/application (15.1ms)
+Completed 500 Internal Server Error in 18ms
+
+ActionView::Template::Error (undefined local variable or method `band' for #<#<Class:0x007ffb1617e378>:0x007ffb1618e020>):
+    10:   <%= f.label :time %>
+    11:   <%= f.text_field :time %>
+    12: 
+    13:   <input type="integer" value="<%= band.id %>">
+    14: 
+    15:   <%= f.submit "Book" %>
+    16: 
+  app/views/events/_manage_form.html.erb:13:in `block in _app_views_events__manage_form_html_erb__3729251373223882165_70358192077360'
+  app/views/events/_manage_form.html.erb:5:in `_app_views_events__manage_form_html_erb__3729251373223882165_70358192077360'
+  app/views/events/new.html.erb:6:in `block in _app_views_events_new_html_erb___953551204672290124_70358193991120'
+  app/views/events/new.html.erb:3:in `_app_views_events_new_html_erb___953551204672290124_70358193991120'
+
+
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.5ms)
+
+
+Started GET "/venues/2/events/new" for 127.0.0.1 at 2014-05-18 17:41:37 -0400
+Processing by EventsController#new as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[35mVenue Load (0.2ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mBand Load (0.3ms)[0m  [1mSELECT "bands".* FROM "bands"[0m
+  Rendered events/_manage_form.html.erb (2.3ms)
+  Rendered events/_manage_form.html.erb (1.5ms)
+  Rendered events/_manage_form.html.erb (1.4ms)
+  Rendered events/new.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 15ms (Views: 12.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 17:41:37 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 17:41:37 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 17:41:37 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-18 17:41:37 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 17:41:37 -0400
+
+
+Started GET "/venues/2/events/new" for 127.0.0.1 at 2014-05-18 17:41:54 -0400
+Processing by EventsController#new as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[35mVenue Load (0.2ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mBand Load (0.3ms)[0m  [1mSELECT "bands".* FROM "bands"[0m
+  Rendered events/_manage_form.html.erb (1.9ms)
+  Rendered events/_manage_form.html.erb (2.6ms)
+  Rendered events/_manage_form.html.erb (1.5ms)
+  Rendered events/new.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 16ms (Views: 13.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-18 17:41:55 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 17:41:55 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 17:41:55 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 17:41:55 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 17:41:55 -0400
+
+
+Started POST "/venues/2/events" for 127.0.0.1 at 2014-05-18 17:42:20 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hHLInBPyR1tytz0mXoEiV4BIElYgHg5KyhqKJqa94NU=", "event"=>{"date"=>"01/01/1900", "time"=>"2400/03/03"}, "commit"=>"Book", "venue_id"=>"2"}
+  [1m[35mVenue Load (0.5ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (6.0ms)[0m  INSERT INTO "events" ("date", "venue_id") VALUES ($1, $2) RETURNING "id"  [["date", "1900-01-01"], ["venue_id", 2]]
+  [1m[36m (6.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/venues/2/events
+Completed 302 Found in 38ms (ActiveRecord: 13.0ms)
+
+
+Started GET "/venues/2/events" for 127.0.0.1 at 2014-05-18 17:42:20 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[35mVenue Load (0.2ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"  WHERE "events"."venue_id" = $1  [["venue_id", 2]]
+  [1m[36mBand Load (0.3ms)[0m  [1mSELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1  [["id", 12]]
+  Rendered events/index.html.erb within layouts/application (5.4ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>Upcomming events at <%= @venue.name %></h1>
+    2: <% @events.each do |event| %>
+    3: <ul>
+    4:   <li><a href="/events/<%= event.id %>"><%= event.band.name %> playing
+    5:     <%= event.band.genre %> on
+    6:     <%= event.date %></a>
+    7:   </li>
+  app/views/events/index.html.erb:4:in `block in _app_views_events_index_html_erb___623111878800606674_70358169999960'
+  app/views/events/index.html.erb:2:in `_app_views_events_index_html_erb___623111878800606674_70358169999960'
+
+
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.7ms)
+
+
+Started GET "/venues/2/events" for 127.0.0.1 at 2014-05-18 17:43:15 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[36mVenue Load (0.2ms)[0m  [1mSELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", "2"]]
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"  WHERE "events"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[35mBand Load (0.3ms)[0m  SELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  Rendered events/index.html.erb within layouts/application (4.1ms)
+Completed 500 Internal Server Error in 8ms
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>Upcomming events at <%= @venue.name %></h1>
+    2: <% @events.each do |event| %>
+    3: <ul>
+    4:   <li><a href="/events/<%= event.id %>"><%= event.band.name %> playing
+    5:     <%= event.band.genre %> on
+    6:     <%= event.date %></a>
+    7:   </li>
+  app/views/events/index.html.erb:4:in `block in _app_views_events_index_html_erb___623111878800606674_70358169999960'
+  app/views/events/index.html.erb:2:in `_app_views_events_index_html_erb___623111878800606674_70358169999960'
+
+
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.3ms)
+
+
+Started GET "/venues/2/events" for 127.0.0.1 at 2014-05-18 17:43:44 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[35mVenue Load (0.2ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events"  WHERE "events"."venue_id" = $1  [["venue_id", 2]]
+  [1m[36mBand Load (0.4ms)[0m  [1mSELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1  [["id", 12]]
+  Rendered events/index.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>Upcomming events at <%= @venue.name %></h1>
+    2: <% @events.each do |event| %>
+    3: <ul>
+    4:   <li><a href="/events/<%= event.id %>"><%= event.band.name %> playing
+    5:     <%= event.band.genre %> on
+    6:     <%= event.date %></a>
+    7:   </li>
+  app/views/events/index.html.erb:4:in `block in _app_views_events_index_html_erb___623111878800606674_70358169999960'
+  app/views/events/index.html.erb:2:in `_app_views_events_index_html_erb___623111878800606674_70358169999960'
+
+
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (15.0ms)
+
+
+Started GET "/venues/2" for 127.0.0.1 at 2014-05-18 17:43:48 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mVenue Load (0.3ms)[0m  [1mSELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered venues/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-18 17:43:48 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 17:43:48 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 17:43:48 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 17:43:48 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 17:43:48 -0400
+
+
+Started GET "/venues" for 127.0.0.1 at 2014-05-18 17:43:52 -0400
+Processing by VenuesController#index as HTML
+  [1m[35mVenue Load (0.3ms)[0m  SELECT "venues".* FROM "venues"
+  Rendered venues/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 17:43:52 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 17:43:52 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-18 17:43:52 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 17:43:52 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 17:43:52 -0400
+
+
+Started GET "/venues/2/events" for 127.0.0.1 at 2014-05-18 17:43:55 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[36mVenue Load (5.5ms)[0m  [1mSELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", "2"]]
+  [1m[36mEvent Load (0.9ms)[0m  [1mSELECT "events".* FROM "events"  WHERE "events"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[35mBand Load (0.4ms)[0m  SELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  Rendered events/index.html.erb within layouts/application (7.2ms)
+Completed 500 Internal Server Error in 18ms
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>Upcomming events at <%= @venue.name %></h1>
+    2: <% @events.each do |event| %>
+    3: <ul>
+    4:   <li><a href="/events/<%= event.id %>"><%= event.band.name %> playing
+    5:     <%= event.band.genre %> on
+    6:     <%= event.date %></a>
+    7:   </li>
+  app/views/events/index.html.erb:4:in `block in _app_views_events_index_html_erb___623111878800606674_70358172592440'
+  app/views/events/index.html.erb:2:in `_app_views_events_index_html_erb___623111878800606674_70358172592440'
+
+
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.6ms)
+
+
+Started GET "/venues/2/events" for 127.0.0.1 at 2014-05-18 17:43:55 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[35mVenue Load (0.2ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"  WHERE "events"."venue_id" = $1  [["venue_id", 2]]
+  [1m[36mBand Load (0.2ms)[0m  [1mSELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1  [["id", 12]]
+  Rendered events/index.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 8ms
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>Upcomming events at <%= @venue.name %></h1>
+    2: <% @events.each do |event| %>
+    3: <ul>
+    4:   <li><a href="/events/<%= event.id %>"><%= event.band.name %> playing
+    5:     <%= event.band.genre %> on
+    6:     <%= event.date %></a>
+    7:   </li>
+  app/views/events/index.html.erb:4:in `block in _app_views_events_index_html_erb___623111878800606674_70358169999960'
+  app/views/events/index.html.erb:2:in `_app_views_events_index_html_erb___623111878800606674_70358169999960'
+
+
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.9ms)
+
+
+Started GET "/venues" for 127.0.0.1 at 2014-05-18 17:44:06 -0400
+Processing by VenuesController#index as HTML
+  [1m[36mVenue Load (0.3ms)[0m  [1mSELECT "venues".* FROM "venues"[0m
+  Rendered venues/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 17:44:06 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 17:44:06 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 17:44:06 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-18 17:44:06 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 17:44:06 -0400
+
+
+Started GET "/venues/3/events" for 127.0.0.1 at 2014-05-18 17:44:08 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"venue_id"=>"3"}
+  [1m[35mVenue Load (0.2ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", "3"]]
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events"  WHERE "events"."venue_id" = $1  [["venue_id", 3]]
+  [1m[36mBand Load (0.5ms)[0m  [1mSELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  Rendered events/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 11ms (Views: 6.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/venues/3/events/new" for 127.0.0.1 at 2014-05-18 17:44:12 -0400
+Processing by EventsController#new as HTML
+  Parameters: {"venue_id"=>"3"}
+  [1m[35mVenue Load (0.2ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mBand Load (2.5ms)[0m  [1mSELECT "bands".* FROM "bands"[0m
+  Rendered events/_manage_form.html.erb (3.5ms)
+  Rendered events/_manage_form.html.erb (1.3ms)
+  Rendered events/_manage_form.html.erb (1.2ms)
+  Rendered events/new.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 20ms (Views: 15.5ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/venues/3/events/new" for 127.0.0.1 at 2014-05-18 17:45:03 -0400
+Processing by EventsController#new as HTML
+  Parameters: {"venue_id"=>"3"}
+  [1m[35mVenue Load (0.2ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mBand Load (0.3ms)[0m  [1mSELECT "bands".* FROM "bands"[0m
+  Rendered events/_manage_form.html.erb (2.1ms)
+  Rendered events/_manage_form.html.erb (1.3ms)
+  Rendered events/_manage_form.html.erb (1.9ms)
+  Rendered events/new.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 16ms (Views: 13.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 17:45:03 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 17:45:03 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-18 17:45:03 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 17:45:03 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 17:45:03 -0400
+
+
+Started GET "/venues/3/events/new" for 127.0.0.1 at 2014-05-18 17:45:12 -0400
+Processing by EventsController#new as HTML
+  Parameters: {"venue_id"=>"3"}
+  [1m[35mVenue Load (0.2ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mBand Load (0.3ms)[0m  [1mSELECT "bands".* FROM "bands"[0m
+  Rendered events/_manage_form.html.erb (1.5ms)
+  Rendered events/_manage_form.html.erb (1.2ms)
+  Rendered events/_manage_form.html.erb (1.2ms)
+  Rendered events/new.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 14ms (Views: 11.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 17:45:12 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-18 17:45:12 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 17:45:12 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 17:45:12 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 17:45:12 -0400
+
+
+Started GET "/venues/3/events/new" for 127.0.0.1 at 2014-05-18 17:45:22 -0400
+Processing by EventsController#new as HTML
+  Parameters: {"venue_id"=>"3"}
+  [1m[35mVenue Load (0.2ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mBand Load (0.2ms)[0m  [1mSELECT "bands".* FROM "bands"[0m
+  Rendered events/_manage_form.html.erb (1.7ms)
+  Rendered events/_manage_form.html.erb (1.4ms)
+  Rendered events/_manage_form.html.erb (1.4ms)
+  Rendered events/new.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-18 17:45:22 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 17:45:22 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 17:45:22 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 17:45:22 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 17:45:22 -0400
+
+
+Started GET "/venues/3/events/new" for 127.0.0.1 at 2014-05-18 17:45:29 -0400
+Processing by EventsController#new as HTML
+  Parameters: {"venue_id"=>"3"}
+  [1m[35mVenue Load (0.2ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mBand Load (0.3ms)[0m  [1mSELECT "bands".* FROM "bands"[0m
+  Rendered events/_manage_form.html.erb (1.7ms)
+  Rendered events/_manage_form.html.erb (1.3ms)
+  Rendered events/_manage_form.html.erb (1.3ms)
+  Rendered events/new.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 14ms (Views: 11.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 17:45:29 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 17:45:29 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 17:45:29 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-18 17:45:29 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 17:45:29 -0400
+
+
+Started GET "/venues/3/events/new" for 127.0.0.1 at 2014-05-18 17:45:44 -0400
+Processing by EventsController#new as HTML
+  Parameters: {"venue_id"=>"3"}
+  [1m[35mVenue Load (0.2ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mBand Load (0.3ms)[0m  [1mSELECT "bands".* FROM "bands"[0m
+  Rendered events/_manage_form.html.erb (8.1ms)
+  Rendered events/_manage_form.html.erb (1.5ms)
+  Rendered events/_manage_form.html.erb (1.3ms)
+  Rendered events/new.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 20ms (Views: 18.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 17:45:45 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 17:45:45 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 17:45:45 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-18 17:45:45 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 17:45:45 -0400
+
+
+Started GET "/venues" for 127.0.0.1 at 2014-05-18 17:46:24 -0400
+Processing by VenuesController#index as HTML
+  [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues"
+  Rendered venues/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 11ms (Views: 8.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 17:46:24 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 17:46:24 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 17:46:24 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-18 17:46:24 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 17:46:24 -0400
+
+
+Started GET "/venues/2/events" for 127.0.0.1 at 2014-05-18 17:46:26 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[36mVenue Load (0.2ms)[0m  [1mSELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", "2"]]
+  [1m[36mEvent Load (2.3ms)[0m  [1mSELECT "events".* FROM "events"  WHERE "events"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[35mBand Load (0.3ms)[0m  SELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  Rendered events/index.html.erb within layouts/application (8.9ms)
+Completed 500 Internal Server Error in 15ms
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>Upcomming events at <%= @venue.name %></h1>
+    2: <% @events.each do |event| %>
+    3: <ul>
+    4:   <li><a href="/events/<%= event.id %>"><%= event.band.name %> playing
+    5:     <%= event.band.genre %> on
+    6:     <%= event.date %></a>
+    7:   </li>
+  app/views/events/index.html.erb:4:in `block in _app_views_events_index_html_erb___623111878800606674_70358172592440'
+  app/views/events/index.html.erb:2:in `_app_views_events_index_html_erb___623111878800606674_70358172592440'
+
+
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.9ms)
+
+
+Started GET "/venues/2/events" for 127.0.0.1 at 2014-05-18 17:46:26 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[35mVenue Load (0.2ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"  WHERE "events"."venue_id" = $1  [["venue_id", 2]]
+  [1m[36mBand Load (0.2ms)[0m  [1mSELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1  [["id", 12]]
+  Rendered events/index.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>Upcomming events at <%= @venue.name %></h1>
+    2: <% @events.each do |event| %>
+    3: <ul>
+    4:   <li><a href="/events/<%= event.id %>"><%= event.band.name %> playing
+    5:     <%= event.band.genre %> on
+    6:     <%= event.date %></a>
+    7:   </li>
+  app/views/events/index.html.erb:4:in `block in _app_views_events_index_html_erb___623111878800606674_70358169999960'
+  app/views/events/index.html.erb:2:in `_app_views_events_index_html_erb___623111878800606674_70358169999960'
+
+
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.0ms)
+
+
+Started GET "/venues/2/events" for 127.0.0.1 at 2014-05-18 17:46:37 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[36mVenue Load (0.2ms)[0m  [1mSELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", "2"]]
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"  WHERE "events"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[35mBand Load (0.3ms)[0m  SELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  Rendered events/index.html.erb within layouts/application (5.6ms)
+Completed 500 Internal Server Error in 10ms
+
+ActionView::Template::Error (undefined method `genre' for nil:NilClass):
+    2: <% @events.each do |event| %>
+    3: <ul>
+    4:   <li><a href="/events/<%= event.id %>"><%= event.band %> playing
+    5:     <%= event.band.genre %> on
+    6:     <%= event.date %></a>
+    7:   </li>
+    8:     <ul>
+  app/views/events/index.html.erb:5:in `block in _app_views_events_index_html_erb___623111878800606674_70358192529760'
+  app/views/events/index.html.erb:2:in `_app_views_events_index_html_erb___623111878800606674_70358192529760'
+
+
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.7ms)
+
+
+Started GET "/venues/2/events" for 127.0.0.1 at 2014-05-18 17:46:43 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[35mVenue Load (0.3ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"  WHERE "events"."venue_id" = $1  [["venue_id", 2]]
+  [1m[36mBand Load (0.2ms)[0m  [1mSELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1  [["id", 12]]
+  Rendered events/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 11ms (Views: 7.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 17:46:43 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 17:46:43 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 17:46:43 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 17:46:43 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-18 17:46:43 -0400
+
+
+Started GET "/events/26" for 127.0.0.1 at 2014-05-18 17:46:47 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mEvent Load (5.5ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 26]]
+  Rendered events/show.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 13ms
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1><%= @event.band.name %> is playing on <%= @event.date %></h1>
+  app/views/events/show.html.erb:1:in `_app_views_events_show_html_erb__768190656467719732_70358173515380'
+
+
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (13.0ms)
+
+
+Started GET "/events/26" for 127.0.0.1 at 2014-05-18 17:46:47 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1  [["id", 26]]
+  Rendered events/show.html.erb within layouts/application (7.2ms)
+Completed 500 Internal Server Error in 11ms
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1><%= @event.band.name %> is playing on <%= @event.date %></h1>
+  app/views/events/show.html.erb:1:in `_app_views_events_show_html_erb__768190656467719732_70358166254200'
+
+
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.6ms)
+
+
+Started GET "/venues" for 127.0.0.1 at 2014-05-18 17:46:54 -0400
+Processing by VenuesController#index as HTML
+  [1m[36mVenue Load (0.3ms)[0m  [1mSELECT "venues".* FROM "venues"[0m
+  Rendered venues/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 12ms (Views: 7.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 17:46:55 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-18 17:46:55 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 17:46:55 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 17:46:55 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 17:46:55 -0400
+
+
+Started GET "/venues/2/events" for 127.0.0.1 at 2014-05-18 17:46:56 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[35mVenue Load (5.8ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"  WHERE "events"."venue_id" = $1  [["venue_id", 2]]
+  [1m[36mBand Load (0.2ms)[0m  [1mSELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1  [["id", 12]]
+  Rendered events/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 20ms (Views: 10.6ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/venues/2/events/edit" for 127.0.0.1 at 2014-05-18 17:47:06 -0400
+
+ActionController::RoutingError (No route matches [GET] "/venues/2/events/edit"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.9ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.4ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (28.9ms)
+
+
+Started GET "/events/19" for 127.0.0.1 at 2014-05-18 17:47:09 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 19]]
+  [1m[35mBand Load (0.3ms)[0m  SELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1  [["id", 12]]
+  Rendered events/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 14ms (Views: 11.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/venues/2/events/26/edit" for 127.0.0.1 at 2014-05-18 17:47:18 -0400
+
+ActionController::RoutingError (No route matches [GET] "/venues/2/events/26/edit"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.0ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (27.7ms)
+
+
+Started GET "/events/19" for 127.0.0.1 at 2014-05-18 17:47:28 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mEvent Load (5.6ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 19]]
+  [1m[35mBand Load (0.4ms)[0m  SELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1  [["id", 12]]
+  Rendered events/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 14ms (Views: 5.8ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/events/24" for 127.0.0.1 at 2014-05-18 17:47:31 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 24]]
+  [1m[35mBand Load (0.8ms)[0m  SELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1  [["id", 12]]
+  Rendered events/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 15ms (Views: 12.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/events/19" for 127.0.0.1 at 2014-05-18 17:47:53 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mEvent Load (6.5ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 19]]
+  [1m[35mBand Load (0.3ms)[0m  SELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1  [["id", 12]]
+  Rendered events/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 14ms (Views: 5.5ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/events/19/edit" for 127.0.0.1 at 2014-05-18 17:47:57 -0400
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 19]]
+  [1m[35mBand Load (0.2ms)[0m  SELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36mVenue Load (0.3ms)[0m  [1mSELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered events/_manage_form.html.erb (2.4ms)
+  Rendered events/edit.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 15ms (Views: 12.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 17:47:57 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 17:47:57 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-18 17:47:57 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 17:47:57 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 17:47:57 -0400
+
+
+Started GET "/venues/2/events" for 127.0.0.1 at 2014-05-18 17:48:07 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[35mVenue Load (0.3ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"  WHERE "events"."venue_id" = $1  [["venue_id", 2]]
+  [1m[36mBand Load (0.2ms)[0m  [1mSELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1  [["id", 12]]
+  Rendered events/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 10ms (Views: 6.3ms | ActiveRecord: 0.7ms)
+  [1m[36mEvent Load (0.6ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1  [["id", 26]]
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 26]]
+  [1m[35mSQL (6.0ms)[0m  DELETE FROM "events" WHERE "events"."id" = 26
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 26]]
+  [1m[35mEvent Load (0.6ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1  [["id", 26]]
+
+
+Started GET "/venues/2/events" for 127.0.0.1 at 2014-05-18 17:49:09 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#index as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[35mVenue Load (0.3ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events"  WHERE "events"."venue_id" = $1  [["venue_id", 2]]
+  [1m[36mBand Load (0.4ms)[0m  [1mSELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1  [["id", 12]]
+  Rendered events/index.html.erb within layouts/application (27.4ms)
+Completed 200 OK in 94ms (Views: 47.6ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 17:49:10 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 17:49:10 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 17:49:10 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-18 17:49:10 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 17:49:10 -0400
+
+
+Started GET "/venues/2/events" for 127.0.0.1 at 2014-05-18 17:49:18 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[36mVenue Load (0.3ms)[0m  [1mSELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", "2"]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"  WHERE "events"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[35mBand Load (0.3ms)[0m  SELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1  [["id", 12]]
+  Rendered events/index.html.erb within layouts/application (7.7ms)
+Completed 500 Internal Server Error in 12ms
+
+ActionView::Template::Error (undefined method `genre' for Thu, 02 Jan 2014:Date):
+    3: <ul>
+    4:   <li><a href="/events/<%= event.id %>"><%= event.band %> playing
+    5:     <%= event.band.name %> on
+    6:     <%= event.date.genre %></a>
+    7:   </li>
+    8:     <ul>
+    9:       <li>Doors open at <%= event.time %></li>
+  app/views/events/index.html.erb:6:in `block in _app_views_events_index_html_erb___2630802277435723484_70141447591360'
+  app/views/events/index.html.erb:2:in `_app_views_events_index_html_erb___2630802277435723484_70141447591360'
+
+
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (14.3ms)
+
+
+Started GET "/venues/2/events" for 127.0.0.1 at 2014-05-18 17:49:42 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[36mVenue Load (0.3ms)[0m  [1mSELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", "2"]]
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"  WHERE "events"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[35mBand Load (0.3ms)[0m  SELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  Rendered events/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 12ms (Views: 8.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 17:49:42 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 17:49:42 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 17:49:42 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-18 17:49:42 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 17:49:42 -0400
+
+
+Started GET "/venues/2/events/new" for 127.0.0.1 at 2014-05-18 17:49:46 -0400
+Processing by EventsController#new as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[35mVenue Load (0.3ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mBand Load (0.3ms)[0m  [1mSELECT "bands".* FROM "bands"[0m
+  Rendered events/_manage_form.html.erb (14.0ms)
+  Rendered events/_manage_form.html.erb (1.4ms)
+  Rendered events/_manage_form.html.erb (1.2ms)
+  Rendered events/new.html.erb within layouts/application (23.3ms)
+Completed 200 OK in 30ms (Views: 27.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/venues/2/events/new" for 127.0.0.1 at 2014-05-18 17:51:29 -0400
+Processing by EventsController#new as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[35mVenue Load (0.3ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mBand Load (0.2ms)[0m  [1mSELECT "bands".* FROM "bands"[0m
+  Rendered events/_manage_form.html.erb (2.1ms)
+  Rendered events/_manage_form.html.erb (1.3ms)
+  Rendered events/_manage_form.html.erb (1.4ms)
+  Rendered events/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 15ms (Views: 12.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 17:51:29 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 17:51:29 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 17:51:29 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-18 17:51:29 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 17:51:29 -0400
+
+
+Started GET "/venues/2/events/new" for 127.0.0.1 at 2014-05-18 17:51:30 -0400
+Processing by EventsController#new as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[35mVenue Load (0.3ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mBand Load (0.2ms)[0m  [1mSELECT "bands".* FROM "bands"[0m
+  Rendered events/_manage_form.html.erb (2.3ms)
+  Rendered events/_manage_form.html.erb (1.4ms)
+  Rendered events/_manage_form.html.erb (1.2ms)
+  Rendered events/new.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 13ms (Views: 11.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 17:51:30 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 17:51:30 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-18 17:51:30 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 17:51:30 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 17:51:30 -0400
+
+
+Started GET "/venues/2/events/new" for 127.0.0.1 at 2014-05-18 17:51:35 -0400
+Processing by EventsController#new as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[35mVenue Load (0.2ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mBand Load (0.3ms)[0m  [1mSELECT "bands".* FROM "bands"[0m
+  Rendered events/_manage_form.html.erb (1.9ms)
+  Rendered events/_manage_form.html.erb (1.3ms)
+  Rendered events/_manage_form.html.erb (1.2ms)
+  Rendered events/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 15ms (Views: 12.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-18 17:51:35 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 17:51:35 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 17:51:35 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 17:51:35 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 17:51:35 -0400
+
+
+Started GET "/venues/2/events/new" for 127.0.0.1 at 2014-05-18 17:51:55 -0400
+Processing by EventsController#new as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[35mVenue Load (0.2ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mBand Load (0.3ms)[0m  [1mSELECT "bands".* FROM "bands"[0m
+  Rendered events/_manage_form.html.erb (1.7ms)
+  Rendered events/_manage_form.html.erb (1.2ms)
+  Rendered events/_manage_form.html.erb (1.3ms)
+  Rendered events/new.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 14ms (Views: 11.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 17:51:55 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 17:51:55 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-18 17:51:55 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 17:51:55 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 17:51:55 -0400
+
+
+Started GET "/venues/2/events" for 127.0.0.1 at 2014-05-18 17:52:17 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[35mVenue Load (0.2ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"  WHERE "events"."venue_id" = $1  [["venue_id", 2]]
+  [1m[36mBand Load (0.3ms)[0m  [1mSELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1  [["id", 12]]
+  Rendered events/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 19ms (Views: 9.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/venues/2/events/new" for 127.0.0.1 at 2014-05-18 17:52:24 -0400
+Processing by EventsController#new as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[36mVenue Load (4.5ms)[0m  [1mSELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mBand Load (0.3ms)[0m  SELECT "bands".* FROM "bands"
+  Rendered events/_manage_form.html.erb (2.7ms)
+  Rendered events/_manage_form.html.erb (2.0ms)
+  Rendered events/_manage_form.html.erb (1.7ms)
+  Rendered events/new.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 23ms (Views: 15.8ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/venues/2/events/new" for 127.0.0.1 at 2014-05-18 17:52:36 -0400
+Processing by EventsController#new as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[36mVenue Load (0.2ms)[0m  [1mSELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mBand Load (0.3ms)[0m  SELECT "bands".* FROM "bands"
+  Rendered events/_manage_form.html.erb (2.1ms)
+  Rendered events/_manage_form.html.erb (1.4ms)
+  Rendered events/_manage_form.html.erb (1.4ms)
+  Rendered events/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 15ms (Views: 12.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 17:52:36 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 17:52:36 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-18 17:52:36 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 17:52:36 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 17:52:36 -0400
+
+
+Started GET "/venues/2/events" for 127.0.0.1 at 2014-05-18 17:52:39 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[36mVenue Load (0.2ms)[0m  [1mSELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", "2"]]
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"  WHERE "events"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[35mBand Load (0.5ms)[0m  SELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  Rendered events/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 18ms (Views: 8.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/events/24" for 127.0.0.1 at 2014-05-18 17:52:41 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1  [["id", 24]]
+  [1m[36mBand Load (0.4ms)[0m  [1mSELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  Rendered events/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 16ms (Views: 7.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events/24" for 127.0.0.1 at 2014-05-18 17:53:16 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1  [["id", 24]]
+  [1m[36mBand Load (0.3ms)[0m  [1mSELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  Rendered events/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 8ms (Views: 5.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 17:53:16 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 17:53:16 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 17:53:16 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-18 17:53:16 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 17:53:16 -0400
+
+
+Started GET "/events/24" for 127.0.0.1 at 2014-05-18 17:53:21 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1  [["id", 24]]
+  [1m[36mBand Load (0.3ms)[0m  [1mSELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  Rendered events/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 17:53:21 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-18 17:53:21 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 17:53:21 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 17:53:21 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 17:53:21 -0400
+
+
+Started GET "/events/24" for 127.0.0.1 at 2014-05-18 17:55:22 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1  [["id", 24]]
+  [1m[36mBand Load (0.2ms)[0m  [1mSELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  Rendered events/show.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"events", :id=>"24"} missing required keys: [:venue_id]):
+    1: <h1>Read more about <%= @event.band.name %>:</h1>
+    2: <button><%= link_to "Back to Venue", venue_events_path %></button>
+  app/views/events/show.html.erb:2:in `_app_views_events_show_html_erb__259153099374263567_70141436235800'
+
+
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.8ms)
+
+
+Started GET "/events/24" for 127.0.0.1 at 2014-05-18 17:55:32 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1  [["id", 24]]
+  [1m[36mBand Load (0.2ms)[0m  [1mSELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  Rendered events/show.html.erb within layouts/application (14.1ms)
+Completed 500 Internal Server Error in 18ms
+
+ActionView::Template::Error (undefined local variable or method `events_path' for #<#<Class:0x007f9626b70ca0>:0x007f96268d0e28>):
+    1: <h1>Read more about <%= @event.band.name %>:</h1>
+    2: <button><%= link_to "Back to Venue", events_path %></button>
+  app/views/events/show.html.erb:2:in `_app_views_events_show_html_erb__259153099374263567_70141434285280'
+
+
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (14.1ms)
+
+
+Started GET "/events/24" for 127.0.0.1 at 2014-05-18 17:55:45 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1  [["id", 24]]
+  [1m[36mBand Load (0.2ms)[0m  [1mSELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  Rendered events/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 17:55:45 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-18 17:55:45 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 17:55:45 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 17:55:45 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 17:55:45 -0400
+
+
+Started GET "/events/24" for 127.0.0.1 at 2014-05-18 17:55:48 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1  [["id", 24]]
+  [1m[36mBand Load (0.2ms)[0m  [1mSELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  Rendered events/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 13ms (Views: 11.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events/24" for 127.0.0.1 at 2014-05-18 17:55:51 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1  [["id", 24]]
+  [1m[36mBand Load (0.2ms)[0m  [1mSELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  Rendered events/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events/24" for 127.0.0.1 at 2014-05-18 17:55:51 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1  [["id", 24]]
+  [1m[36mBand Load (0.2ms)[0m  [1mSELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  Rendered events/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events/24" for 127.0.0.1 at 2014-05-18 17:55:52 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1  [["id", 24]]
+  [1m[36mBand Load (0.2ms)[0m  [1mSELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  Rendered events/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events/24" for 127.0.0.1 at 2014-05-18 17:55:52 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1  [["id", 24]]
+  [1m[36mBand Load (0.2ms)[0m  [1mSELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  Rendered events/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 8ms (Views: 5.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events/24" for 127.0.0.1 at 2014-05-18 17:55:52 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1  [["id", 24]]
+  [1m[36mBand Load (0.2ms)[0m  [1mSELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  Rendered events/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2014-05-18 17:56:00 -0400
+
+ActionController::RoutingError (No route matches [GET] "/events"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.8ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.7ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (28.8ms)
+
+
+Started GET "/venues" for 127.0.0.1 at 2014-05-18 17:56:06 -0400
+Processing by VenuesController#index as HTML
+  [1m[35mVenue Load (0.3ms)[0m  SELECT "venues".* FROM "venues"
+  Rendered venues/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 17:56:06 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 17:56:06 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-18 17:56:06 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 17:56:06 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 17:56:06 -0400
+
+
+Started GET "/venues/2/events" for 127.0.0.1 at 2014-05-18 17:56:08 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[36mVenue Load (0.2ms)[0m  [1mSELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", "2"]]
+  [1m[36mEvent Load (2.5ms)[0m  [1mSELECT "events".* FROM "events"  WHERE "events"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[35mBand Load (0.4ms)[0m  SELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  Rendered events/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 16ms (Views: 10.1ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/venues/2/events" for 127.0.0.1 at 2014-05-18 17:56:58 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[35mVenue Load (0.2ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"  WHERE "events"."venue_id" = $1  [["venue_id", 2]]
+  [1m[36mBand Load (0.2ms)[0m  [1mSELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1  [["id", 12]]
+  Rendered events/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 17:56:58 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 17:56:58 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 17:56:58 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 17:56:58 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-18 17:56:58 -0400
+
+
+Started GET "/events/24" for 127.0.0.1 at 2014-05-18 17:56:59 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 24]]
+  [1m[35mBand Load (0.3ms)[0m  SELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1  [["id", 12]]
+  Rendered events/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 15ms (Views: 7.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/venues/24/events" for 127.0.0.1 at 2014-05-18 17:57:01 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"venue_id"=>"24"}
+  [1m[36mVenue Load (0.2ms)[0m  [1mSELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", 24]]
+Completed 404 Not Found in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find Venue with 'id'=24):
+  app/controllers/events_controller.rb:41:in `find_venue'
+
+
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (21.4ms)
+
+
+Started GET "/venues/24/events" for 127.0.0.1 at 2014-05-18 17:57:01 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"venue_id"=>"24"}
+  [1m[35mVenue Load (1.4ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", 24]]
+Completed 404 Not Found in 3ms
+
+ActiveRecord::RecordNotFound (Couldn't find Venue with 'id'=24):
+  app/controllers/events_controller.rb:41:in `find_venue'
+
+
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.8ms)
+
+
+Started GET "/venues/24/events" for 127.0.0.1 at 2014-05-18 17:57:35 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"venue_id"=>"24"}
+  [1m[36mVenue Load (0.2ms)[0m  [1mSELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", 24]]
+Completed 404 Not Found in 1ms
+
+ActiveRecord::RecordNotFound (Couldn't find Venue with 'id'=24):
+  app/controllers/events_controller.rb:41:in `find_venue'
+
+
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.4ms)
+
+
+Started GET "/venues/24/events" for 127.0.0.1 at 2014-05-18 17:58:26 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"venue_id"=>"24"}
+  [1m[35mVenue Load (0.2ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", 24]]
+Completed 404 Not Found in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find Venue with 'id'=24):
+  app/controllers/events_controller.rb:41:in `find_venue'
+
+
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.7ms)
+
+
+Started GET "/events/24" for 127.0.0.1 at 2014-05-18 17:58:30 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 24]]
+  [1m[35mBand Load (0.3ms)[0m  SELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1  [["id", 12]]
+  Rendered events/show.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (undefined method `venue_id' for nil:NilClass):
+    1: <h1>Read more about <%= @event.band.name %>:</h1>
+    2: <button><a href="/venues/<%= @venue.venue_id %>/events">Back to Venue</a></button>
+  app/views/events/show.html.erb:2:in `_app_views_events_show_html_erb__259153099374263567_70141405942140'
+
+
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.2ms)
+
+
+Started GET "/events/24" for 127.0.0.1 at 2014-05-18 17:58:39 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 24]]
+  [1m[35mBand Load (0.2ms)[0m  SELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1  [["id", 12]]
+  Rendered events/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 17:58:39 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 17:58:39 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 17:58:39 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 17:58:39 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-18 17:58:39 -0400
+
+
+Started GET "/events" for 127.0.0.1 at 2014-05-18 17:58:51 -0400
+
+ActionController::RoutingError (No route matches [GET] "/events"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.8ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /Users/thmsweaver/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (21.8ms)
+
+
+Started GET "/venues" for 127.0.0.1 at 2014-05-18 17:58:52 -0400
+Processing by VenuesController#index as HTML
+  [1m[36mVenue Load (0.4ms)[0m  [1mSELECT "venues".* FROM "venues"[0m
+  Rendered venues/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 17:58:52 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 17:58:52 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 17:58:52 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 17:58:52 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-18 17:58:52 -0400
+
+
+Started GET "/venues/2/events" for 127.0.0.1 at 2014-05-18 17:59:07 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[35mVenue Load (6.2ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"  WHERE "events"."venue_id" = $1  [["venue_id", 2]]
+  [1m[36mBand Load (0.2ms)[0m  [1mSELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1  [["id", 12]]
+  Rendered events/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 19ms (Views: 9.1ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/events/24" for 127.0.0.1 at 2014-05-18 17:59:14 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 24]]
+  [1m[35mBand Load (2.3ms)[0m  SELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1  [["id", 12]]
+  Rendered events/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 12ms (Views: 7.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/events/24" for 127.0.0.1 at 2014-05-18 18:00:58 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mEvent Load (5.4ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 24]]
+  [1m[35mBand Load (0.3ms)[0m  SELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1  [["id", 12]]
+  Rendered events/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 13ms (Views: 5.2ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/venues/2/events/new" for 127.0.0.1 at 2014-05-18 18:01:19 -0400
+Processing by EventsController#new as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[36mVenue Load (0.2ms)[0m  [1mSELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mBand Load (0.2ms)[0m  SELECT "bands".* FROM "bands"
+  Rendered events/_manage_form.html.erb (2.2ms)
+  Rendered events/_manage_form.html.erb (2.0ms)
+  Rendered events/_manage_form.html.erb (2.5ms)
+  Rendered events/new.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 21ms (Views: 18.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/venues/2/events" for 127.0.0.1 at 2014-05-18 18:01:29 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[36mVenue Load (0.4ms)[0m  [1mSELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", "2"]]
+  [1m[36mEvent Load (2.2ms)[0m  [1mSELECT "events".* FROM "events"  WHERE "events"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[35mBand Load (0.4ms)[0m  SELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  Rendered events/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 14ms (Views: 8.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/venues" for 127.0.0.1 at 2014-05-18 18:02:18 -0400
+Processing by VenuesController#index as HTML
+  [1m[35mVenue Load (0.4ms)[0m  SELECT "venues".* FROM "venues"
+  Rendered venues/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/venues/2/events" for 127.0.0.1 at 2014-05-18 18:02:19 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[36mVenue Load (0.3ms)[0m  [1mSELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", "2"]]
+  [1m[36mEvent Load (1.7ms)[0m  [1mSELECT "events".* FROM "events"  WHERE "events"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[35mBand Load (0.5ms)[0m  SELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  Rendered events/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 17ms (Views: 10.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/venues/2/events/new" for 127.0.0.1 at 2014-05-18 18:02:30 -0400
+Processing by EventsController#new as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[35mVenue Load (5.8ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mBand Load (0.6ms)[0m  [1mSELECT "bands".* FROM "bands"[0m
+  Rendered events/_manage_form.html.erb (1.8ms)
+  Rendered events/_manage_form.html.erb (2.4ms)
+  Rendered events/_manage_form.html.erb (1.8ms)
+  Rendered events/new.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 23ms (Views: 14.6ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/venues/2/events" for 127.0.0.1 at 2014-05-18 18:03:43 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#index as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[35mVenue Load (0.6ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events"  WHERE "events"."venue_id" = $1  [["venue_id", 2]]
+  [1m[36mBand Load (0.4ms)[0m  [1mSELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1  [["id", 12]]
+  Rendered events/index.html.erb within layouts/application (27.8ms)
+Completed 200 OK in 91ms (Views: 50.9ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 18:03:43 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 18:03:43 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 18:03:43 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-18 18:03:43 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 18:03:44 -0400
+
+
+Started GET "/events/24" for 127.0.0.1 at 2014-05-18 18:04:05 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 24]]
+  [1m[35mBand Load (0.4ms)[0m  SELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1  [["id", 12]]
+  Rendered events/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 13ms (Views: 5.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/venues/2" for 127.0.0.1 at 2014-05-18 18:14:21 -0400
+Processing by VenuesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mVenue Load (0.3ms)[0m  [1mSELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered venues/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 19ms (Views: 16.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 18:14:21 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 18:14:21 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 18:14:21 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-18 18:14:21 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 18:14:21 -0400
+
+
+Started GET "/venues" for 127.0.0.1 at 2014-05-18 18:14:21 -0400
+Processing by VenuesController#index as HTML
+  [1m[35mVenue Load (0.3ms)[0m  SELECT "venues".* FROM "venues"
+  Rendered venues/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-18 18:14:22 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-18 18:14:22 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-18 18:14:22 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-18 18:14:22 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-18 18:14:22 -0400
+
+
+Started GET "/venues/2/events" for 127.0.0.1 at 2014-05-18 18:14:31 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[36mVenue Load (7.0ms)[0m  [1mSELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", "2"]]
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"  WHERE "events"."venue_id" = $1[0m  [["venue_id", 2]]
+  [1m[35mBand Load (0.3ms)[0m  SELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  Rendered events/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 21ms (Views: 10.7ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/venues/2/events" for 127.0.0.1 at 2014-05-18 18:16:21 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"venue_id"=>"2"}
+  [1m[35mVenue Load (4.6ms)[0m  SELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "venues".* FROM "venues"  WHERE "venues"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+  [1m[35mEvent Load (0.6ms)[0m  SELECT "events".* FROM "events"  WHERE "events"."venue_id" = $1  [["venue_id", 2]]
+  [1m[36mBand Load (0.3ms)[0m  [1mSELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "bands".* FROM "bands"  WHERE "bands"."id" = $1 LIMIT 1  [["id", 12]]
+  Rendered events/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 19ms (Views: 10.3ms | ActiveRecord: 5.5ms)
