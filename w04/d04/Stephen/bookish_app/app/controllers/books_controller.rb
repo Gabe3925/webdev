@@ -2,7 +2,7 @@
 # @Author: stephenstanwood
 # @Date:   2014-05-15 15:30:56
 # @Last Modified by:   stephenstanwood
-# @Last Modified time: 2014-05-15 17:42:01
+# @Last Modified time: 2014-05-16 07:30:49
 
 class BooksController < ApplicationController
 
@@ -31,6 +31,7 @@ class BooksController < ApplicationController
 
   # Shows the details for a specific book
   def show
+    @author = Author.find(params[:author_id])
     @book = Book.find(params[:id])
     render :show
   end
@@ -38,7 +39,7 @@ class BooksController < ApplicationController
   # Destroys a given entry in the database
   def destroy
     Book.find(params[:id]).destroy
-    redirect_to "/authors/#{author_id}/books"
+    redirect_to "/authors/#{params[:author_id]}/books"
   end
 
 end
