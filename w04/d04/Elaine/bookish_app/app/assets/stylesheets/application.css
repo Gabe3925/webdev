@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  background: url(http://www.clearspringacupuncture.co.uk/wp-content/uploads/2013/01/open_book_green_background_1157228291.jpg) no-repeat center center fixed;
+  padding: 50px;
+}
+
+div.page {
+  background:rgba(255,255,255, 0.7);
+  border-radius: 50px;
+  margin: 0 auto;
+  padding: 50px;
+  width: 600px;
+ }
