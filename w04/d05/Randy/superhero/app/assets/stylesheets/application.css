@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+/*body {
+  background-image: url("http://static.web-backgrounds.net/uploads/2011/09/preview7.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #000;
+  color: #fff;
+  font
+  font-weight: bold;
+  text-align: center;
+}
+
+a {
+  color: #000;
+  font-weight: bold;
+  text-align: center;
+}
+
+li {
+   list-style-type: none;
+}
+*/
