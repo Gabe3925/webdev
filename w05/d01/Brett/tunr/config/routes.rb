@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
-  resources :artists, except: [:index]
+  resources :artists, except: [:index] do
+    resources :songs, shallow: true, except: [:index, :show]
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

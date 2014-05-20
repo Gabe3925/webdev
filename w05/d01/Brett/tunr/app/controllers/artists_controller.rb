@@ -1,4 +1,4 @@
-class ArtistsController < ActionController::Base
+class ArtistsController < ApplicationController
   before_action :find_artist, only: [:show, :edit, :update, :destroy]
 
   def new
@@ -11,6 +11,8 @@ class ArtistsController < ActionController::Base
   end
 
   def show
+    @artist = find_artist
+    @songs = @artist.songs
   end
 
   def edit
