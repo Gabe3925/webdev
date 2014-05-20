@@ -19,15 +19,16 @@ describe 'admin can manage artists' do
       expect(page).to have_content 'Single Ladies'
     end
 
-  # it 'can edit a  song' do
-  #   visit artist_path(beyonce)
-  #   click_link('Halo')
-  #   # save_and_open_page
-  #   fill_in 'Name', with: 'Banana'
-  #   fill_in 'Year', with: '1487'
-  #   click_button('submit')
-  #   expect(page).to have_content 'Banana'
-  # end
+  it 'can edit a  song' do
+    visit artist_path(beyonce)
+    save_and_open_page
+    click_link('Halo')
+    # save_and_open_page
+    fill_in 'Name', with: 'Banana'
+    fill_in 'Year', with: '1487'
+    click_button('submit')
+    expect(page).to have_content 'Banana'
+  end
 
   it 'can delete songs' do
     visit artist_path(beyonce)
