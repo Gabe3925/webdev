@@ -1,11 +1,12 @@
 class CharactersController < ApplicationController
+  before_action :find_book, only: [:new, :create]
+  before_action :find_character, only: [:show, :edit, :update]
+
   def new
-    @book = Book.find(params[:book_id])
     @character = @book.characters.new
   end
 
   def create
-    @book = Book.find(params[:book_id])
     @character = Character.new(character_params)
 
     if @character.save
@@ -17,15 +18,12 @@ class CharactersController < ApplicationController
   end
 
   def show
-    @character = Character.find(params[:id])
   end
 
   def edit
-    @character = Character.find(params[:id])
   end
 
   def update
-    @character = Character.find(params[:id])
     if @character.update(character_params)
       redirect_to @character
     else
@@ -34,6 +32,14 @@ class CharactersController < ApplicationController
   end
 
   private
+  def find_book
+    @book = Book.find params[:book_id]
+  end
+
+  def find_character
+    @character = Character.find(params[:id])
+  end
+
   def character_params
     params.require(:character).permit(:name, :gender, :quirk, :book_ids)
   end
