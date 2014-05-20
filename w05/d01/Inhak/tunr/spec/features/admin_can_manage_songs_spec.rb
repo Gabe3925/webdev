@@ -23,6 +23,14 @@ describe "an admin can manage songs" do
     expect(page).to have_content("Me, Myself, and I")
   end
 
+  it "can update through artist path" do
+    visit artist_path(beyonce)
+    click_link("edit")
+    fill_in "song_title", with: "Single Ladies"
+    click_button("submit")
+    expect(page).to have_content("Single Ladies")
+  end
+
   it "can destroy a song" do
     visit artist_path(beyonce)
     click_button("destroy song")
