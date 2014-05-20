@@ -1,0 +1,30 @@
+
+
+<h1><%= @artist.name %></h1>
+  <p><%= @artist.genre %></p>
+
+  <%= image_tag @artist.photo_url, alt:"Inhak's Mom", class:"artist" %>
+
+    <%= form_for @artist, method: 'delete' do |f| %>
+    <%= f.submit "destroy" %>
+  <% end %>
+
+
+  <ul>
+    <% @songs.each do |song| %>
+    <li><%= song.title %></li>
+    <% end %>
+  </ul>
+
+
+  <%= link_to 'add song', new_artist_song_path(@artist) %>
+
+
+  <% @songs.each do |song| %>
+    <%= song.title %>
+    <%= link_to "edit song", edit_artist_song_path(@artist, song) %>
+    <%= button_to 'destroy song', artist_song_path(@artist, song), method: :delete %>
+  <% end %>
+
+
+
