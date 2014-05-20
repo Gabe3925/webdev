@@ -11,23 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140515160046) do
+ActiveRecord::Schema.define(version: 20140519223417) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "dogs", force: true do |t|
-    t.string  "name"
-    t.text    "image_url"
-    t.integer "age"
+  create_table "artists", force: true do |t|
+    t.string "name"
+    t.string "genre"
+    t.text   "photo_url"
   end
 
-  create_table "toys", force: true do |t|
-    t.string   "name"
-    t.integer  "dog_id"
-    t.text     "photo_url"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "songs", force: true do |t|
+    t.string  "year"
+    t.string  "title"
+    t.integer "artist_id"
   end
 
 end
