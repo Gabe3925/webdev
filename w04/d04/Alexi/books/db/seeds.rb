@@ -7,3 +7,4 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Author.create(name: 'JK Rowling', birth: '01/01/1965', gender: 'female')
+Book.create(title: 'Harry Potter and the Sorcerer\'s Stone', date: '2000', genre: 'fantasy', author_id: 4)
