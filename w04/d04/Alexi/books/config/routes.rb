@@ -5,9 +5,15 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   
 root 'authors#index'
-  resources :authors do
-    # resources :books { :except => [:update, :edit] } do
+
+  shallow do
+    resources :authors do
+      resources :books, { except: [:update, :edit] } do
+        resources :characters, { except: [:update, :edit] }
+      end
+    end
   end
+
 
   # resources :books do
   #   resources :characters { :except => [:update, :edit] }
