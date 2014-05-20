@@ -1,7 +1,17 @@
 <%= @artist.name %>
 
+<% @songs.each do |song| %>
+  <%= song.name %>
+  <%= link_to song.name, edit_artist_song_path(@artist, song) %>
+
+<%end%>
 
 
 <%= form_for @artist, method: 'delete' do |f| %>
-<%= f.submit 'Delete', id: 'destroy' %>
-<%end%>
+  <%= f.submit "Delete" %>
+  <%end%>
+
+<%= link_to "New Song", new_artist_song_path(@artist) %>
+
+
+
