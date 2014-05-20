@@ -1,6 +1,10 @@
 class ArtistsController < ApplicationController
   before_action :find_artist, only: [:show, :edit, :update, :destroy]
 
+  def index
+    @artists = Artist.all
+  end
+
   def new
     @artist = Artist.new
   end
@@ -18,11 +22,12 @@ class ArtistsController < ApplicationController
 
   def update
     @artist.update(artist_params)
-    redirect to @artist
+    redirect_to @artist
   end
 
   def destroy
     @artist.destroy
+    redirect_to artists_path
   end
 
   private
