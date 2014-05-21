@@ -26,7 +26,7 @@ describe 'an admin can manage artists' do
 
   it "can destroy an artist" do
     visit artist_path(beyonce)
-    click_button("destroy")
+    click_button("Destroy Artist")
     expect(page).to_not have_content("beyonce")
   end
 

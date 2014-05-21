@@ -6,9 +6,6 @@
   <%= image_tag @artist.photo_url, alt:"Inhak's Mom", class:"artist" %>
 
     <%= form_for @artist, method: 'delete' do |f| %>
-    <%= f.submit "destroy" %>
-  <% end %>
-
 
   <ul>
     <% @songs.each do |song| %>
@@ -20,11 +17,15 @@
   <%= link_to 'add song', new_artist_song_path(@artist) %>
 
 
+<h2>Song List</h2>
   <% @songs.each do |song| %>
-    <%= song.title %>
+    <ul>
+    <li><%= song.title %></li>
+    </ul>
     <%= link_to "edit song", edit_artist_song_path(@artist, song) %>
-    <%= button_to 'destroy song', artist_song_path(@artist, song), method: :delete %>
+    <%= button_to 'Remove Song', artist_song_path(@artist, song), method: :delete %>
   <% end %>
 
 
-
+<%= f.submit "Destroy Artist" %>
+  <% end %>
