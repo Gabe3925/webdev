@@ -11,23 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140515160046) do
+ActiveRecord::Schema.define(version: 20140520225209) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "dogs", force: true do |t|
-    t.string  "name"
-    t.text    "image_url"
-    t.integer "age"
+  create_table "users", force: true do |t|
+    t.string "name"
+    t.string "email"
+    t.string "password_digest"
+    t.string "remember_token"
   end
 
-  create_table "toys", force: true do |t|
-    t.string   "name"
-    t.integer  "dog_id"
-    t.text     "photo_url"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
 
 end
