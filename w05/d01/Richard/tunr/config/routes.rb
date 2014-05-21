@@ -9,6 +9,15 @@ Rails.application.routes.draw do
     resources :songs
   end
 
+  resources :users
+  resources :sessions, only: [:create]
+
+  get '/signin', to: 'sessions#new'
+  delete '/signout', to: 'sessions#destroy'
+
+  get '/signup', to: 'users#new'
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

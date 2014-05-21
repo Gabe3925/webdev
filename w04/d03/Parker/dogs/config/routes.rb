@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
    get '/about' => 'welcome#about'
    get '/dogs' => 'dogs#index'
-   get '/dogs/new' => 'dogs#new'
+   post '/dogs/new' => 'dogs#new'
    get '/dogs/create' => 'dogs#create'
 
   # Example of regular route:
