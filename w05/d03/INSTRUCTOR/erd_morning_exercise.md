@@ -2,7 +2,7 @@
 
 You and your group will be whiteboarding ERDs for the semi-vague prompts below.
 
-####Rollercoaster Tycoon
+####Rollercoast Tycoon
 You are a rollercoaster tycoon interested in developing software to track the addictiveness of your rollercoasters. Each of the themeparks in your porfolio has a diverse assortment of rollercoasters, and each rollercoaster makes numerous runs a day. Each run can hold 50 or so visitors, and visitors often ride the same coaster multiple times.
 
 ####Wheel of Fortune
