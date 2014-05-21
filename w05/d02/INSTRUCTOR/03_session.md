@@ -12,7 +12,7 @@ However, our sessions controller will NOT have a corresponding model. We do not 
 
 ## 1. Routing
 
-Given that sessions will be managed as a RESTful resource, let's start by adding session resources into our routes file. Add "sessions" resources that only handles new, create, and destroy, as well as a user-friendly "/signin" path, and a custom "/signout" path:
+Given that sessions will be managed as a RESTful resource, let's start by adding session resources into our routes file. Add "sessions" resources that only handles new and create, as well as a user-friendly "/signin" route, and a custom "/signout" route:
 
 `config/routes.rb`:
 
@@ -28,6 +28,13 @@ Rails.application.routes.draw do
   
 end
 ```
+
+Why make a custom route for "signout"? Well, think about the "destroy" resource that would be generated using `resources`:
+
+`delete '/session/:id' => 'sessions#destroy`
+
+That resource requires an ID as part of its route, which our session cookie doesn't really have (or need). Our custom destroy route will perform the action without requiring an ID.
+
 
 ## 2. Controller
 
@@ -54,7 +61,7 @@ The signin page allows a user to submit their credentials to the session control
 
 ### Flash message
 
-Rails provides a simple and convenient messaging system for controllers to send notifications into a view. We call this the "flash message". We'll probably want to print out these flash messages throughout our application, so let's make the flash a view partial.
+Rails provides a simple and convenient messaging system for controllers to send notifications into a view. We call this the "flash message". We'll probably want to print out these flash messages throughout our application, so let's make the flash a view partial that can be rendered anywhere.
 
 Create a new views directory called "common", and within it create a flash view partial...
 
@@ -66,11 +73,11 @@ Create a new views directory called "common", and within it create a flash view 
 <% end %>
 ```
 
-We can now render this partial ("common/flash") into any view where we want to display the flash message!
+We can now render this partial ("common/flash") into any view that needs to display the flash message.
 
 ### Signin form
 
-We have no model to bind this form to, so instead we provide the form a ":session" namespace, and point it at the `sessions_path`:
+We have no model to bind this form to, so instead we'll provide the form a ":session" namespace (ie: the name of the params hash that will hold our form data), and point it at the `sessions_path`:
 
 `app/views/sessions/new.html.erb`:
 
@@ -92,7 +99,7 @@ We have no model to bind this form to, so instead we provide the form a ":sessio
 
 ### The "create" action
 
-Now update the "create" action of the sessions controller to find a user with the provided email, and then try to log them in:
+Now configure the sessions controller "create" action to find a user with the provided email, and then try to log them in:
 
 `app/controllers/sessions_controller.rb`:
 
@@ -113,7 +120,7 @@ end
 
 ## 4. Session Helper
 
-After a user logs in, we'll want to access their identity throughout our entire application. Therefore, we'll want to break out session-management tasks into a universal helper.
+After a user signs in, we'll need to access their information throughout our entire application. Therefore, we'll want to break out session-management tasks into a universal helper.
 
 ### Helper module
 
@@ -127,7 +134,7 @@ module SessionsHelper
 end
 ```
 
-This is a helper *module*. Modules are packages of code that can be added into classes as needed. We'll add this session helper into our main application controller, which will provide its behaviors to all other controllers via inheritance.
+This is a helper *module*. Modules are packages of code that can be added into other classes. We'll add this session helper into our main application controller, which will provide its behaviors to *all other controllers* via inheritance.
 
 Go into your application controller and include this new sessions helper module:
 
@@ -140,7 +147,7 @@ class ApplicationController < ActionController::Base
 end
 ```
 
-Neat. Now anything we include in that session helper will be available within any application controller!
+Neat. Now anything we include in that session helper will be available in any application controller!
 
 ### Current User
 
@@ -174,7 +181,7 @@ When getting the current user, we'll grab any remember-token that exists within 
 
 ### Signin Status
 
-Now we add the transactional process for actually signing users in and out. When a user signs in, we plant a new remember-token into their cookie, and then save a hashed version of that token into our database. This will allow us to recognize the user's session cookie in the future. When signing out, we simply undo this connection.
+Now we'll add the transactional process for actually signing users in and out. When a user signs in, we plant a new remember-token into their cookie, and then save a hashed version of that token into our database. This will allow us to recognize the user's session cookie in the future. When signing out, we'll simply break this connection.
 
 `app/helpers/sessions_helper.rb`:
 
@@ -204,9 +211,11 @@ module SessionsHelper
 end
 ```
 
-### Location Management
+Why are we using `update_attribute` in the above, rather than just setting a new "remember_token" on the user and then saving it? Keep in mind that our user is only a partial model: it has no "password" or "password_confirmation" field on it (given that we don't store those fields in our database). Because those password fields are missing, our model will fail full-model validation. Using `update_attribute` will perform a *partial update*, where only the "remember_token" field will be validated and saved.
 
-It's quit common that we'll try to access a protected URL as a non-authenticated user, at which time we're forwarded to the signin page. However, after signing in, isn't it nice when the application forwards you along to the protected page you originally requested? This too can be handled with the session…
+### Location Forwarding
+
+It's quit common that we'll try to access a protected URL as a non-authenticated user, at which time we're directed to the signin page. However, after signing in, isn't it handy when the application forwards us along to the protected page that we originally requested? This location forwarding behavior can also be handled using the session.
 
 `app/helpers/sessions_helper.rb`:
 
@@ -230,11 +239,11 @@ module SessionsHelper
 end
 ```
 
-These methods are designed to store a user's intended destination URL within their session, and then forward on to that URL after authentication is completed. The `redirect_back_or` method can be used in place of a normal `redirect_to` method in cases where the user was asked to sign in before completing an action.
+These methods are designed to store a user's intended destination URL within their session, and then forward along to that URL after authentication is completed. The `redirect_back_or` method can be used in place of a normal `redirect_to` method in cases where the user was asked to sign in before completing an action.
 
 ### Security Checkpoint
 
-Last but not least, let's add in the helper method that we'll use as a universal security checkpoint. We can use this method in any controller's "before_action" to prevent the user from accessing content without signing in.
+Last but not least, let's add in the helper method that we'll use as a universal security checkpoint. We can use this method with any controller's `before_action` to prevent the user from accessing content without authenticating.
 
 `app/helpers/sessions_helper.rb`:
 
@@ -246,7 +255,7 @@ module SessionsHelper
   # Security Checkpoint method:
 
   def require_signin
-    unless signed_in?
+    if !signed_in?
       store_location
       flash[:notice] = "Please sign in."
       redirect_to signin_url
@@ -267,14 +276,14 @@ Lastly, we'll need to hook up our session controller with our new Sessions Helpe
 # Test if the user was found AND authenticates
 if user && user.authenticate(params[:session][:password])
   sign_in user
-  redirect_back_or user
+  redirect_back_or root_path
 else
 ...
 ```
 
 ## Users controller
 
-Now let's require signin to access actions within the users controller. Add a "before_action" that requires signin. We can do this anywhere in our app that we want to require user signin!
+Now let's require signin to access actions within the users controller. Add a `before_action` that requires signin. We can do this anywhere in our app that we want to require users to authenticate.
 
 `app/controllers/users_controller.rb`:
 
@@ -284,7 +293,7 @@ class UsersController < ApplicationController
   ...
 ```
 
-While in the users controller, let's also update the users "create" action to automatically sign in newly-created users:
+While in the users controller, let's also update the users "create" action to automatically signin newly-created users:
 
 ```
 def create
@@ -300,11 +309,11 @@ end
 
 # 6. Signout
 
-To create a signout button, we'll need to send a DELETE request to the sessions controller. While many forums and blog posts will tell you to use a delete link, these actually require JavaScript to work right. For starters, we'll use a good old form.
+To create a signout button, we'll need to send a DELETE request to the sessions controller. While many forums and blog posts tell you to use an anchor tag (< a >), those links actually require JavaScript to properly send a DELETE request. We'll use a good old form.
 
 ## Signout Form
 
-The "Signout" button should be present in all views once the user signs in, so let's create a new common view partial for the form. 
+The "Signout" button should be present in all views after the user signs in, so let's create another common view partial for the form. 
 
 `app/views/common/_signout.html.erb`:
 
@@ -332,7 +341,7 @@ For now, let's just render that partial into our main application layout so that
 
 ## Signout Controller
 
-Now we need to include our signout behaviors within the sessions controller. Signout will simply terminate the user's session, and then redirect to the application root (or another logged-out view of your choice!).
+Now we need to define our signout behavior in the sessions controller "destroy" action. Signout will simply terminate the user's session, and then redirect to the application root (or another logged-out view of your choice).
 
 `app/controllers/sessions_controller.rb`:
 
