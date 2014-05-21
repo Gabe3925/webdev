@@ -13,4 +13,4 @@ __Note:__ You'll have to register at Mashape.
 
 Head into your personal directory for today and create a `proof_of_concept.rb` file. Within this file, use httparty to access the API(s) you're interested in. 
 
-__Note:__ Some APIs require you to register for an API key which has a daily hit limit. This is to ensure that selfish users don't crash the API by hitting it 5,000 times a day.
+__Note:__ Some APIs require you to register for an API key. You may to use this API key when hitting the API.
