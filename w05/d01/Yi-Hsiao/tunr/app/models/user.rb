@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  before_create :create_remember_token
   before_save :normalize_fields
 
   validates :name,
@@ -14,18 +15,22 @@ class User < ActiveRecord::Base
   has_secure_password
 
   # generates remember token
-  def self.new_remember_token
+  def User.new_remember_token
     SecureRandom.urlsafe_base64
   end
 
   # hashes a string
-  def self.hash(string)
-    Digest::SHA1.hexdigest string
+  def User.hash(token)
+    Digest::SHA1.hexdigest token.to_s
   end
 
   private
   def normalize_fields
     name.capitalize!
     email.downcase!
+  end
+
+  def create_remember_token
+    self.remember_token = User.hash User.new_remember_token
   end
 end
