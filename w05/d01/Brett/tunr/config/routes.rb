@@ -9,6 +9,10 @@ Rails.application.routes.draw do
     resources :songs, shallow: true, except: [:index, :show]
   end
 
+  resources :users
+
+  get '/signup', to: 'users#new'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
