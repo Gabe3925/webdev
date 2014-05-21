@@ -12,4 +12,9 @@ class DogsController < ApplicationController
 	def create
 		render :form
 	end
+
+	def create
+		Dog.create(name: params[:name], age: params[:age], image_url: params[image_url] )
+		redirect_to '/dogs'
+	end
 end
