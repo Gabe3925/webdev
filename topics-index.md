@@ -2,23 +2,23 @@
 
 **Week 1**
 
-* Day 1: command line
-* Day 2: variables, if/else, while, gets/puts
-* Day 3: arrays, hashes, enums
-* Day 4: more enums, fileIO
+* Day 1: Command line, git, github
+* Day 2: Variables, if/else, while, gets/puts
+* Day 3: Arrays, hashes, enums
+* Day 4: More enums, FileIO
 * Day 5: OOP, classes
 
 **Week 2**
 
-* Day 1: class inheritance, happitales
+* Day 1: Class inheritance, Happitales
 * Day 2: Rspec intro
-* Day 3: problem modeling, Rspec vending machine
-* Day 4: code retreat
-* Day 5: database & SQL
+* Day 3: Problem modeling, Rspec vending machine
+* Day 4: Code retreat
+* Day 5: Database & SQL
 
 **Week 3**
 
-* Day 1: foreign keys, pg gem
+* Day 1: Foreign keys, PG gem
 * Day 2: ActiveRecord intro, validations
 * Day 3: ActiveRecord relationships
 * Day 4: Internet, Sinatra intro
@@ -31,3 +31,9 @@
 * Day 3: Rails
 * Day 4: Rails + nested resources
 * Day 5: Rails helpers
+
+**Week 5**
+
+* Day 1: Agile, SCRUM, pivitol, Tunr
+* Day 2: Authentication
+* Day 3: APIs
