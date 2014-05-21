@@ -30,7 +30,7 @@ describe 'an admin can manage songs' do
 
   it "can delete a song from the artists page" do
     visit artist_path(beyonce)
-    click_button('destroy song')
+    click_button('Remove Song')
     expect(page).to_not have_content 'irreplaceable'
   end
 end
