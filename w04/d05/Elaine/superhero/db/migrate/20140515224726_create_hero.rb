@@ -1,4 +1,4 @@
-class CreateHero < ActiveRecord::Migration
+class CreateArtist < ActiveRecord::Migration
   def change
     create_table :heros do |t|
       t.string :name
