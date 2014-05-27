@@ -81,3 +81,6 @@ config.paperclip_defaults = {
    }
  }
 ```
+### 5. Set up your environment variables for production
+
+- [https://devcenter.heroku.com/articles/config-vars](https://devcenter.heroku.com/articles/config-vars)
