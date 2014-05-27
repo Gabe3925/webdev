@@ -1,14 +1,14 @@
-# Private Env Variables
+# Private ENV Variables
 
 ## Why Env Variables?
 
 ### The problem:
 
-We frequently have private configuration data (API keys, login credentials, etc) that we don't want to include in our project codebase that gets hosted on GitHub.
+We frequently have private configuration data (API keys, login credentials, etc) that we don't want to include in our project codebase that gets hosted on GitHub, because nefarious individuals can use that public information for nefarious deeds. 
 
 ### The solution
 
-We should configure this sensative data within our host environment, and then just include references to this configuration within our project code.
+We hide this sensitive data within our host environment, and then just include references to this configuration within our project code.
 
 ## Setting it up
 
@@ -47,7 +47,7 @@ AWS_ACCESS_KEY_ID=XXXXXXXXXXXX
 AWS_SECRET_ACCESS_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
-### 3. Add ".env" to Git-ignore
+### 3. Add ".env" to the hiden `.gitignore` file within your Rails project
 
 Lastly, we need to tell Git to ignore our environment configuration file so that it won't be included in our repo. Again, really simple:
 
@@ -69,7 +69,7 @@ Within the `.gitignore` file, add your ".env" file…
 
 ### 4. Reference environment variables in your app!
 
-You'll need to restart your Rails server. Now whenever you perform a Rake task, your environment settings will be added into the environment instance. After that, you can refence environment variable within your Rails codebase through the `ENV` hash:
+You'll need to restart your Rails server. Now whenever you perform a Rake task, your environment settings will be added into the environment instance. After that, you can refence an environment variable within your Rails codebase through the `ENV` hash:
 
 ```
 config.paperclip_defaults = {
