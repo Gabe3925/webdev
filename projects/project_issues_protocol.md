@@ -9,26 +9,26 @@ You will be submitting any requests for project help via GitHub issues. In doing
 ___
 ###Step 1 - Click 'Issues' Within Your Project Repo
 
-![image](click_issues.png)
+![image](../screenshots/click_issues.png)
 ___
 ###Step 2 - Click 'Create a new issue'
 
-![image](create_issue.png)
+![image](../screenshots/create_issue.png)
 ___
 
 ###Step 3 - Tell us what you're working on, what error you're getting, and what you've done in your attempt to solve it.
 
-![image](fill_in_text_fields.png)
+![image](../screenshots/fill_in_text_fields.png)
 ___
 
 ###Step 4 - Assign the Instructors to the Issue
 
-![image](assign_instructors.png)
+![image](../screenshots/assign_instructors.png)
 
 ___
 
 ###Step 5 - Submit the Issue
 
-![image](submit_issue.png)
+![image](../screenshots/submit_issue.png)
 
 
