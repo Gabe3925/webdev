@@ -1,4 +1,4 @@
-##WDI_DC_1 Project 1 Repos
+Project 1 Repos
 
 Adam Barrett
   - https://github.com/ab75173/congressional_io
