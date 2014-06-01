@@ -7,9 +7,9 @@ Today we are going to float and review your User Stories, ERD, and API validatio
 
 ####Tuesday Schedule
 
-|Instructor | 9:30 am | 10:30 am | 2:00 pm |  3:00 pm |
-|:----    |:----  |:----  |:----  |:---- |:----|:----|:----|:----|
-|__Travis__|Mikael | Elaine | Jacob | Inhak |
+|Instructor | 9:30 am | 10:30 am | 2:00 pm |
+|:----    |:----  |:----  |:----  |:---- |:----|:----|:----|
+|__Travis__|Mikael | Elaine | Jacob |
 |__Greg__| Matt | Adam | Alexi |
 |__Peter__| Stephen | JoElla |Jon |
 
@@ -17,9 +17,9 @@ Randy | Parker | Yi-Hsiao
 
 ####Wednesday Schedule
 
-|Instructor | 9:30 am | 10:30 am | 2:00 pm |
-|:----    |:----  |:----  |:----  |:---- |
-|__Travis__| Salil | Richard | Brett |
+|Instructor | 9:30 am | 10:30 am | 2:00 pm | 3:00 pm |
+|:----    |:----  |:----  |:----  |:---- | :---- |
+|__Travis__| Salil | Richard | Brett | Inhak
 |__Greg__| Gabe | Mary | Thomas |
 |__Peter__| Randy | Parker | Yi-Hsiao |
 
