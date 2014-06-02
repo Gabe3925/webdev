@@ -54,3 +54,8 @@ dwarves = ["Doc", "Sleepy", "Bashful", "Grumpy", "Dopey", "Sneezy", "Happy"]
 dwarves.each_with_index do |dwarf, index|
   puts dwarf
 end
+
+#Hashes
+my_hash = {name: "Snow White", age: 17, weakness: "apples"}
+my_hash[:name]
+my_hash[:age] = 29
