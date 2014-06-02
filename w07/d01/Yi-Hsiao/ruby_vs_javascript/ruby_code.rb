@@ -40,3 +40,23 @@ while count > 0
   puts count
   count -= 1
 end
+
+# method
+def add(one_num, another_num)
+  one_num + another_num
+end
+puts add(2, 2);
+
+# proc
+add = Proc.new { |one_num, another_num| one_num + another_num }
+puts add(2, 2);
+
+# array
+dwarves = ["Bashful", "Doc", "Dopey", "Grumpy", "Happy", "Sleepy", "Sneezy"]
+
+# enumeration
+dwarves.each { |dwarf| put "Hi, I am #{ dwarf }." }
+
+dwarves.each_with_index do |dwarf, index|
+  puts "I am dwarf ##{ index }, #{ dwarf}."
+end

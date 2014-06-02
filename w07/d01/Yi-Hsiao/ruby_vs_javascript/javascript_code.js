@@ -45,3 +45,33 @@ while (count > 0)  {
   console.log(count);
   count--;
 }
+
+// function
+function add( one_num, another_num ) {
+  return one_num + another_num;
+}
+var sum = add(2, 2);
+console.log( sum );
+
+// anonymous function
+var add = function( one_num, another_num ) {
+  return one_num + another_num;
+};
+var sum = add(2, 2);
+console.log( sum );
+
+// array
+var dwarves = ["Bashful", "Doc", "Dopey", "Grumpy", "Happy", "Sleepy", "Sneezy"];
+
+// for loop
+var greeting;
+for (var i = 0; i < dwarves.length; i++) {
+  greeting = "Hi, I am " + dwarves[i] + ".";
+  console.log( greeting );
+}
+
+var greeting;
+dwarves.forEach( function( dwarf, index ) {
+  greeting = "I am dwarf #" + index + ", " + dwarf + ".";
+  console.log( greeting );
+});
