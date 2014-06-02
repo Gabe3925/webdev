@@ -34,6 +34,6 @@
 
 **Week 5**
 
-* Day 1: Agile, SCRUM, pivitol, Tunr
+* Day 1: Agile, SCRUM, Pivotal Tracker, Tunr
 * Day 2: Authentication
 * Day 3: APIs
