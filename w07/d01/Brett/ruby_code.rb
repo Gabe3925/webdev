@@ -38,3 +38,25 @@ while count > 0
   puts count
   count -= 1
 end
+
+#Methods
+def add(x, y)
+  x + y
+end
+
+#Arrays
+my_name_array = ["Adam", "Elaine", "Travis"]
+my_name_array[0]
+my_name_array << "Matt"
+
+#Enumeration
+dwarves = ["Doc","Sleepy","Bashful","Grumpy","Dopey","Sneezy","Happy"]
+
+dwarves.each do |dwarf|
+  puts dwarf
+end
+
+#Hashes
+my_hash = {name: "Snow White", age: 17, weakness: "apples"}
+my_hash[:name]
+my_hash[:age] = 29
