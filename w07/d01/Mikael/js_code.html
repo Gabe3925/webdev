@@ -51,6 +51,41 @@
   }
 
 
+  //Functions
+  //named
+  function add(x,y){
+    return x + y;
+  }
+
+  //anonymous
+  var add = function(x, y){
+    return x + y;
+  };
+
+  //function with no arguments
+  var scream = function(){
+    return "AAAAHHHHH";
+  };
+
+  //Arrays
+  var myNameArray = ['Adam', 'Elaine', 'Travis'];
+  myNameArray[0];
+  myNameArray.push('Matt');
+
+  //Iteration
+  var dwarves = ['Doc', 'Sleepy', 'Bashful', 'Grumpy', 'Dopey', 'Sneezy', 'Happy']
+
+  //for loop
+  for(var i = 0; i <= dwarves.length; i++){
+    console.log('Hi Ho! I am' + dwarves[i]);
+  }
+
+  //enumeration
+  dwarves.forEach(function(dwarf, index)){
+    console.log(dwarf + ' says hi');
+  }
+
+
   </script>
 </body>
 </html>
