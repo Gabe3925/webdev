@@ -3,6 +3,7 @@
 
 # Variables
 beep = "beep"
+multi_word_variable = "some string"
 
 #Console Output
 puts beep
