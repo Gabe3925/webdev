@@ -85,6 +85,30 @@ dwarves.forEach(function(dwarf, index){
   console.log(dwarves[index] + ' says hi');
 })
 
+// Object (Literal Notation)
+var myObject = {name: 'Snow White', age: 17, weakness: 'apples'};
+
+var myBird = {
+  name: "Tweety", 
+  chirp: function(){
+    console.log('tweet tweet tweet');
+  },
+  greet: function(){
+    console.log('Hi my name is ' + this.name);
+  }
+}
+
+var person = {
+  name: 'Alexi',
+  age: 31,
+  sing: function() {
+    console.log("I wish I was a little bit taller");
+  },
+  introduce: function() {
+    console.log("Hi, my name is " + this.name + " I'm from Texas");
+  }
+};
+
   </script>
   </body>
 </html>
