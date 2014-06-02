@@ -3,6 +3,7 @@
 
 # Variables
 beep = "beep"
+multi_word_variable = "some string"
 
 #Console Output
 puts beep
@@ -35,4 +36,21 @@ count = 10
 while count > 0
   puts count
   count -= 1
+end
+
+#Methods
+def add(x, y)
+  x + y
+end
+
+#Arrays
+my_name_array = ["Adam", "Elaine", "Travis"]
+my_name_array[0]
+my_name_array << "Matt"
+
+#Enumeration
+dwarves = ["Doc", "Sleepy", "Bashful", "Grumpy", "Dopey", "Sneezy", "Happy"]
+
+dwarves.each_with_index do |dwarf, index|
+  puts dwarf
 end
