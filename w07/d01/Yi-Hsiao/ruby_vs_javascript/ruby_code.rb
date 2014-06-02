@@ -60,3 +60,23 @@ dwarves.each { |dwarf| put "Hi, I am #{ dwarf }." }
 dwarves.each_with_index do |dwarf, index|
   puts "I am dwarf ##{ index }, #{ dwarf}."
 end
+
+# object
+class Bird
+  def initialize( name )
+    @name = name
+  end
+
+  def chirp
+    return "Tweet, Tweet, Tweet!"
+  end
+
+  def greet
+    return "Hi, my name is #{ name }."
+  end
+
+  private
+    def name; @name; end
+end
+
+myBird = Bird.new("Tweety")

@@ -75,3 +75,14 @@ dwarves.forEach( function( dwarf, index ) {
   greeting = "I am dwarf #" + index + ", " + dwarf + ".";
   console.log( greeting );
 });
+
+// object (literal notation)
+var myBird = {
+  name: "Tweety",
+  chirp: function() {
+    return "Tweet, Tweet, Tweet!";
+  },
+  greet: function() {
+    return "Hi, my name is " + this.name + ".";
+  }
+};
