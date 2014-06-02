@@ -34,3 +34,19 @@ while count > 0
   puts count
   count -= 1
 end
+
+def add(x,y)
+  x + y
+end
+
+# Arrays
+my_name_array = ["Adam", "Elaine", "Travis"]
+my_name_array[0]
+my_name_array << "Matt"
+
+# Enumeration
+dwarves = ["Doc", "Sleepy", "Bashful", "Grumpy", "Sneezy", "Happy", "Dopey"]
+
+dwarves.each do |dwarf|
+  puts dwarf
+end

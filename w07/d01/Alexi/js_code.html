@@ -50,6 +50,40 @@ while (count > 0) {
   count--;
 }
 
+//Functions
+
+//named
+function add(x, y){
+  return x + y;
+}
+
+// anonymous
+var add = function(x, y){
+  return x + y;
+};
+
+//function w/o arguments
+var scream = function(x, y){
+  return "AAAHHH";
+};
+
+// Arrays
+var myNameArray = ['Adam', 'Elaine', 'Travis'];
+myNameArray[0];
+myNameArray.push('Matt')
+
+// Iteration
+var dwarves = ['Doc', 'Sleepy', 'Bashful', 'Grumpy', 'Sneezy', 'Happy', 'Dopey']
+
+//for looop
+for(var i = 0; i < dwarves.length; i++){
+  console.log('HI HO! I am ' + dwarves[i]);
+}
+
+//enumeration
+dwarves.forEach(function(dwarf, index){
+  console.log(dwarves[index] + ' says hi');
+})
 
   </script>
   </body>
