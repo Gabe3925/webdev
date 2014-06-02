@@ -88,6 +88,29 @@
     console.log(dwarf + ' says hi');
   });
 
+  //Object (literal notation)
+  var myObject = {name: 'Snow White', age: 17, weakness: 'apples'};
+
+  var tweety = {
+    character: "Tweety",
+    chirp: function(){
+      console.log('tweet tweet tweet');
+    },
+    greet: function(){
+      console.log('Hi my name is ' + this.character);
+    }
+  }
+
+  var person = {
+    name: "boomer",
+    hometown: "Jawbone",
+    sing: function() {
+      console.log("I've been working on my BAAAANNjooo");
+    },
+    greet: function(visitor) {
+      console.log("Hiya " + visitor + ", mah name is " + this.name + ", is this your first time to " + this.hometown + "?");
+    }
+  }
 
 
   </script>

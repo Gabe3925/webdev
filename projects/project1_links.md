@@ -9,6 +9,9 @@ Jacob Cain
 Mikael Davis
   - https://github.com/OKitsMikael/share_the_baton
 
+Salil Doshi
+  - https://github.com/4S1D2/Healthcare_app
+
 Elaine Fang
   - https://github.com/ef718/artbook
 
