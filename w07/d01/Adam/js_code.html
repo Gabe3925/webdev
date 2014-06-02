@@ -52,6 +52,40 @@
     count -= 1;
   }
 
+  //Funcations
+
+  //named
+  function add(x, y) {
+    return x + y;
+  }
+
+  //anonymous
+  var add = function(x, y) {
+    return x + y;
+  }
+
+  //function with no arguments
+  var scream = function() {
+    return "AHHHHHHHHHH";
+  }
+
+  //Arrys
+  var myNameArray = ['Adam', 'Jesse', 'Sean'];
+  myNameArray[0];
+  myNameArray.push('Matt');
+
+  //Iteration
+  var dwarves = ["Doc", "Sleepy", "Happy", "Grumpy"]
+
+  //for loop
+  for(var i = 0; i <= dwarves.length; i++) {
+    console.log('HI HO! I am ' + dwarves[i]);
+  }
+
+  //enumeration
+  dwarves.forEach(function(dwarf, index) {
+    console.log(dwarf + ' says hi');
+  });
 
   </script>
 

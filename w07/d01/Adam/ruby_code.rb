@@ -38,3 +38,14 @@ while count > 0
   count -= 1
 end
 
+#Arrays
+my_name_array = ["Adam", "Jesse", "Matt"]
+my_name_array[0]
+my_name_array << "Matt"
+
+#Enumeration
+dwarves = ["Doc", "Sleepy", "Happy", "Grumpy"]
+
+dwarves.each do |dwarf|
+  puts dwarf
+end
