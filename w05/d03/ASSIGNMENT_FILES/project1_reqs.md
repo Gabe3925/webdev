@@ -1,6 +1,6 @@
 ## Process
 - Requirements Gathering & Specification (PT)
-- Application Architecture (ERD, 3+ Models)
+- Application Architecture (Entity Relationship Diagram, 3+ Models)
 - Tested
 - Documentation (README, Blog)
 - Deployment
@@ -15,4 +15,4 @@
 - Validation
 - Authentication and Authorization
 - Content Structure (Document Outline)
-- New technology
+- Utilizes a technology not covered in class (ie: an API or gem)
