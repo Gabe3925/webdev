@@ -2,7 +2,7 @@
 * @Author: stephenstanwood
 * @Date:   2014-06-03 09:31:22
 * @Last Modified by:   stephenstanwood
-* @Last Modified time: 2014-06-03 12:12:49
+* @Last Modified time: 2014-06-03 15:38:15
 */
 
 describe("JavaScript Functions", function() {
@@ -49,6 +49,79 @@ describe("JavaScript Functions", function() {
         function test() {
           return 1;
         }
+    });
+  });
+
+  describe('context', function () {
+    it('will bind the function invocation pattern to the global scope object', function () {
+      function test() {
+        return this;
+      }
+
+      expect( test() ).toBe(GLOBAL);
+    });
+
+    it('will bind the method invocation pattern to the object that hosts the function', function() {
+      var obj = {
+        beep: function() {
+          return this;
+        }
+      };
+
+      var obj2 = {
+        test: obj.beep
+      };
+
+      expect( obj.beep() ).toBe( obj );
+      expect( obj2.test() ).toBe( obj2 );
+
+      expect( obj.beep === obj2.test ).toBeTruthy();
+    });
+
+    it('will bind the call and apply invocation pattern to a passed object', function() {
+      function test() {
+        return this;
+      }
+
+      var target = {};
+
+      expect( test.call( target ) ).toBe( target );
+    });
+
+    it('will bind the constructor invocation pattern to a brand new object instance...', function() {
+
+      function TestWidget(name) {
+        this.name = name;
+      }
+
+      var gabe = new TestWidget('Gabe');
+      var tom = new TestWidget('Tom');
+
+      expect( gabe.name ).toBe( 'Gabe' );
+      expect( tom.name ).toBe( 'Tom' );
+    });
+  });
+
+  describe('prototypal inheritance', function() {
+
+    it('will link a function\'s prototype object to all constructed instances', function () {
+
+      function Person(name) {
+        this.name = name;
+      }
+
+      Person.prototype = {
+        greet: function() {
+          return 'hello, i\'m ' + this.name;
+        }
+      };
+
+      var person = new Person("Larry");
+
+      expect( person.greet() ).toBe( 'hello, i\'m Larry' );
+      expect( person.hasOwnProperty( 'name' )).toBeTruthy();
+      expect( person.hasOwnProperty( 'greet' )).toBeFalsy();
+
     });
   });
 });
