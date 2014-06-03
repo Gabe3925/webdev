@@ -82,7 +82,64 @@ describe("JavaScript Functions", function() {
 
     });
 
+    it('assigns all underclared variables into global scrope.', function() {
+
+      function adam() {
+        //var n;
+
+        function question() {
+          n = 20;
+        }
+
+        question();
+      }
+
+      adam();
+      expect(GLOBAL.n).toBe(20);
+    });
+
+    it('allows immediately invoked experessions (IIFE) to create a private scope for our sweet codez.', function() {
+      var iifeWasInvoked = false;
+      (function() {
+
+        iifeWasInvoked = true;
+
+      })();
+
+      expect(iifeWasInvoked).toBeTruthy();
+
+    });
   });
 
+
+  describe("declaration, assignment, and hoisting", function() {
+
+    it('will hoist function declarations to the top of scope so that they can be used anywhere within that scope.', function() {
+
+      expect(typeof test).toBe('function');
+      expect(test()).toBe(1);
+
+      //This function was deliberately written after expectations (for hoisting).
+
+      function test() {
+        return 1;
+      }
+    });
+
+    it('will not hoist function assignments to the top of scope, because that would change control flow', function() {
+
+      expect(typeof test).toBe('undefined');
+
+      //This function was deliberately written after expectations (for hoisting).
+      var test = function() {
+        return 1;
+      }
+    });
+
+
+
+
+
+  });
 
 });
