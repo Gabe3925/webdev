@@ -99,15 +99,80 @@ describe("JavaScript Functions", function() {
 
     });
     it("will NOT hoist function assignments to the top of scope, because that would change control flow.", function() {
-
       expect(typeof test).toBe('undefined');
-      
-
       //This function was deliberately written after expectations (for hoisting). 
-
       var test = function() {
         return 1;
       };
     });
+  });
+  describe("context", function() {
+    it("will bind the function invocation patter to the global scope object", function () {
+      function test() {
+        return this;
+      }
+      expect( test() ).toBe(GLOBAL);
+    });
+
+    it("will bind the method invocation pattern to the object that hosts the function.", function() {
+
+      var obj = {
+        beep: function() {
+          return this;
+        }
+      };
+      expect( obj.beep() ).toBe(obj);
+    });
+
+    it ("will bind the 'call' and 'apply' invocation pattern to a passed object", function() {
+
+      function test() {
+        return this;
+      }
+      var target = {};
+      expect( test.call(target) ).toBe();
+    });
+
+    it("will bind the constructor invocation pattern to a brand new object instance.", function(){
+
+      function TestWidget() {
+        this.name = name;
+      }
+
+      var gabe = new TestWidget('Gabe');
+      var tom = TestWidget('Tom');
+
+      expect( gabe.name ).toBe('Gabe');
+      expect( tom.name ).toBe('Tom');
+      expect( gabe instanceof TestWidget ).toBeTruthy();
+
+    });
+  });
+  
+  describe("prototypal inheritance", funciton() {
+    it('will link a functions "prototype" object to all constructed object instances.', function() {
+
+      function Person(name) {
+        this.name = name;
+      }
+
+      Person.prototype = {
+        greet: function() {
+          return "hello, I'm" + this.name;
+        }
+      };
+      var person = new Person("Larry");
+
+      expect( person.greet() ).toBe("hello, I'm Larry");
+
+      expect( person.hasOwnProperty('name') ).toBeTruthy();
+
+      expect( person.hasOwnProperty('greet') ).toBeFalsy();
+    });
+    it('will share methods and data structures between all instances, via the common prototype (BEWARE) ')
+
+    function StuffDrawer(name){
+      
+    }
   });
 });
