@@ -38,3 +38,6 @@ end
 def add(x, y)
   x + y
 end
+
+# Arrays
+my_name_array = ["Adam", "Elaine", "Travis"]
