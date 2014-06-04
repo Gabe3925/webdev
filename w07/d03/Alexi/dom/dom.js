@@ -57,3 +57,52 @@ function  addSuperPowersToMutants() {
     mutants[i].innerHTML += ' has super powers!';
 }
 addSuperPowersToMutants();
+
+// Add Gambit to the good guy list
+
+function addGambit() {
+  var goodGuys = document.querySelector('#good-guy-list');
+  var gambit = document.createElement('li');
+  gambit.classList.add('mutant');
+  gambit.textContent = 'Gambit';
+  goodGuys.appendChild(gambit);
+}
+
+// Move Mystique from bad guys to good guys
+function changeOfHeart(){
+  var mystique = document.getElementById('bad-guy-list').children[1];
+  goodGuyList = document.getElementById('good-guy-list');
+  goodGuyList.appendChild(mystique);
+}
+changeOfHeart();
+
+// Remove Stryker
+// function removeStryker(){
+//   //
+// }
+
+//=========EVENTS===========//
+
+function clicker() {
+  var button = document.getElementById('button');
+  button.addEventListener('click', function() {
+    alert('click!');
+  });
+}
+clicker();
+
+function clickProfessorX() {
+  var profX = document.getElementById('x');
+  profX.addEventListener('click', addGambit);
+}
+clickProfessorX();
+
+function colorize(){
+  var form = document.getElementById('paint');
+  form.addEventListener('submit', function(event){
+    event.preventDefault();
+    var color = document.getElementById('input').value;
+    document.body.style.backgroundColor = color;
+  });
+}
+colorize();
