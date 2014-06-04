@@ -1,3 +1,5 @@
+brush = document.querySelector('.brush');
+
 function setColor(){
   var colorButton = document.getElementById('set-color');
   colorButton.addEventListener('click', function(event){
@@ -11,11 +13,15 @@ function setColor(){
 setColor();
 
 function createDivs(){
-  for (i = 0; i < 20; i++){
-    var newDiv = document.createElement('div');
-      newDiv.setAttribute('class', 'square');
-      document.body.appendChild(newDiv);
+  for (i = 0; i < 20000; i++){
+    var div = document.createElement('div');
+      div.setAttribute('class', 'square');
+      div.addEventListener('mouseover', function(){
+      this.style.backgroundColor = brush.style.backgroundColor;
+    });
+      document.body.appendChild(div);
       }
 }
-
 createDivs();
+
+
