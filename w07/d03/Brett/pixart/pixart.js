@@ -10,10 +10,10 @@ function setColor() {
 setColor();
 
 function addSquares() {
-  for(i = 0; i < 20; i++) {
+  for(i = 0; i < 8000; i++) {
     square = document.createElement("div");
     square.classList.add("square");
-    square.addEventListener("click", function() {
+    square.addEventListener("mouseover", function() {
       this.style.backgroundColor = color;
     });
     document.body.appendChild(square);
