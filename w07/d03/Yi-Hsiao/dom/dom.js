@@ -35,4 +35,18 @@
       }
     }
   };
+
+  // find button
+  var button = document.getElementById( "button" );
+  // log its context when it's clicked
+  button.addEventListener( "click", function() {
+    console.log( this );
+  });
+
+  var form = document.getElementsByTagName( "form" )[0];
+  form.addEventListener( "submit", function( event ) {
+    event.preventDefault();
+    var color = document.getElementById( "input" ).value;
+    document.body.style.background = color;
+  });
 })();
