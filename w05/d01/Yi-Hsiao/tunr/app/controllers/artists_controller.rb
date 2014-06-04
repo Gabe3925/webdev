@@ -11,12 +11,7 @@ class ArtistsController < ApplicationController
 
   def create
     @artist = Artist.new(params_artist)
-
-    if @artist.save
-      redirect_to @artist
-    else
-      render "new"
-    end
+    save_artist
   end
 
   def show
@@ -28,12 +23,7 @@ class ArtistsController < ApplicationController
 
   def update
     @artist.assign_attributes(params_artist)
-
-    if @artist.save
-      redirect_to @artist
-    else
-      render "edit"
-    end
+    save_artist
   end
 
   def destroy
@@ -53,5 +43,16 @@ class ArtistsController < ApplicationController
 
   def find_artist
     @artist = Artist.find(params[:id])
+  end
+
+  def save_artist
+    if @artist.save
+      redirect_to @artist
+    else
+      case params[:_method]
+      when "post" then render :new
+      when "patch" then render :edit
+      end
+    end
   end
 end

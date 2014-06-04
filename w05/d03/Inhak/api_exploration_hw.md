@@ -11,6 +11,6 @@ __Note:__ You'll have to register at Mashape.
 
 ####Step 2 - Proof of Concept
 
-Head into your personal directory for today and create a `proof_of_concept.rb` file. Within this file, use httparty to access the API(s) you're interested in. 
+Head into your personal directory for today and create a `proof_of_concept.rb` file. Within this file, use httparty to access the API(s) you're interested in.
 
 __Note:__ Some APIs require you to register for an API key. You may need to use this API key when hitting the API.
