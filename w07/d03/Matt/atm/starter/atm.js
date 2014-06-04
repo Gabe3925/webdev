@@ -27,8 +27,10 @@ function withdrawChecking() {
   checkingWithdraw.addEventListener('click', function(e) {
     e.preventDefault();
     var cAmount = checkingAmount.value;
-    cBalance -= parseInt(cAmount);
-    checkingBalance.textContent = '$' + cBalance;
+    if (parseInt(cAmount) && cBalance >0) {
+      cBalance -= parseInt(cAmount);
+      checkingBalance.textContent = '$' + cBalance;
+    }
   });
 }
 
@@ -63,8 +65,10 @@ function withdrawSavings() {
   savingsWithdraw.addEventListener('click', function(e) {
     e.preventDefault();
     var sAmount = savingsAmount.value;
-    sBalance -= parseInt(sAmount);
-    savingsBalance.textContent = '$' + sBalance;
+    if (parseInt(sAmount) && sBalance > 0) {
+      sBalance -= parseInt(sAmount);
+      savingsBalance.textContent = '$' + sBalance;
+    }
   });
 }
 
