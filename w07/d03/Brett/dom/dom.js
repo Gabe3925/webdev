@@ -81,3 +81,32 @@ function removeStryker() {
   stryker.parentNode.removeChild(stryker);
 }
 removeStryker();
+
+//////////
+///Events
+/////////
+
+function clicker() {
+  var button = document.getElementById("button");
+  button.addEventListener("click", function() {
+    alert("click!");
+  });
+}
+clicker();
+
+function clickProfessorX() {
+  var profX = document.getElementById("x");
+  profX.addEventListener("click", addGambit);
+}
+clickProfessorX();
+
+function colorize() {
+  var form = document.getElementById("paint");
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+    console.log(event);
+    var color = document.getElementById("input").value;
+    document.body.style.backgroundColor = color;
+  });
+}
+colorize();
