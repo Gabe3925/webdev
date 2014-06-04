@@ -553,7 +553,7 @@ When a function accepts arguments, they are stored within its scope and made acc
 ```
 function multiplyFactory(base) {
 	return function(n) {
-		return base + n;
+		return base * n;
 	}
 }
 
