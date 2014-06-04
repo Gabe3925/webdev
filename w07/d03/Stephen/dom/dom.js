@@ -2,7 +2,7 @@
 * @Author: stephenstanwood
 * @Date:   2014-06-04 11:27:56
 * @Last Modified by:   stephenstanwood
-* @Last Modified time: 2014-06-04 14:15:58
+* @Last Modified time: 2014-06-04 16:14:37
 */
 
 // logs all of the good guys
@@ -43,3 +43,20 @@ function removeStriker() {
   var s = document.getElementById( 'stryker' );
   s.parentNode.removeChild( s );
 }
+
+var button = document.getElementById('button');
+button.addEventListener( 'click', function() { alert( 'click!' ) } );
+
+var x = document.getElementById('x');
+x.addEventListener( 'click', addGambit );
+
+function colorize() {
+  var form = document.getElementById( 'paint' );
+  form.addEventListener( 'submit', function( e ) {
+    e.preventDefault();
+    var color = document.getElementById( 'input' ).value;
+    document.body.style.backgroundColor = color;
+  });
+}
+
+colorize();
