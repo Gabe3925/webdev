@@ -7,7 +7,7 @@ Create an object-oriented JavaScript application with three constructor function
 **Requirements:**
 
 1. Create a new HTML document, and include a `hogwarts.js` file. Feel free to include Underscore above it.
- 
+
 2. Start by building the smallest object unit (Student) and work your way up to the largest (School).
 
 3. Stay DRY. If you write a behavior twice, you can probably consolidate it.
@@ -56,7 +56,7 @@ var total = gryff.getTotalPoints();
 
 * `name`: specifies the name of the student.
 * `points`: specifies the number of points the student has earned.
-* `awardPoints(points)`: adds the specified number of points to the student's current point to total. 
+* `awardPoints(points)`: adds the specified number of points to the student's current point to total.
 
 
 **Example Usage:**
