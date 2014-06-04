@@ -8,5 +8,6 @@ function setColor(){
     brushBox.style.backgroundColor = fieldColorValue;
   });
 }
-
 setColor();
+
+
