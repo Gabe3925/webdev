@@ -56,3 +56,27 @@ function addSuperPowersToMutants(){
   }
 }
 addSuperPowersToMutants();
+
+// Add Gambit to the good guy list
+function addGambit(){
+  var goodGuys = document.querySelector('#good-guy-list');
+  var gambit = document.createElement('li');
+  gambit.classList.add('mutant');
+  gambit.classList.add('cajun');
+  gambit.textContent = 'Gambit';
+  goodGuys.appendChild(gambit);
+}
+addGambit();
+
+// Move Mystique from bad guys to good guys
+function changeOfHeart(){
+  var mystique = document.getElementById('bad-guy-list').children[1];
+  var goodGuyList = document.getElementById('good-guy-list');
+  goodGuyList.appendChild(mystique);
+}
+changeOfHeart();
+
+// Remove Stryker
+function removeStryker(){
+  
+}
