@@ -1,6 +1,6 @@
 
 
-
+// It works?!?
 function initials(fname, lname){
   var fname = prompt('What is your first name?');
   var lname = prompt('What is your last name?');
@@ -8,7 +8,6 @@ function initials(fname, lname){
   var linitial = lname.slice(0,1); 
 }
   console.log(finitial + "." + linitial + ".");
-
 
 function initials(input){
   var names = input.split(' ');
