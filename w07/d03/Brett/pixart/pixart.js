@@ -13,6 +13,9 @@ function addSquares() {
   for(i = 0; i < 20; i++) {
     square = document.createElement("div");
     square.classList.add("square");
+    square.addEventListener("click", function() {
+      this.style.backgroundColor = "green";
+    });
     document.body.appendChild(square);
   }
 }
