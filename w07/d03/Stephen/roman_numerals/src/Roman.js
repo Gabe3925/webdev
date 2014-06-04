@@ -2,7 +2,7 @@
 * @Author: stephenstanwood
 * @Date:   2014-06-04 09:30:43
 * @Last Modified by:   stephenstanwood
-* @Last Modified time: 2014-06-04 10:06:08
+* @Last Modified time: 2014-06-04 10:22:25
 */
 
 var ROMAN_NUMERALS = [
@@ -26,13 +26,16 @@ function romanize( num ) {
 
   var res = "";
 
+  // loop through the roman numerals from largest to smallest
   for ( var i = 0, len = ROMAN_NUMERALS.length; i < len; i++ ) {
+
+    // figure out how many of the current symbol fit in the number
     var num_sym = parseInt( num / ROMAN_NUMERALS[i][1] );
 
-    for ( var s = 0; s < num_sym; s++ ) {
-      res += ROMAN_NUMERALS[i][0];
-    }
+    // add that many of the symbol to the result string
+    res += new Array( num_sym + 1 ).join( ROMAN_NUMERALS[i][0] );
 
+    // decrease the number to convert by the appropriate amount
     num %= ROMAN_NUMERALS[i][1];
   }
 
