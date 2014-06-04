@@ -37,3 +37,20 @@
 * Day 1: Agile, SCRUM, Pivotal Tracker, Tunr
 * Day 2: Authentication
 * Day 3: APIs
+* Day 4: Tunr, Authorization
+* Day 5: Project planning
+
+**Week 6**
+
+* Project 1 (".env" files, deployment)
+
+**Week 7**
+
+* Day 1: JavaScript vars, loops, objects, arrays, UnderscoreJS
+* Day 2: JavaScript functions, prototypal inheritance
+* Day 3: DOM manipulation and events
+* Day 4: 
+* Day 5: 
+
+**Week 8**
+
