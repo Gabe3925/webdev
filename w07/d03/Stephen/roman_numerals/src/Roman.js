@@ -2,7 +2,7 @@
 * @Author: stephenstanwood
 * @Date:   2014-06-04 09:30:43
 * @Last Modified by:   stephenstanwood
-* @Last Modified time: 2014-06-04 10:22:25
+* @Last Modified time: 2014-06-04 11:17:59
 */
 
 var ROMAN_NUMERALS = [
@@ -32,7 +32,7 @@ function romanize( num ) {
     // figure out how many of the current symbol fit in the number
     var num_sym = parseInt( num / ROMAN_NUMERALS[i][1] );
 
-    // add that many of the symbol to the result string
+    // add that many of the symbol to the end of the result string
     res += new Array( num_sym + 1 ).join( ROMAN_NUMERALS[i][0] );
 
     // decrease the number to convert by the appropriate amount
