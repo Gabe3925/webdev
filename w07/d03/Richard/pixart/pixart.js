@@ -2,8 +2,11 @@
 * @Author: Richard Hessler
 * @Date:   2014-06-04 16:18:10
 * @Last Modified by:   Richard Hessler
-* @Last Modified time: 2014-06-04 16:33:13
+* @Last Modified time: 2014-06-04 16:45:37
 */
+
+
+/* Commit 1 */
 function colorize() {
   var form = document.getElementById('set-color');
   form.addEventListener('click', function(e) {
@@ -13,3 +16,7 @@ function colorize() {
   });
 }
 colorize();
+
+
+/* Commit 2 */
+
