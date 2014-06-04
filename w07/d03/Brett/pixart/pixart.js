@@ -8,3 +8,12 @@ function setColor() {
   });
 }
 setColor();
+
+function addSquares() {
+  for(i = 0; i < 20; i++) {
+    square = document.createElement("div");
+    square.classList.add("square");
+    document.body.appendChild(square);
+  }
+}
+addSquares();
