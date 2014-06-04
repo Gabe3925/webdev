@@ -17,3 +17,13 @@ function createSquares() {
 }
 createSquares();
 
+function colorizeSquares() {
+  squares = document.querySelectorAll('.square')
+  for (var i = 0; i < squares.length; i++) {
+    squares[i].addEventListener('click', function() {
+      this.style.backgroundColor = 'green'
+    });
+  };
+}
+colorizeSquares();
+
