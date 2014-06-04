@@ -20,3 +20,17 @@ function colorize() {
 }
 
 colorize();
+
+function boxize() {
+  var brush = document.querySelector('.brush');
+  var conBox = document.querySelector('.controls');
+
+  for (i=0; i <= 20; i++) {
+    var box = document.createElement('div');
+    box.setAttribute('class', 'brush');
+
+    conBox.appendChild(box)
+  }
+}
+
+boxize();
