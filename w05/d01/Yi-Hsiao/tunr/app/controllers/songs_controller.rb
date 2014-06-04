@@ -8,12 +8,7 @@ class SongsController < ApplicationController
 
   def create
     @song = @artist.songs.new(song_params)
-
-    if @song.save
-      redirect_to @artist
-    else
-      render "new"
-    end
+    save_song
   end
 
   def edit
@@ -22,12 +17,7 @@ class SongsController < ApplicationController
   def update
     @song.assign_attributes(song_params)
     @artist = @song.artist
-
-    if @song.save
-      redirect_to @song.artist
-    else
-      render "edit"
-    end
+    save_song
   end
 
   def destroy
@@ -47,5 +37,16 @@ class SongsController < ApplicationController
 
   def song_params
     params.require(:song).permit(:title, :year, :artist_id)
+  end
+
+  def save_song
+    if @song.save
+      redirect_to @song
+    else
+      case params[:_method]
+      when "post" then render :new
+      when "patch" then render :edit
+      end
+    end
   end
 end
