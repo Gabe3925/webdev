@@ -3,10 +3,6 @@ class UsersController < ApplicationController
   before_action :require_signin, except: [:new, :create]
   before_action :require_current_user, only: [:edit]
 
-  def index
-    @users = User.all
-  end
-
   def new
     @user = User.new
   end
