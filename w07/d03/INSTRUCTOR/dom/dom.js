@@ -52,7 +52,7 @@ changeTagFont('h1', 'Lobster Two');
 function addSuperPowersToMutants(){
   var mutants = document.querySelectorAll('.mutant');
   for (var i = 0; i < mutants.length; i++){
-    mutants[i].innerHTML + ' has super powers!';
+    mutants[i].innerHTML += ' has super powers!';
   }
 }
 addSuperPowersToMutants();
