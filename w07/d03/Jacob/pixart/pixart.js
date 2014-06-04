@@ -1,5 +1,5 @@
-//Commit One: Set Color
-function setColor () {
+//Commit One and Two: Set Color
+function setColor() {
   var colorButton = document.getElementById('form');
   colorButton.addEventListener('submit', function(event) {
     event.preventDefault ();
@@ -9,3 +9,13 @@ function setColor () {
   });
 }
 setColor();
+
+//Commit Three: 20 Divs of Square Class
+function createSquares() {
+  for (var i = 0; i < 20; i++) {
+    var square = document.createElement('div');
+    square.setAttribute('class', 'square');
+    document.body.appendChild(square);
+  }
+}
+createSquares();
