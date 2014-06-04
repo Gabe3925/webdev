@@ -78,5 +78,7 @@ changeOfHeart();
 
 // Remove Stryker
 function removeStryker(){
-  
+  var stryker = document.getElementById('stryker');
+  stryker.parentNode.removeChild(stryker);
 }
+removeStryker();
