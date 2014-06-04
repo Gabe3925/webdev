@@ -125,5 +125,113 @@ describe("JavaScript Functions", function() {
 
     });
 
+    describe("context", function(){
+      it('will bind the function invocation pattern to the global scope object', function(){
+
+        function test() {
+          return this;
+        }
+
+        expect( test() ).toBe(GLOBAL);
+      });
+
+      it('will bind the method invocation pattern to the object that hosts the function.', function(){
+        var obj = {
+          beep: function(){
+            return this;
+          }
+        };
+
+        expect( obj.beep()).toBe(obj);
+
+      });
+
+      it('will bind the "call" and "apply" invocation pattern to the passed object.', function(){
+
+        function test(){
+          return this;
+        }
+
+        var target = {};
+
+        expect( test.call(target) ).toBe(target);
+      });
+
+      it('will bind the constructor invocation pattern to a brand new object instnace.', function(){
+        function TestWidget(name){
+          this.name = name;
+        }
+
+        var gabe = new TestWidget('Gabe');
+        var tom = new TestWidget('Tom');
+
+        expect( gabe.name ).toBe('Gabe');
+        expect( tom.name ).toBe('Tom');
+
+        expect( gabe instanceof TestWidget).toBeTruthy();
+      });
+    });
+
+  describe("prototypal inheritance", function(){
+
+    it('will link a functions "prototype" to all constructed object instances.', function(){
+      function Person(name){
+        this.name = name;
+      }
+
+      Person.prototype = {
+        greet: function() {
+          return "hello, I'm " + this.name;
+        }
+      };
+
+      var person = new Person("Larry");
+
+      expect( person.greet).toBe("hello, I'm Larry");
+
+      expect( person.hasOwnProperty('name')).toBeTruthy();
+      expect( person.hasOwnProperty('greet')).toBeFalsy();
+    });
+
+    it('will share methods and data structures between all isntances, via the common prototype (BEWARE)', function(){
+
+      function StuffDrawer(name){
+        this.name = name;
+        this.stuff = [];
+      }
+
+      StuffDrawer.prototype = {
+        addStuff: function(thing){
+          this.stuff.push(thing);
+        }
+      }
+
+      var elaine = new StuffDrawer('Elaine');
+      var parker = new StuffDrawer('Parker');
+
+      parker.addStuff('pencil');
+      elaine.addStuff('alarm clock');
+
+      expect(elaine.stuff.length).toBe(1);
+    });
+
+    it('creates prototype chains using object "__proto__" properties.', function(){
+
+      function Person(name){
+        this.name = name;
+      }
+
+      Person.prototype = {
+        legs: 2
+      };
+
+      var tim = new Person('Tim');
+
+      expect( tim.__proto__).toBe(Person.prototype);
+      expect( Person.prototype.__proto__).toBe(Object.prototype);
+      expect( tim.__proto__.__proto__).toBe(Object.prototype);
+    });
+  });
+
   });
 });
