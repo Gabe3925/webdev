@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+[Artist, Song, User].each do |model|
+  model.destroy_all
+  model.connection.reset_pk_sequence! model.table_name
+end
