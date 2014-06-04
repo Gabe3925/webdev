@@ -1,4 +1,4 @@
-# Blog Post
+  # Blog Post
 
 ### Why are we blogging?
 - We've been going at a breakneck pace over the past 6 weeks. Writing is a great way to reflect upon what you've learned and your experience.
