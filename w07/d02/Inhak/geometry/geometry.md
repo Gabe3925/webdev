@@ -42,7 +42,7 @@ Augment its prototype with the following methods:
 Create a few rectangles with different lengths and widths, and then test your outcomes using Jasmine!
 
 
-## LineSegment
+## LineSegmenthttp://en.wikipedia.org/wiki/Isosceles_triangle#By_internal_angles
 
 Given the following constructor:
 
