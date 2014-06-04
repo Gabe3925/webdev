@@ -10,4 +10,12 @@ function setColor(){
 }
 setColor();
 
+function createDivs(){
+  for (i = 0; i < 20; i++){
+    var newDiv = document.createElement('div');
+      newDiv.setAttribute('class', 'square');
+      document.body.appendChild(newDiv);
+      }
+}
 
+createDivs();
