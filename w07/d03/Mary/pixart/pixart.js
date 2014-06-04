@@ -7,3 +7,13 @@ function setColor() {
   });
 }
 setColor();
+
+function createSquares() {
+  for (var i = 0; i < 10; i++) {
+    var square = document.createElement('div');
+    document.body.appendChild(square);
+    square.classList.add('square');
+  }
+}
+createSquares();
+
