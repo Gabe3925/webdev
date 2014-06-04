@@ -17,7 +17,7 @@ function createSquares() {
 }
 createSquares();
 
-function colorizeSquares() {
+function colorizeSquaresToGreen() {
   squares = document.querySelectorAll('.square')
   for (var i = 0; i < squares.length; i++) {
     squares[i].addEventListener('click', function() {
@@ -25,5 +25,16 @@ function colorizeSquares() {
     });
   };
 }
-colorizeSquares();
+colorizeSquaresToGreen();
+
+function colorizeSquaresToInput() {
+  squares = document.querySelectorAll('.square');
+  for (var i = 0; i < squares.length; i++) {
+    squares[i].addEventListener('click', function() {
+      var color = document.getElementById('color-field').value;
+      this.style.backgroundColor = color;
+    });
+  };
+}
+colorizeSquaresToInput();
 
