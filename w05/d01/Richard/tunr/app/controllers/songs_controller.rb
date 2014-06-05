@@ -7,6 +7,9 @@ class SongsController < ApplicationController
 
   def create
     @song=Song.create(song_params)
+    @song.artist = @artist
+    response = HTTParty.get("https://itunes.apple.com/search?term=beyonce+halo&media=music&entity=musicTrack&limit=1")
+    binding.pry
     redirect_to @artist
   end
 
@@ -21,7 +24,6 @@ class SongsController < ApplicationController
   end
 
   def destroy
-    @song = Song.find(params[:id])
     @song.destroy
     redirect_to @artist
   end

@@ -7,8 +7,8 @@
     <h1>this</h1>
     <script type='text/javascript'>
 
-      console.log('1')
-      console.log(this);
+      console.log('1') // 1
+      console.log(this); // global(window)
 
       var color = 'red';
 
@@ -17,17 +17,17 @@
         console.log(this.color);
       };
 
-      console.log('2')
-      shmee();
+      console.log('2') // 2
+      shmee(); // global(window)
 
       var banana = { color: 'yellow' };
       banana.shmee = shmee;
 
-      console.log('3');
-      console.log(banana);
+      console.log('3'); // 3
+      console.log(banana);  // Object
 
-      console.log('4');
-      banana.shmee();
+      console.log('4'); // 4
+      banana.shmee(); // Object, yellow
 
       var puppy = {
         name: 'fluffy',
@@ -39,14 +39,14 @@
         },
       };
 
-      console.log('5');
-      console.log(puppy);
+      console.log('5'); // 5
+      console.log(puppy); // Object
 
-      console.log('6')
-      puppy.bark();
+      console.log('6') // 6
+      puppy.bark(); // OBject
 
-      console.log('7');
-      puppy.sayName();
+      console.log('7'); // 7
+      puppy.sayName(); // "fluffy"
 
       var kitten = {
         name: 'mittens',
@@ -58,11 +58,11 @@
         }
       }
 
-      console.log('8');
-      console.log(kitten);
+      console.log('8'); // 8
+      console.log(kitten); // Object
 
-      console.log('9');
-      kitten.introFriend();
+      console.log('9'); // 9
+      kitten.introFriend(); // Object, puppy object, object
 
     </script>
   </body>
