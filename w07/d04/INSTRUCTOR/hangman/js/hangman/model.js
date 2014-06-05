@@ -7,5 +7,10 @@ Hangman.prototype = {
 
   reset: function() {
     
+  },
+
+  selectRandomWord: function() {
+    var index = Math.round((this.words.length-1) * Math.random());
+    return this.words[index];
   }
 };
