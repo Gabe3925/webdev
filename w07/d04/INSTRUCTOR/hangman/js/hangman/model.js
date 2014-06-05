@@ -18,6 +18,7 @@ Hangman.prototype = {
     this.active = true;
     this.chances = 8;
     this.guesses = [];
+    this.update();
   },
 
   // Selects a random word
@@ -41,7 +42,7 @@ Hangman.prototype = {
     if (!this.active) return;
 
     if (letter.length > 1) {
-      throw "this is invalid input.";
+      throw "this is invalid input: it requires only one character.";
     }
 
     if (!this.hasGuess(letter)) {
@@ -50,12 +51,15 @@ Hangman.prototype = {
       if (!this.hasWordLetter(letter)) {
         this.chances -= 1;
       }
+
+      this.update();
     }
   },
 
   update: function() {
 
     var display = '';
+    var lettersMissing = 0;
 
     for (var i=0; i < this.word.length; i++) {
       // do we have this letter?
@@ -65,9 +69,22 @@ Hangman.prototype = {
       var letter = this.word[i];
       var hasGuess = this.hasGuess(letter);
       display += hasGuess ? letter : '_';
+
+      if (!hasGuess) {
+        lettersMissing += 1;
+      }
     }
 
-    this.wordDisplay = display;
+    this.victory = !lettersMissing;
+
+    if (this.active && this.chances) {
+      this.active = !!lettersMissing;
+    } else {
+      this.active = false;
+    }
+
+    // is the game active? if so, display the hidden word. otherwise, show the full word.
+    this.wordDisplay = this.active ? display : this.word;
   }
 
 };

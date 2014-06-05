@@ -1,4 +1,4 @@
-function HangmanView() {
+function HangmanView(model) {
   this.model = model;
   this.initialize();
 }
@@ -22,5 +22,6 @@ HangmanView.prototype = {
   onLetter: function() {
     var letter = this.uiLetter.value;
     this.model.guess(letter);
+    this.render();
   }
 };

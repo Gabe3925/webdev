@@ -18,6 +18,7 @@ Hangman.prototype = {
     this.active = true;
     this.chances = 8;
     this.guesses = [];
+    this.update();
   },
 
   selectRandomWord: function() {
@@ -42,6 +43,8 @@ Hangman.prototype = {
 
     if (!this.hasWordLetter(letter)) this.chances--;
     this.guesses.push(letter);
+
+    this.update();
   },
 
   update: function() {
