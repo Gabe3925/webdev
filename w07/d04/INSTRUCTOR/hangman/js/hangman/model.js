@@ -51,7 +51,23 @@ Hangman.prototype = {
         this.chances -= 1;
       }
     }
+  },
 
+  update: function() {
+
+    var display = '';
+
+    for (var i=0; i < this.word.length; i++) {
+      // do we have this letter?
+      // if so, display it.
+      // otherwise, fill it in with an "_"
+
+      var letter = this.word[i];
+      var hasGuess = this.hasGuess(letter);
+      display += hasGuess ? letter : '_';
+    }
+
+    this.wordDisplay = display;
   }
 
 };
