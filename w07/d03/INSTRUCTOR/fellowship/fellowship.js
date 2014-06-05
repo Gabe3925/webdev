@@ -73,6 +73,20 @@ keepItSecretKeepItSafe();
 // 4
 function makeBuddies(buddies) {
   // create an aside tag
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+  // display an unordered list of buddies in the aside
+  // insert your aside before rivendell
+=======
+=======
+>>>>>>> 64217c132cc503226a9689b293afd95499ad8863
+=======
+<<<<<<< Updated upstream
+>>>>>>> ac4a3483155e4c87cf04b43f6c047914c55f565a
+=======
+>>>>>>> 4cb34c273b7f80f8ffdaba4951f66592e85c5392
+>>>>>>> Stashed changes
   var asideTag = document.createElement('aside');
   // display an unordered list of buddies in the aside
   var buddiesList = document.createElement('ul');
@@ -85,6 +99,17 @@ function makeBuddies(buddies) {
   asideTag.appendChild(buddiesList);
   var rivendell = document.getElementsByTagName('article')[1];
   rivendell.parentNode.insertBefore(asideTag, rivendell);
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 34fb00333b49b43d2d050316475dc5a2a4cd40a5
+=======
+>>>>>>> 64217c132cc503226a9689b293afd95499ad8863
+=======
+<<<<<<< Updated upstream
+>>>>>>> ac4a3483155e4c87cf04b43f6c047914c55f565a
+=======
+>>>>>>> 4cb34c273b7f80f8ffdaba4951f66592e85c5392
+>>>>>>> Stashed changes
 }
 makeBuddies(buddies);
 
@@ -124,4 +149,16 @@ function forgeTheFellowShip() {
   var rivendell = document.getElementsByTagName('article')[1];
   rivendell.appendChild(theFellowship);
 }
+<<<<<<< HEAD
+<<<<<<< HEAD
 forgeTheFellowShip();
+=======
+forgeTheFellowShip();
+>>>>>>> 64217c132cc503226a9689b293afd95499ad8863
+=======
+forgeTheFellowShip();
+<<<<<<< Updated upstream
+>>>>>>> ac4a3483155e4c87cf04b43f6c047914c55f565a
+=======
+>>>>>>> 4cb34c273b7f80f8ffdaba4951f66592e85c5392
+>>>>>>> Stashed changes

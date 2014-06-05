@@ -5,6 +5,9 @@
 // When "Pause" is clicked, the text should say "Time elapsed: 1", but stop incrementing.
 
 
+<<<<<<< HEAD
+
+=======
 var start = document.getElementById("start");
 var title = document.getElementById("timer");
 var reset = document.getElementById("reset");
@@ -35,3 +38,4 @@ reset.addEventListener("click", resetTextAndClearInterval);
 pause.addEventListener("click", function(){
   clearInterval(timerID);
 });
+>>>>>>> ac4a3483155e4c87cf04b43f6c047914c55f565a
