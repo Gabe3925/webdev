@@ -56,6 +56,7 @@ Hangman.prototype = {
   update: function() {
 
     var display = '';
+    var lettersMissing = 0;
 
     for (var i=0; i < this.word.length; i++) {
       // do we have this letter?
@@ -65,9 +66,22 @@ Hangman.prototype = {
       var letter = this.word[i];
       var hasGuess = this.hasGuess(letter);
       display += hasGuess ? letter : '_';
+
+      if (!hasGuess) {
+        lettersMissing += 1;
+      }
     }
 
-    this.wordDisplay = display;
+    this.victory = !lettersMissing;
+
+    if (this.active && this.chances) {
+      this.active = !!lettersMissing;
+    } else {
+      this.active = false;
+    }
+
+    // is the game active? if so, display the hidden word. otherwise, show the full word.
+    this.wordDisplay = this.active ? display : this.word;
   }
 
 };
