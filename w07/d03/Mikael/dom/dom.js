@@ -50,5 +50,9 @@ function addSuperPowersToMutants() {
 function addGambit() {
   var goodGuys = document.querySelector('#good-guy-list');
   var gambit = document.createElement('li');
-  gambit.
+  gambit.classList.add('mutant');
+  gambit.textContent = 'Gambit';
+  goodGuys.appendChild(gambit);
 }
+
+addGambit();
