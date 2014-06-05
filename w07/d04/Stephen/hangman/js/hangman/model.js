@@ -42,5 +42,30 @@ Hangman.prototype = {
 
     if (!this.hasWordLetter(letter)) this.chances--;
     this.guesses.push(letter);
+  },
+
+  update: function() {
+    if (!this.active) {
+      this.wordDisplay = this.word;
+      return;
+    }
+
+    // assume victory until proven otherwise
+    var won = true;
+
+    this.wordDisplay = "";
+    for (var i=0, len=this.word.length; i<len; i++) {
+      if ( this.hasGuess(this.word[i]) ) {
+        this.wordDisplay += this.word[i];
+      } else {
+        this.wordDisplay += '_';
+        won = false;
+      }
+    }
+
+    if(won) {
+      this.victory = true;
+      this.active = false;
+    }
   }
 };
