@@ -1,8 +1,8 @@
-<!-- All Superheros Link -->
+<%= link_to "All Heros", heros_path %><!-- All Superheros Link -->
 
 <h1><%= @hero.name %></h1>
 <p><%= @hero.secret_identity %></p>
 
-<!-- Hero Image -->
+<%= image_tag @hero.image_url, alt: "", class: "hero" %><!-- Hero Image -->
 
-<!-- Hero Edit link -->
+<p><%= link_to "Edit", edit_hero_path(@hero) %></p><!-- Hero Edit link -->
