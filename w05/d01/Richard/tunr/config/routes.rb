@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :songs
   end
 
-  resources :users
+  resources :users, except: [:index]
   resources :sessions, only: [:create]
 
   get '/signin', to: 'sessions#new'
