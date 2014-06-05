@@ -5,6 +5,7 @@
 Tired of writing for loops and wish you had all the awesome semantic enumerators that we had in Ruby? You can with [underscore.js!](http://underscorejs.org/)
 
 * Your job will be to write the methods found in the pokemon.js file. The methods are namespaced behind the `pokemon` object.
+
 * I've put the JSON of the pokemon data in the `js/data.js` file. You do not need to touch this file. You will have access to all of the data using `pokemon.pokemonList`
 
 * I've written stubs for a few methods that you are going to write:

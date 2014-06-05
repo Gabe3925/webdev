@@ -16,3 +16,8 @@ end
 
 puts "The sum of all multiples of "+first_multiple.to_s+" and "+second_multiple.to_s
 puts "That are below the number "+max.to_s+" is : "+sum_for_two_multiples(max, first_multiple, second_multiple).to_s
+# numbers=(1..999).to_a
+# all = numbers.select do |n|
+#   n%3==0||n%5==0
+# end
+# puts all.reduce(:+)
