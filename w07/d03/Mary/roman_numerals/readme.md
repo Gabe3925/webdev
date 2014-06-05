@@ -1,6 +1,6 @@
 ##Roman Numerals
 
-Your task is to make the tests in `SpecRunner.html`. You will do this by writing a romanize function that takes a single numeric input and returns the appropriate roman numberal as a string.
+Your task is to make the tests in `SpecRunner.html` pass. You will do this by writing a romanize function that takes a single numeric input and returns the appropriate roman numberal as a string.
 ```javascript
 romanize(73) // => 'LXXIII'
 romanize(99) // => 'LXXIII'
