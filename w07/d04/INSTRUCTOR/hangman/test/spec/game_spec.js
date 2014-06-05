@@ -22,6 +22,33 @@ describe("Hangman", function() {
 
   });
 
-  
+  describe("hasGuess", function() {
+    beforeEach(function() {
+      game.guesses = ['Z'];
+    });
 
+    it("should return true when the game has the guessed letter.", function() {
+      expect(game.hasGuess('Z')).toBe(true);
+    });
+
+    it("should return false if the game does not yet have the guessed letter.", function() {
+      expect(game.hasGuess('X')).toBe(false);
+    });
+  });
+
+  describe("reset", function() {
+
+    it("should select a new random word for the game.", function() {
+      var stub = sinon.stub(game, 'selectRandomWord').returns('inhak');
+      game.reset();
+      expect(game.word).toBe('inhak');
+      stub.restore();
+    });
+
+    it("should reset the guesses array.", function() {
+      game.guesses = ['X'];
+      game.reset();
+      expect(game.guesses.length).toBe(0);
+    });
+  });
 });
