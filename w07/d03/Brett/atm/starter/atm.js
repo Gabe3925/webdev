@@ -1,22 +1,3 @@
-// var checkingBalance = 0;
-// var savingsBalance = 0;
-
-// function checkingDeposit() {
-//   var form  = document.getElementById("checking-deposit-form");
-//   form.addEventListener("submit", function(event) {
-//     event.preventDefault();
-//     var deposit = document.getElementById("checking-amount").value;
-//     checkingBalance += deposit;
-
-//     var currency = document.getElementById("checking-balance").innerHTML;
-//     currency.replace(/[$,]+/g,"");
-//     deposit_amt = parseFloat(currency);
-//     checkingBalance += deposit_amt;
-//     debugger;
-//     balance = "$" + checkingBalance;
-//   });
-// }
-// checkingDeposit();
 
 var checkingBalance = 0;
 var checkingBalanceString = document.getElementById("checking-balance")
@@ -43,8 +24,11 @@ function checkingWithdrawal() {
     if (checkingBalance >= withdrawal) {
       checkingBalance -= withdrawal;
       checkingBalanceString.innerHTML = "$" + checkingBalance;
-    } else if (checkingBalance + savingsBalance >= withdrawal) {
-      savingsBalance -= (withdrawal - checkingBalance)
+    } else if(checkingBalance + savingsBalance >= withdrawal) {
+      savingsBalance -= (withdrawal - checkingBalance);
+      checkingBalance = 0;
+      checkingBalanceString.innerHTML = "$" + checkingBalance;
+      savingsBalanceString.innerHTML = "$" + savingsBalance;
     }
   });
 }
@@ -69,7 +53,12 @@ function savingsWithdrawal() {
     if (savingsBalance >= withdrawal) {
       savingsBalance -= withdrawal;
       savingsBalanceString.innerHTML = "$" + savingsBalance;
-    }
+    } else if(savingsBalance + checkingBalance >= withdrawal) {
+        checkingBalance -= (withdrawal - savingsBalance);
+        savingsBalance = 0;
+        checkingBalanceString.innerHTML = "$" + checkingBalance;
+        savingsBalanceString.innerHTML = "$" + savingsBalance;
+      }
   });
 }
 savingsWithdrawal();
