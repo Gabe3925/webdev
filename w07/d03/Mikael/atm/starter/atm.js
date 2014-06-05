@@ -44,8 +44,18 @@ checkwithdrawbutton.addEventListener('click', function() {
 
 savwithdrawbutton.addEventListener('click', function() {
   var balance = parseInt(savbal.textContent.split('$')[1]);
-  balance -= parseInt(savamt.value);
-  if (balance > 0) {
-    savbal.textContent = '$' + balance.toString();
+  var totalbalance = balance + parseInt(checkbal.textContent.split('$')[1]);
+  var withdraw = parseInt(savamt.value);
+
+  if (withdraw < balance) {
+    balance -= withdraw;
+    checkbal.textContent = '$' + balance.toString();
+  } else if (withdraw < totalbalance) {
+    withdraw -= balance;
+    totalbalance -= balance + withdraw;
+    savbal.textContent = '$0';
+    checkbal.textContent = '$' + totalbalance.toString();
   }
+
+
 });
