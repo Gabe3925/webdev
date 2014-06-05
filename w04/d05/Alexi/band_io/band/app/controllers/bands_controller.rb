@@ -38,7 +38,7 @@ private
     @band = Band.find(params[:id])
   end
 
-  def band_params
+  def band_params         
     params.require(:band).permit(:name, :genre, :explicit_lyrics, :video_url)
   end
 
