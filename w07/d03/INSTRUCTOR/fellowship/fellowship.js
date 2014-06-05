@@ -82,7 +82,11 @@ function makeBuddies(buddies) {
 =======
 >>>>>>> 64217c132cc503226a9689b293afd95499ad8863
 =======
+<<<<<<< Updated upstream
 >>>>>>> ac4a3483155e4c87cf04b43f6c047914c55f565a
+=======
+>>>>>>> 4cb34c273b7f80f8ffdaba4951f66592e85c5392
+>>>>>>> Stashed changes
   var asideTag = document.createElement('aside');
   // display an unordered list of buddies in the aside
   var buddiesList = document.createElement('ul');
@@ -101,7 +105,11 @@ function makeBuddies(buddies) {
 =======
 >>>>>>> 64217c132cc503226a9689b293afd95499ad8863
 =======
+<<<<<<< Updated upstream
 >>>>>>> ac4a3483155e4c87cf04b43f6c047914c55f565a
+=======
+>>>>>>> 4cb34c273b7f80f8ffdaba4951f66592e85c5392
+>>>>>>> Stashed changes
 }
 makeBuddies(buddies);
 
@@ -149,4 +157,8 @@ forgeTheFellowShip();
 >>>>>>> 64217c132cc503226a9689b293afd95499ad8863
 =======
 forgeTheFellowShip();
+<<<<<<< Updated upstream
 >>>>>>> ac4a3483155e4c87cf04b43f6c047914c55f565a
+=======
+>>>>>>> 4cb34c273b7f80f8ffdaba4951f66592e85c5392
+>>>>>>> Stashed changes
