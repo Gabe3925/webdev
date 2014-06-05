@@ -1,42 +1,32 @@
-var checkingBalance = document.getElementById('checking-balance');
-var checkingAmount = document.getElementById('checking-amount');
-var checkingDepositButton = document.getElementById('checking-deposit');
-var checkingWithdrawButton = document.getElementById('checking-withdraw');
-var savingsBalance = document.getElementById('savings-balance');
-var savingsAmount = document.getElementById('savings-amount');
-var savingsDepositButton = document.getElementById('savings-deposit');
-var savingsWithdrawButton = document.getElementById('savings-withdraw');
+var cBalance = document.getElementById('checking-balance');
+var cAmount = document.getElementById('checking-amount');
+var cDepositButton = document.getElementById('checking-deposit');
+var cWithdrawButton = document.getElementById('checking-withdraw');
+var sBalance = document.getElementById('savings-balance');
+var sAmount = document.getElementById('savings-amount');
+var sDepositButton = document.getElementById('savings-deposit');
+var sWithdrawButton = document.getElementById('savings-withdraw');
 
+function deposit(balance, amount, depositButton, withdrawButton) {
+  depositButton.addEventListener('click', function() {
+    balance.textContent = parseInt(balance.textContent) + parseInt(amount.value)
+    balance.classList.remove('zero')
+  })
+}
 
-checkingDepositButton.addEventListener('click', function() {
-  checkingBalance.textContent = parseInt(checkingBalance.textContent) + parseInt(checkingAmount.value)
-  checkingBalance.classList.remove('zero');
-});
-
-
-checkingWithdrawButton.addEventListener('click', function() {
-    if (parseInt(checkingAmount.value) <= parseInt(checkingBalance.textContent)) {
-      checkingBalance.textContent = parseInt(checkingBalance.textContent) - parseInt(checkingAmount.value);
-    } else if (parseInt(checkingAmount.value) > parseInt(checkingBalance.textContent) && parseInt(savingsAmount.value) <= parseInt(savingsBalance.textContent)) {
-      savingsBalance.textContent = parseInt(savingsBalance.textContent) - ((parseInt(checkingAmount.value) - parseInt(checkingBalance.textContent)));
-      checkingBalance.textContent = 0;
-      checkingBalance.classList.add('zero')
+function withdraw(balance, otherBalance, amount, otherAmount, depositButton, withdrawButton) {
+  withdrawButton.addEventListener('click', function() {
+    if (parseInt(amount.value) <= parseInt(balance.textContent)) {
+      balance.textContent = parseInt(balance.textContent) - parseInt(amount.value);
+    } else if (parseInt(amount.value) > parseInt(balance.textContent) && parseInt(otherAmount.value) <= parseInt(otherBalance.textContent)) {
+      otherBalance.textContent = parseInt(otherBalance.textContent) - ((parseInt(amount.value) - parseInt(balance.textContent)));
+      balance.textContent = 0;
+      balance.classList.add('zero')
        }
-  });
+  })
+}
 
-
-savingsDepositButton.addEventListener('click', function() {
-  savingsBalance.textContent = parseInt(savingsBalance.textContent) + parseInt(savingsAmount.value);
-  savingsBalance.classList.remove('zero');
-});
-
-
-savingsWithdrawButton.addEventListener('click', function() {
-  if (parseInt(savingsAmount.value) <= parseInt(savingsBalance.textContent)) {
-    savingsBalance.textContent = parseInt(savingsBalance.textContent) - parseInt(savingsAmount.value);
-  } else if (parseInt(savingsAmount.value) > parseInt(savingsBalance.textContent) && parseInt(checkingAmount.value) <= parseInt(checkingBalance.textContent)) {
-    checkingBalance.textContent = parseInt(checkingBalance.textContent) - ((parseInt(savingsAmount.value) - parseInt(savingsBalance.textContent)
-    savingsBalance.textContent = 0;
-    savingsBalance.classList.add('zero') };
-});
-
+deposit(cBalance, cAmount, cDepositButton, cWithdrawButton);
+deposit(sBalance, sAmount, sDepositButton, sWithdrawButton);
+withdraw(cBalance, sBalance, cAmount, sAmount, cDepositButton, cWithdrawButton);
+withdraw(sBalance, cBalance, sAmount, cAmount, sDepositButton, sWithdrawButton);
