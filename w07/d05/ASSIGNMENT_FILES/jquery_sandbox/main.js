@@ -12,9 +12,6 @@ console.log("Click on http://jquery.com to head to the docs");
 // A: Provide the opening tag of the type of element you want to create.
       // Example: var newDiv = $("<div>");
 
-// IMPORTANT
-// You can't use jQuery methods on objects you haven't wrapped in cash.
-
 // Those are the basics, now research the following jQuery methods and play around with them
 // .text()
 // .html()
@@ -27,8 +24,5 @@ console.log("Click on http://jquery.com to head to the docs");
 // .hide()
 // .fadeIn()
 // .fadeOut()
-
-
-
 
 
