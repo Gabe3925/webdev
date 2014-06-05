@@ -130,5 +130,25 @@ describe("Hangman", function() {
       game.update();
       expect(game.wordDisplay).toBe(game.word);
     });
+
+    it("should resolve victory as true when all letters have been guessed.", function() {
+      game.guesses = ['s', 'e'];
+      game.update();
+      expect(game.victory).toBe(true);
+    });
+
+    it("should resolve victory as false when letters are still missing.", function() {
+      game.guesses = ['s'];
+      game.update();
+      expect(game.victory).toBe(false);
+    });
+
+    it("should deactive the game when all letters have been guessed.", function() {
+      game.guesses = ['s', 'e'];
+      game.update();
+      expect(game.active).toBe(false);
+    });
+
+
   });
 });
