@@ -68,13 +68,6 @@ function addGambit(){
 }
 addGambit();
 
-// NOTES PLH
-// 
-// 
-
-
-
-
 // Move Mystique from bad guys to good guys
 function changeOfHeart(){
   var mystique = document.getElementById('bad-guy-list').children[1];
@@ -89,62 +82,3 @@ function removeStryker(){
   stryker.parentNode.removeChild(stryker);
 }
 removeStryker();
-
-// function clicker (){
-//     var button = document.getElementById('button');
-//     button.addEventListener('click', function(){alert('click');
-//   });
-// }
-
-// clicker();
-
-// function clickProfessorX()
-//   var pfofx = document.getElementById('x');
-//   form.addEventListener('click'), addGambit;
-// }
-// clickProfessorX();
-
-
-// function colorize(){
-//   var form = document.getElementById('paint');
-//   form.addEventListener('submit', function(event){
-//     event.preventDefault();
-//     var color = document.getElementById('input').value;
-//     document.body.style.backgroundColor = color;
-//   });
-// }
-// colorize();
-
-
-///////////////////
-/// Events
-///////////////////
-
-
-function clicker(){
-  var button = document.getElementById('button');
-  button.addEventListener('click', function(){ 
-    alert('click!');
-  });
-}
-clicker();
-
-function clickProfessorX(){
-  var profX = document.getElementById('x');
-  profX.addEventListener('click', addGambit);
-}
-clickProfessorX();
-
-function colorize(){
-  var form = document.getElementById('paint');
-  form.addEventListener('submit', function(event){
-    event.preventDefault();
-    var color = document.getElementById('input').value;
-    document.body.style.backgroundColor = color;
-  });
-}
-colorize();
-
-
-
-
