@@ -1,18 +1,33 @@
 @import url(http://fonts.googleapis.com/css?family=Monoton);
 
 .brush {
+<<<<<<< HEAD
+=======
+  display: inline-block;
+>>>>>>> 34fb00333b49b43d2d050316475dc5a2a4cd40a5
   width: 100px;
   height: 100px;
   background: #1B4370;
   margin: 15px auto;
+<<<<<<< HEAD
+=======
+  margin-right: 20px;
+>>>>>>> 34fb00333b49b43d2d050316475dc5a2a4cd40a5
 }
 
 .square {
   float: left;
+<<<<<<< HEAD
   width: 100px;
   height: 100px;
   background: #E7E5DB;
   margin: 10px;
+=======
+  width: 10px;
+  height: 10px;
+  background: #E7E5DB;
+  margin: 0px;
+>>>>>>> 34fb00333b49b43d2d050316475dc5a2a4cd40a5
 }
 
 h1 {
@@ -27,4 +42,8 @@ h1 {
 
 body {
   background-image: url('ps_neutral.png');
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 34fb00333b49b43d2d050316475dc5a2a4cd40a5
