@@ -15,7 +15,7 @@
     var result = bank[accountType].deposit( amount );
     if ( result ) {
       var balanceView = document.getElementById( accountType + "-balance" );
-      var balanceAmount = result.balanceString;
+      var balanceAmount = "$" + result.balance;
 
       updateBalance( balanceView, balanceAmount );
     }
@@ -39,7 +39,7 @@
       for ( var i = 0; i < accounts.length; i++ ) {
         var accountType = accounts[i];
         var balance = document.getElementById( accountType + "-balance" );
-        var balanceAmount = result[accountType].balanceString;
+        var balanceAmount = "$" + result[accountType].balance;
         updateBalance( balance, balanceAmount );
       }
     }

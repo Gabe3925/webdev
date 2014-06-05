@@ -23,22 +23,22 @@ describe( "Bank", function() {
     it( "should withdraw all money from the requested account and the remainder in the other account", function() {
       bank.withdraw( "checking", 150 );
 
-      expect( bank.checking.balanceString ).toEqual( "$0" );
-      expect( bank.savings.balanceString ).toEqual( "$50" );
+      expect( bank.checking.balance ).toEqual( 0 );
+      expect( bank.savings.balance ).toEqual( 50 );
     });
 
     it( "should withdraw all money from both accounts, if available", function() {
       bank.withdraw( "checking", 200 );
 
-      expect( bank.checking.balanceString ).toEqual( "$0" );
-      expect( bank.savings.balanceString ).toEqual( "$0" );
+      expect( bank.checking.balance ).toEqual( 0 );
+      expect( bank.savings.balance ).toEqual( 0 );
     });
 
     it( "should not withdraw any money, if there are insufficient funds across both accounts", function() {
       bank.withdraw( "checking", 300 );
 
-      expect( bank.checking.balanceString ).toEqual( "$100" );
-      expect( bank.savings.balanceString ).toEqual( "$100" );
+      expect( bank.checking.balance ).toEqual( 100 );
+      expect( bank.savings.balance ).toEqual( 100 );
     });
   });
 });
