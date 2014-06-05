@@ -43,6 +43,12 @@ describe( "Bank Account", function() {
       expect( bankAccount.balanceString ).toEqual( "$70" );
     });
 
+    it( "should withdraw all money from the bank account, if available", function() {
+      bankAccount.withdraw( 100 );
+
+      expect( bankAccount.balanceString ).toEqual( "$0" );
+    });
+
     it( "should not withdraw money, if the balance goes below 0", function() {
       bankAccount.withdraw( 150 );
 
