@@ -18,10 +18,13 @@
 
 
 <h2>Song List</h2>
+  <<ul>
   <% @songs.each do |song| %>
-    <ul>
-    <li><%= song.title %></li>
-    </ul>
+    <li>
+      <%= render partial: 'songs/song', locals: { song: song } %>
+    </li>
+  <% end %>
+  </ul>
     <%= link_to "edit song", edit_artist_song_path(@artist, song) %>
     <%= button_to 'Remove Song', artist_song_path(@artist, song), method: :delete %>
   <% end %>
