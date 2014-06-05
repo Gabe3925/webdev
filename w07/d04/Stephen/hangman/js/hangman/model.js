@@ -21,7 +21,10 @@ Hangman.prototype = {
     this.update();
   },
 
+<<<<<<< HEAD
   // Selects a random word
+=======
+>>>>>>> 0aa2eee0f62c0315c98d82d55f5197cb4460a062
   selectRandomWord: function() {
     var index = Math.round((this.words.length-1) * Math.random());
     return this.words[index];
@@ -32,11 +35,15 @@ Hangman.prototype = {
     return this.guesses.indexOf(letter) >= 0;
   },
 
+<<<<<<< HEAD
   // Checks to see if the specified letter exists within the current word:
+=======
+>>>>>>> 0aa2eee0f62c0315c98d82d55f5197cb4460a062
   hasWordLetter: function(letter) {
     return this.word.indexOf(letter) >= 0;
   },
 
+<<<<<<< HEAD
   //
   guess: function(letter) {
     if (!this.active) return;
@@ -87,4 +94,42 @@ Hangman.prototype = {
     this.wordDisplay = this.active ? display : this.word;
   }
 
+=======
+  guess: function(letter) {
+    if (letter.length != 1) throw "invalid letter guessed!";
+
+    // ignore guesses in non-active games, repeated guesses
+    if (!this.active || this.guesses.indexOf(letter) != -1) return;
+
+    if (!this.hasWordLetter(letter)) this.chances--;
+    this.guesses.push(letter);
+
+    this.update();
+  },
+
+  update: function() {
+    if (!this.active) {
+      this.wordDisplay = this.word;
+      return;
+    }
+
+    // assume victory until proven otherwise
+    var won = true;
+
+    this.wordDisplay = "";
+    for (var i=0, len=this.word.length; i<len; i++) {
+      if ( this.hasGuess(this.word[i]) ) {
+        this.wordDisplay += this.word[i];
+      } else {
+        this.wordDisplay += '_';
+        won = false;
+      }
+    }
+
+    if(won) {
+      this.victory = true;
+      this.active = false;
+    }
+  }
+>>>>>>> 0aa2eee0f62c0315c98d82d55f5197cb4460a062
 };

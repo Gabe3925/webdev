@@ -25,7 +25,10 @@ describe("Hangman", function() {
   });
 
   describe("hasGuess", function() {
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0aa2eee0f62c0315c98d82d55f5197cb4460a062
     beforeEach(function() {
       game.guesses = ['Z'];
     });
@@ -55,24 +58,39 @@ describe("Hangman", function() {
     });
   });
 
+<<<<<<< HEAD
 
   describe("hasWordLetter", function() {
     beforeEach(function() {
       game.word = "volume";
+=======
+  describe("hasWordLetter", function() {
+    beforeEach(function() {
+      game.word="volume";
+>>>>>>> 0aa2eee0f62c0315c98d82d55f5197cb4460a062
     });
 
     it("should return true if word has the specified letter.", function() {
       expect(game.hasWordLetter("v")).toBe(true);
     });
 
+<<<<<<< HEAD
     it("should return false if the word does not have the specified letter.", function() {
+=======
+    it("should return false if word does not have the specified letter.", function() {
+>>>>>>> 0aa2eee0f62c0315c98d82d55f5197cb4460a062
       expect(game.hasWordLetter("z")).toBe(false);
     });
   });
 
   describe("guess", function() {
     beforeEach(function() {
+<<<<<<< HEAD
       game.word = 'richard';
+=======
+      game.word="richard";
+      CHANCES = game.chances;
+>>>>>>> 0aa2eee0f62c0315c98d82d55f5197cb4460a062
     });
 
     it("should add the guessed letter to the guesses array.", function() {
@@ -86,7 +104,11 @@ describe("Hangman", function() {
       expect(game.guesses.length).toBe(0);
     });
 
+<<<<<<< HEAD
     it("should decrement chances ramaining when guessing a new failed letter.", function() {
+=======
+    it("should decrement chances remaining when guessing a new failed letter.", function() {
+>>>>>>> 0aa2eee0f62c0315c98d82d55f5197cb4460a062
       game.guess('z');
       expect(game.chances).toBe(CHANCES-1);
     });
@@ -102,6 +124,7 @@ describe("Hangman", function() {
       expect(game.chances).toBe(CHANCES);
     });
 
+<<<<<<< HEAD
     it("should throw an error when an invalid letter is guessed.", function() {
       expect(function() {
         game.guess('zz');
@@ -113,11 +136,22 @@ describe("Hangman", function() {
 
   describe("update", function() {
 
+=======
+    it("should throw an error upon invalid guess.", function() {
+      expect(function() { game.guess('zz$'); }).toThrow();
+    });
+  });
+
+  describe("update", function() {
+>>>>>>> 0aa2eee0f62c0315c98d82d55f5197cb4460a062
     beforeEach(function() {
       game.word = "sees";
     });
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0aa2eee0f62c0315c98d82d55f5197cb4460a062
     it("should render the word display based on current guesses while the game is active", function() {
       game.active = true;
       game.guesses = ['e'];
@@ -128,7 +162,11 @@ describe("Hangman", function() {
     it("should render the full word display when the game is no longer active.", function() {
       game.active = false;
       game.update();
+<<<<<<< HEAD
       expect(game.wordDisplay).toBe(game.word);
+=======
+      expect(game.wordDisplay).toBe('sees');
+>>>>>>> 0aa2eee0f62c0315c98d82d55f5197cb4460a062
     });
 
     it("should resolve victory as true when all letters have been guessed.", function() {
@@ -137,18 +175,32 @@ describe("Hangman", function() {
       expect(game.victory).toBe(true);
     });
 
+<<<<<<< HEAD
     it("should resolve victory as false when letters are still missing.", function() {
       game.guesses = ['s'];
+=======
+    it("should resolve victory as false when not all letters have been guessed.", function() {
+      game.guesses = ['e'];
+>>>>>>> 0aa2eee0f62c0315c98d82d55f5197cb4460a062
       game.update();
       expect(game.victory).toBe(false);
     });
 
+<<<<<<< HEAD
     it("should deactive the game when all letters have been guessed.", function() {
+=======
+    it("should deactivate the game when all letters have been guessed.", function() {
+>>>>>>> 0aa2eee0f62c0315c98d82d55f5197cb4460a062
       game.guesses = ['s', 'e'];
       game.update();
       expect(game.active).toBe(false);
     });
+<<<<<<< HEAD
 
 
   });
 });
+=======
+  });
+});
+>>>>>>> 0aa2eee0f62c0315c98d82d55f5197cb4460a062
