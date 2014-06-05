@@ -74,9 +74,12 @@ keepItSecretKeepItSafe();
 function makeBuddies(buddies) {
   // create an aside tag
 <<<<<<< HEAD
+<<<<<<< HEAD
   // display an unordered list of buddies in the aside
   // insert your aside before rivendell
 =======
+=======
+>>>>>>> 64217c132cc503226a9689b293afd95499ad8863
   var asideTag = document.createElement('aside');
   // display an unordered list of buddies in the aside
   var buddiesList = document.createElement('ul');
@@ -89,7 +92,10 @@ function makeBuddies(buddies) {
   asideTag.appendChild(buddiesList);
   var rivendell = document.getElementsByTagName('article')[1];
   rivendell.parentNode.insertBefore(asideTag, rivendell);
+<<<<<<< HEAD
 >>>>>>> 34fb00333b49b43d2d050316475dc5a2a4cd40a5
+=======
+>>>>>>> 64217c132cc503226a9689b293afd95499ad8863
 }
 makeBuddies(buddies);
 
@@ -129,4 +135,8 @@ function forgeTheFellowShip() {
   var rivendell = document.getElementsByTagName('article')[1];
   rivendell.appendChild(theFellowship);
 }
+<<<<<<< HEAD
 forgeTheFellowShip();
+=======
+forgeTheFellowShip();
+>>>>>>> 64217c132cc503226a9689b293afd95499ad8863
