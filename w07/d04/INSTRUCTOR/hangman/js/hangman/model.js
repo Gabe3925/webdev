@@ -36,7 +36,7 @@ Hangman.prototype = {
     return this.word.indexOf(letter) >= 0;
   },
 
-  // 
+  //
   guess: function(letter) {
     if (!this.active) return;
 
@@ -52,6 +52,16 @@ Hangman.prototype = {
       }
     }
 
+  },
+
+  update: function() {
+    var display = '';
+    for (var i = 0; i < this.word.length; i++) {
+      var letter = this.word[i];
+      var hasGuess = this.hasGuess(letter);
+      display += hasGuess ? letter : '_';
+    }
+    this.wordDisplay = display;
   }
 
 };

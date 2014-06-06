@@ -27,17 +27,19 @@ function depositSavings() {
 depositSavings();
 
 //As a user, I want to withdraw money from one of the bank accounts
+//the below are set up in two different manners, which one is perferrable?
 function withdrawChecking() {
   var checkingWithdrawButton = document.getElementById('checking-withdraw');
   checkingWithdrawButton.addEventListener('click', function() {
-    var checkingWithdrawAmount = document.getElementById('checking-amount').value;
-    if ((parseInt(checkingBalance.innerHTML.replace('$', ''))) >= (parseInt(checkingWithdrawAmount))) {
-      checkingBalance.innerHTML = parseInt(checkingBalance.innerHTML.replace('$', '')) - parseInt(checkingWithdrawAmount);
-      checkingBalance.innerHTML = '$ ' + checkingBalance.innerHTML;
+    //why does the below || 0 add a space between the dollar sign?
+    var checkingWithdrawAmount = document.getElementById('checking-amount').value || 0;
+    if ((parseInt(checkingBalance.innerHTML.replace('$', ''))) < (parseInt(checkingWithdrawAmount))) {
       document.getElementById('checking-amount').value = '';
-    } else {
-      document.getElementById('checking-amount').value = '';
+      return
     }
+    checkingBalance.innerHTML = parseInt(checkingBalance.innerHTML.replace('$', '')) - parseInt(checkingWithdrawAmount);
+    checkingBalance.innerHTML = '$ ' + checkingBalance.innerHTML;
+    document.getElementById('checking-amount').value = '';
   });
 }
 withdrawChecking();
