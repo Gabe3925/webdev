@@ -9,5 +9,13 @@ console.log("Click on http://jquery.com to head to the docs");
       // Example:  $("#title")
 
 // Q: How do you create a NEW jQuery object you can later append to the DOM?
+<<<<<<< HEAD
 // A: Provide the opening tag of the type of element you want to create and then wrap it in cash
       // Example: var newDiv = $("<div>");
+=======
+// A: Provide the opening tag of the type of element you want to create.
+      // Example: var newDiv = $("<div>");
+
+
+
+>>>>>>> fartstore
