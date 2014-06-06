@@ -7,8 +7,8 @@
   color: rgb(165, 119, 0);
 }
 
-.product div {
-  color: rgba(165, 119, 0, 0.5);
+.product {
+  background-color: rgba(165, 119, 0, 0.5);
   height: 200px;
   width: 200px;
 }
