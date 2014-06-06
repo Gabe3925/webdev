@@ -10,6 +10,10 @@ Today we learn jQuery, the world's most popular JavaScript library. Take 15 minu
 1. How does it solve it?
     - Articulation: It allows developers to create abstractions for low level interactions.
 1. What are the alternatives?
+<<<<<<< HEAD
     - Articulation: Ajax
 
 
+=======
+    - Articulation:
+>>>>>>> bea577ebf88311544e37cc14d08b12dc30fa5719
