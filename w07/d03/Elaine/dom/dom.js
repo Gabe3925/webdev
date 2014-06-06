@@ -107,7 +107,7 @@ function colorize() {
     event.preventDefault();
     // console.log(event);
     var color = document.getElementById('input').value;
-    document.body.style.backgroundColor = color;
+    document.querySelector('.brush').style.backgroundColor = color;
   });
 }
 colorize();
