@@ -15,4 +15,6 @@ The jQuery Sandbox is cool, but market demands have changed and we need a fart s
 ####Bonus
 Add an event listener to your new button using jQuery. When the button is clicked, a div of the "product" class should fade into view at the bottom of the dom. After 5 seconds, this div should disappear. 
 
+__NOTE:__ For this one, there are several options you can use for setting event listeners, but you should choose jQuery's `.on()` method, for reasons I plan on going over.
+
 
