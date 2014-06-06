@@ -13,15 +13,33 @@ HangmanView.prototype = {
     this.uiResult = document.querySelector('[data-ui="result"]');
 
     this.uiLetter.addEventListener('keyup', _.bind(this.onLetter, this));
+    this.uiNewGame.addEventListener('click', _.bind(this.onReset, this));
+    this.render();
   },
 
   render: function() {
-    this.uiGuesses.innerText = this.model.guesses;
+
+    var result = '';
+
+    if (!this.model.active) {
+      result = 'You '+ (this.model.victory ? 'win!' : 'lose');
+    }
+
+    this.uiResult.innerText = result;
+    this.uiWord.innerText = this.model.wordDisplay;
+    this.uiChances.innerText = this.model.chances;
+    this.uiGuesses.innerText = this.model.guesses.join('');
   },
 
   onLetter: function() {
     var letter = this.uiLetter.value;
+    this.uiLetter.value = '';
     this.model.guess(letter);
+    this.render();
+  },
+
+  onReset: function() {
+    this.model.reset();
     this.render();
   }
 };
