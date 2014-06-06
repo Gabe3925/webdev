@@ -22,19 +22,17 @@ body {
 
 
 
-div .outer {
+.outer {
   background-color: #eabc6f;
-  height: 525px;
+  border: 2px solid red;
 
   margin: 75px auto;
 
   padding: 8px;
   width: 684px;
-
-
 }
 
-div .form {
+.form {
   background-color: #eabc6f;
 
   border: 2px solid black;
@@ -54,14 +52,14 @@ img {
 
   }
 
-  div .info_column {
+ .info_column {
   border: 1px solid #e1c49a;
   float: left;
   margin: 15px;
   width: 300px;
   }
 
-  div .image_column {
+.image_column {
   border: 1px solid #e1c49a;
   float: left;
   margin: 15px;
@@ -69,7 +67,7 @@ img {
   width: 300px;
   }
 
- div .banner {
+.banner {
   height: 75px;
   margin: auto;
   text-align: center;
