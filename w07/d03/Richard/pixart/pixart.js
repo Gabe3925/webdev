@@ -2,9 +2,9 @@
 * @Author: Richard Hessler
 * @Date:   2014-06-04 16:18:10
 * @Last Modified by:   Richard Hessler
-* @Last Modified time: 2014-06-04 16:53:49
+* @Last Modified time: 2014-06-04 17:31:43
 */
-
+var brush = document.querySelector('.brush');
 
 /* Commit 1 */
 function colorize() {
@@ -18,12 +18,16 @@ function colorize() {
 colorize();
 
 function createDivs() {
-  for(var i = 20; i > 0; i--){
+  for(var i = 200000; i > 0; i--){
   var div = document.createElement('div');
   div.setAttribute('class','square');
+  div.addEventListener('mouseover', function(){
+    this.style.backgroundColor = brush.style.backgroundColor;
+  })
   document.body.appendChild(div);
 }
 }
 createDivs();
 /* Commit 2 */
+
 
