@@ -9,14 +9,15 @@
 
 .square {
   float: left;
-  width: 20px;
-  height: 20px;
-  background: #E7E5DB;
-  margin: 0px;
   width: 100px;
   height: 100px;
   background: #E7E5DB;
   margin: 10px;
+
+  width: 2px;
+  height: 2px;
+  background: #E7E5DB;
+  margin: 0px;
 
 }
 
@@ -31,6 +32,6 @@ h1 {
 }
 
 body {
+  width: 500px;
   background-image: url('ps_neutral.png');
 }
-
