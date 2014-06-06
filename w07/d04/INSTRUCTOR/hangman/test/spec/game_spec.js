@@ -109,4 +109,46 @@ describe("Hangman", function() {
     });
 
   });
+
+
+  describe("update", function() {
+
+    beforeEach(function() {
+      game.word = "sees";
+    });
+
+
+    it("should render the word display based on current guesses while the game is active", function() {
+      game.active = true;
+      game.guesses = ['e'];
+      game.update();
+      expect(game.wordDisplay).toBe('_ee_');
+    });
+
+    it("should render the full word display when the game is no longer active.", function() {
+      game.active = false;
+      game.update();
+      expect(game.wordDisplay).toBe(game.word);
+    });
+
+    it("should resolve victory as true when all letters have been guessed.", function() {
+      game.guesses = ['s', 'e'];
+      game.update();
+      expect(game.victory).toBe(true);
+    });
+
+    it("should resolve victory as false when letters are still missing.", function() {
+      game.guesses = ['s'];
+      game.update();
+      expect(game.victory).toBe(false);
+    });
+
+    it("should deactive the game when all letters have been guessed.", function() {
+      game.guesses = ['s', 'e'];
+      game.update();
+      expect(game.active).toBe(false);
+    });
+
+
+  });
 });
