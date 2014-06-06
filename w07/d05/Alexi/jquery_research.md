@@ -4,12 +4,20 @@ Today we learn jQuery, the world's most popular JavaScript library. Take 15 minu
 
 ####Questions
 1. What does jQuery do? 
+    - Articulation: Provides easy-to-use syntax for developers to create JS content
+2. What problem does jQuery solve?
+    - Articulation: designed to make it easier to navigate a document, select DOM elements, create animations, handle events, and develop Ajax applications
+        - jQuery also provides capabilities for developers to create plug-ins on top of the JavaScript library. 
+            - This enables developers to create abstractions for low-level interaction and animation, advanced effects and high-level, theme-able widgets. 
+        - The modular approach to the jQuery library allows the creation of powerful dynamic web pages and web applications.
+3. How does it solve it?
     - Articulation: 
-1. What problem does jQuery solve?
-    - Articulation: 
-1. How does it solve it?
-    - Articulation: 
-1. What are the alternatives?
+        - DOM element selections
+        - Traversal
+        - Manipulation
+4. What are the alternatives?
     - Articulation:
+    -   YUI v3
+    -   Dojo
 
 
