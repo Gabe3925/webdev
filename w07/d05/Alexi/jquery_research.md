@@ -17,7 +17,10 @@ Today we learn jQuery, the world's most popular JavaScript library. Take 15 minu
         - Manipulation
 4. What are the alternatives?
     - Articulation:
+<<<<<<< HEAD
     -   YUI v3
     -   Dojo
 
 
+=======
+>>>>>>> bea577ebf88311544e37cc14d08b12dc30fa5719
