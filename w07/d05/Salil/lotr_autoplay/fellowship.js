@@ -64,7 +64,7 @@ function beautifulStranger() {
 function forgeTheFellowShip() {
   console.log("forging the fellowship like a boss");
   // move the hobbits and the buddies to Rivendell
-  // create a new div called 'the-fellowship'
+  // create a new div with an id of 'the-fellowship'
   // add each hobbit and buddy one at a time to 'the-fellowship'
   // after each character is added make an alert that they have joined your party
 }
