@@ -18,5 +18,3 @@ Today we learn jQuery, the world's most popular JavaScript library. Take 15 minu
 
 4. What are the alternatives?
     - Articulation:
-
-
