@@ -5,11 +5,18 @@ Today we learn jQuery, the world's most popular JavaScript library. Take 15 minu
 ####Questions
 1. What does jQuery do? 
     - Articulation: 
-1. What problem does jQuery solve?
+    
+
+    
+2. What problem does jQuery solve?
     - Articulation: 
-1. How does it solve it?
+    
+
+3. How does it solve it?
     - Articulation: 
-1. What are the alternatives?
+
+
+4. What are the alternatives?
     - Articulation:
 
 
