@@ -9,7 +9,6 @@ Today we learn jQuery, the world's most popular JavaScript library. Take 15 minu
     - Articulation: Document traversal, event handling
 1. How does it solve it?
     - Articulation: Easy to use API that works across a multitude of browsers.
-1. What are the alternatives?
+1. What are the alternatives:
     - Articulation: Prototype (a precursor)
-
 
