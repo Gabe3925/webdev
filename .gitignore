@@ -31,3 +31,6 @@ thumbs.db
 
 # Ignore Node dependencies
 node_modules
+
+# Ignore jquery_research.md
+jquery_research.md
