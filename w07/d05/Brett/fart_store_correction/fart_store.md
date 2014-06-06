@@ -13,7 +13,7 @@ The jQuery Sandbox is cool, but market demands have changed and we need a fart s
 1. Create a button element with text "Sample The Product" and an id of "sample-button". Append it to the DOM's `<body>` element
 
 ####Bonus
-Add an event listener to your new button using jQuery's `.on()` method. When the button is clicked, a div of the "product" class should fade into view at the bottom of the dom. After 5 seconds, this div should disappear. 
+Add an event listener to your new button using jQuery's `.on()` method. When the button is clicked, a div of the "product" class should fade into view at the bottom of the dom. After 5 seconds, this div should disappear.
 
 __NOTE:__ For this one, there are several options you can use for setting the event listener, but it's best to go with jQuery's `.on()` method, for reasons I'll soon explain.
 

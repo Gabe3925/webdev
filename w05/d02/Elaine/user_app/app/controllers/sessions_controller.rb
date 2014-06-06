@@ -14,6 +14,7 @@ class SessionsController < ApplicationController
       sign_in user
       redirect_back_or root_url
     else
+      # If either the user wasn't located or the password didn't match, show an error message and reload the sign in page.
       flash[:error] = 'Invalid email/password.'
       redirect_to signin_url
 
