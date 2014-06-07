@@ -99,7 +99,6 @@ function clickProfessorX() {
   profX.addEventListener("click", addGambit);
 }
 clickProfessorX();
-
 function colorize() {
   var form = document.getElementById("paint");
   form.addEventListener("submit", function(event) {

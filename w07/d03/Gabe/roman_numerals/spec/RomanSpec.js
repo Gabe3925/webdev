@@ -1,11 +1,38 @@
+//    EXAMPLE:
+//it('will allow us to called named functions with their name', function() {
+//    function test() {
+//      return 1;
+//    }
+//    expect( test()).toBe(1);
+//});
+
+
+
+
+
+
 describe("romanize", function() {
+
+
   it("converts 1", function() {
+
+    function test() {
+      return 'I';
+    }
     expect(romanize(1)).toEqual('I');
   });
 
+
+
   it("converts 2", function() {
+
+    function test() {
+        return 'II';
+    }
     expect(romanize(2)).toEqual('II');
   });
+
+
 
   it("converts 3", function() {
     expect(romanize(3)).toEqual('III');
