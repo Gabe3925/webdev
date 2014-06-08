@@ -6,8 +6,8 @@ var savingsBalance = document.getElementById('savings-balance');
 function depositChecking() {
   var checkingDepositButton = document.getElementById('checking-deposit');
   checkingDepositButton.addEventListener('click', function() {
-    var checkingDepositAmount = document.getElementById('checking-amount').value;
-    //why does appending dollar sign in below break the function?
+    //why does the 0 int shift when I withdraw 0.  how else can i prevent NaN?
+    var checkingDepositAmount = document.getElementById('checking-amount').value || 0;
     checkingBalance.innerHTML = parseInt(checkingBalance.innerHTML.replace('$', '')) + parseInt(checkingDepositAmount);
     checkingBalance.innerHTML = '$ ' + checkingBalance.innerHTML;
     document.getElementById('checking-amount').value = '';
@@ -18,7 +18,7 @@ depositChecking();
 function depositSavings() {
     var savingsDepositButton = document.getElementById('savings-deposit');
     savingsDepositButton.addEventListener('click', function() {
-      var savingsDepositAmount = document.getElementById('savings-amount').value;
+      var savingsDepositAmount = document.getElementById('savings-amount').value || 0;
       savingsBalance.innerHTML = parseInt(savingsBalance.innerHTML.replace('$', '')) + parseInt(savingsDepositAmount);
       savingsBalance.innerHTML = '$ ' + savingsBalance.innerHTML;
       document.getElementById('savings-amount').value = '';
@@ -48,7 +48,11 @@ function withdrawSavings() {
   var savingsWithdrawButton = document.getElementById('savings-withdraw');
   savingsWithdrawButton.addEventListener('click', function() {
     var savingsWithdrawAmount = document.getElementById('savings-amount').value
-    if ((parseInt(savingsBalance.innerHTML.replace('$', ''))) >= (parseInt(savingsWithdrawAmount))) {
+    if ((parseInt(savingsBalance.innerHTML.replace('$', ''))) < (parseInt(savingsWithdrawAmount)) && (parseInt(checkingBalance.innerHTML.replace('$', ''))) + (parseInt(savingsBalance.innerHTML.replace('$', ''))) > (parseInt(savingsWithdrawAmount))) {
+      checkingBalance.innerHTML = '$' + ((parseInt(checkingBalance.innerHTML.replace('$', ''))) - ((parseInt(savingsWithdrawAmount)) - (parseInt(savingsBalance.innerHTML.replace('$', '')))))
+      savingsBalance.innerHTML = '$' + 0;
+      document.getElementById('savings-amount').value = '';
+    } else if ((parseInt(savingsBalance.innerHTML.replace('$', ''))) >= (parseInt(savingsWithdrawAmount))) {
       savingsBalance.innerHTML = parseInt(savingsBalance.innerHTML.replace('$', '')) - parseInt(savingsWithdrawAmount);
       savingsBalance.innerHTML = '$ ' + savingsBalance.innerHTML;
       document.getElementById('savings-amount').value = '';
@@ -58,3 +62,5 @@ function withdrawSavings() {
   });
 }
 withdrawSavings();
+
+
