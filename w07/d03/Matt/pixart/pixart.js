@@ -8,29 +8,22 @@
 //   });
 // }
 
-function colorize() {
-  var form = document.getElementById('form');
-  var input = document.querySelector('#color-field');
-  var brush = document.querySelector('.brush');
 
-  form.addEventListener('submit', function(event) {
-    event.preventDefault();
-    brush.style.background = input.value
+var form = document.getElementById('form');
+var input = document.querySelector('#color-field');
+var brush = document.querySelector('.brush');
+
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+  brush.style.backgroundColor = input.value
+});
+
+for( var i = 0; i < 8000; i++){
+  var div = document.createElement('div');
+  div.classList.add('square');
+  div.addEventListener('mouseover', function(){
+    this.style.backgroundColor = brush.style.backgroundColor;
   });
+  document.body.appendChild(div);
 }
 
-colorize();
-
-function boxize() {
-  var brush = document.querySelector('.brush');
-  var conBox = document.querySelector('.controls');
-
-  for (i=0; i <= 20; i++) {
-    var box = document.createElement('div');
-    box.setAttribute('class', 'brush');
-
-    conBox.appendChild(box)
-  }
-}
-
-boxize();
