@@ -33,7 +33,7 @@ Game.prototype.gameOver = function() {
     return true;
   }
 
-  // if the game has more than 8 turns, we terminate it regardless of whether a winner has been crowned
+  // if the game has more than 8 turns, we terminate it regardless of whether a champion has been crowned
   if (this.turnNumber > 8) {
     return true;
   }
@@ -54,6 +54,7 @@ Game.prototype.checkWinner = function() {
   }
   // FOR each column in the board
   for(var i = 0; i < 3; i++){
+    // first we check that the boards have valid values (ie: either 'x' or 'o')
     if( (this.board[0][i] === "x" ||
          this.board[0][i] === "o") &&
         (this.board[0][i] === this.board[1][i]) &&
