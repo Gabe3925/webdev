@@ -38,7 +38,11 @@ Hangman.prototype = {
     return this.word.indexOf(letter) >= 0;
   },
 
+<<<<<<< HEAD
+  //
+=======
   // Recieves a letter into the game,
+>>>>>>> 237bfdefec1527c1b8fa2bffc69016c73516271b
   guess: function(letter) {
 
     // If the game is over, then don't run the rest of this function.
@@ -99,8 +103,21 @@ Hangman.prototype = {
       this.active = false;
     }
 
+<<<<<<< HEAD
+  },
+
+  update: function() {
+    var display = '';
+    for (var i = 0; i < this.word.length; i++) {
+      var letter = this.word[i];
+      var hasGuess = this.hasGuess(letter);
+      display += hasGuess ? letter : '_';
+    }
+    this.wordDisplay = display;
+=======
     // is the game active? if so, display the hidden word. otherwise, show the full word.
     this.wordDisplay = this.active ? display : this.word;
+>>>>>>> 237bfdefec1527c1b8fa2bffc69016c73516271b
   }
 
 };

@@ -22,15 +22,15 @@
 
   <script src="js/jquery.js"></script>
   <script>
-
   $('#sync-button').on('click', function() {
+
+    $(this).text('Sync was triggered');
 
     var start = Date.now();
 
     // Just sit here an do nothing for five seconds...
     while(Date.now() - start < 5000);
   });
-
   </script>
 </body>
 </html>
