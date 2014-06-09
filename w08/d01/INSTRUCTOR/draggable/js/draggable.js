@@ -1,51 +1,59 @@
+var $body = $('body');
+var height = $body.height();
+var width = $body.width();
 
-$body = $("body");
+$('img.empty').each(function() {
+  var $img = $(this);
 
-$('.empty').each(function() {
-  var $empty = $(this);
-  
-  $empty.css({
-    top: Math.random() * ($body.height() - $empty.height() - 200) + 200,
-    left: Math.random() * ($body.width() - $empty.width())
+  $img.css({
+    left: (width - $img.width()) * Math.random(),
+    top: (height - $img.height() - 200) * Math.random() + 200
   });
 });
 
-$(".drag").on('mousedown', function(evt) {
+$('img.drag')
+  .each(function(index) {
+    $(this).css({
+      left: width / 3 * index,
+      top: 10
+    });
+  })
+  .on('mousedown', function(evt) {
+    evt.preventDefault();
+    drag(this);
+  });
 
-  evt.preventDefault();
-  var $dragger = $(this);
-  var $doc = $(document);
 
-  $doc
+function drag(el) {
+  var $el = $(el);
+  var $doc = $(document)
     .on('mousemove', function(evt) {
-      evt.preventDefault();
-
-      $dragger.css({
-        top: evt.pageY - ($dragger.height() / 2),
-        left: evt.pageX - ($dragger.width() / 2)
+      $el.css({
+        left: evt.pageX - $el.width()/2,
+        top: evt.pageY - $el.height()/2
       });
     })
-    .on('mouseup', function() {
+    .on('mouseup', function(evt) {
       $doc.off('mousemove mouseup');
-      drop($dragger);
+      drop($el);
     });
-
-});
+}
 
 function drop(el) {
-  var $el = $(el);
-  var className = $el.attr('class').replace('drag ', '');
-  var $negative = $('.empty.'+className);
-  var negativePosition = $negative.position();
-  var positivePosition = $el.position();
+  var $pos = $(el);
+  var negative = $pos.attr('src').replace('-pos', '-neg');
+  var $neg = $('img[src="'+ negative +'"]');
 
-  if (distance(negativePosition, positivePosition) < 50) {
-    $el.animate(negativePosition);
+  var pos = $pos.offset();
+  var neg = $neg.offset();
+
+  if (distance(pos, neg) < 40) {
+    $pos.animate(neg);
   }
 }
 
-function distance(p1, p2) {
-  var a = p2.left - p1.left;
-  var b = p2.top - p1.top;
-  return Math.sqrt(a* a + b * b);
+function distance(pos, neg) {
+  var a = neg.left - pos.left;
+  var b = neg.top - pos.top;
+  return Math.sqrt(a * a + b * b);
 }
