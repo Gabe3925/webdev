@@ -9,6 +9,7 @@ $('#search').on('submit', function(evt) {
   var keyword = $('#movie-search').val();
   var apiPath = "http://www.omdbapi.com/?s=" + escape(keyword);
   $.getJSON(apiPath).then(function(movies) {
+    $selectDropdown.html('');
     for (var i = 0; i < movies.Search.length; i++) {
       $selectDropdown.show();
       $selectDropdown.val($("#movie-select option:first").text('MOVIES MATCHING: ' + keyword));
