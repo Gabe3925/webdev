@@ -1,9 +1,11 @@
+// Constructor for the School Object
 function School(name) {
   this.name = name;
   this.houses = [];
 }
-
+  // Prototype for School Object
   School.prototype = {
+    //function to add house
     addHouse: function(name) {
       this.houses.push(new House(name));
     },
@@ -73,10 +75,10 @@ var randy = new Student("Randy Latz");
 var richard = new Student("Richard Hessler");
 var yiHsiao = new Student("Yi-Hsiao Liu");
 
-var gryff = new House("Gryffindor");
-var huff = new House("Hufflepuff");
-var slyth = new House("Slytherin");
-var rav = new House("Ravenclaw");
+// var gryff = new House("Gryffindor");
+// var huff = new House("Hufflepuff");
+// var slyth = new House("Slytherin");
+// var rav = new House("Ravenclaw");
 
 gryff.addStudent("Harry Potter");
 gryff.addStudent("Hermione Granger");
