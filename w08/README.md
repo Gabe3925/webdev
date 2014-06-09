@@ -1,4 +1,4 @@
-#Week 7 - Intro to Async & Group Work
+#Week 8 - Intro to Async & Group Work
 
 ###What did we do last week?
 - We learned the basics of JavaScript, the DOM, and looked at some major libraries (Underscore and jQuery).
