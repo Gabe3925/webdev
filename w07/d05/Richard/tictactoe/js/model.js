@@ -2,7 +2,7 @@
 * @Author: Richard Hessler
 * @Date:   2014-06-07 13:55:32
 * @Last Modified by:   Richard Hessler
-* @Last Modified time: 2014-06-09 00:41:51
+* @Last Modified time: 2014-06-09 09:42:55
 */
 
 //Global Variables
@@ -27,18 +27,22 @@ function clickBtn(btn) {
   // begins with player = 1
   if(player === 1){
     docVar.value = 'X';              // assigns value of "X" to first and every other block clicked
-    docVar.disabled = 'disabled';    // adds disabled to input button (block) element
+    docVar.disabled = 'disabled';   // adds disabled to input button (block) element
     player -=1;                     //increments player value to 0 - to be O's turn next
     boxesClicked +=1;               // increments boxes clicked
+    docVar.classList.add("red");
     checkForWinner();               // update state of game
+
 
   } else {
     docVar.value = 'O';             // assigns value of "O" to first and every other block clicked
-    docVar.disabled = 'disabled';   // adds disabled to input button (block) element
+    docVar.disabled = 'disabled';  // adds disabled to input button (block) element
     player += 1;                    //deccrements player value to 0 - to be O's turn next
     boxesClicked += 1;              // increments boxes clicked
+    docVar.classList.add("red");
     checkForWinner();               // update state of game
   }
+
 }
 
 // update function assessing status of game state
@@ -73,15 +77,25 @@ function checkForWinner(){
 
 // resets game attributes to new
 function reset() {
+
   player = 1;                                         // reseting player value to 1
   boxesClicked = 0;                                   // reseting boxesClicked value to 0
   for (var i=1; i<=9; i++){
-    document.getElementById('btn'+i).value = '';          //looping through and assigning all values to ''
-    document.getElementById('btn'+i).disabled = '';       //looping through and assigning all disabled attr to ''
+    var docVar = document.getElementById('btn'+i);
+    docVar.value = '';                                //looping through and assigning all values to ''
+    docVar.disabled = '';                             //looping through and assigning all disabled attr to ''
+    docVar.className = "";                            //removes classes on elements
   }
 }
 
+
+
 // for some reason this function was kind of working- meaning on first load it would work great, but seemed to have odd diminishing returns.  It depended on where I clicked, but the next game or the one after that, would reset or send me to the relocat page before the game had concluded.  I thought I covered my bases in the reset function with (document.getElementById('btn'+i).disabled = '';) but I suppose not.
+//
+//
+//
+//
+
 // function playAgain() {
 //   y = confirm(winner +" PLAY AGAIN?");
 //     if(y===true){
