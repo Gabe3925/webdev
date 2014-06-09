@@ -37,11 +37,7 @@ var pokemon = {
   },
 
   totalStats : function(name){
-    var monster = _.reduce(
-        (_.values(
-        (_.findWhere(allPokemon, {name: name})).stats)
-        ).map(function(x){return parseInt(x,10)}), function(memo, num)
-        { return memo + num; }, 0);
+    var monster = _.reduce((_.values((_.findWhere(allPokemon, {name: name})).stats)).map(function(x){return parseInt(x,10)}), function(memo, num){ return memo + num; }, 0);
     return monster;
   }
 
