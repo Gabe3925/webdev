@@ -6,17 +6,21 @@
   <body>
     <h1>this</h1>
     <script type='text/javascript'>
-
+      //prints 1
       console.log('1')
+      //prints the window, because the 'this' will references the closure which it is currently acting upon.
       console.log(this);
 
       var color = 'red';
 
+      //by itself, doesn't print anything.
       var shmee = function(){
         console.log(this);
         console.log(this.color);
       };
 
+      //prints 2.
+      //shmee should print out
       console.log('2')
       shmee();
 
