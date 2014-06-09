@@ -6,6 +6,8 @@
 
 `"$NN is £NN".`
 
+1.6747 Price of 1 GBP in USD
+
 * Write a function poundsToDollars that takes a pound number as input and outputs a string of what the dollar equivalent is.
 
 `"£NN is $NN".`
