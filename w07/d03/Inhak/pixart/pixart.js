@@ -12,9 +12,13 @@ colorize();
 
 function addTwentySquares(){
   var body = document.body;
-  for (i = 0; i < 20; i++){
+  var brush = document.querySelector('.brush');
+  for (i = 0; i < 10000; i++){
     var divs = document.createElement('div');
     divs.classList.add('square');
+    divs.addEventListener('mouseover', function(){
+      this.style.backgroundColor = brush.style.backgroundColor;
+    });
     body.appendChild(divs);
   }
 }
