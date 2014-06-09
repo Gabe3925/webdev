@@ -6,3 +6,26 @@
 
 
 
+var start = document.getElementById("start");
+var timer = document.getElementById("timer");
+var reset = document.getElementById("reset");
+var pause = document.getElementById("pause");
+
+
+var seconds = 0;
+var timerID;
+
+start.addEventListener("click", function(){
+  timer.textContent = "Time Elapsed" + seconds;
+  setInterval(function){
+    seconds ++;
+    timer.textContent = "Time Elasped: " + seconds;
+  }, 1000);
+});
+
+reset.addEventListener("click", function{
+  timer.textContent = "Stop Watch";
+  clearInterval(timerID);
+  seconds = 0;
+})
+
