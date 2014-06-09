@@ -9,27 +9,31 @@ Game.prototype.mark = function(play, location) {
     throw new Error("game over!");
   }
 
+  // if this spot hasn't been taken and it's the appropriate player's turn, mark it
   if (!this.playAt(location) && play === this.turn) {
     this.board[location.row][location.column] = play;
     this.turnNumber++;
     this.nextTurn();
   };
-  
+
 }
 
 Game.prototype.playAt = function(location) {
-  return this.board[location.row][location.column]; 
+  return this.board[location.row][location.column];
 }
 
 Game.prototype.nextTurn = function() {
-  this.turn = ( this.turn === "x" ? "o" : "x" )
+  this.turn = ( this.turn === "x" ? "o" : "x" );
 };
 
 Game.prototype.gameOver = function() {
+  // if the check winner method returns anything other than undefined,
+  // then we know it's defined and the game is over
   if (this.checkWinner() !== undefined) {
     return true;
   }
 
+  // if the game has more than 8 turns, we terminate it regardless of whether a winner has been crowned
   if (this.turnNumber > 8) {
     return true;
   }
@@ -65,11 +69,11 @@ Game.prototype.checkWinner = function() {
     return this.board[1][1];
   }
   // diagonal top right
-  if( (this.board[0][2] === "x" || 
+  if( (this.board[0][2] === "x" ||
        this.board[0][2] === "o") &&
       (this.board[0][2] === this.board[1][1]) &&
       (this.board[1][1] === this.board[2][0]) ){
     return this.board[1][1];
   }
 
-}
+};
