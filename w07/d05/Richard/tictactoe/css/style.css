@@ -1,0 +1,41 @@
+/*
+* @Author: Richard Hessler
+* @Date:   2014-06-07 13:59:49
+* @Last Modified by:   Richard Hessler
+* @Last Modified time: 2014-06-09 10:01:04
+*/
+
+body {
+  background-color: black;
+  text-align:center;
+}
+
+.red {
+  background-color: rgba(250, 250,250,.7);
+}
+h1 {
+  color: white;
+  margin: 100px 0 100px 0;
+  text-align: center;
+}
+
+div {
+  border: 1px solid black;
+  height: 310px;
+  width: 310px;
+  text-align: center;
+  margin: auto;
+}
+
+input {
+  background-color: white;
+  border: 1px solid #888;
+  float: right;
+  font-size: 70px;
+  height: 100px;
+  padding: 0px;
+  position: relative;
+  margin: -2px;
+  text-align: center;
+  width: 100px;
+}
