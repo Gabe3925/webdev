@@ -4,7 +4,7 @@ document.querySelector('ul').addEventListener('click', function(e){
   for(i = 0; i <e.target.parentElement.children.length; i++) {
     if(e.target === e.target.parentElement.children[i]) {
        game.mark(game.turn, {row: parseInt(i/3), column: i%3});
-       render(); 
+       render();
     };
   };
 });
