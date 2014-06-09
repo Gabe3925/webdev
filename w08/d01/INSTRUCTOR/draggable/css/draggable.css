@@ -9,24 +9,10 @@ img {
 
 img.empty {
   opacity: 0.5;
-  top: 200px;
   z-index: 0;
 }
 
 img.drag {
   cursor: move;
-  top: 0;
   z-index: 1;
-}
-
-.dog {
-  left: 20px;
-}
-
-.fox {
-  left: 220px;
-}
-
-.cat {
-  left: 420px;
 }
