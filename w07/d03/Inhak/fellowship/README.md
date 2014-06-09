@@ -7,7 +7,7 @@ Create a function for each of the following steps to practice DOM Manipulation a
 
 var hobbits = [
   'Frodo Baggins',
-  'Samwise 'Sam' Gamgee',
+  'Samwise \'Sam\' Gamgee',
   'Meriadoc \'Merry\' Brandybuck',
   'Peregrin 'Pippin' Took'
 ];
