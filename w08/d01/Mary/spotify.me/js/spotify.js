@@ -12,12 +12,11 @@ $('#search-type').on('change', function() {
   search();
 });
 
-var nextPageLink = '<a href="" id="next-page-link">Next Page</a>'
-    $('#results').prepend(nextPageLink)
-    $('#next-page-link').on('click', function(){
-      page++;
-      search();
-    })
+
+$('#next-page-link').on('click', function(){
+  page++;
+  search();
+})
 
 
 function search() {
@@ -42,7 +41,8 @@ function albumSearch(keyword) {
       html += '<li><a href="' + albums.albums[i].href + '">' + albums.albums[i].name + '</a></li>';
     }
     $('#results').html(html);
-    $('#results').prepend('<p>Showing ' + offset + '-' + (offset + 100) + ' results of ' + numberOfResults + '.</p>')
+    $('#results').prepend('<p>Showing ' + offset + '-' + (offset + 100) + ' results of ' + numberOfResults + '.</p>');
+    $('#results').prepend('<a href="" id="next-page-link">Next Page</a>')
   })
 }
 
@@ -58,7 +58,8 @@ function artistSearch(keyword) {
       html += '<li><a href="' + artists.artists[i].href + '">' + artists.artists[i].name + '</a></li>';
     }
     $('#results').html(html);
-    $('#results').prepend('<p>Showing ' + offset + '-' + (offset + 100) + ' results of ' + numberOfResults + '.</p>')
+    $('#results').prepend('<p>Showing ' + offset + '-' + (offset + 100) + ' results of ' + numberOfResults + '.</p>');
+    $('#results').prepend('<a href="" id="next-page-link">Next Page</a>')
   })
 
 }
@@ -75,7 +76,9 @@ function trackSearch(keyword) {
       html += '<li><a href="' + tracks.tracks[i].href + '">' + tracks.tracks[i].name + '</a></li>';
     }
     $('#results').html(html);
-    $('#results').prepend('<p>Showing ' + offset + '-' + (offset + 100) + ' results of ' + numberOfResults + '.</p>')
+    $('#results').prepend('<p>Showing ' + offset + '-' + (offset + 100) + ' results of ' + numberOfResults + '.</p>');
+    $('#results').prepend('<a href="" id="next-page-link">Next Page</a>')
   })
+
 
 }
