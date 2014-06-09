@@ -107,9 +107,32 @@ describe("Hangman", function() {
         game.guess('zz');
       }).toThrow();
     });
+  });
+
+  describe('update', function() {
+
+    beforeEach(function() {
+      game.word = 'sees';
+    });
+
+    it('should render the word display based on current guesses while the game is active', function() {
+      game.active = true;
+      game.guesses = ['e'];
+      game.update();
+      expect(game.wordDisplay).toBe('_ee_');
+    });
+
+    it('should render the full word display when the game is no longer active', function() {
+      game.active = false;
+      game.update();
+      expect(game.wordDisplay).toBe(game.word)
+    });
 
   });
 
+<<<<<<< HEAD
+});
+=======
 
   describe("update", function() {
 
@@ -152,3 +175,4 @@ describe("Hangman", function() {
 
   });
 });
+>>>>>>> 237bfdefec1527c1b8fa2bffc69016c73516271b
