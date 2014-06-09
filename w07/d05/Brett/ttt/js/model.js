@@ -49,4 +49,6 @@ ticTacToe.prototype = {
   }
 }
 
+  // TODO Reassess the complete game state with update function
+
 
