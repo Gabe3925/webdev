@@ -5,27 +5,37 @@
 // When "Pause" is clicked, the text should say "Time elapsed: 1", but stop incrementing.
 
 
+<<<<<<< HEAD
 
+=======
 var start = document.getElementById("start");
-var timer = document.getElementById("timer");
+var title = document.getElementById("timer");
 var reset = document.getElementById("reset");
 var pause = document.getElementById("pause");
-
 
 var seconds = 0;
 var timerID;
 
+function updateTime(){
+  seconds++;
+  title.textContent = "Time Elapsed: " + seconds;
+}
+
+// on click we update the text field with 'Time Elapsed: 0'
 start.addEventListener("click", function(){
-  timer.textContent = "Time Elapsed" + seconds;
-  setInterval(function){
-    seconds ++;
-    timer.textContent = "Time Elasped: " + seconds;
-  }, 1000);
+  title.textContent = 'Time Elapsed: ' + seconds;
+  timerID = setInterval(updateTime, 1000);
 });
 
-reset.addEventListener("click", function{
-  timer.textContent = "Stop Watch";
+function resetTextAndClearInterval(){
+  title.textContent = "Stop Watch";
   clearInterval(timerID);
+  // we need to reset the seconds to zero, so that when we press start the time doesn't start at 3
   seconds = 0;
-})
+}
 
+reset.addEventListener("click", resetTextAndClearInterval);
+pause.addEventListener("click", function(){
+  clearInterval(timerID);
+});
+>>>>>>> ac4a3483155e4c87cf04b43f6c047914c55f565a
