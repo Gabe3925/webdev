@@ -9,6 +9,7 @@ Game.prototype.mark = function(play, location) {
     throw new Error("game over!");
   }
 
+  // if this spot hasn't been taken and it's the appropriate player's turn, mark it
   if (!this.playAt(location) && play === this.turn) {
     this.board[location.row][location.column] = play;
     this.turnNumber++;
@@ -22,7 +23,7 @@ Game.prototype.playAt = function(location) {
 }
 
 Game.prototype.nextTurn = function() {
-  this.turn = ( this.turn === "x" ? "o" : "x" )
+  this.turn = ( this.turn === "x" ? "o" : "x" );
 };
 
 Game.prototype.gameOver = function() {
