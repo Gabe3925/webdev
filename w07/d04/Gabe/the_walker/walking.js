@@ -1,39 +1,8 @@
 var leftBorder = 400;
 var rightBorder = 700;
-var xPosition = rightBorder;
 
 var theWalker = document.getElementById("img");
-var xPosition = rightBorder;
 
-theWalker.style.left = rightBorder + "px";
-var walingLeft = true;
-
-function walk(){
-  xPosition = walkingLeft ? xPosition -= 10 : xPosition += 10;
-  theWalker.style.left = xPosition + "px";
-  if (xPosition === leftBorder){
-    theWalker.classList.toggle("flip-img");
-    walkingLeft = false;
-  }
-  if(xPosition === rightBorder {
-    theWalker.classList.toggle("flip-img");
-    walkingLeft = true;
-  })
-}
-
-
-var timerID = setInterval(walk, 75);
-
-
-
-//setInterval(function(){
-//  xPosition -= 10;
-//  theWalker.style.left = xPosition + "px";
-//}, 75);
-//
-//if (xPosition === leftBorder){
-//  theWalker.classList.toggle("flip-img");
-//}
 
 // Have the stick figure start at the right border and start walking left
 // When he crosses the left border, have him turn around and start walking right (and vice versa)
