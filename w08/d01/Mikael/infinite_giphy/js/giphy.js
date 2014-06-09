@@ -12,7 +12,7 @@ function search() {
     var html = '';
 
     for (var i=0; i < gifs.data.length; i++) {
-      offset += 1;
+      page += 1;
       html += '<img src="'+ gifs.data[i].images.original.url +'" alt="" data-index="'+offset+'">';
     }
 
