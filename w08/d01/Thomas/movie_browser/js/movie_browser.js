@@ -22,8 +22,7 @@ function search(query) {
 function getDetails(query) {
   var apiPath = 'http://www.omdbapi.com/?t=' + escape(query);
   $.getJSON(apiPath).then(function(response) {
-    var $poster = $('<img src="response.Poster">')
-    $('#movie-detail').append([response.Title, $poster ])
+    $('#movie-detail').html('<h2>' + response.Title + '</h2>' + '<img src="' + response.Poster + '">')
   });
 }
 
