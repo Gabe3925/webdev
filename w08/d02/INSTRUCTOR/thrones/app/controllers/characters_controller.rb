@@ -1,5 +1,4 @@
 class CharactersController < ApplicationController
-  protect_from_forgery with: :null_session
 
   def index
     @characters = Character.order("created_at ASC")
