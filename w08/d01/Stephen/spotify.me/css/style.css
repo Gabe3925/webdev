@@ -16,3 +16,14 @@ h1 {
 a {
   color: #c00;
 }
+
+#result-page a {
+  text-decoration: none;
+  color: black;
+  margin: 4px;
+}
+
+#result-page .next-page {
+  text-decoration: underline;
+  color: red;
+}
