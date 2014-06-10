@@ -10,7 +10,7 @@ class CreateStudents < ActiveRecord::Migration
 
     reversible do |dir|
       dir.up do
-        execute <<-SQL  
+        execute <<-SQL
         ALTER TABLE students
         ADD CONSTRAINT fk_students_houses
         FOREIGN KEY (house_id)
