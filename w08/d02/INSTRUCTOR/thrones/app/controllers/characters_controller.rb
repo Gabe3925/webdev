@@ -23,6 +23,16 @@ class CharactersController < ApplicationController
     end
   end
 
+  def destroy
+    @character = Character.find(params[:id])
+
+    if @character.destroy
+      render status: 200, nothing: true
+    else
+      render status: 400, nothing: true
+    end
+  end
+
   private
 
   def character_params
