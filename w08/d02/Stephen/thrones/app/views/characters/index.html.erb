@@ -1,0 +1,19 @@
+<!--
+
+@Author: stephenstanwood
+@Date:   2014-06-10 11:41:55
+@Last Modified by:   stephenstanwood
+@Last Modified time: 2014-06-10 12:02:39
+
+ -->
+
+<h1>Winter is Coming</h1>
+
+<ul>
+  <% @characters.each do |character| %>
+    <li data-character-id='<%= character.id %>'>
+      <%= character.name %>
+      <%= check_box_tag :dead, 'yes', character.dead %>
+    </li>
+  <% end %>
+</ul>
