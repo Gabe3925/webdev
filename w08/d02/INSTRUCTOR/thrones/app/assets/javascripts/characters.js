@@ -58,6 +58,7 @@ function appendCharacter(character){
   li.append($('<span>&hearts;</span>'));
   $('ul').append(li);
   bindCheckBoxes(li.find('input'));
+  bindDeleteButtons(li.find('span'));
 }
 
 function bindDeleteButtons(buttons){
