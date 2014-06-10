@@ -3,6 +3,9 @@
 <head>
   <title>Movie Browser</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/jquery.js"></script>
+  <script src="js/OpenMovieDBAPI.js"></script>
+  <script src="js/movie_browser.js"></script>
 </head>
 <body>
   
@@ -20,8 +23,11 @@
 
     <div id="movie-detail"></div>
   </div>
+  <script>
+    $(function() {
+      new MovieBrowser();
+    });
+  </script>
 
-  <script src="js/jquery.js"></script>
-  <script src="js/movie_browser.js"></script>
 </body>
 </html>
