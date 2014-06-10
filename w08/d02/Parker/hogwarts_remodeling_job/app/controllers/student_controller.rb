@@ -1,4 +1,4 @@
-class StudentsController < ActionController
+class StudentController < ApplicationController
 
   def index
   end
