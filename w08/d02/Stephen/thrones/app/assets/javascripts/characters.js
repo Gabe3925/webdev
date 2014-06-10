@@ -2,7 +2,7 @@
 * @Author: stephenstanwood
 * @Date:   2014-06-10 11:53:22
 * @Last Modified by:   stephenstanwood
-* @Last Modified time: 2014-06-10 15:35:27
+* @Last Modified time: 2014-06-10 17:23:55
 */
 
 $( function() {
@@ -53,7 +53,7 @@ function appendCharacter( ch ) {
   var li = $( '<li data-character-id="' + ch.id + '">' );
   li.append( ch.name + '</li>' );
   li.append( $( '<input type="checkbox">' ) );
-  li.append( $( '<span>&hearts;</span>' ) );
+  li.append( $( '<span>bye bye</span>' ) );
   $( 'ul' ).append( li );
   bindCheckBoxes( li.find( 'input' ) );
 }
