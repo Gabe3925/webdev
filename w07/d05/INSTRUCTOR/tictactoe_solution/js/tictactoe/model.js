@@ -1,4 +1,5 @@
-var Game = function(){
+
+function Game(){
   this.turn = "x";
   this.turnNumber = 0;
   this.board = new Array(new Array(3), new Array(3), new Array(3));
@@ -9,27 +10,32 @@ Game.prototype.mark = function(play, location) {
     throw new Error("game over!");
   }
 
+  // if the spot hasn't been taken and it's the appropriate player's turn, mark the turn
   if (!this.playAt(location) && play === this.turn) {
+    // 'location.row' and 'location.column' tell you that location argument should be
+    // an object with a 'row' property and a 'column' property
     this.board[location.row][location.column] = play;
     this.turnNumber++;
     this.nextTurn();
   };
-  
 }
 
 Game.prototype.playAt = function(location) {
-  return this.board[location.row][location.column]; 
+  return this.board[location.row][location.column];
 }
 
 Game.prototype.nextTurn = function() {
-  this.turn = ( this.turn === "x" ? "o" : "x" )
+  this.turn = ( this.turn === "x" ? "o" : "x" );
 };
 
 Game.prototype.gameOver = function() {
+  // if the check winner method returns anything other than undefined,
+  // then we know it IS defined and the game is over
   if (this.checkWinner() !== undefined) {
     return true;
   }
 
+  // if the game has more than 8 turns, we terminate it regardless of whether a champion has been crowned
   if (this.turnNumber > 8) {
     return true;
   }
@@ -41,11 +47,13 @@ Game.prototype.checkWinner = function() {
 
   // FOR each row in the board
   for(var i = 0; i < 3; i++){
+    // first we check that the boards have valid values (ie: either 'x' or 'o')
+    // then we check if their are matches within any of the rows
     if( (this.board[i][0] === "x" ||
          this.board[i][0] === "o") &&
         (this.board[i][1] === this.board[i][2]) &&
         (this.board[i][1] === this.board[i][0]) ){
-      return this.board[i][0];
+      return this.board[i][0]; // if condition is met, return the winning character
     }
   }
   // FOR each column in the board
@@ -65,11 +73,11 @@ Game.prototype.checkWinner = function() {
     return this.board[1][1];
   }
   // diagonal top right
-  if( (this.board[0][2] === "x" || 
+  if( (this.board[0][2] === "x" ||
        this.board[0][2] === "o") &&
       (this.board[0][2] === this.board[1][1]) &&
       (this.board[1][1] === this.board[2][0]) ){
     return this.board[1][1];
   }
 
-}
+};
