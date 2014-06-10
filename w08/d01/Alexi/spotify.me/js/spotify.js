@@ -19,7 +19,7 @@ function search(keyword) {
 
   $.getJSON(apiPath).then(function(results) {
     var html = '';  
-    console.log(results);
+    //console.log(results);
 
     for (var i=0; i < results[searchType + 's'].length; i++) {
       //offset += 1;

@@ -15,7 +15,10 @@ function search(keyword) {
     } 
     $("#movie-select").append(titles);
     // $("#option-value").html("Hello");
-        //--> couldn't get it to work
+    //$("select option").replaceWith("Hello")
+    
+        
+        //--> couldn't get the menu to change
   });
 }
 
@@ -27,9 +30,9 @@ function display(keyword) {
     console.log(results);
     var poster = '<img src=' + results.Poster + '">'
     var title = results.Title;
-    $("#movie-detail").append(title).css({ "size": "40px" });
-    // --> Poster removes title for some reason...
-    $("#movie-detail").html(poster).css({ "float": "right" });
+    $("#movie-detail").html(title).css({ "font-size": "50px", "float": "top" });
+    // --> Couldn't figure out how to style the title and poster
+    $("#movie-detail").append(poster).css({ "float": "bottom" });
 
 
   });
