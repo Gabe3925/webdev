@@ -2,7 +2,7 @@
 * @Author: stephenstanwood
 * @Date:   2014-06-10 11:53:22
 * @Last Modified by:   stephenstanwood
-* @Last Modified time: 2014-06-10 17:19:38
+* @Last Modified time: 2014-06-10 17:31:08
 */
 
 $( function() {
@@ -53,8 +53,9 @@ function appendSong( song ) {
   li.append( song.title + ' by ' + song.artist );
   li.append( '<audio controls><source src="' + song.preview_url + '"></audio>' );
   li.append( '</li>' );
-  li.append( $( '<span>&hearts;</span>' ) );
+  li.append( $( '<span>bye bye</span>' ) );
   $( 'ul' ).append( li );
+  bindDeleteButtons( $( 'li span' ) );
 }
 
 function bindDeleteButtons( buttons ) {
