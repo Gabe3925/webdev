@@ -67,7 +67,13 @@ function bindDeleteButtons(buttons){
     $.ajax({
       url: '/characters/' + character.data('character-id'),
       type: 'delete',
-      dataType: 'json'
-    })
+      dataType: 'json',
+      context: character
+    }).then(removeCharacter)
   });
+}
+
+function removeCharacter(){
+  // console.log(this);
+  this.remove();
 }

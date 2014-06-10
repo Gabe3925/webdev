@@ -27,7 +27,7 @@ class CharactersController < ApplicationController
     @character = Character.find(params[:id])
 
     if @character.destroy
-      render status: 200, nothing: true
+      render json: {}
     else
       render status: 400, nothing: true
     end
