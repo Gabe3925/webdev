@@ -1,33 +1,37 @@
 function TicTacToe() {
-  this.board = {};
+  this.board = [new Array(3), new Array(3), new Array(3)];
   this.xMove = true; // is it X's move?
   this.activeGame = true;
 }
 
 TicTacToe.prototype = {
+  gridSize: 3,
   placeMarker: function( xCoord, yCoord ) {
     // return early if the game is over
     if ( !this.activeGame ) return;
 
     var coordinates = [xCoord, yCoord];
-    var position = coordinates.join(",");
 
+    // check if marker is within the bounds of the grid
     var withinGrid = true;
     for ( var i = 0; i < coordinates.length; i++ ) {
       var coordinate = coordinates[i];
-      if ( coordinate >= 3 || coordinate < 0 ) {
+      if ( coordinate >= this.gridSize || coordinate < 0 ) {
         withinGrid = false;
         break;
       }
     }
 
     // only add markers if it's within the grid and there is no marker there already
-    if ( !this.board[position] && withinGrid ) {
-      this.board[position] = this.xMove ? "X" : "O";
+    if ( withinGrid && !this.board[yCoord][xCoord] ) {
+      this.board[yCoord][xCoord] = this.xMove ? "X" : "O";
       this.xMove = !this.xMove;  // switch markers after every move;
     }
+
+    this.gameWon = this.checkWin();
+    if ( this.gameWon ) this.activeGame = false;
   },
-  updateGame: function() {
+  checkWin: function() {
     // check for horizontal or vertical win conditions
     var winConditions = ["horizontal", "vertical"];
 
@@ -35,24 +39,20 @@ TicTacToe.prototype = {
       // determine search type
       var isHorizontalSearch = winConditions[i] == "horizontal";
 
-      for ( var j = 0; j < 3; j++ ) {
+      for ( var j = 0; j < this.gridSize; j++ ) {
         var markerType = "";  // reset marker for each search
 
-        for ( var k = 0; k < 3; k ++ ) {
+        for ( var k = 0; k < this.gridSize; k ++ ) {
           var row = isHorizontalSearch ? j : k;
           var col = isHorizontalSearch ? k : j;
 
-          var position = [row, col].join(",");
-          markerType = markerType || this.board[position];
+          markerType = markerType || this.board[row][col];
 
           // end search prematurely if there are no markers or markers do not match
-          if ( !markerType || this.board[position] !== markerType ) break;
+          if ( !markerType || this.board[row][col] !== markerType ) break;
 
-          // if there are 3 markers of the same type in a row, end the game
-          if ( k === 2 ) {
-            this.activeGame = false;
-            return this.activeGame;
-          }
+          // if there are 3 markers of the same type in a row, return true
+          if ( k === this.gridSize - 1 ) return true;
         }
       }
     }
@@ -66,20 +66,19 @@ TicTacToe.prototype = {
       var isDownRightSearch = diagonalConditions[i] == "down-right";
       var markerType = ""; // reset markerType for each search type
 
-      for ( var j = 0; j < 3; j++ ) {
-        var position = isDownRightSearch ? [j, j].join(",") : [2 - j, j].join(",");
-        markerType = markerType || this.board[position];
+      var lastIndex = this.gridSize - 1;
+      for ( var j = 0; j < this.gridSize; j++ ) {
+        var row = isDownRightSearch ? j : lastIndex - j;
+        var col = isDownRightSearch ? j : j;
+        markerType = markerType || this.board[row][col];
 
-        if ( !markerType || this.board[position] !== markerType ) break;
+        if ( !markerType || this.board[row][col] !== markerType ) break;
 
-        if ( j === 2 ) {
-          this.activeGame = false;
-          return this.activeGame;
-        }
+        if ( j === lastIndex ) return true;
       }
 
     }
 
-    return this.activeGame;
+    return false;
   }
 };
