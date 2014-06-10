@@ -1,18 +1,18 @@
-puts "Max?"
-max = gets.chomp.to_i
-puts "First Multiple?"
-first_multiple = gets.chomp.to_i
-puts "Second Multiple?"
-second_multiple = gets.chomp.to_i
+# num = 1
+# multiples_array = []
+# while num < 1000
+#   if num % 3 == 0
+#     multiples_array.push(num)
+#   elsif num % 5 == 0
+#     multiples_array.push(num)
+#   end
+#   num += 1
+# end
+# puts multiples_array.reduce(:+)
 
-def sum_for_one_multiple(max, multiple)
-    n = (max - 1) / multiple
-    return n * (n + 1) / 2 * multiple
+def sum_multiples(multiple, to)
+    n = (to-1) / multiple
+    n * (n+1) / 2 * multiple
 end
 
-def sum_for_two_multiples(max, first_multiple, second_multiple)
-    return sum_for_one_multiple(max, first_multiple) + sum_for_one_multiple(max, second_multiple) - sum_for_one_multiple(max, first_multiple * second_multiple)
-end
-
-puts "The sum of all multiples of "+first_multiple.to_s+" and "+second_multiple.to_s
-puts "That are below the number "+max.to_s+" is : "+sum_for_two_multiples(max, first_multiple, second_multiple).to_s
+puts sum_multiples(3,1000) + sum_multiples(5,1000) - sum_multiples(15,1000)

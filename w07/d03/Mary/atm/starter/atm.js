@@ -9,8 +9,8 @@ var sWithdrawButton = document.getElementById('savings-withdraw');
 
 function deposit(balance, amount, depositButton, withdrawButton) {
   depositButton.addEventListener('click', function() {
-    balance.textContent = parseInt(balance.textContent) + parseInt(amount.value)
-    balance.classList.remove('zero')
+    balance.textContent = parseInt(balance.textContent) + parseInt(amount.value);
+    balance.classList.remove('zero');
   })
 }
 
@@ -21,7 +21,7 @@ function withdraw(balance, otherBalance, amount, otherAmount, depositButton, wit
     } else if (parseInt(amount.value) > parseInt(balance.textContent) && parseInt(otherAmount.value) <= parseInt(otherBalance.textContent)) {
       otherBalance.textContent = parseInt(otherBalance.textContent) - ((parseInt(amount.value) - parseInt(balance.textContent)));
       balance.textContent = 0;
-      balance.classList.add('zero')
+      balance.classList.add('zero');
        }
   })
 }

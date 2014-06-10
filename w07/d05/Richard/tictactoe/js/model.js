@@ -2,7 +2,7 @@
 * @Author: Richard Hessler
 * @Date:   2014-06-07 13:55:32
 * @Last Modified by:   Richard Hessler
-* @Last Modified time: 2014-06-09 09:42:55
+* @Last Modified time: 2014-06-09 13:15:25
 */
 
 //Global Variables
@@ -30,9 +30,8 @@ function clickBtn(btn) {
     docVar.disabled = 'disabled';   // adds disabled to input button (block) element
     player -=1;                     //increments player value to 0 - to be O's turn next
     boxesClicked +=1;               // increments boxes clicked
-    docVar.classList.add("red");
+    docVar.classList.add("doge");
     checkForWinner();               // update state of game
-
 
   } else {
     docVar.value = 'O';             // assigns value of "O" to first and every other block clicked
@@ -42,7 +41,6 @@ function clickBtn(btn) {
     docVar.classList.add("red");
     checkForWinner();               // update state of game
   }
-
 }
 
 // update function assessing status of game state
@@ -53,24 +51,18 @@ function checkForWinner(){
   for(var i = 0; i < winningCombos.length; i++){
     if(document.getElementById([winningCombos[i][0]]).value === 'X' && document.getElementById([winningCombos[i][1]]).value === 'X' && document.getElementById([winningCombos[i][2]]).value === 'X'){
 
-      // winner = 'X wins!'                 // variable for broken function below
-      console.log("X WON! Rematch!")        // testing output
-      alert("X WON! Rematch!");             // user facing output
-      reset();                              // resets game to new game status
+      winner = 'Doge wins!'                 // variable for broken function below
+      playAgain();
 
       // loops through values of buttons and assesses whether or not a winning combination has been satisfied.
   } else if (document.getElementById([winningCombos[i][0]]).value === 'O' && document.getElementById([winningCombos[i][1]]).value === 'O' && document.getElementById([winningCombos[i][2]]).value === 'O'){
 
-      // winner = 'O wins!'                 // variable for broken function below
-      alert("O WON! Rematch!")              // user facing output
-      console.log("O WON! Rematch!")        // testing output
-      reset();                              // resets game to new game status
+      winner = 'Grumpy wins!'                 // variable for broken function below
+      playAgain();
 
   } else if (boxesClicked === 9){           // catchall/prevents game from ending before all 9 boxes are clicked
-      // winner = "Scratch Game!"             // variable for broken function below
-      alert("Scratch Game - Rematch")         // user facing output
-      console.log("Scratch Game - Rematch")   // testing output
-      reset();                                // resets game to new game status
+      winner = "Scratch Game!"             // variable for broken function below
+      playAgain();
     }
   }
 }
@@ -88,20 +80,12 @@ function reset() {
   }
 }
 
-
-
-// for some reason this function was kind of working- meaning on first load it would work great, but seemed to have odd diminishing returns.  It depended on where I clicked, but the next game or the one after that, would reset or send me to the relocat page before the game had concluded.  I thought I covered my bases in the reset function with (document.getElementById('btn'+i).disabled = '';) but I suppose not.
-//
-//
-//
-//
-
-// function playAgain() {
-//   y = confirm(winner +" PLAY AGAIN?");
-//     if(y===true){
-//         reset();
-//     } else if (y===false){
-//       // window.location="https://www.youtube.com/watch?v=F5O553ZOdRo"
-//   }
-// }
+function playAgain() {
+  y = confirm(winner +" PLAY AGAIN?");
+    if(y===true){
+        this.reset();
+    } else if (y===false){
+      window.location="https://www.youtube.com/watch?v=F5O553ZOdRo"
+  }
+}
 
