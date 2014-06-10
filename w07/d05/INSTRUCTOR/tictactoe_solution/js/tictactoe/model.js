@@ -1,9 +1,17 @@
-
+// each new game begins with player x and an empty board
 function Game(){
   this.turn = "x";
   this.turnNumber = 0;
   this.board = new Array(new Array(3), new Array(3), new Array(3));
 }
+
+Game.prototype.playAt = function(location) {
+  return this.board[location.row][location.column];
+};
+
+Game.prototype.nextTurn = function() {
+  this.turn = ( this.turn === "x" ? "o" : "x" );
+};
 
 Game.prototype.mark = function(play, location) {
   if ( this.gameOver() ) {
@@ -17,16 +25,9 @@ Game.prototype.mark = function(play, location) {
     this.board[location.row][location.column] = play;
     this.turnNumber++;
     this.nextTurn();
-  };
-}
-
-Game.prototype.playAt = function(location) {
-  return this.board[location.row][location.column];
-}
-
-Game.prototype.nextTurn = function() {
-  this.turn = ( this.turn === "x" ? "o" : "x" );
+  }
 };
+
 
 Game.prototype.gameOver = function() {
   // if the check winner method returns anything other than undefined,
@@ -41,22 +42,24 @@ Game.prototype.gameOver = function() {
   }
 
   return false;
-}
+};
 
+// checkWinner will return undefined unless a winning condition is met
 Game.prototype.checkWinner = function() {
 
-  // FOR each row in the board
+  // for each ROW in the board
   for(var i = 0; i < 3; i++){
-    // first we check that the boards have valid values (ie: either 'x' or 'o')
-    // then we check if their are matches within any of the rows
+    // first we check that the row in question begins with a valid value (ie: either 'x' or 'o')
+    // then we check if the next two values
     if( (this.board[i][0] === "x" ||
          this.board[i][0] === "o") &&
-        (this.board[i][1] === this.board[i][2]) &&
-        (this.board[i][1] === this.board[i][0]) ){
+        (this.board[i][0] === this.board[i][1]) &&
+        (this.board[i][1] === this.board[i][2]) ){
       return this.board[i][0]; // if condition is met, return the winning character
     }
   }
-  // FOR each column in the board
+
+  // for each COLUMN in the board
   for(var i = 0; i < 3; i++){
     if( (this.board[0][i] === "x" ||
          this.board[0][i] === "o") &&
