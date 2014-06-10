@@ -2,7 +2,7 @@
 * @Author: stephenstanwood
 * @Date:   2014-06-09 14:47:11
 * @Last Modified by:   stephenstanwood
-* @Last Modified time: 2014-06-09 16:47:16
+* @Last Modified time: 2014-06-09 17:04:50
 */
 
 // spotify returns a max of 100 per query
@@ -20,7 +20,7 @@ function search() {
 
   var searchType = $( '#search-type option:selected' ).val();
   var apiPath = urls[ searchType ];
-  apiPath += escape( $( '#search-keyword' ).val() );
+  apiPath += escape( $( '#movie-search' ).val() );
 
   if ( page > 1 ) apiPath += '&page=' + page;
 // console.log(apiPath);
