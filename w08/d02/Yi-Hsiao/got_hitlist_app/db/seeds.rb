@@ -11,18 +11,20 @@ Character.destroy_all
 
 # Arya's hit list
 p "Adding Arya's hit list"
-Character.create(name: "King Joffrey", dead: true)
-Character.create(name: "Ser Amory", dead: true)
-Character.create(name: "The Tickler", dead: true)
-Character.create(name: "Polliver", dead: true)
-Character.create(name: "Ser Gregor", dead: true)
-Character.create(name: "Raff the Sweetling", dead: true)
-Character.create(name: "Chiswyck", dead: true)
-Character.create(name: "Weese", dead: true)
-Character.create(name: "Ilyn Payne")
-Character.create(name: "Meryn Trant")
-Character.create(name: "Queen Cersei")
-Character.create(name: "Dunsen")
-Character.create(name: "The Hound")
+Character.create([
+  { name: "King Joffrey", dead: true },
+  { name: "Ser Amory", dead: true },
+  { name: "The Tickler", dead: true },
+  { name: "Polliver", dead: true },
+  { name: "Ser Gregor", dead: true },
+  { name: "Raff the Sweetling", dead: true },
+  { name: "Chiswyck", dead: true },
+  { name: "Weese", dead: true },
+  { name: "Ilyn Payne" },
+  { name: "Meryn Trant" },
+  { name: "Queen Cersei" },
+  { name: "Dunsen" },
+  { name: "The Hound" }
+])
 
 p "Finished seeding"
