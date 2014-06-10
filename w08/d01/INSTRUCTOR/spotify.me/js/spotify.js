@@ -2,7 +2,7 @@ var keyword = "";
 
 function searchByArtist() {
   var url = 'http://ws.spotify.com/search/1/artist.json?q='+keyword;
-  
+
   $.getJSON(url).then(function(data) {
     var html = '';
 
@@ -33,7 +33,7 @@ function searchByTrack() {
 
 function newSearch() {
   var searchType = $('#search-type').val();
-  
+
   if (searchType === 'artist') {
     searchByArtist();
   } else {
