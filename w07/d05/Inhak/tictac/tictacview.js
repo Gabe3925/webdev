@@ -1,5 +1,5 @@
 function TicTacView(){
-  this.tictac = TicTac;
+  this.tictac = new TicTac();
   this.initialize();
 }
 
@@ -11,7 +11,7 @@ TicTacView.prototype = {
       var divs = document.createElement('div');
       divs.classList.add('square');
       divs.addEventListener('click', function(){
-        this.innerhtml = tictac.spaces[i];
+        this.innerhtml = this.tictac.spaces[i];
       });
     }
     this.uiBoard.appendChild(divs);
