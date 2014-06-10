@@ -16,13 +16,13 @@
   </thead>
   <tbody id="tbody-playlist">
     <% @songs.each do |song| %>
-      <tr>
+      <%= content_tag :tr, :"data-song-id" => song.id do %>
         <td><%= song.title %></td>
         <td><%= song.artist %></td>
         <td>
-          <%= content_tag :iframe, nil, :src => spotifyEmbedLink(song.preview_url), width: 300, height: 80, frameborder: 0, allowtransparency: true %>
+          <%= content_tag :iframe, nil, src: spotifyEmbedLink(song.preview_url), width: 300, height: 80, frameborder: 0, allowtransparency: true %>
         </td>
-      </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>

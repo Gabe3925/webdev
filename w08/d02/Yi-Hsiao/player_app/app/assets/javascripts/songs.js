@@ -1,6 +1,7 @@
 $(function() {
   var $form = $( "#form-add-song" );
   var $playlist = $( "#tbody-playlist" );
+  var songIDDataAttr = "song-id";
 
   function initialize() {
     handleAddSongFormSubmit();
@@ -30,7 +31,7 @@ $(function() {
 
   // adds a song to the playlist view
   function addSongToView( song ) {
-    var html = "<tr>";
+    var html = '<tr data-' + songIDDataAttr + '="' + song.id + '">';
         html += "<td>" + song.title + "</td>";
         html += "<td>" + song.artist + "</td>";
         html += "<td>" + spotifyIframe( song.preview_url ) + "</td>";
