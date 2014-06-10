@@ -1,5 +1,4 @@
 class CharactersController < ApplicationController
-  protect_from_forgery with: :null_session
 
   def index
     @characters = Character.order("created_at ASC")
@@ -15,7 +14,23 @@ class CharactersController < ApplicationController
   end
 
   def create
-    binding.pry
+    @character = Character.new(character_params)
+
+    if @character.save
+      render json: @character
+    else
+      render status: 400, nothing: true
+    end
+  end
+
+  def destroy
+    @character = Character.find(params[:id])
+
+    if @character.destroy
+      render json: {}
+    else
+      render status: 400, nothing: true
+    end
   end
 
   private
