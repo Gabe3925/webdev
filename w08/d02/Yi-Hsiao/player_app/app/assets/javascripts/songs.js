@@ -2,15 +2,23 @@ $(function() {
   var $form = $( "#form-add-song" );
   var $playlist = $( "#tbody-playlist" );
 
-  $form.on( "submit", function( evt ) {
-    evt.preventDefault();
+  function initialize() {
+    handleAddSongFormSubmit();
+  }
 
-    var data = $( this ).serializeObject();
-    addSongToDB( data )
-      .then( addSongToView )
-      .then( clearForm );
-  });
+  // adds song to DB on form submission
+  function handleAddSongFormSubmit() {
+    $form.on( "submit", function( evt ) {
+      evt.preventDefault();
 
+      var data = $( this ).serializeObject();
+      addSongToDB( data )
+        .then( addSongToView ) // update view
+        .then( resetForm );    // reset form
+    });
+  }
+
+  // adds song to DB and return promise
   function addSongToDB( data ) {
     return $.ajax({
       data: data,
@@ -40,7 +48,9 @@ $(function() {
   }
 
   // resets the form
-  function clearForm() {
+  function resetForm() {
     $form[0].reset();
   }
+
+  initialize();
 });
