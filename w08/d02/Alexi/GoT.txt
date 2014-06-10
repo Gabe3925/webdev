@@ -1,8 +1,12 @@
 Create a Rails app (use -T -d postgresql)
+rails new thrones -T -d postgresql
 
 |x| One model: Character
   - name, string, not null
   - dead, boolean, default to false
+rails generate migration CreateCharacters
+rake db:migrate
+rake db:seed
 
 |x| Create the AR model
 
