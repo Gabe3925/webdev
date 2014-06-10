@@ -1,13 +1,30 @@
-console.log("================================");
-console.log("Welcome to Your Sandbox Console.");
-console.log("================================");
+$(function() {
+  
+  $("#title")
+    .text("The Fart Store")    // change title to 'The Fart Store'
+    .addClass("classy")        // style title
+    .css("font-size", "4em");  // change font-size to 4ems
 
-console.log("Click on http://jquery.com to head to the docs");
+  // change first paragraph's text
+  $("p:eq(0)")
+    .html("We've got fun <strong>AND</strong> games - Axel Rose");
 
-// Q: How do you make a DOM element a jQuery object?
-// A: Target it with a css selector and then just wrap it in cash, homie.
-      // Example:  $("#title")
+  $("h2:eq(0)")
+    .text("Manifesto")               // change 2nd heading's text
+    .after("<p>No judgement.</p>");  // add a paragraph 'No judgement' underneath the heading
 
-// Q: How do you create a NEW jQuery object you can later append to the DOM?
-// A: Provide the opening tag of the type of element you want to create and then wrap it in cash
-      // Example: var newDiv = $("<div>");
+  $("ul:eq(0)")
+    .remove();
+
+  $("body")
+    .append("<button id='sample-button'>Sample the Product</button>");
+
+  // get fart sound
+  var audioElement = document.createElement('audio');
+  audioElement.setAttribute('src', 'http://www.soundjay.com/human/sounds/fart-01.mp3');
+  $.get();
+
+  $('#sample-button').on("click", function() {
+    audioElement.play();
+  });
+});

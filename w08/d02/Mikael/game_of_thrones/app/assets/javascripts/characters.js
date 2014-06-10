@@ -6,13 +6,14 @@ $(function(){
   var $deleteButtons = $('li span');
   bindDeleteButtons($deleteButtons);
 
+});
+
+function bindForm() {
   var $form = $('form');
   $form.on('submit', function(evt) {
     evt.preventDefault();
 
     var $data = $(this).serializeObject();
-
-    console.log($data);
 
     $.ajax({
       url: '/characters',
@@ -21,11 +22,10 @@ $(function(){
       data: {character: $data},
       context: this
     })
-    then(appendCharacter);
+    .then(appendCharacter);
 
   });
-
-});
+}
 
 function bindCheckBoxes(boxes) {
   boxes.change(function() {
@@ -51,11 +51,12 @@ function bindCheckBoxes(boxes) {
 
 function appendCharacter(character) {
   this.reset();
-  var li = $('<li data-character-id="' + character.id '">' + character.name + '</li>');
+  var li = $('<li data-character-id="' + character.id + '">' + character.name + '</li>');
   li.append($('<input type="checkbox">'));
   li.append($('<span>&hearts;</span>'))
   $('ul').append(li);
   bindCheckBoxes(li.find('input'));
+  bindDeleteButtons(li.find('span'));
 }
 
 function bindDeleteButtons(buttons) {
@@ -66,8 +67,10 @@ function bindDeleteButtons(buttons) {
       type: 'delete',
       dataType: 'json',
       context: character
-    }).then(function(){
-      this.remove();
-    });
+    }).then(removeCharacter);
   });
+}
+
+function removeCharacter(){
+  this.remove();
 }

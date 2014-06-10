@@ -2,13 +2,16 @@
 
 body {
   font-family: Ribeye Marrow;
+  color: papayawhip;
+  background-color: chocolate;
   margin: 0;
   padding: 0;
   padding-left: 40%;
 }
 
+
 form {
-  position: fixed;
+  position: auto;
   left: 10%;
   top: 100px;
   width: 30%;
@@ -22,8 +25,8 @@ img {
   display: block;
   margin: 50px auto;
   vertical-align: middle;
-  height: 200px;
-  width: 200px;
+  height: 100%;
+  width: 100%;
   transition: 1s;
 }
 
