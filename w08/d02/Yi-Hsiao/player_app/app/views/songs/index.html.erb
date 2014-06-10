@@ -1,0 +1,8 @@
+<h1>Play.er</h1>
+
+<h2>Songs</h2>
+<ul>
+  <% @songs.each do |song| %>
+    <%= content_tag :li, song.title %>
+  <% end %>
+</ul>
