@@ -13,6 +13,7 @@
     <th>Title</th>
     <th>Artist</th>
     <th>Preview</th>
+    <th></th>
   </thead>
   <tbody id="tbody-playlist">
     <% @songs.each do |song| %>
@@ -21,6 +22,9 @@
         <td><%= song.artist %></td>
         <td>
           <%= content_tag :iframe, nil, src: spotifyEmbedLink(song.preview_url), width: 300, height: 80, frameborder: 0, allowtransparency: true %>
+        </td>
+        <td>
+          <%= button_to "Delete", song_path(song), method: :delete, class: "btn-delete-song" %>
         </td>
       <% end %>
     <% end %>

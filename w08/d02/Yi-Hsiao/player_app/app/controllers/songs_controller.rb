@@ -12,6 +12,15 @@ class SongsController < ApplicationController
     end
   end
 
+  def destroy
+    @song = Song.find params[:id]
+    if @song.destroy
+      head :ok
+    else
+      head :bad_request
+    end
+  end
+
   private
   def song_params
     params.require(:song).permit :artist, :preview_url, :title
