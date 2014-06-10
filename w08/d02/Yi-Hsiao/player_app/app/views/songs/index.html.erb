@@ -1,6 +1,13 @@
 <h1>Play.er</h1>
 
-<h2>Songs</h2>
+<%= form_for :song, html: {id: "form-add-song"} do |f| %>
+  <%= f.text_field :title,       placeholder: "Title" %>
+  <%= f.text_field :artist,      placeholder: "Artist" %>
+  <%= f.text_field :preview_url, placeholder: "Spotify URL" %>
+  <%= f.submit "Add song to playlist" %>
+<% end %>
+
+<h2>Playlist</h2>
 <table>
   <thead>
     <th>Title</th>
