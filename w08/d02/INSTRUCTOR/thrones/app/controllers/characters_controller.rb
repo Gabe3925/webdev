@@ -14,6 +14,10 @@ class CharactersController < ApplicationController
     end
   end
 
+  def create
+    binding.pry
+  end
+
   private
 
   def character_params
