@@ -1,10 +1,12 @@
 // API Docs at:
 // http://www.omdbapi.com
 
-var keyword = ''
+var keyword;
+var userChoice;
 $('#movie-select').hide();
-function search(keyword) {
-  var apiPath = 'http://www.omdbapi.com/?s=' + escape(keyword);
+
+function search(query) {
+  var apiPath = 'http://www.omdbapi.com/?s=' + escape(query);
   $.getJSON(apiPath).then(function(response) {
 
 //why does it not seem to matter if I store an initial value in titles?
@@ -17,7 +19,13 @@ function search(keyword) {
   });
 }
 
-
+function getDetails(query) {
+  var apiPath = 'http://www.omdbapi.com/?t=' + escape(query);
+  $.getJSON(apiPath).then(function(response) {
+    var $poster = $('<img src="response.Poster">')
+    $('#movie-detail').append([response.Title, $poster ])
+  });
+}
 
 $('#search').on('submit', function(evt) {
   evt.preventDefault();
@@ -28,6 +36,6 @@ $('#search').on('submit', function(evt) {
 
 $('#movie-select').on('change', function(evt) {
   evt.preventDefault();
-  var userChoice = $('#movie-select').val();
-  console.log(userChoice);
+  userChoice = $('#movie-select').val();
+  getDetails(userChoice);
 });
