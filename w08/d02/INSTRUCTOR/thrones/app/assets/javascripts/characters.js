@@ -15,6 +15,13 @@ $(function(){
       type: 'POST',
       dataType: 'json',
       data: {character: data}
+    }).then(function(character){
+      console.log(character);
+      var li = $('<li data-character-id="' + character.id + '" >' + character.name + '</li>');
+      li.append($('<input type="checkbox">'));
+      $('ul').append(li);
+      
+      bindCheckBoxes(li.find('input'));
     })
 
   });
