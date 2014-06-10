@@ -1,8 +1,21 @@
 <h1>Play.er</h1>
 
 <h2>Songs</h2>
-<ul>
-  <% @songs.each do |song| %>
-    <%= content_tag :li, song.title %>
-  <% end %>
-</ul>
+<table>
+  <thead>
+    <th>Title</th>
+    <th>Artist</th>
+    <th>Preview</th>
+  </thead>
+  <tbody>
+    <% @songs.each do |song| %>
+      <tr>
+        <td><%= song.title %></td>
+        <td><%= song.artist %></td>
+        <td>
+          <%= content_tag :iframe, nil, :src => spotifyEmbedLink(song.preview_url), width: 300, height: 80, frameborder: 0, allowtransparency: true %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
