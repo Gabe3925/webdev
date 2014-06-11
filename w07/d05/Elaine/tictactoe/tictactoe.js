@@ -74,8 +74,19 @@ function check() {
           alert(sq2.value + " Wins!");
           reset();
       }
+  } else if ((sq3.value === sq6.value) && (sq6.value === sq9.value) && (sq3.value !== "_")) {
+      if(sq3.value!="_") { // Added check here
+          alert(sq3.value + " Wins!");
+          reset();
+      }
+  } else if ((sq1.value === sq4.value) && (sq4.value === sq7.value) && (sq1.value !== "_")) {
+      if(sq1.value!="_") { // Added check here
+          alert(sq1.value + " Wins!");
+          reset();
+      }
   } else if ((emptySpaces <= 0) && (complete() === true)) {
     alert("It's a tie.");
+    reset();
   };
 };
 
