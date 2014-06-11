@@ -2,7 +2,7 @@
 # @Author: stephenstanwood
 # @Date:   2014-06-11 09:30:47
 # @Last Modified by:   stephenstanwood
-# @Last Modified time: 2014-06-11 10:06:24
+# @Last Modified time: 2014-06-11 10:14:50
 
 require 'pry'
 require 'HTTParty'
@@ -12,6 +12,7 @@ city = city.gsub(' ','_')
 state = ARGV[1]
 
 response = HTTParty.get("http://api.wunderground.com/api/ad189a4cbdfe44dc/hourly/q/#{ state }/#{ city }.json")
+# TESTING: puts "http://api.wunderground.com/api/ad189a4cbdfe44dc/hourly/q/#{ state }/#{ city }.json"
 
 i = 0;
 
