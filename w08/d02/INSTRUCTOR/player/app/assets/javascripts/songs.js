@@ -20,6 +20,7 @@ function bindForm() {
 }
 
 function appendSong(song) {
+  debugger
   this.reset();
 
   var li = $("<li data-song-id=" + song.id + " >" + song.title + "</li>");
@@ -27,9 +28,9 @@ function appendSong(song) {
   li.append($("<audio controls><source src='" + song.preview_url + "'></audio>"));
   li.append($("<span>&times;</span>"));
   $("ul").append(li);
-
   bindDeleteButtons(li.find("span"));
-}
+} 
+
 
 function bindDeleteButtons(buttons) {
   buttons.on("click", function() {
