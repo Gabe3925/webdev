@@ -27,3 +27,9 @@ $('#search').on('submit', function(evt){
   $movieSelect.show();
   searchMovieSelector(keyword);
 });
+
+$('#movie-select').on('change', function(){
+  var selectMovie = $('#movie-select').va();
+
+
+});

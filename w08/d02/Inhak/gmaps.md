@@ -11,7 +11,7 @@ This app will use 2 AJAX requests:
 ### Getting Started
 
 To start:
-- Create your Rails model, controller, and view. 
+- Create your Rails model, controller, and view.
 - You will need a Pin model with 2 attributes: longitude and latitude.  Both should be stored as floats.
 - Optionally seed some sample data.
 - You should implement INDEX and CREATE methods for your Pin, both of which should respond with JSON.
