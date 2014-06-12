@@ -28,8 +28,16 @@ $('#search').on('submit', function(evt){
   searchMovieSelector(keyword);
 });
 
-$('#movie-select').on('change', function(){
-  var selectMovie = $('#movie-select').va();
-
+$('#movie-select').on('change', function(evt){
+  evt.preventDefault();
+  var selectMovie = $('#movie-select option:selected').text();
+  var detail = 'http://www.omdbapi.com/?t=' + escape(selectMovie);
+  $.getJSON(detail).then(function(data){
+    var html = '';
+    html += '<h2>' + data.Title + '</h2>';
+    html += '<img src=' + data.Poster + '/>';
+    html += '<p>' + data.Plot + '</p>';
+    $('#movie-detail').html(html);
+  });
 
 });
