@@ -1,19 +1,4 @@
 function initialize() {
-  var location = new google.maps.LatLng(-34.139, 150.699);
-  var newMarker = new google.maps.Marker({
-    position: location,
-    map: map
-  });
-
-  google.maps.event.addListener(map, 'click', function(event) {
-  
-  $.ajax({
-    url: "/index"
-    type: "GET"
-    
-  })
-});
-
   var mapOptions = {
     zoom: 8,
     center: new google.maps.LatLng(-34.397, 150.644)
@@ -34,3 +19,25 @@ function loadScript() {
 window.onload = loadScript;
 
 
+var location = new google.maps.LatLng(-34.139, 150.699);
+var newMarker = new google.maps.Marker({
+  position: location,
+  map: map
+
+$.ajax
+  type: "GET"
+  url: "/index"  
+});
+
+google.maps.event.addListener(map, 'click', function(event) {
+  
+  $.ajax({
+    type: "POST",
+    url: "/index",
+    dataType: "json",
+    data: {
+      latlng: lat + "," + lng
+    }
+
+  })
+});
