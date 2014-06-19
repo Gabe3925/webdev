@@ -17,3 +17,12 @@
   height: 200px;
   width: 200px;
 }
+
+
+#box {
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  background: #f00;
+  font-size: 14px;
+}

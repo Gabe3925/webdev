@@ -3,7 +3,7 @@ $(function() {
   var authenticityToken = $( "meta[name='csrf-token']" ).attr( "content" );
   var charIDAttr = "char-id";
   var $list = $( "#hit-list" );
-  var $form = $( "#add-char-to-hitlist-form" );
+  var $form = $( "#add-char" );
 
   function initialize() {
     // update character's status when checkboxes are clicked
@@ -12,7 +12,7 @@ $(function() {
       var charID = $character.data( charIDAttr );
       var charDead = $(this).prop( "checked" );
 
-      updateCharacter( charID, { dead: charDead } );
+      updateCharacterInDB( charID, { dead: charDead } );
 
       // toggle .dead class for character, based on their status
       $character.toggleClass( "dead", charDead );
@@ -22,39 +22,65 @@ $(function() {
     $form.on( "submit", function( evt ) {
       evt.preventDefault();
       data = $( this ).serializeObject();
-      addCharacter( data ).then( appendCharacter );
+      addCharacterToDB( data )
+        .then( appendCharacterToView )
+        .then( clearForm );
+    });
+
+    $list.on( "click", ".delete-char", function() {
+      $character = $( this ).parent();
+      var id = $character.data( charIDAttr );
+      deleteCharacterFromDB( id )
+        .then(function() {
+          removeCharacterFromView.call( $character[0] );
+        });
     });
   }
 
   // update characters in DB
-  function updateCharacter( id, charAttributes ) {
+  function updateCharacterInDB( id, charAttributes ) {
     return $.ajax({
-      url: "/characters/" + id,
-      type: "patch",
+      data: { character: charAttributes },
       dataType: "json",
-      data: { character: charAttributes }
+      type: "patch",
+      url: "/characters/" + id
     });
   }
 
   // add characters in DB
-  function addCharacter( data ) {
+  function addCharacterToDB( data ) {
     return $.ajax({
-      url: "/characters/",
-      type: "post",
+      data: data,
       dataType: "json",
-      data: data
+      type: "post",
+      url: "/characters/"
     });
   }
 
-  // add character to list
-  function appendCharacter( character ) {
+  // delete character from DB
+  function deleteCharacterFromDB( id ) {
+    return $.ajax({
+      dataType: "json",
+      type: "delete",
+      url: "/characters/" + id
+    });
+  }
+
+  // add character to hit list
+  function appendCharacterToView( character ) {
     var html = '<li data-' + charIDAttr + '="' + character.id + '">';
-    html += '<input type="checkbox">';
+    html += '<input type="checkbox">\n';
     html += character.name;
     html += "</li>";
 
     $list.append( html );
   }
+
+  // remove character from list
+  function removeCharacterFromView() { this.remove(); }
+
+  // clears form
+  function clearForm() { $form[0].reset(); }
 
   initialize();
 });

@@ -23,4 +23,6 @@ ActiveRecord::Schema.define(version: 20140610152534) do
     t.datetime "updated_at"
   end
 
+  add_index "characters", ["name"], name: "index_characters_on_name", unique: true, using: :btree
+
 end
