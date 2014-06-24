@@ -25,6 +25,3 @@ As we do dive into building more client-side applications, we're going to start 
     - Example 1:
     - Example 2:
     - Example 3:
-
->>>>>>> local_storage
->>>>>>> 582441f164c7035a8fdcdd2683007afc3d0e7505
