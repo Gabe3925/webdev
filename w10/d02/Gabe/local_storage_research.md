@@ -19,6 +19,7 @@ Cookies can only hold about 4kb data
   - Answer:
   Storing data in cookies or on a server DB.
 
+<<<<<<< HEAD
 - Come up with a scenario in which local storage would be useful.
     - Scenario:
     A web-game in which a player constructs something-- local storage would allow a user to quit -even mid game!- then come back to a game and resume it.
@@ -30,6 +31,8 @@ Cookies can only hold about 4kb data
     
     
 
+=======
+>>>>>>> ac24a3e832b6fc7540dd90620a5fc5ac3677128e
 - Come up with three scenarios in which local storage would be useful.
     - Example 1:
     - Example 2:
