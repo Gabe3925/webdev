@@ -1,21 +1,10 @@
-// Rund code after the DOM has loaded
+// Run code after the DOM has loaded
 $(function() {
   var $boxes = $('li input[type="checkbox"]');
   bindCheckBoxes($boxes);
-  var $form = $('form');
-  $form.on("submit", function(evt) {
-    evt.preventDefault();
-
-    var data = $(this).serializeObject();
-    console.log(data);
-
-    $.ajax({
-      url: '/characters',
-      type: 'POST',
-      dataType: 'json',
-      data: {character: data}
-    })
-  });
+  bindForm();
+  var $deleteButtons = $('li span');
+  bindDeleteButtons($deleteButtons);
 });
 
 function bindCheckBoxes(boxes) {
@@ -36,4 +25,53 @@ function bindCheckBoxes(boxes) {
     character.toggleClass('dead');
 
   });
+}
+
+function bindForm(){
+  var $form = $('form');
+  $form.on("submit", function(evt) {
+    evt.preventDefault();
+
+    var data = $(this).serializeObject();
+    console.log(data);
+
+    $.ajax({
+      url: '/characters',
+      type: 'POST',
+      dataType: 'json',
+      data: {character: data},
+      context: this
+    }).then(appendCharacter);
+  });
+}
+
+function appendCharacter(character) {
+  // console.log(character);
+  // console.log(this);
+  this.reset();
+  var li = $('<li data-character-id="' + character.id + '">' + character.name + '</li>');
+  li.append($('<input type="checkbox">'));
+  li.append($('<span>&times;</span>'));
+  $('ul').append(li);
+
+  bindCheckBoxes(li.find('input'));
+  bindDeleteButtons(li.find('span'));
+}
+
+function bindDeleteButtons(buttons) {
+  buttons.on('click', function() {
+    var character = $(this).parent();
+
+    $.ajax({
+      url: '/characters/' + character.data('character-id'),
+      type: 'delete',
+      dataType: 'json',
+      context: character
+    }).then(removeCharacter);
+  });
+}
+
+function removeCharacter() {
+  // console.log(this);
+  this.remove();
 }
