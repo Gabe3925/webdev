@@ -20,6 +20,7 @@ function bindForm() {
 }
 
 function appendSong(song) {
+  //what is being reset?
   this.reset();
 
   var li = $("<li data-song-id=" + song.id + " >" + song.title + "</li>");
@@ -47,7 +48,7 @@ function deleteSong(song) {
     context: song // passes the context so we can call 'this' on success
   }).then(removeSong);
 }
-
+//why do we separate the above and below functions?
 function removeSong(){
   this.remove(); //'this' refers to the song
 }
