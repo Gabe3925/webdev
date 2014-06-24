@@ -29,3 +29,9 @@ Cookies can only hold about 4kb data
     Tasks requiring high security, like banking, should probably use server-side storage.
     
     
+
+- Come up with three scenarios in which local storage would be useful.
+    - Example 1:
+    - Example 2:
+    - Example 3:
+
