@@ -11,8 +11,20 @@ As we do dive into building more client-side applications, we're going to start 
 - What are the alternatives?
   - Answer: Cookies, database.
 
+<<<<<<< HEAD
 - Come up with a scenario in which local storage would be useful.
     - Scenario: Storing small bits of user data for use within an app. Local storage would be superior as it would eliminate a need to communicated with a server. Not making that request saves resources and time.
 
 - Think of a scenario where server-side storage would be preferred.
+<<<<<<< HEAD
     - Scenario: If there is large amounts of data, or some data you want to persist in long term storage, server side storage would be more useful as it allows you to save more than 5MB-10MB and keep it as long as required.
+=======
+    - Scenario:
+=======
+- Come up with three scenarios in which local storage would be useful.
+    - Example 1:
+    - Example 2:
+    - Example 3:
+
+>>>>>>> local_storage
+>>>>>>> 582441f164c7035a8fdcdd2683007afc3d0e7505
