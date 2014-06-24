@@ -25,6 +25,7 @@ localStorage["kickerOfElves"] // => "Robert Pollard"
 __Cool, but what if we move to another website like ESPN. Is kickerOfElves still available to us?__
 
 ```javascript
+// http://espn.go.com
 localStorage["kickerOfElves"] // => undefined
 ```
 
