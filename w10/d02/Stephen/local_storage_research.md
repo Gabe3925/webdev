@@ -12,6 +12,7 @@ As we do dive into building more client-side applications, we're going to start 
   - Answer: cookies, databases, being OK with not moving information from session to session...
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 - Come up with a scenario in which local storage would be useful.
     - Scenario: you're using an api with a call limit and want to limit the number of calls that you make to the service
 
@@ -21,7 +22,13 @@ As we do dive into building more client-side applications, we're going to start 
 =======
     - Scenario:
 =======
+=======
+>>>>>>> ac24a3e832b6fc7540dd90620a5fc5ac3677128e
 - Come up with three scenarios in which local storage would be useful.
     - Example 1:
     - Example 2:
     - Example 3:
+<<<<<<< HEAD
+=======
+
+>>>>>>> ac24a3e832b6fc7540dd90620a5fc5ac3677128e
