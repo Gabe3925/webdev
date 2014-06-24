@@ -16,3 +16,4 @@ As we do dive into building more client-side applications, we're going to start 
 
 - Think of a scenario where server-side storage would be preferred.
     - Scenario: when large amounts of data need to be persisted, local storage capacity is more limited.
+
