@@ -15,6 +15,7 @@ As we do dive into building more client-side applications, we're going to start 
   - Answer: COOKIES!
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 - Come up with a scenario in which local storage would be useful.
     - Scenario: Entice user's to use your site without having to signup/signin. Could be used to store user preferences for a shopping site or progress for a learning or gaming site.
 
@@ -24,10 +25,15 @@ As we do dive into building more client-side applications, we're going to start 
 =======
     - Scenario:
 =======
+=======
+>>>>>>> ac24a3e832b6fc7540dd90620a5fc5ac3677128e
 - Come up with three scenarios in which local storage would be useful.
     - Example 1:
     - Example 2:
     - Example 3:
 
+<<<<<<< HEAD
 >>>>>>> local_storage
 >>>>>>> 582441f164c7035a8fdcdd2683007afc3d0e7505
+=======
+>>>>>>> ac24a3e832b6fc7540dd90620a5fc5ac3677128e
