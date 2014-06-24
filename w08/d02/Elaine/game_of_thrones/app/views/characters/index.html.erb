@@ -16,6 +16,7 @@
     <li data-character-id="<%= character.id %>" class="<%= character.dead ? "dead" : "" %>">
       <%= character.name %>
       <%= check_box_tag :dead, 'yes', character.dead %>
+      <span>&times;</span>
     </li>
   <% end %>
 </ul>

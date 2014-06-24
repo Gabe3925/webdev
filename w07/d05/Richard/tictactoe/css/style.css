@@ -2,12 +2,14 @@
 * @Author: Richard Hessler
 * @Date:   2014-06-07 13:59:49
 * @Last Modified by:   Richard Hessler
-* @Last Modified time: 2014-06-09 13:16:02
+* @Last Modified time: 2014-06-10 09:34:07
 */
 
 body {
   background-color: black;
   text-align:center;
+  font: 18px/27px Skolar, Tisa, Georgia, serif;
+  color: #888;
 }
 
 .red {
