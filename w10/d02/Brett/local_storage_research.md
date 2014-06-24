@@ -11,8 +11,20 @@ As we do dive into building more client-side applications, we're going to start 
 - What are the alternatives?
   - Answer: Cookies, HTML5 storage, hacky methods
 
+<<<<<<< HEAD
 - Come up with a scenario in which local storage would be useful.
     - Scenario: storing progress even after browser window is closed, tracking progress without users
 
 - Think of a scenario where server-side storage would be preferred.
+<<<<<<< HEAD
     - Scenario: anytime you wouldn't want files to be manipulated or tinkered with (security reasons)
+=======
+    - Scenario:
+=======
+- Come up with three scenarios in which local storage would be useful.
+    - Example 1:
+    - Example 2:
+    - Example 3:
+
+>>>>>>> local_storage
+>>>>>>> 582441f164c7035a8fdcdd2683007afc3d0e7505
