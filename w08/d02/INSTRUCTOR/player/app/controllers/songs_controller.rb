@@ -6,6 +6,7 @@ class SongsController < ApplicationController
   def create
     # binding.pry
     @song = Song.new(song_params)
+    #should this have been done in the model?
     @song.preview_url = get_preview_url(@song.artist, @song.title)
 
     if @song.save
@@ -19,6 +20,7 @@ class SongsController < ApplicationController
     @song = Song.find(params[:id])
 
     if @song.destroy
+      #why do we render an empty object?
       render json: {}
     else
       render status: 400, nothing: true
