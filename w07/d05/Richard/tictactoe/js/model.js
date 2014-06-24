@@ -2,7 +2,7 @@
 * @Author: Richard Hessler
 * @Date:   2014-06-07 13:55:32
 * @Last Modified by:   Richard Hessler
-* @Last Modified time: 2014-06-09 13:15:25
+* @Last Modified time: 2014-06-10 09:41:59
 */
 
 //Global Variables
@@ -50,6 +50,7 @@ function checkForWinner(){
   // loops through values of buttons and assesses whether or not a winning combination has been satisfied.
   for(var i = 0; i < winningCombos.length; i++){
     if(document.getElementById([winningCombos[i][0]]).value === 'X' && document.getElementById([winningCombos[i][1]]).value === 'X' && document.getElementById([winningCombos[i][2]]).value === 'X'){
+
 
       winner = 'Doge wins!'                 // variable for broken function below
       playAgain();
