@@ -30,12 +30,12 @@ $(function(){
 
 //////////////////// Creates a new Marker and places it on the Map //////////debugger
 function placeMarker(position) {
-  var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+  //var image = new google.maps.MarkerImage('images/self-distract-button-48.png');
   var marker = new google.maps.Marker({
     position: position,
     map: map,
     animation: google.maps.Animation.BOUNCE,
-    //icon: iconBase + "self-distract-button-48.png"
+    //icon: image
   });
 }
 

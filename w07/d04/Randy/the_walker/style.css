@@ -9,3 +9,10 @@ img {
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
 }
+#img{
+  border: 10px solid #000;
+  border-radius: 100px;
+}
+body{
+background-color: #000;
+}
