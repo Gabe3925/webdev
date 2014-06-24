@@ -2,7 +2,7 @@
 * @Author: stephenstanwood
 * @Date:   2014-06-24 10:26:29
 * @Last Modified by:   stephenstanwood
-* @Last Modified time: 2014-06-24 12:28:14
+* @Last Modified time: 2014-06-24 13:47:20
 */
 
 // API: http://itsthisforthat.com/api.php?json
@@ -36,9 +36,18 @@ var IdeaView = Backbone.View.extend({
   },
 
   render: function() {
-    this.$el.html( this.model.get( 'this' ) + ' <span>for</span> ' + this.model.get( 'that' ) );
+    var message = this.model.get( 'this' ) + ' <span>for</span> ' + this.model.get( 'that' );
+    this.$( 'p' ).html( message );
 
     this.$( 'span' ).css( 'color', 'white' );
+  },
+
+  events: {
+    'click #idea-reload': 'onReload'
+  },
+
+  onReload: function( e ) {
+    this.model.reload();
   }
 
 });
