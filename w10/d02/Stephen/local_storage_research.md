@@ -11,8 +11,20 @@ As we do dive into building more client-side applications, we're going to start 
 - What are the alternatives?
   - Answer: cookies, databases, being OK with not moving information from session to session...
 
+<<<<<<< HEAD
 - Come up with a scenario in which local storage would be useful.
     - Scenario: you're using an api with a call limit and want to limit the number of calls that you make to the service
 
 - Think of a scenario where server-side storage would be preferred.
+<<<<<<< HEAD
     - Scenario: you run twitter and want to keep a copy of all of the tweets from forever
+=======
+    - Scenario:
+=======
+- Come up with three scenarios in which local storage would be useful.
+    - Example 1:
+    - Example 2:
+    - Example 3:
+
+>>>>>>> local_storage
+>>>>>>> 582441f164c7035a8fdcdd2683007afc3d0e7505
