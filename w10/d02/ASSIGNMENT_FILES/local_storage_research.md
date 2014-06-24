@@ -11,8 +11,8 @@ As we do dive into building more client-side applications, we're going to start 
 - What are the alternatives?
   - Answer:
 
-- Come up with three scenarios in which local storage would be useful.
-    - Example 1:
-    - Example 2:
-    - Example 3:
+- Come up with a scenario in which local storage would be useful.
+    - Scenario:
 
+- Think of a scenario where server-side storage would be preferred.
+    - Scenario:
