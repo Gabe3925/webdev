@@ -11,8 +11,10 @@ As we do dive into building more client-side applications, we're going to start 
 - What are the alternatives?
   - Answer: Cookies, databases, storage options that require external plug-ins
 
+
 - Come up with a scenario in which local storage would be useful.
     - Scenario: An app which is available both off and online; local storage could be used when offline of server
 
 - Think of a scenario where server-side storage would be preferred.
     - Scenario: Something that requires more than 5 MG of data (local storage's limit); if you want to sync across devices, database is needed
+
