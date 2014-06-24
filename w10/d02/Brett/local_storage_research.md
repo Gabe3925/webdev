@@ -1,18 +1,18 @@
 ## Intro to Local Storage
 
-As we do dive into building more client-side applications, we're going to start thinking about how and where we store and manage our data. In doing so, we'll make use of browsers' local storage, introduced in HTML5. Take the next 15 minutes to research local storage, answering the questions below. 
+As we do dive into building more client-side applications, we're going to start thinking about how and where we store and manage our data. In doing so, we'll make use of browsers' local storage, introduced in HTML5. Take the next 15 minutes to research local storage, answering the questions below.
 
 - What is local storage?
-  - Answer:
+  - Answer: Storage on the client side. Native apps have used this forever.
 
 - What problem does it solve?
-  - Answer:
+  - Answer: Persisting data on a user/session level and getting rid of the need to transmit the same data over and over.
 
 - What are the alternatives?
-  - Answer:
+  - Answer: Cookies, HTML5 storage, hacky methods
 
 - Come up with a scenario in which local storage would be useful.
-    - Scenario:
+    - Scenario: storing progress even after browser window is closed, tracking progress without users
 
 - Think of a scenario where server-side storage would be preferred.
-    - Scenario:
+    - Scenario: anytime you wouldn't want files to be manipulated or tinkered with (security reasons)
