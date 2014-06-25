@@ -17,3 +17,15 @@
 img {
   width: 100px;
 }
+
+.character {
+  display: inline-block;
+  position: relative;
+  margin: 20px;
+  vertical-align: top;
+}
+
+body {
+  background-size: cover;
+  background-image: url('http://wallpaperswa.com/thumbnails/detail/20130724/nintendo%20retro%20super%20mario%20retro%20games_wallpaperswa.com_37.jpg');
+}
