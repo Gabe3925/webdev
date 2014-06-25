@@ -10,7 +10,10 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = post.new(post_params)
+    @post = Post.new(post_params)
+
+    require 'open-uri'
+    @post.title = Nokogiri::HTML(open("#{post_params['url']}")).title
 
     if @post.save
       render json: @post
