@@ -6,9 +6,9 @@ var IdeaModel = Backbone.Model.extend({
 
   // sets default values for any given instance of IdeaModel
   defaults: {
-    'this': 'Chair',
-    'that': 'Dog'
-  },
+    'this': 'Default THIS',
+    'that': 'Default THAT'
+  }
 
   // the 'url' attribute is used by the .fetch method to sync with an external API
   url: 'http://itsthisforthat.com/api.php?json',
@@ -19,6 +19,7 @@ var IdeaModel = Backbone.Model.extend({
     this.fetch({dataType: 'jsonp', jsonp: 'call'});
   }
 });
+
 
 // sets up constructor function for creating idea views
 var IdeaView = Backbone.View.extend({
@@ -32,8 +33,9 @@ var IdeaView = Backbone.View.extend({
     this.render();
   },
 
-  render: function() {
-    var message = this.model.get('this') +' <span>for</span> '+ this.model.get('that');
+  render: function(){
+    var message = this.model.get('this') + '<span> for </span> ' + this.model.get('that');
+
     // finds any child <p> tags within the view's designated 'el' and sets their html
     this.$('p').html(message);
   },
@@ -47,7 +49,8 @@ var IdeaView = Backbone.View.extend({
   }
 });
 
-var idea = new IdeaModel();
+
+
 // when you instantiate a view, you'll almost always pass it a model or collection
 // so that it has access to dynamic data
 var ideaView = new IdeaView({ model: idea });
