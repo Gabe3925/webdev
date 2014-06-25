@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.order(:upvotes :desc)
+    @posts = Post.order(upvotes: :desc)
 
     respond_to do |format|
       format.html { render :index }
