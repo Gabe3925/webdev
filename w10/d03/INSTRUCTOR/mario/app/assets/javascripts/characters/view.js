@@ -25,3 +25,17 @@ var CharacterView = Backbone.View.extend({
   }
 
 });
+
+var ListView = Backbone.View.extend({
+  el: '#container',
+
+  initialize: function(){
+    this.listenTo(this.collection, 'add', this.addOne);
+  },
+
+  addOne: function(character){
+    var view = new CharacterView({model: character});
+    this.$el.append(view.el);
+  }
+
+})
