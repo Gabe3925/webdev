@@ -4,6 +4,10 @@ var Character = Backbone.Model.extend({
     name: '',
     img_url: '',
     coins: 0
+  },
+
+  getCoin: function(){
+    this.save('coins', this.get('coins') + 1);
   }
 
 });
