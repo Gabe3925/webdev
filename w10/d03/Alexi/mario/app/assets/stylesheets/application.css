@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+img {
+  max-height: 100px;
+}
+
+.character {
+  display: inline-block;
+  position: relative;
+  margin: 20px;
+  vertical-align: top;
+}

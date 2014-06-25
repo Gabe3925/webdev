@@ -25,6 +25,16 @@ var CharacterView = Backbone.View.extend({
   }
 
 });
-mario = new Character({name: 'yoshi', img_url: 'http://upload.wikimedia.org/wikipedia/en/3/39/YoshiMarioParty9.png'})
-marioView = new CharacterView({model: mario});
-$('body').append(marioView.el);
+
+var ListView = Backbone.View.extend({
+  el: '#container',
+
+  initialize: function(){
+    this.listenTo(this.collection, 'add', this.addOne);
+  },
+
+  addOne: function(character){
+    var view = new CharacterView({ model: character })
+    this.$el.append(view.el);
+  }
+});

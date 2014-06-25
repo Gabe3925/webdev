@@ -1,5 +1,5 @@
 var Character = Backbone.Model.extend({
-  urlRoot: '/characters',
+  // urlRoot: '/characters',
   
   defaults: {
     name: '',
@@ -8,3 +8,7 @@ var Character = Backbone.Model.extend({
   }
 });
 
+var CharacterCollection = Backbone.Collection.extend({
+  model: Character,
+  url: '/characters'
+});
