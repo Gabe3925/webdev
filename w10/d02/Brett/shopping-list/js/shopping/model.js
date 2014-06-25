@@ -14,3 +14,4 @@ var ItemsCollection = Backbone.Collection.extend({
 });
 
 var items = new ItemsCollection();
+muppets.comparator = "rating";
