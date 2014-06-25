@@ -9,18 +9,30 @@ var CharacterView = Backbone.View.extend({
   },
 
   events: {
-    'click span' : 'onRemove'
+    'click span' : 'onRemove',
+    'click img' : 'onGetCoin'
   },
 
   onRemove: function(){
     this.model.destroy();
   },
 
+  onGetCoin: function(){
+    this.$el.animate({top: '-50px'}, 200).animate({top: 0}, 200);
+    document.getElementById('coin').play();
+    this.model.getCoin();
+  },
+
+  template: _.template($('#character-html').html()),
+
   render: function(){
-    var rendered = '<h2>' + this.model.get('name') + ' -- '
-      + this.model.get('coins') + '</h2>'
-      + '<span> &times; </span>'
-      + '<img src="' + this.model.get('img_url') + '"/>';
+    
+    // var rendered = '<h2>' + this.model.get('name') + ' -- '
+    //   + this.model.get('coins') + '</h2>'
+    //   + '<span> &times; </span>'
+    //   + '<img src="' + this.model.get('img_url') + '"/>';
+
+    var rendered = this.template({character: this.model});
     this.$el.html(rendered);
   }
 
