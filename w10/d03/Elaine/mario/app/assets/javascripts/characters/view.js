@@ -23,7 +23,7 @@ var CharacterView = Backbone.View.extend({
     this.model.getCoin();
   },
 
-  template: _.template($('#character-html').html),
+  template: _.template($('#character-html').html()),
 
   render: function() {
     // var rendered = '<h2>' + this.model.get('name') + ' -- ' + this.model.get('coins') + '</h2>' + '<span> &times; </span>' + '<img src="' + this.model.get('img_url') + '"/>';
