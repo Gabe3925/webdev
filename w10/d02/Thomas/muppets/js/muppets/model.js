@@ -5,14 +5,22 @@ var MuppetModel = Backbone.Model.extend({
     name: '',
     image: '',
     rating: 1
+  },
+
+  vote: function(modifier) {
+    var currentRating = this.get('rating');
+    currentRating += modifier;
+    this.save({rating: currentRating});
+    this.collection.sort();
   }
+
 });
 
 //a Collection for a list of muppet items:
-//why does the model need to be specified?
 var MuppetsCollection = Backbone.Collection.extend({
   model: MuppetModel,
-  localStorage: new Backbone.LocalStorage('muppets')
+  localStorage: new Backbone.LocalStorage('muppets'),
+  comparator: 'rating'
 });
 
 //what does the below accomplish, and why does it look like I am calling a function?
