@@ -38,4 +38,26 @@ var ListView = Backbone.View.extend({
     this.$el.append(view.el);
   }
 
-})
+});
+
+var FormView = Backbone.View.extend({
+
+  el: 'form',
+
+  events: {
+    'submit' : 'createCharacter'
+  },
+
+  createCharacter: function(evt){
+    evt.preventDefault();
+    var name = this.$('[name="name"]').val();
+    var img_url = this.$('[name="img_url"]').val();
+    this.el.reset();
+
+    this.collection.create({
+      name: name,
+      img_url: img_url
+    });
+  }
+
+});
