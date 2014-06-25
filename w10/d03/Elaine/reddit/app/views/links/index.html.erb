@@ -1,0 +1,21 @@
+<h1>Red.it</h1>
+
+<form>
+  <fieldset>
+    <legend>New Link</legend>
+    <label>
+      URL
+      <input type="text" name="url" />
+    </label>
+    <button>Submit</button>
+  </fieldset>
+</form>
+
+<div id="container"></div>
+
+<script type="template" id="link-html">
+  <h2><%%= link.get('title') %> (<%%= link.get('upvotes') %>)</h2>
+  <p><%%= link.get('url') %></p>
+  <span> &times; </span>
+  <button>Upvote</button>
+</script>
