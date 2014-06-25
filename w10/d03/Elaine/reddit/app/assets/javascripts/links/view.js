@@ -10,7 +10,8 @@ var LinkView = Backbone.View.extend({
 
   events: {
     'click span' : 'onRemove',
-    'click button' : 'onUpvote',
+    'click button#up' : 'onUpvote',
+    'click button#down' : 'onDownvote',
   },
 
   onRemove: function() {
@@ -19,6 +20,10 @@ var LinkView = Backbone.View.extend({
 
   onUpvote: function() {
     this.model.addUpvote();
+  },
+
+  onDownvote: function() {
+    this.model.subtractUpvote();
   },
 
   template: _.template($('#link-html').html()),
@@ -33,26 +38,17 @@ var ListView = Backbone.View.extend({
   el: '#container',
 
   initialize: function() {
-    this.listenTo(this.collection, 'add', this.addOne);
     this.listenTo(this.collection, 'add remove change sort', this.render);
   },
 
-  addOne: function(link) {
-    var view = new LinkView({model: link});
-    this.$el.append(view.el);
-  },
-
-  template: _.template($('#link-html').html()),
-
   render: function() {
-    var html = '';
+    this.$el.empty();
+    var $e = this.$el;
 
     this.collection.each(function(one) {
       var view = new LinkView({model: one});
-      var rendered = view.template({link: one});
-      html += rendered;
+      $e.append(view.el);
     });
-    this.$el.append(html);
   }
 });
 
@@ -68,12 +64,9 @@ var FormView = Backbone.View.extend({
     evt.preventDefault();
 
     var url = this.$('[name="url"]').val();
-
-    var title = '';
-
+    this.el.reset();
 
     this.collection.create({
-      title: title,
       url: url
     });
   }

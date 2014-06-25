@@ -14,8 +14,9 @@
 <div id="container"></div>
 
 <script type="template" id="link-html">
-  <h2><%%= link.get('title') %> (<%%= link.get('upvotes') %>)</h2>
-  <p><%%= link.get('url') %></p>
+  <h2><%%= link.get('title') %> <span id="votes">(<%%= link.get('upvotes') %>)</span></h2>
+  <p><a href="<%%= link.get('url') %>"><%%= link.get('url') %></a></p>
   <span> &times; </span>
-  <button>Upvote</button>
+  <button id="up">Upvote</button>
+  <button id="down">Downvote</button>
 </script>

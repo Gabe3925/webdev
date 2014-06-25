@@ -13,3 +13,23 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  background-image: url('http://bglabs.evade.netdna-cdn.com/wp-content/uploads/2013/04/subtle-mosaic-pattern.png');
+  padding: 50px;
+}
+
+fieldset {
+  background-color: rgba(255,255,255,0.75);
+  padding: 20px;
+}
+
+div {
+  background-color: rgba(255,255,255,0.5);
+  margin-top: 20px;
+  padding: 5px 20px;
+}
+
+span#votes {
+  color: #C00000;
+}
