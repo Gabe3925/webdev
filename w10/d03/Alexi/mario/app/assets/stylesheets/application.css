@@ -14,6 +14,11 @@
  *= require_self
  */
 
+body {
+  background-size: cover;
+  background-image: url('http://www.wall321.com/thumbnails/detail/20120422/mario%201280x800%20wallpaper_www.wallpaperto.com_24.jpg');
+}
+
 img {
   max-height: 100px;
 }
