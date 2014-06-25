@@ -7,8 +7,9 @@ var MuppetModel = Backbone.Model.extend({
 
   vote: function(num) {
     this.attributes.rating += num;
-    console.log(this.attributes.rating);
     this.save();
+    console.log(this);
+    this.collection.sortByRating('rating');
   }
 });
 

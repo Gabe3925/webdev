@@ -46,12 +46,14 @@ var MuppetListView = Backbone.View.extend({
     var cid = $(evt.target).data('upvote');
     var model = this.collection.get(cid);
     model.vote(-1);
+    this.render();
   },
 
   downvote: function(evt) {
     var cid = $(evt.target).data('downvote');
     var model = this.collection.get(cid);
-    model.vote(1)
+    model.vote(1);
+    this.render();
   },
 
   onRemove: function(evt) {
