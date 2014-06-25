@@ -8,14 +8,17 @@ var MuppetModel = Backbone.Model.extend({
 
   upvote: function(vote){
     voteValue = parseInt(vote);
-    this.rating += voteValue;
+    this.attributes.rating += voteValue;
     this.save();
   }
 });
 
 var MuppetsCollection = Backbone.Collection.extend({
   model: MuppetModel,
-  localStorage: new Backbone.LocalStorage('muppets_storage')
+  localStorage: new Backbone.LocalStorage('muppets_storage'),
+  comparator: function(model){
+    return -model.get('rating');
+  }
 });
 
 var muppets = new MuppetsCollection();
