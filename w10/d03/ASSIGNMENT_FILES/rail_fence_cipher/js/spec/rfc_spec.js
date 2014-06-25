@@ -1,5 +1,5 @@
 describe("#encode", function(){
   it("encodes a string", function(){
-    expect(encode("WEAREDISCOVEREDFLEEATONCE")).toBe("WECRLTEERDSOEEFEAOCAIVDEN")
+    expect(encode("WEAREDISCOVEREDFLEEATONCE")).toBe("WECRLTEERDSOEEFEAOCAIVDEN");
   });
 });
