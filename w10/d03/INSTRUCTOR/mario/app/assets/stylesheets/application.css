@@ -17,3 +17,10 @@
 img {
   width: 100px;
 }
+
+.character {
+  display: inline-block;
+  position: relative;
+  margin: 20px;
+  vertical-align: top;
+}
