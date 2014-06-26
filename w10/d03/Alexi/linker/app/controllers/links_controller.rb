@@ -29,7 +29,7 @@ class LinksController < ApplicationController
     end
   end
 
-  def destory
+  def destroy
     @link = Link.find(params[:id])
 
     if @link.destroy
@@ -42,7 +42,6 @@ class LinksController < ApplicationController
   private
 
   def link_params
-    params.require(:character).permit(:title, :votes, :url)
+    params.require(:link).permit(:title, :votes, :url)
   end
-
 end
