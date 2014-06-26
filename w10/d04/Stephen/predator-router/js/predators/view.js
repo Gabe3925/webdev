@@ -2,7 +2,7 @@
 * @Author: stephenstanwood
 * @Date:   2014-06-26 12:05:36
 * @Last Modified by:   stephenstanwood
-* @Last Modified time: 2014-06-26 14:30:09
+* @Last Modified time: 2014-06-26 15:34:56
 */
 
 var PredatorListView = Backbone.View.extend({
@@ -25,4 +25,4 @@ var PredatorDetailView = Backbone.View.extend({
     var rendered = this.template( this.model.toJSON() );
     return this.$el.html( rendered );
   }
-})
+});
