@@ -2,19 +2,27 @@
 * @Author: stephenstanwood
 * @Date:   2014-06-26 12:05:36
 * @Last Modified by:   stephenstanwood
-* @Last Modified time: 2014-06-26 12:26:41
+* @Last Modified time: 2014-06-26 14:30:09
 */
 
 var PredatorListView = Backbone.View.extend({
   tagName: 'ul',
   className: 'predator-list',
-
   template: _.template( $( '#predator-list' ).html() ),
 
   render: function() {
-    var rendered = this.template();
+    var rendered = this.template({ collection: this.collection });
     return this.$el.html( rendered );
   }
 });
 
-new PredatorListView().render().appendTo( '#predator-container' );
+var PredatorDetailView = Backbone.View.extend({
+  tagName: 'div',
+  className: 'predator-detail',
+  template: _.template( $( '#predator-detail' ).html() ),
+
+  render: function() {
+    var rendered = this.template( this.model.toJSON() );
+    return this.$el.html( rendered );
+  }
+})
