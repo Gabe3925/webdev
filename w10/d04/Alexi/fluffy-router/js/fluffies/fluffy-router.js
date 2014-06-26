@@ -27,12 +27,15 @@ var FluffyRouter = Backbone.Router.extend({
 });
 
 var NavView = Backbone.View.extend({
-  initializer: function(options) {
+
+  el: '#nav',
+
+  initialize: function(options) {
     this.listenTo(options.router, 'route', this.render);
   },
 
   render: function() {
-    $('a')
+    this.$('a')
       .removeClass('active')
       .filter('[href="#' + Backbone.history.fragment +'"]')
       .addClass('active');
@@ -42,3 +45,4 @@ var NavView = Backbone.View.extend({
 var fluffyRouter = new FluffyRouter();
 var navView = new NavView({ router: fluffyRouter });
 Backbone.history.start();
+
