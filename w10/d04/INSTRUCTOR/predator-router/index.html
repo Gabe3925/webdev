@@ -10,18 +10,6 @@
     <h1>Predator Router</h1>
     <div id="predator-container"></div>
   </div>
-  
-  <script type="template" id="predator-list">
-    <% collection.each(function(model) { %>
-      <li><a href="#predators/<%= model.get('id') %>"><%= model.get('name') %></a></li>
-    <% }) %>
-  </script>
-
-  <script type="template" id="predator-detail">
-    <a href="#predators">All Predators</a>
-    <h2><%= name %></h2>
-    <img src="<%= image %>" alt="<%= name %>">
-  </script>
 
   <script src="js/vendor/jquery.js"></script>
   <script src="js/vendor/underscore.js"></script>
