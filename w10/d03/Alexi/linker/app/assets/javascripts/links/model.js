@@ -8,7 +8,8 @@ var Link = Backbone.Model.extend({
   },
 
   getLink: function(){
-    this.save('links', this.get('links') + 1);
+    this.save('votes', this.get('votes') + 1);
+    this.collection.sort();
   }
 });
 

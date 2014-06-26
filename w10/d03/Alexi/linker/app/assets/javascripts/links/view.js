@@ -1,5 +1,5 @@
 var LinkView = Backbone.View.extend({
-  tagName: 'li',
+  tagName: 'div',
   className: 'link',
 
   initialize: function(){
@@ -14,7 +14,7 @@ var LinkView = Backbone.View.extend({
 
   onRemove: function(){
     this.model.destroy();
-  }.
+  },
 
   template: _.template($('#link-html').html()),
 
@@ -29,7 +29,7 @@ var ListView = Backbone.View.extend({
   el: '#container',
   
   initialize: function(){
-    this.listenTo(this.collection, 'add', this.addOne);
+    this.listenTo(this.collection, 'add remove sort', this.render);
   },
 
   addOne: function(link){
