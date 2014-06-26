@@ -30,6 +30,7 @@ var FluffyRouter = Backbone.Router.extend({
 
 var NavView = Backbone.View.extend({
 
+  //LISTENS TO BROWSER ROUTES...
   initialize: function(options) {
     this.listenTo(options.router, 'route', this.render)
   },
