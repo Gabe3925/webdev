@@ -2,7 +2,7 @@
 * @Author: stephenstanwood
 * @Date:   2014-06-26 15:05:02
 * @Last Modified by:   stephenstanwood
-* @Last Modified time: 2014-06-26 16:40:34
+* @Last Modified time: 2014-06-27 11:51:15
 */
 
 var StudentsRouter = Backbone.Router.extend({
@@ -30,6 +30,3 @@ var StudentsRouter = Backbone.Router.extend({
     this.view.render().appendTo( '#students-container' );
   }
 });
-
-var router = new StudentsRouter();
-Backbone.history.start();

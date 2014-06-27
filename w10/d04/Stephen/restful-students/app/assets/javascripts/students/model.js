@@ -2,7 +2,7 @@
 * @Author: stephenstanwood
 * @Date:   2014-06-26 15:05:02
 * @Last Modified by:   stephenstanwood
-* @Last Modified time: 2014-06-26 17:08:50
+* @Last Modified time: 2014-06-27 12:08:17
 */
 
 var Student = Backbone.Model.extend({
@@ -20,5 +20,10 @@ var StudentCollection = Backbone.Collection.extend({
   url: '/students'
 });
 
+var router;
 var studentsCollection = new StudentCollection();
-studentsCollection.fetch();
+studentsCollection.fetch().then( function() {
+  router = new StudentsRouter();
+  Backbone.history.start();
+});
+
