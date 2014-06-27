@@ -12,13 +12,13 @@ var StudentsRouter = Backbone.Router.extend({
 
   list: function() {
     this.clearView();
-    this.view = new StudentListView({collection: StudentsCollection});
+    this.view = new StudentListView({collection: studentsCollection});
     this.view.render().appendTo('#students-container');
   },
 
   detail: function(id) {
     this.clearView();
-    var predator = StudentsCollection.get(id);
+    var student = studentsCollection.get(id);
     this.view = new StudentDetailView({model: student});
     this.view.render().appendTo('#student-container');
   }
