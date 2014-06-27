@@ -1,18 +1,19 @@
-class StudentController < ApplicationController
+class StudentsController < ApplicationController
 
   def index
-    @students = Student.all.order(:name)
+    @students = Student.all
 
     respond_to do |format|
       format.html { render :index }
       format.json { render json: @students }
+    end
   end
 
   def show
   end
 
   def create
-    @Student = Student.new(student_params)
+    @student = Student.new(student_params)
 
     if @student.save
       render json: @student

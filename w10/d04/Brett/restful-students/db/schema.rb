@@ -17,6 +17,11 @@ ActiveRecord::Schema.define(version: 20140626191651) do
   enable_extension "plpgsql"
 
   create_table "students", force: true do |t|
+    t.string "name"
+    t.string "email"
+    t.string "phone_number"
+    t.text   "location"
+    t.string "employment"
   end
 
 end

@@ -5,11 +5,13 @@ var Student = Backbone.Model.extend({
     location: "",
     phoneNumber: "",
     employment: ""
-  },
-
-  var StudentCollection = Backbone.Collection.extend({
-    model: Student,
-    url: "students",
-  });
-
+  }
 });
+
+var StudentCollection = Backbone.Collection.extend({
+  model: Student,
+  url: "students"
+});
+
+var studentCollection = new StudentCollection
+
