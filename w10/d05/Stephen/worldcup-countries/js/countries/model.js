@@ -2,23 +2,32 @@
 * @Author: stephenstanwood
 * @Date:   2014-06-27 12:42:39
 * @Last Modified by:   stephenstanwood
-* @Last Modified time: 2014-06-27 13:12:04
+* @Last Modified time: 2014-06-27 21:46:45
 */
 
 var Country = Backbone.Model.extend({
   defaults: {
     alpha2Code: '',
     name: '',
-    isPlaying: false,
+    isPlaying: true,
     isEliminated: false
   },
 
+  initialize: function ( obj ) {
+    this.alpha2Code = obj.alpha2Code;
+    this.name =  obj.name;
+    this.isPlaying = true;
+    this.isEliminated = false;
+  },
+
   toggleElimination: function() {
-    isEliminated = !isEliminated;
-  }
+    var newStatus = !this.get( 'isEliminated' );
+    this.set({ 'isEliminated': newStatus });
+  },
 
   togglePlaying: function() {
-    isPlaying = !isPlaying;
+    var newStatus = !this.get( 'isPlaying' );
+    this.set({ 'isPlaying': newStatus });
   }
 });
 
