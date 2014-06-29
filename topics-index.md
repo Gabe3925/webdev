@@ -49,8 +49,31 @@
 * Day 1: JavaScript vars, loops, objects, arrays, UnderscoreJS
 * Day 2: JavaScript functions, prototypal inheritance
 * Day 3: DOM manipulation and events
-* Day 4: 
-* Day 5: 
+* Day 4: JavaScript TDD
+* Day 5: jQuery
 
 **Week 8**
 
+* Day 1: Intro to Async + Ajax
+* Day 2: Ajax CRUD
+* Day 3: Mini Team Projects; Git branch, rebase, merge.
+* Day 4: Mini Team Projects
+* Day 5: Project-2 Kickoff
+
+**Week 9**
+
+* Project 2
+
+**Week 10**
+
+* Day 1: Intro to MV*; Backbone Models, Collection & Views
+* Day 2: Backbone CRUD
+* Day 3: Backbone Router, multiple views, advanced templating
+* Day 4: RESTful Students lab
+
+**Week 11**
+
+* Day 1: AMD + RequireJS
+* Day 2: Application design workshop
+* Day 3: D3, Data.gov mini teams
+* Day 4: mini teams
