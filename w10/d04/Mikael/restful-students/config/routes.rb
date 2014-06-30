@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  
-  root 'app#index'
-  get '/templates' => 'app#templates'
+
+  root 'students#index'
+  # get '/templates' => 'students#templates'
+  resources :students
 
 end
