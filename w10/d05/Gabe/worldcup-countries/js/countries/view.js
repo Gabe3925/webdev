@@ -62,7 +62,7 @@ var CountryListItemView = Backbone.View.extend({
 
   render: function(){
 
-    var rendered = this.template({country: this.model});
+    var rendered = this.template({model: this.model});
     this.$el.html(rendered);
   }
 });
@@ -77,8 +77,8 @@ var CountryListView = Backbone.View.extend({
 
   render: function(evt) {
     evt.preventDefault();
-    var rendered = this.template({predators: this.collection});
-    return this.$el.html(rendered);
+    var rendered = this.template({collection: this.collection});
+    this.$el.html(rendered);
     this.$el.reset();
   }
 });
