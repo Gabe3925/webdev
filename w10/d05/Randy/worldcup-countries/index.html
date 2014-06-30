@@ -18,13 +18,13 @@
     <ul>
       <li>
         <label>
-          <input type="checkbox" name="playing" checked="<%=isPlaying%>">
+          <input type="checkbox" name="playing" checked= <%= isPlaying ? 'checked' : '' %>>
           Competing in the World Cup
         </label>
       </li>
       <li>
         <label>
-          <input type="checkbox" name="eliminated" checked="<%=isEliminated%>">
+          <input type="checkbox" name="eliminated" checked= <%= isEliminated ? "checked" : ""%>>
           Has been eliminated
         </label>
       </li>

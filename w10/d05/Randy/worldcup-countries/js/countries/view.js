@@ -13,12 +13,12 @@ var CountryDetailView = Backbone.View.extend({
 
   playing: function(){
     this.model.set({isPlaying: !this.model.get("isPlaying")});
-    return isPlaying
+    this.render();
   },
 
   eliminated: function(){
     this.model.set({isEliminated: !this.model.get("isEliminated")});
-    return isEliminated
+    this.render();
   },
 
   render: function() {
