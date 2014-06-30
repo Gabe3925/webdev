@@ -6,7 +6,7 @@
   <button class="primary" id="student-add" title="Add">+</button>
 </form>
 <ul id="students-list" class="students-list">
-  <li><a href="#students/1">Peter</a></li>
-  <li><a href="#students/2">Travis</a></li>
-  <li><a href="#students/3">Greg</a></li>
+  <%% collection.each( function( model ) { %>
+    <li><a href="#students/<%%= model.get( 'id' ) %>"><%%= model.get( 'name' ) %></a></li>
+  <%% }) %>
 </ul>

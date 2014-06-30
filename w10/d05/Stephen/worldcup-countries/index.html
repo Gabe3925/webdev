@@ -5,14 +5,13 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  
+
   <ul class="countries-list" id="countries-list"></ul>
   <div class="country-main" id="country-main"></div>
-  
 
   <script type="template" id="country-detail">
-    <h1>United States</h1>
-    <img src="http://www.geonames.org/flags/x/us.gif" alt="United States">
+    <h1><%= name %></h1>
+    <img src="http://www.geonames.org/flags/x/<%= alpha2Code.toLowerCase() %>.gif" alt="<%= name %>">
     <ul>
       <li>
         <label>
