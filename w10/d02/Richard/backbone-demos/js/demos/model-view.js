@@ -8,7 +8,6 @@
 // IdeaModel === function
 var IdeaModel = Backbone.Model.extend({
 
-
   url: 'http://itsthisforthat.com/api.php?json',
 
   // attributes which the model stores - initial
