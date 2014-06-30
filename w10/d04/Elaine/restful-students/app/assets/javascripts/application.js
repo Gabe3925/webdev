@@ -18,3 +18,4 @@
 //= require ./students/model
 //= require ./students/view
 //= require ./students/router
+//= require main
