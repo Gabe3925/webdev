@@ -11,6 +11,6 @@ We are going to have 1:1 meetings this week to discuss your post-course goals, a
 
 |Instructor | M 4:30 | M 4:45| M 5:00| Tu 4:30 | T 4:45 | T 5:00 | W 4:30
 |:----    |:----  |:----  |:----  |:---- |:----|:----|:----|:----|:----
-|__Greg__| Elaine | Jacob | Yi-Hsiao | Salil | Mary | Brett | 
-|__Peter__| Mikael | JoElla |Jon | Randy | Parker | Inhak | Stephen|
+|__Greg__| Elaine | Jacob | Yi-Hsiao | JoElla | Mary | Brett | 
+|__Peter__| Mikael | Salil |Jon | Randy | Parker | Inhak | Stephen|
 |__Travis__|  Matt | Adam | Alexi | Gabe | Richard | Thomas |
