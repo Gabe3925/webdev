@@ -20,7 +20,11 @@ function bindForm() {
 }
 
 function appendSong(song) {
+<<<<<<< HEAD
+  debugger
+=======
   //what is being reset?
+>>>>>>> 548fe458a01b8f1a02bd634767dc78cf088a798c
   this.reset();
 
   var li = $("<li data-song-id=" + song.id + " >" + song.title + "</li>");
@@ -28,9 +32,9 @@ function appendSong(song) {
   li.append($("<audio controls><source src='" + song.preview_url + "'></audio>"));
   li.append($("<span>&times;</span>"));
   $("ul").append(li);
-
   bindDeleteButtons(li.find("span"));
-}
+} 
+
 
 function bindDeleteButtons(buttons) {
   buttons.on("click", function() {
