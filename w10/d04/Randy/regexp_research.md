@@ -9,12 +9,16 @@ Take 15-20 minutes to research Regular Expressions and answer the questions belo
 ####Questions to Answer:
 
 - What are Regular Expressions used for?
-  - Articulation:
+  - Articulation: A sequence of characters that forms a search pattern, mainly for use in pattern matching with strings, or string matching, i.e. "find and replace"-like operations.
 
 - What's the alternative to using regular expressions?
   - Answer:
+  	A crap ton of if statements
+  	SNOBOL
+  	Icon
+  	SRE
 
 - Are regular expressions unique to a particular language?
-  - Answer: 
+  - Answer:  No.
 
 Once finished, head over to [Rubular.com](http://rubular.com) and look over the RegExp key. The key will be confusing at first, but it's actually remarkably sensible and accessible to anyone who sticks with it. Then start playing around with the test string "https://chase.com/derek.vander.hoop". 
