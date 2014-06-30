@@ -7,7 +7,7 @@ Unfortunate facts…
 
 Let's build a class contact information directory to keep eveyone in touch! (we'll need a volunteer to host it on their Heroku account.)
 
-This is a full REST application with multiple front-end views. There are LOTS of moving pieces here. Work with a parter, or a small group. Take each step at your own pace. We've done each part of this; now we need to put al of those pieces together. Work methodically at your own pace; we'll be here to help.
+This is a full REST application with multiple front-end views. There are LOTS of moving pieces here. Work with a partner, or a small group. Take each step at your own pace. We've done each part of this; now we need to put al of those pieces together. Work methodically at your own pace; we'll be here to help.
 
 Here's what to do:
 
@@ -20,7 +20,7 @@ Create a `Student` model with the following fields (all strings):
 - phone
 - location
 - employment
-      
+
 Setup all necessary resources to provide a JSON API through the "/students" route.
 
 
@@ -36,7 +36,7 @@ All front-end HTML resources can be found in `app/views/app`.
 
 Within `assets/javascripts/students/model.js`:
 
-- Create a Backbone "Student" Model with fields matching the backend database. 
+- Create a Backbone "Student" Model with fields matching the backend database.
 
 - Create a Backbone "Students" Collection. Configure it to manage Student models, and talk to the "/students" REST endpoint.
 
