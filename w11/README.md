@@ -1,8 +1,8 @@
-# Week 10 - Intro to Model/View
+# Week 11 - Single Page Apps
 
 ###What did we do last week?
 
-- We learned Backbbone.
+- We learned Backbone.
 - We tamed fire-breathing unicorns.
 
 ###What are we doing this week?
