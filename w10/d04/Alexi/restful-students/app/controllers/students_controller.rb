@@ -1,7 +1,7 @@
 class StudentsController < ApplicationController
 
   def index
-    @students = Student.order(:created_at)
+    @students = Student.all
 
     respond_to do |format|
       format.html { render :index }
