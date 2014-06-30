@@ -23,6 +23,7 @@ Create a `Student` model with the following fields (all strings):
       
 Setup all necessary resources to provide a JSON API through the "/students" route.
 
+- Mario --> Mario & Red-It
 
 ## 2. Explore the Front-End
 
@@ -32,13 +33,22 @@ The front-end already has some HTML templates embedded within it. A preview of t
 
 All front-end HTML resources can be found in `app/views/app`.
 
+- Fluffy
+- Predator
+
 ## 3. Create a Backbone Model
 
 Within `assets/javascripts/students/model.js`:
 
 - Create a Backbone "Student" Model with fields matching the backend database. 
+	- Create new DB
 
 - Create a Backbone "Students" Collection. Configure it to manage Student models, and talk to the "/students" REST endpoint.
+	- Mario
+	- Red-It
+	- Check Tuesday apps too
+		- Shopping List
+		- Muppets
 
 - Create an instance of the collection called `studentsCollection`. Other Backbone components will reference this instance!
 
@@ -47,8 +57,11 @@ Within `assets/javascripts/students/model.js`:
 Within `assets/javascripts/students/view.js`:
 
 - Create a `StudentsListView` view class; it should create it's own "div" tag with a class of "students-list".
+	- Mario + Predator
 
 - Attach an Underscore template to this view class; use HTML from the "#students-list" script template tag (template available at `app/views/students/_list_template.html.erb`).
+	- Mario
+	- Predator
 
 - **To preview this view:** instance it with a reference to your `studentsCollection`, and then render it into the "#students-container" element. *When you've got this view fully working, you can disable this preview instance.*
 
@@ -57,7 +70,9 @@ Within `assets/javascripts/students/view.js`:
 ## 5. Create a Student Detail View
 
 Within `assets/javascripts/students/view.js`:
-
+	- Mario
+	- Predator
+	
 - Create a `StudentDetailView` view class; it should create it's own "form" tag with a class of "student-detail".
 
 - Attach an Underscore template to this view class; use HTML from the "#student-detail" script template tag (template available at `app/views/students/_detail_template.html.erb`).
@@ -69,7 +84,8 @@ Within `assets/javascripts/students/view.js`:
 ## 6. Create a Router
 
 Within `assets/javascripts/students/router.js`:
-
+	- Fluffy & Predator
+	
 - Create a new router with routes for "students" and "student/:id".
 - The "students" route should construct a new `StudentsListView` instance, and put its content into the "#students-container".
 - The "students/:id" route should create a new `StudentDetailView` instance using the specified model ID, and put it into the "#students-container".
