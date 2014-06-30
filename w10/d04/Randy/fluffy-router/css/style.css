@@ -11,10 +11,13 @@ a {
 
 h1, h2 {
   color: #fff;
+  font-family: script;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75);
 }
 
 img {
+  border: 8px solid #fff;
+  border-radius: 100px;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
 }
 

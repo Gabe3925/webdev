@@ -4,12 +4,12 @@ var StudentsListView = Backbone.View.extend({
   tagName: 'div',
   className: 'students-list',
   template: _.template($('#students-list').html()),
-  
+
   // Configures the view to re-render upon syncing with the API:
   initialize: function() {
     this.listenTo(this.collection, 'sync', this.render);
   },
-  
+
   // Renders the list display based on collection contents:
   render: function() {
     var rendered = this.template({students: this.collection});
