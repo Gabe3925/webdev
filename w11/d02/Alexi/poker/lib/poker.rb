@@ -1,37 +1,38 @@
+require 'pry'
+
 class Hand
   def initialize(cards)
     @cards = cards
   end
 
   def values
-    myfavoritestnumbersintheworld = []
+    fav_number = []
     @cards.each do |mycard|
-      value = mycard[0]
-
-                if value == "A"
-
-  myfavoritestnumbersintheworld << 1
-  elsif value == "T"
-  myfavoritestnumbersintheworld << 10
-
-
-  elsif value == 'J'
-  myfavoritestnumbersintheworld.push(11)
-  elsif value =="Q"
-  myfavoritestnumbersintheworld << 12
-  elsif value == "K"
-  myfavoritestnumbersintheworld.push(13)
-  else
-  myfavoritestnumbersintheworld.push(value.to_i)
-  end
+    value = mycard[0]
+    
+      if value == "A"
+        fav_number << 1
+      elsif value == "T"
+        fav_number << 10
+      elsif value == 'J'
+        fav_number << 11
+      elsif value =="Q"
+        fav_number << 12
+      elsif value == "K"
+        fav_number << 13
+      else
+        fav_number << value.to_i
+      end
     end
-    myfavoritestnumbersintheworld
+    fav_number
   end
+
 
   def suits
     mycardarray = Array.new
+  
     for card in @cards do
-    mycardarray << card.split("")[1]
+      mycardarray << card.split("")[1]
     end
     return mycardarray
   end
@@ -42,21 +43,21 @@ class Hand
     ordered_values.each_with_index do |value, index| 
     if index > 0
       if value != (ordered_values[index - 1] + 1)
-    is_straight = false
-    end
+        is_straight = false
       end
     end
+  end
     is_straight
   end
 
   def flush?
     is_flush = true
     suits.each_with_index do |suit, index| 
-    if index > 0
-    if suit != (suits[index - 1])
-    is_flush = false
-    end
-    end
+      if index > 0
+        if suit != (suits[index - 1])
+          is_flush = false
+        end
+      end
     end
     is_flush
   end
@@ -72,10 +73,8 @@ class Hand
         true
       end
     else
-      false
-    end
-      
-
+     false
+   end
   end
 
   def four_of_a_kind?
@@ -90,24 +89,26 @@ class Hand
   end
 
   def best_hand
-        ordered_values = values.sort
+    ordered_values = values.sort
     is_straight = true
+    
     ordered_values.each_with_index do |value, index| 
-    if index > 0
-    if value != (ordered_values[index - 1] + 1)
-    is_straight = false
+      if index > 0
+        if value != (ordered_values[index - 1] + 1)
+          is_straight = false
+        end
+      end
     end
-    end
-    end
+    
     is_flush = true
     suits.each_with_index do |suit, index| 
-    if index > 0
-    if suit != (suits[index - 1])
-    is_flush = false
+      if index > 0
+        if suit != (suits[index - 1])
+          is_flush = false
+        end
+      end
     end
-    end
-    end
-
+    
     if is_straight && is_flush
       'Straight Flush'
     elsif four_of_a_kind?
@@ -121,8 +122,8 @@ class Hand
     else
       "Not much"
     end
+  
   end
-
 end
 
 
