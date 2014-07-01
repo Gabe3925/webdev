@@ -6,11 +6,13 @@ define(function(require) {
   var Backbone = require('backbone');
   // Require all application components...
 
+  var watchlist = require('./models/watchlist');
   var router = require('./routers/routes');
   var searchView = require('./views/search');
+  var watchlistView = require('./views/watchlist');
 
   // Implementation:
 
-  console.log('Ready to go...');
+  watchlist.fetch();
   Backbone.history.start();
 });
