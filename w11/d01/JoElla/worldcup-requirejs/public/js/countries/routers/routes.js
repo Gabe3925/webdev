@@ -3,24 +3,33 @@
 // - Countries model
 // - CountryDetailView
 
-var CountriesRouter = Backbone.Router.extend({
-  routes: {
-    ':id': 'country',
-    '*default': 'country'
-  },
+define(function(require){
+  //Imports (what it needs)
+  var Backbone = require('backbone');
+  var countries = require('../models/countries');
+  var CountryDetailView = require('../views/detail');
 
-  country: function(id) {
-    if (this.view) {
-      this.view.remove();
-    }
-    
-    if (!id) {
-      id = countries.at(0).get('alpha2Code');
-      this.navigate(id);
-    }
+  //Implementation (how it builds itself)
+  var CountriesRouter = Backbone.Router.extend({
+    routes: {
+      ':id': 'country',
+      '*default': 'country'
+    },
 
-    var country = countries.findWhere({alpha2Code: id});
-    this.view = new CountryDetailView({model: country});
-    this.view.render().appendTo('#country-main');
-  }
+    country: function(id) {
+      if (this.view) {
+        this.view.remove();
+      }
+
+      if (!id) {
+        id = countries.at(0).get('alpha2Code');
+        this.navigate(id);
+      }
+
+      var country = countries.findWhere({alpha2Code: id});
+      this.view = new CountryDetailView({model: country});
+      this.view.render().appendTo('#country-main');
+    }
+  });
+  return new CountriesRouter;
 });

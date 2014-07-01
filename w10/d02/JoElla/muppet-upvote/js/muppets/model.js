@@ -13,8 +13,6 @@ var MuppetModel = Backbone.Model.extend({
 });
 
 
-
-
 var MuppetsCollection = Backbone.Collection.extend({
   model: MuppetModel,
   localStorage: new Backbone.LocalStorage('muppetStore')

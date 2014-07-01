@@ -5,14 +5,17 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  
+
   <ul class="countries-list" id="countries-list"></ul>
   <div class="country-main" id="country-main"></div>
-  
+
 
   <script type="template" id="country-detail">
-    <h1>United States</h1>
-    <img src="http://www.geonames.org/flags/x/us.gif" alt="United States">
+   <% countriesCollection.each(function(country){ %>
+    <h1><%= country.get('name') %></h1>
+
+      <img src='"http://www.geonames.org/flags/x/' + <%= country.get('alpha2Code') %> + '.gif"' alt="United States">
+      <% }) %>
     <ul>
       <li>
         <label>
@@ -26,6 +29,7 @@
           Has been eliminated
         </label>
       </li>
+
     </ul>
   </script>
 
