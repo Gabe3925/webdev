@@ -7,12 +7,8 @@ define(function(require) {
     el: "#watchlist",
 
     initialize: function() {
-      this.listenTo(this.collection, "sync", this.render);
+      this.listenTo(this.collection, "sync add remove", this.render);
       this.render();
-    },
-
-    events: {
-      "click li": "onClick"
     },
 
     render: function() {
@@ -23,10 +19,6 @@ define(function(require) {
       });
 
       this.$el.html(html);
-    },
-
-    onClick: function() {
-      $("watchlist-toggle").text("Remove from Watchlist");
     }
   });
 

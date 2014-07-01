@@ -1,7 +1,7 @@
 class MoviesController < ApplicationController
 
   def index
-    @movies = Movie.all
+    @movies = Movie.order("title ASC")
 
     if @movies
       render json: @movies
@@ -21,7 +21,13 @@ class MoviesController < ApplicationController
   end
 
   def destroy
+     @movie = Movie.find(params[:id])
 
+    if @movie.destroy
+      render json: {}
+    else
+      render status: 400, nothing: true
+    end
   end
 
   private

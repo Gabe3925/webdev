@@ -11,6 +11,7 @@ define(function(require) {
 
     initialize: function() {
       this.listenTo(this.model, "sync", this.render);
+      this.listenTo(watchlist, "add remove sync", this.renderButtonText);
     },
 
     events: {
@@ -21,14 +22,41 @@ define(function(require) {
       event.preventDefault();
 
       var title = this.model.get("Title");
-      var imdbID = this.model.get("imdbID");
+      var imdbID = this.model.get("imdbID")
 
-      watchlist.create({title: title, imdb_id: imdbID});
+      var saved = watchlist.findWhere({imdb_id: imdbID});
+
+      if (saved) {
+        saved.destroy();
+        this.$("event.target").text("Add to watchlist");
+      } else {
+        watchlist.create({
+          title: title,
+          imdb_id: imdbID
+        });
+
+        this.$("event.target").text("Remove from watchlist");
+      }
+
     },
 
     render: function() {
       var rendered = this.template(this.model.toJSON());
-      return this.$el.html(rendered);
+      this.$el.html(rendered);
+      this.renderButtonText();
+      return this.$el
+    },
+
+    renderButtonText: function() {
+      var imdbID = this.model.get("imdbID")
+      var saved = watchlist.findWhere({imdb_id: imdbID});
+
+      if (saved) {
+        this.$("#watchlist-toggle").text("Remove from watchlist");
+      } else {
+        this.$("#watchlist-toggle").text("Add to watchlist");
+      }
+
     }
   });
 
