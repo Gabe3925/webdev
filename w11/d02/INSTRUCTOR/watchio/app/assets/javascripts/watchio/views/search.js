@@ -19,7 +19,7 @@ define(function(require) {
         html += '<option value="#movies/'+ model.get('imdbID') +'">'+ model.get('Title') +'</option>';
       });
 
-      this.$('[name="search-results"]').html(html);
+      this.$('[name="search-results"]').html(html).trigger('change');
     },
 
     events: {
