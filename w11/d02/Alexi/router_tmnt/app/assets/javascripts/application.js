@@ -12,11 +12,4 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require underscore
-//= require backbone
-//= require models/turtle
-//= require views/list_view
-//= require views/turtle_profile_view
-//= require routers/router
-//= require main
+//= require_tree .
