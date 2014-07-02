@@ -15,9 +15,9 @@ var Turtle = Backbone.Model.extend({
 });
 
 var TurtleCollection = Backbone.Collection.extend({
-  // whenever we call .fetch() on an instance of the collection, it will know to retrieve data from the specified URL
+  // whenever we call .fetch() on an instance of this collection, the instance will make an AJAX call to '/turtles'
   url: '/turtles',
-    // when an instace of TurtleCollection fetches data, it needs a way to instantiate Turtle objects FROM that data, so we provide it with the Turtle constructor
+  // when an instance of TurtleCollection fetches data, it needs a way to instantiate Turtle objects FROM that data, so we provide it with the Turtle constructor
   model: Turtle,
 });
 ```
