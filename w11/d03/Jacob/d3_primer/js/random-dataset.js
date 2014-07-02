@@ -8,3 +8,7 @@ function getRandomDataset() {
 	
 	return dataset;
 }
+
+
+redrawGraph();
+document.getElementById('refresh').onclick = redrawGraph;

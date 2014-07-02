@@ -29,7 +29,7 @@ function redrawGraph() {
     .attr('y', function(d) { return canvasH - scaleY(d); })
     .attr('width', 10)
     .attr('height', function(d) { return scaleY(d); })
-    .attr('fill', function(d) { return 'rgb('0,0, + d*10 + ')'; });
+    .attr('fill', function(d) { return 'rgb('0,0 + d*10 + ')'; });
 
   bars
     .exit()
@@ -38,3 +38,16 @@ function redrawGraph() {
     .attr('y', canvasH)
     .remove();
 }
+
+// Create the SVG image...
+
+
+function redrawGraph() {
+
+  // Redraw the graph image...
+  var data = getRandomDataset();
+
+  console.log(data);
+
+}
+
