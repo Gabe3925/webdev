@@ -18,4 +18,8 @@ word_ladder_neighbors("aloe")
 
 ## Bonus
 1. One word in the list has 33 other words that can appear next to it. What is this word?
-2. How many different words can be reached, starting from BEST, in 3 or fewer steps?
+2. How many different words can be reached, starting from best, in 3 or fewer steps?
+
+---
+
+Source : http://www.reddit.com/r/dailyprogrammer/comments/149kec/1242012_challenge_114_easy_word_ladder_steps/
