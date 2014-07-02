@@ -20,15 +20,21 @@
   </div>
 
 <script type="text/template" id="turtle-list-item-template">
-  <li class="turtle blue"><a href="#turtles/3">LEONARDO</a></li>
+  <%% collection.each(function(turtle){  %>
+    <li class="turtle <%%= turtle.get("eyeband_color") %>"><a href="#turtles/<%%= turtle.get("id") %>"><%%= turtle.get("name").toUpperCase()  %></a></li>
+  <%% }) %>
 </script>
+ <!--  <li class="turtle blue"><a href="#turtles/3">LEONARDO</a></li> -->
 
 <script type="text/template" id="turtle-profile-template">
-  <h1 class="orange">MICHELANGELO</h1>
-  <img src="http://img4.wikia.nocookie.net/__cb20140504203628/deathbattle/images/9/9c/Tmnt-michelangelo.png" alt="michelangelo">
-  <p class="weapon orange">NUNCHAKUS</p>
+  <h1 class="<%%= eyeband_color %>"><%%= name.toUpperCase() %></h1>
+  <img src="<%%= image_url %>" alt="<%%= name %>">
+  <p class="weapon <%%= eyeband_color %>"><%%= weapon.toUpperCase() %></p>
 </script>
 
+<!--   <h1 class="orange">MICHELANGELO</h1>
+  <img src="http://img4.wikia.nocookie.net/__cb20140504203628/deathbattle/images/9/9c/Tmnt-michelangelo.png" alt="michelangelo">
+  <p class="weapon orange">NUNCHAKUS</p> -->
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>
