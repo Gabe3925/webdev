@@ -15,9 +15,10 @@ var Turtle = Backbone.Model.extend({
 });
 
 var TurtleCollection = Backbone.Collection.extend({
+  // whenever we call .fetch() on an instance of this collection, the instance will make an AJAX call to '/turtles'
+  url: '/turtles',
+  // when an instance of TurtleCollection fetches data, it needs a way to instantiate Turtle objects FROM that data, so we provide it with the Turtle constructor
   model: Turtle,
-  // whenever we call .fetch() on an instance of the collection, it will know to retrieve data from the specified URL
-  url: '/turtles'
 });
 ```
 
@@ -26,6 +27,7 @@ __Let's make sure this data behaves the way we expect by console logging each tu
 ```javascript
 // main.js
 var turtleCollection = new TurtleCollection();
+// .fetch() makes an AJAX call to '/turtles', so we use .then() to make sure we don't console log anything before the data is actually returned. 
 turtleCollection.fetch().then(function(){
   turtleCollection.each(function(turtle){
     console.log( turtle.get("name") );
@@ -38,7 +40,7 @@ __Okay, so the first specification is to see a list of turtles on page load. Let
 ```javascript
 // views/list_view.js
 var TurtleListView = Backbone.View.extend({
-  // this is a list view, so our el will be an unordered list
+  // this is a list view, and the provided template uses <li> elements, so let's set our el to be an unordered list to which we can attach <li>s
   tagName: 'ul',
 
   // grab the template specified in the spec sheet
@@ -51,7 +53,7 @@ var TurtleListView = Backbone.View.extend({
   },
 
   render: function(){
-    // I altered my template to look for a collection, so we pass the template a collection
+    // I altered my template (see below) to look for a collection, so we pass the template a collection
     var html = this.template({ collection: this.collection });
     // we return something from render so that we can chain method calls off of it
     return this.$el.html(html);
@@ -81,10 +83,9 @@ turtleCollection.fetch().then(function(){
 });
 ```
 
-__Your code should display an attractive list of 4 turtles, each of which should like to a different url fragment (Example: /#turtles/4). If it doesn't, debug.__
+__Your code should display an attractive list of 4 turtles, each of which should link to a different url fragment (Example: /#turtles/4). If it doesn't, debug.__
 
-__The spec sheet says it wants the new url to trigger the display of a new view, but tackling that challenge whole gives us two tasks (route tracking and developing the profile view) instead of one. 
-Let's first make sure that we can get our profile view working correctly on the page__
+__The spec sheet says it wants the new url to trigger the display of a new view, but tackling that challenge whole gives us two tasks at once (route tracking and developing the profile view). Let's first make sure that we can get our profile view working correctly on the page__
 
 ```javascript
 // views/turtle_profile_view.js
@@ -127,7 +128,7 @@ turtleCollection.fetch().then(function(){
 });
 ```
 
-__Once your profile view appears on the page in the proper formatting/styling, it's time to hook this puppy up to a router, starting with the list view, which is our default__
+__Does our profile view appear on the page in the proper formatting/styling? If not, debug. When it renders appropriately, it's time to hook this puppy up to a router, starting with the list view, which is our default__
 
 ```javascript
 // routers/router.js
@@ -143,7 +144,7 @@ var Router = Backbone.Router.extend({
 });
 ```
 
-__Now let's instantiate our router and start the backbone history so we can make sure the router is actually tracking changes__
+__Now let's instantiate our router and start the backbone history so we can make sure the router is actually tracking changes in the address bar__
 ```javascript
 // main.js
 var turtleCollection = new TurtleCollection();
@@ -153,9 +154,9 @@ turtleCollection.fetch().then(function(){
 });
 ```
 
-__Let's check the console. Is the router tracking changes? If not, debug.__
+__Let's check the console as we visit the '/#turtles' route. Does it log the message specified above? If not, debug.__
 
-__Great, now we move on to building the clearView method, which we'll use in our route handlers, and we'll also build out the listTurtles route handler__
+__Great, now we move on to building the clearView method (which we'll use in our route handlers), and we'll also build out the listTurtles route handler__
 
 ```javascript
 // routers/router.js
@@ -175,6 +176,7 @@ var Router = Backbone.Router.extend({
   listTurtles: function(){
     console.log("listTurtles route handler firing");
     this.clearView();
+    // remember, turtles list view uses a collection in it's render function, so we'll pass the instance a collection
     this.view = new TurtleListView({ collection: turtleCollection });
     this.view.$el.appendTo(".content-wrapper");
   },
@@ -195,9 +197,11 @@ var Router = Backbone.Router.extend({
 
   displayDetail: function(id){
     this.clearView();
+    // gotta find the right turtle within the collection.
     var turtle = turtleCollection.find(function(turtle){
       return turtle.get("id") === parseInt(id);
     });
+    // instances of TurtleProfileView reference a model in their render method, so we pass the instance a 'model' attribute
     this.view = new TurtleProfileView({ model: turtle });
     this.view.$el.appendTo(".content-wrapper");
   },
