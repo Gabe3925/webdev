@@ -16,11 +16,12 @@ var Turtle = Backbone.Model.extend({
 
 var TurtleCollection = Backbone.Collection.extend({
   model: Turtle,
+  // whenever we call .fetch() on an instance of the collection, it will know to retrieve data from the specified URL
   url: '/turtles'
 });
 ```
 
-__Let's make sure this data behaves the way we expect__
+__Let's make sure this data behaves the way we expect by console logging each turtles name. If nothing is logged, debug.__
 
 ```javascript
 // main.js
@@ -40,7 +41,7 @@ var TurtleListView = Backbone.View.extend({
   // this is a list view, so our el will be an unordered list
   tagName: 'ul',
 
-  // grab the template specified in the spec
+  // grab the template specified in the spec sheet
   template: _.template( $("#turtle-list-item-template").html() ),
 
   initialize: function(){
@@ -52,7 +53,7 @@ var TurtleListView = Backbone.View.extend({
   render: function(){
     // I altered my template to look for a collection, so we pass the template a collection
     var html = this.template({ collection: this.collection });
-    // we return something from render so that we can chain off of it
+    // we return something from render so that we can chain method calls off of it
     return this.$el.html(html);
   },
 });
@@ -69,7 +70,7 @@ __Let's add iteration logic to the template__
 </script>
 ```
 
-__Let's append everything the list view to the `.content-wrapper` div to make sure it's looks the way you'd expect__
+__Following the spec sheet, let's append the list view to the DOM's `.content-wrapper` div to make sure it looks the way you'd expect__
 
 ```javascript
 // main.js
@@ -80,10 +81,10 @@ turtleCollection.fetch().then(function(){
 });
 ```
 
-__Awesome. Our list view works perfectly and seems to update the url fragment when we click on a given item__
+__Your code should display an attractive list of 4 turtles, each of which should like to a different url fragment (Example: /#turtles/4). If it doesn't, debug.__
 
-__The spec sheet says it wants the url to show us a new view, but tackling that challenge whole gives us two tasks (router and the profile view) instead of one. 
-Let's first make sure that we can see our view on the page__
+__The spec sheet says it wants the new url to trigger the display of a new view, but tackling that challenge whole gives us two tasks (route tracking and developing the profile view) instead of one. 
+Let's first make sure that we can get our profile view working correctly on the page__
 
 ```javascript
 // views/turtle_profile_view.js
@@ -100,13 +101,14 @@ var TurtleProfileView = Backbone.View.extend({
   },
 
   render: function(){
+    // here we pass the template function a JSON object (as opposed to a model or collection attribute), because I want to keep the language within the template as clean as possible. See template below.
     var html = this.template( this.model.toJSON() );
     return this.$el.html(html);
   },
 });
 ```
 
-__Wonderful, but we need to actually make the template dynamic, so what does  that look like?__
+__Wonderful, but we need to actually make the template dynamic, so what changes do we make?__
 
 ```html
 <script type="text/template" id="turtle-profile-template">
@@ -116,14 +118,16 @@ __Wonderful, but we need to actually make the template dynamic, so what does  th
 </script>
 ```
 
-__Let's actually instantiate the profile view with a sample model within main.js, appending it to the `.content-wrapper`__
+__To make sure our view works as it should, let's instantiate the profile view with a sample model within main.js, appending it to the `.content-wrapper`__
 ```javascript
   // main.js
-  var turtleProfileView = new TurtleProfileView({ model: turtleCollection.at(2) });
+turtleCollection.fetch().then(function(){
+  var turtleProfileView = new TurtleProfileView({ model: turtleCollection.at(2) }); // NOTE: turtleCollection.at(2) is a temporary model choice for proof of working profile view.
   turtleProfileView.$el.appendTo(".content-wrapper");
+});
 ```
 
-__It works. Now it's finally time we hooked this puppy up to our router, starting with the list view, which is our default__
+__Once your profile view appears on the page in the proper formatting/styling, it's time to hook this puppy up to a router, starting with the list view, which is our default__
 
 ```javascript
 // routers/router.js
