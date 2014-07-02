@@ -4,7 +4,7 @@ define(function(require) {
   var Backbone = require('backbone');
   var LocalStorage = require('backbone-localstorage');
   var currency = require('../helpers/currency');
-  var products = require('./products');
+  var products = require('./product');
 
   // Implementation:
   var VendingMachine = Backbone.Model.extend({
