@@ -34,7 +34,7 @@ puts "Ready, steady, Go!"
 # http://rubylearning.com/blog/2013/06/19/how-do-i-benchmark-ruby-code/
 
 iterations = 10 # Run the test mutliple iterations to make sure we get a meaningful number.
-n = 5000
+n = 1000
 
 # (10) is padding for headers so we get nice looking output
 Benchmark.bmbm(10) do |bm|
