@@ -9,9 +9,13 @@
 
 #### Associative Array / Hash
 * What is it? What is a good example of when we would use one?
+- 
 * What is the time complexity to search? Why?
+- O(1). Unless they're collisions.
 * What is a hash function? 
+- 
 * What is a hash collision?
+- 
 
 #### Tree
 * What is it? What is a good example of when we would use one?
