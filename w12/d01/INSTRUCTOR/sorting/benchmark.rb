@@ -24,18 +24,7 @@ class Array
   end
 
   def quick_sort
-    return self if self.length <= 1    
-    less = []
-    greater = []
-    pivot = self.shift
-    self.each do |num|
-      if num <= pivot
-        less << num
-      else
-        greater << num
-      end
-    end
-    return less.quick_sort + [pivot] + greater.quick_sort
+    #Paste your code here!
   end
 
 end
@@ -64,11 +53,11 @@ Benchmark.bmbm(10) do |bm|
   end
 
 # Uncomment the code below when you are ready!
-  bm.report("Quick") do
-    iterations.times do
-      arr.dup.quick_sort
-    end
-  end
+  # bm.report("Quick") do
+  #   iterations.times do
+  #     arr.dup.quick_sort
+  #   end
+  # end
 
   bm.report("Ruby") do
     iterations.times do
