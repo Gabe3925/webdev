@@ -12,5 +12,3 @@ def valid(cc_num)
   sum = new_string.split('').map(&:to_i).reduce(:+)
   sum % 10 === 0
 end
-
-
