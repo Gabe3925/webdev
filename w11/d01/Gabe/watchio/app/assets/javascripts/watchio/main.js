@@ -4,8 +4,11 @@ define(function(require) {
 
   var jquery_ujs = require('jquery_ujs');
   var Backbone = require('backbone');
+
   // Require all application components...
 
+  var searchView = require('./views/search');
+  var HomeView = require('./views/home');
 
   // Implementation:
 
