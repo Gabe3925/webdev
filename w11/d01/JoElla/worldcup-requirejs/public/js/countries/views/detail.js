@@ -3,27 +3,35 @@
 // - Underscore
 // - Text: detail.html
 
+define(function(require){
 
-var CountryDetailView = Backbone.View.extend({
-  template: _.template( $('#country-detail').html() ),
+  var Backbone = require('backbone');
+  var _ = require('underscore');
+  //requiring the html file that templates what's in the model
+  var templateText = require('text!../templates/detail.html');
 
-  render: function() {
-    var rendered = this.template(this.model.toJSON());
-    return this.$el.html(rendered);
-  },
+  var CountryDetailView = Backbone.View.extend({
+    template: _.template( templateText ),
 
-  events: {
-    'change [name="playing"]': 'onPlaying',
-    'change [name="eliminated"]': 'onEliminated'
-  },
+    render: function() {
+      var rendered = this.template(this.model.toJSON());
+      return this.$el.html(rendered);
+    },
 
-  onPlaying: function() {
-    var checked = this.$('[name="playing"]').prop('checked');
-    this.model.set('isPlaying', checked);
-  },
+    events: {
+      'change [name="playing"]': 'onPlaying',
+      'change [name="eliminated"]': 'onEliminated'
+    },
 
-  onEliminated: function() {
-    var checked = this.$('[name="eliminated"]').prop('checked');
-    this.model.set('isEliminated', checked);
-  }
+    onPlaying: function() {
+      var checked = this.$('[name="playing"]').prop('checked');
+      this.model.set('isPlaying', checked);
+    },
+
+    onEliminated: function() {
+      var checked = this.$('[name="eliminated"]').prop('checked');
+      this.model.set('isEliminated', checked);
+    }
+  });
+  return CountryDetailView;
 });

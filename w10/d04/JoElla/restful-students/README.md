@@ -20,7 +20,7 @@ Create a `Student` model with the following fields (all strings):
 - phone
 - location
 - employment
-      
+
 Setup all necessary resources to provide a JSON API through the "/students" route.
 
 
@@ -36,7 +36,7 @@ All front-end HTML resources can be found in `app/views/app`.
 
 Within `assets/javascripts/students/model.js`:
 
-- Create a Backbone "Student" Model with fields matching the backend database. 
+- Create a Backbone "Student" Model with fields matching the backend database.
 
 - Create a Backbone "Students" Collection. Configure it to manage Student models, and talk to the "/students" REST endpoint.
 
