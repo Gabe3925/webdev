@@ -3,15 +3,25 @@ var StudentListView = Backbone.View.extend({
   className: "students-list",
 
   initialize: function() {
-    this.listenTo(this.collection, "add remove sync change", this.render);
-    this.render();
+    this.listenTo(this.collection, "sync", this.render);
   },
 
   template: _.template($("#students-list").html()),
 
   render: function() {
-    var rendered = this.template({collection: this.collection});
+    var rendered = this.template({studentsCollection: this.collection});
     return this.$el.html(rendered);
+  },
+
+  events: {
+    "submit form": "onSubmit"
+  },
+
+  onSubmit: function(event) {
+    event.preventDefault();
+    var name = this.$("[name='name']").val();
+    this.collection.create({name: name});
+    this.$("input").val("");
   }
 });
 
@@ -24,32 +34,36 @@ var StudentDetailView = Backbone.View.extend({
   render: function() {
     var rendered = this.template(this.model.toJSON());
     return this.$el.html(rendered);
-  }
-});
-
-var FormView = Backbone.View.extend({
-  el: "form",
-
-  events: {
-    "submit": "createStudent"
   },
 
-  createStudent: function(event) {
+  done: function() {
+    window.location.href = "#students"
+  },
+
+  events: {
+    "click #done": "onDone",
+    "click #remove": "onRemove",
+    "click #save": "onSave"
+  },
+
+  onDone: function(event) {
     event.preventDefault();
-    var name = this.$("[name='name']").val();
-    this.el.reset();
+    this.done();
+  },
 
-    this.collection.create({
-      name: name
-    });
+  onSave: function(event) {
+    event.preventDefault();
+    var data = this.$("input").serializeObject();
+    this.model.save(data);
+    this.done();
+  },
 
+  onRemove: function(event) {
+    event.preventDefault();
+    if(window.confirm("Are you sure you want to delete this student?")) {
+      this.model.destroy();
+      this.done();
+    }
   }
 });
-
-studentCollection.fetch().then(function() {
-  var student = new StudentDetailView()
-  var addStudentView = new FormView({collection: studentCollection});
-
-});
-
 

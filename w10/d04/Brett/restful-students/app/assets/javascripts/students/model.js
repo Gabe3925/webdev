@@ -10,8 +10,6 @@ var Student = Backbone.Model.extend({
 
 var StudentCollection = Backbone.Collection.extend({
   model: Student,
-  url: "students"
+  url: "/students"
 });
-
-var studentCollection = new StudentCollection
 

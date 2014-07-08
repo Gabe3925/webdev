@@ -4,85 +4,76 @@ class Hand
   end
 
   def values
-    myfavoritestnumbersintheworld = []
-    @cards.each do |mycard|
-      value = mycard[0]
+    values_array = []
 
-                if value == "A"
+    @cards.each do |card|
+      value = card[0]
 
-  myfavoritestnumbersintheworld << 1
-  elsif value == "T"
-  myfavoritestnumbersintheworld << 10
+      case value
+      when "A"
+        values_array << 1
+      when "T"
+        values_array << 10
+      when 'J'
+        values_array << 11
+      when "Q"
+        values_array << 12
+      when "K"
+        values_array << 13
+      else
+        values_array << value.to_i
+      end
 
-
-  elsif value == 'J'
-  myfavoritestnumbersintheworld.push(11)
-  elsif value =="Q"
-  myfavoritestnumbersintheworld << 12
-  elsif value == "K"
-  myfavoritestnumbersintheworld.push(13)
-  else
-  myfavoritestnumbersintheworld.push(value.to_i)
-  end
     end
-    myfavoritestnumbersintheworld
+
+    values_array.sort
   end
 
   def suits
-    mycardarray = Array.new
+    current_hand = Array.new
+
     for card in @cards do
-    mycardarray << card.split("")[1]
+      current_hand << card.split("")[1]
     end
-    return mycardarray
+
+    current_hand
   end
 
   def straight?
-    ordered_values = values.sort
     is_straight = true
-    ordered_values.each_with_index do |value, index| 
-    if index > 0
-      if value != (ordered_values[index - 1] + 1)
-    is_straight = false
+
+    values.each_with_index do |value, index|
+      is_straight = false if index > 0 && value != (values[index - 1] + 1)
     end
-      end
-    end
+
     is_straight
   end
 
   def flush?
     is_flush = true
-    suits.each_with_index do |suit, index| 
-    if index > 0
-    if suit != (suits[index - 1])
-    is_flush = false
+
+    suits.each_with_index do |suit, index|
+      is_flush = false if index > 0 && suit != (suits[index - 1])
     end
-    end
-    end
+
     is_flush
   end
 
   def full_house?
-    ordered_values = values.sort
-    if values.count(ordered_values[0]) == 2
-      if values.count(ordered_values[-1]) == 3
-        true
-      end
-    elsif values.count(ordered_values[-1]) == 2
-      if values.count(ordered_values[0]) == 3
-        true
-      end
+
+    if values.count(values[0]) == 2 && values.count(values[-1]) == 3
+      true
+    elsif values.count(values[-1]) == 2 && values.count(values[0]) == 3
+      true
     else
       false
     end
-      
-
   end
 
   def four_of_a_kind?
-    ordered_values = values.sort
-    if ordered_values[0] == ordered_values[1] && ordered_values[1] == ordered_values[2] && ordered_values[2] == ordered_values[3]
+    if values[0] == values[1] && values[1] == values[2] && values[2] == values[3]
       true
-    elsif ordered_values[1] == ordered_values[2] && ordered_values[2] == ordered_values[3] && ordered_values[3] == ordered_values[4]
+    elsif values[1] == values[2] && values[2] == values[3] && values[3] == values[4]
       true
     else
       false
@@ -90,22 +81,16 @@ class Hand
   end
 
   def best_hand
-        ordered_values = values.sort
     is_straight = true
-    ordered_values.each_with_index do |value, index| 
-    if index > 0
-    if value != (ordered_values[index - 1] + 1)
-    is_straight = false
+
+    values.each_with_index do |value, index|
+      is_straight = false if index > 0 && value != (values[index - 1] + 1)
     end
-    end
-    end
+
     is_flush = true
-    suits.each_with_index do |suit, index| 
-    if index > 0
-    if suit != (suits[index - 1])
-    is_flush = false
-    end
-    end
+
+    suits.each_with_index do |suit, index|
+      is_flush = false if index > 0 && suit != (suits[index - 1])
     end
 
     if is_straight && is_flush
@@ -124,6 +109,3 @@ class Hand
   end
 
 end
-
-
-
