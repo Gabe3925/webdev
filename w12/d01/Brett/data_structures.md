@@ -8,8 +8,11 @@
   - Linked lists are dynamic in size and no shifting of data when inserting or deleting.
 * What is the time complexity to search?
   * A linked list?
+  - O(n) - have to traverse down the list
   * An unsorted array?
+  - 0(n)
   * A sorted array?
+  - O(log n)
 
 #### Associative Array / Hash
 * What is it? What is a good example of when we would use one?
