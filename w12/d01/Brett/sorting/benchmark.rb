@@ -18,13 +18,30 @@ class Array
           self[i-1], self[i] = self[i], self[i-1] #this swaps them
           swapped = true #remember there was a swap
         end
-      end    
+      end
     end
     self
   end
 
   def quick_sort
-    #Paste your code here!
+    return self if self.length <= 1
+    # less, equal, greater := three empty arrays
+    less = []
+    greater = []
+    pivot = self.shift
+    # if length(array) > 1
+      # pivot := select any element of array
+
+  #     for each x in array
+    self.each do |number|
+    # if x < pivot then add x to less
+    # if x = pivot then add x to equal
+    # if x > pivot then add x to greater
+      less << number if number <= pivot
+      greater << number if number >= pivot
+    end
+
+    less.quick_sort + [pivot] + greater.quick_sort
   end
 
 end
@@ -40,10 +57,10 @@ iterations = 10 # Run the test mutliple iterations to make sure we get a meaning
 
 # (10) is padding for headers so we get nice looking output
 Benchmark.bmbm(10) do |bm|
-  # The times for some benchmarks depend on the order in which items are run. 
+  # The times for some benchmarks depend on the order in which items are run.
   # These differences are due to the cost of memory allocation and garbage collection.
-  # To avoid these discrepancies, the bmbm method is provided. 
-  # `bmbm` first runs the code as a 'rehearsal' to force any initialization that needs to happen and 
+  # To avoid these discrepancies, the bmbm method is provided.
+  # `bmbm` first runs the code as a 'rehearsal' to force any initialization that needs to happen and
   # and ensure that the system is fully initialized and the benchmark is fair.
 
   bm.report("Bubble") do

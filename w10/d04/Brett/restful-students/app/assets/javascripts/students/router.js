@@ -2,27 +2,31 @@ var StudentsRouter = Backbone.Router.extend({
 
   routes: {
     "students": "list",
-    "students/:id": "detail"
+    "students/:id": "detail",
+    "*default": "list"
   },
 
-  clearView: function() {
+  initialize: function(options) {
+    this.collection = options.collection;
+  },
+
+  setView: function(newView) {
     if (this.view) {
       this.view.remove();
     }
+
+    this.view = newView;
+    this.view.render().appendTo("#students-container");
   },
 
   list: function() {
-    this.clearView();
-    this.view = new StudentListView({collection: studentCollection});
-    this.view.render().appendTo("#students-container");
+    var view = new StudentListView({collection: this.collection});
+    this.setView(view);
   },
 
   detail: function(id) {
-    this.clearView();
-    this.view = new StudentDetailView({model:studentCollection.get(id)});
-    this.view.render().appendTo("#students-container");
+    var view = new StudentDetailView({model: this.collection.get(id)});
   }
+
 });
 
-var router = new StudentsRouter();
-Backbone.history.start();

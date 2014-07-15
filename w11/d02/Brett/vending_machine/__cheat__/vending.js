@@ -38,8 +38,8 @@ define(function(require) {
     },
 
     vend: function() {
-      var state = this.toJSON();
-      var product = products.findWhere({code: state.selection});
+      var currentState = this.toJSON();
+      var product = products.findWhere({code: currentState.selection});
 
       if (!product) {
         // Invalid selection:
@@ -85,6 +85,6 @@ define(function(require) {
       this.trigger('status', message);
     }
   });
-  
+
   return new VendingMachine();
 });

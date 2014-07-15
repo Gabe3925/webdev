@@ -5,7 +5,6 @@ var movie = '';
 
 $('#search').on('submit', function(evt){
   evt.preventDefault();
-
   keyword = $('#movie-search').val();
   search(keyword);
   $('#movie-select').show();

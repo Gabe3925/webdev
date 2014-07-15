@@ -4,7 +4,7 @@
 
 * Create a Search model/collection that fetches from `http://www.omdbapi.com/?s={{ title }}`. Export an instance of the Search collection for use by other modules.
 
-* Create a SearchView that binds to the document's "#search" element. Export a instance of SearchView, with the Search collection attached. SearchView should submit new search terms, and rerender whenever new search data syncs.
+* Create a Search view that binds to the document's "#search" element. Export a instance of SearchView, with the Search collection attached. SearchView should submit new search terms, and rerender whenever new search data syncs.
 
 * Require SearchView into the main application module.
 

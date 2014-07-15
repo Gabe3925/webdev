@@ -11,12 +11,12 @@ Credit card numbers can be validated by reverse engineering the [Luhn algorithm]
 For example, given the card number 4408 0412 3456 7893:
 
 ```ruby
-# Orig  :  4 4 0 8 0 4 1 2 3 4   5 6   7 8   9 3 
+# Orig  :  4 4 0 8 0 4 1 2 3 4   5 6   7 8   9 3
 # Step 1:  8 4 0 8 0 4 2 2 6 4  10 6  14 8  18 3
 # Step 2:  8+4+0+8+0+4+2+2+6+4+1+0+6+1+4+8+1+8+3 = 70
 # Step 3:  70 % 10 == 0
 
-# NOTE: In step 1, we double the second to last digit and get 18, but in Step 2, we add the *digits* 1 and 8. 
+# NOTE: In step 1, we double the second to last digit and get 18, but in Step 2, we add the *digits* 1 and 8.
 ```
 
 ### Directions
